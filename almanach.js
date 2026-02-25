@@ -3774,9 +3774,9 @@ function initShare() {
 
                 await navigator.share({
                     title: "Almanach du Jour",
-                    text:  `${dateStr.charAt(0).toUpperCase() + dateStr.slice(1)} — Soleil, Lune & Marées bretonnes`,
+                    text:  `${dateStr.charAt(0).toUpperCase() + dateStr.slice(1)} — Soleil, Lune & Marées bretonnes Soleil, Lune, Marées bretonnes, Éphémérides historiques, Calendrier jardinier biodynamique et Dictons du terroir, tous les calculs sont effectués localement, sans connexion requise. Installable sur mobile comme application. - https://patrick-1963.github.io/almanach/index.html`,
                     files: [file],
-                    body: "Soleil, Lune, Marées bretonnes, Éphémérides historiques, Calendrier jardinier biodynamique et Dictons du terroir, tous les calculs sont effectués localement, sans connexion requise. Installable sur mobile comme application."
+                    
                 });
             }, "image/png");
         } catch (err) {
