@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════
-// ALMANACH DU JOUR — Service Worker v1.4
+// ALMANACH DU JOUR — Service Worker v1.6
 //
 // Stratégie :
 //   • Installation  → mise en cache de tous les assets

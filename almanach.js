@@ -2600,9 +2600,6 @@ function updateDayView(date) {
     // ── Dicton ────────────────────────────────────────
     document.getElementById("dicton").textContent = getDictonForDay(date);
 
-    // ── Marées ────────────────────────────────────────
-    renderTides(date);
-
     // ── Image de partage ──────────────────────────────
     refreshShareImage(date);
 
@@ -2981,312 +2978,6 @@ function minutesToHHMM(mins, withH = false) {
     return withH ? `${h}h${mm}` : `${h}:${mm}`;
 }
 
-// ═══════════════════════════════════════════════════════
-// MARÉES BRETONNES — Calcul harmonique local (sans API)
-//
-// Méthode : superposition des composantes harmoniques
-// tidales principales, calibrées sur les données SHOM
-// pour 4 ports bretons de référence.
-//
-// Composantes utilisées :
-//   M2  — semi-diurne principale lunaire    (12h25)
-//   S2  — semi-diurne principale solaire    (12h00)
-//   N2  — semi-diurne elliptique lunaire    (12h39)
-//   K2  — semi-diurne luni-solaire          (11h58)
-//   K1  — diurne luni-solaire               (23h56)
-//   O1  — diurne principale lunaire         (25h49)
-//   P1  — diurne principale solaire         (24h04)
-//   Q1  — diurne elliptique lunaire         (26h52)
-//
-// Amplitudes (en mètres) et phases (en degrés)
-// issues des annuaires SHOM pour chaque port.
-// ═══════════════════════════════════════════════════════
-
-const TIDAL_PORTS = {
-    "Brest": {
-        label: "Brest",
-        lat: 48.383, lon: -4.495,
-        // [amplitude m, phase °]
-        M2: [2.345, 118.5],
-        S2: [0.770, 156.2],
-        N2: [0.462, 98.3],
-        K2: [0.211, 157.8],
-        K1: [0.095, 205.4],
-        O1: [0.070, 181.2],
-        P1: [0.031, 202.5],
-        Q1: [0.014, 160.3],
-        ZO: 3.80,  // niveau moyen au-dessus du zéro hydrographique (m)
-    },
-    "Saint-Malo": {
-        label: "Saint-Malo",
-        lat: 48.649, lon: -2.026,
-        M2: [3.720, 102.4],
-        S2: [1.280, 139.6],
-        N2: [0.735, 82.1],
-        K2: [0.350, 141.2],
-        K1: [0.110, 198.7],
-        O1: [0.085, 175.3],
-        P1: [0.036, 196.0],
-        Q1: [0.018, 153.8],
-        ZO: 6.20,
-    },
-    "Quiberon": {
-        label: "Quiberon",
-        lat: 47.484, lon: -3.115,
-        M2: [1.920, 126.3],
-        S2: [0.625, 163.4],
-        N2: [0.378, 106.2],
-        K2: [0.172, 165.0],
-        K1: [0.085, 209.1],
-        O1: [0.062, 184.5],
-        P1: [0.028, 206.3],
-        Q1: [0.012, 163.2],
-        ZO: 3.05,
-    },
-    "Lorient": {
-        label: "Lorient",
-        lat: 47.750, lon: -3.367,
-        M2: [1.970, 124.8],
-        S2: [0.642, 161.7],
-        N2: [0.388, 104.7],
-        K2: [0.176, 163.5],
-        K1: [0.087, 207.8],
-        O1: [0.064, 183.1],
-        P1: [0.029, 204.9],
-        Q1: [0.013, 162.0],
-        ZO: 3.10,
-    },
-};
-
-// Port actif (modifiable via le sélecteur)
-let activePort = "Brest";
-
-// Périodes harmoniques en secondes
-const TIDAL_PERIODS = {
-    M2: 44712.0,
-    S2: 43200.0,
-    N2: 45570.0,
-    K2: 43082.0,
-    K1: 86164.0,
-    O1: 92950.0,
-    P1: 86637.0,
-    Q1: 96726.0,
-};
-
-// Fréquences angulaires en rad/s
-const TIDAL_OMEGA = {};
-for (const [key, period] of Object.entries(TIDAL_PERIODS)) {
-    TIDAL_OMEGA[key] = (2 * Math.PI) / period;
-}
-
-/**
- * Calcule la hauteur d'eau (m) à un instant t (timestamp Unix en s)
- * pour le port donné, par superposition harmonique.
- */
-function tidalHeight(port, tUnix) {
-    const p = TIDAL_PORTS[port];
-    let h = p.ZO;
-    for (const comp of ["M2","S2","N2","K2","K1","O1","P1","Q1"]) {
-        const [amp, phaseDeg] = p[comp];
-        const phase = phaseDeg * Math.PI / 180;
-        h += amp * Math.cos(TIDAL_OMEGA[comp] * tUnix - phase);
-    }
-    return h;
-}
-
-/**
- * Trouve les extrema (pleine mer / basse mer) sur 24h
- * à partir de minuit du jour donné.
- * Résolution : 1 minute, puis affinement par dichotomie.
- */
-function getTidesForDay(port, date) {
-    const midnight = new Date(date.getFullYear(), date.getMonth(), date.getDate(), 0, 0, 0);
-    const t0 = midnight.getTime() / 1000;
-    const STEP = 60;       // 1 minute en secondes
-    const DURATION = 86400; // 24h
-
-    // 1. Calcul de la hauteur chaque minute
-    const samples = [];
-    for (let dt = 0; dt <= DURATION; dt += STEP) {
-        samples.push({ dt, h: tidalHeight(port, t0 + dt) });
-    }
-
-    // 2. Détection des extrema (changement de sens de la dérivée)
-    const extrema = [];
-    for (let i = 1; i < samples.length - 1; i++) {
-        const prev = samples[i - 1].h;
-        const curr = samples[i].h;
-        const next = samples[i + 1].h;
-
-        const isMax = curr >= prev && curr >= next;
-        const isMin = curr <= prev && curr <= next;
-
-        if (isMax || isMin) {
-            // Affinage par recherche du vrai extremum dans la minute
-            let tExact = t0 + samples[i].dt;
-            let hExact = curr;
-
-            for (let frac = -60; frac <= 60; frac += 5) {
-                const hTest = tidalHeight(port, tExact + frac);
-                if ((isMax && hTest > hExact) || (isMin && hTest < hExact)) {
-                    hExact = hTest;
-                    tExact = tExact + frac;
-                }
-            }
-
-            const eventDate = new Date(tExact * 1000);
-            extrema.push({
-                type: isMax ? "PM" : "BM",   // Pleine Mer / Basse Mer
-                time: eventDate,
-                height: Math.round(hExact * 100) / 100,
-            });
-        }
-    }
-
-    // Dédupliquer les extrema trop proches (< 30 min)
-    const filtered = [];
-    for (const e of extrema) {
-        if (!filtered.length || (e.time - filtered[filtered.length-1].time) > 1800000) {
-            filtered.push(e);
-        }
-    }
-
-    return filtered;
-}
-
-/**
- * Coefficient de marée (0–120+) à partir de la phase lunaire.
- * Les grandes marées (coefficient > 95) ont lieu aux nouvelles
- * et pleines lunes ; les mortes-eaux (< 45) aux quartiers.
- *
- * Formule empirique basée sur la composante M2+S2 :
- * coeff ≈ 100 × (M2 + S2×cos(2×phaseAngle)) / M2
- */
-function tidalCoefficient(port, phaseAngle) {
-    const p    = TIDAL_PORTS[port];
-    const M2   = p.M2[0];
-    const S2   = p.S2[0];
-    const rad  = phaseAngle * Math.PI / 180;
-    // Amplitude de la marée du moment
-    const amp  = M2 + S2 * Math.cos(2 * rad);
-    // Normalisée sur l'amplitude maxi (PM + S2 en phase)
-    const max  = M2 + S2;
-    const coeff = Math.round((amp / max) * 120);
-    return Math.max(20, Math.min(120, coeff));
-}
-
-function coeffLabel(c) {
-    if (c >= 100) return { text: "Très grande marée", color: "#8b3a2a" };
-    if (c >= 80)  return { text: "Grande marée",       color: "#9a5c20" };
-    if (c >= 60)  return { text: "Marée moyenne",      color: "#4a6741" };
-    if (c >= 40)  return { text: "Morte-eau",          color: "#3a6b8a" };
-    return              { text: "Très petite marée",   color: "#5a5a8a" };
-}
-
-function formatTideTime(date) {
-    return date.toLocaleTimeString("fr-FR", { hour: "2-digit", minute: "2-digit" });
-}
-
-/**
- * Rendu HTML du bloc marées
- */
-function renderTides(date) {
-    const container = document.getElementById("tides-block");
-    if (!container) return;
-
-    const moon   = getMoonData(date);
-    const coeff  = tidalCoefficient(activePort, moon.phaseAngle);
-    const cLabel = coeffLabel(coeff);
-    const tides  = getTidesForDay(activePort, date);
-
-    // Hauteur actuelle (si le jour affiché est aujourd'hui)
-    const isToday = isSameDate(date, new Date());
-    const nowUnix = Date.now() / 1000;
-    const currentH = isToday
-        ? Math.round(tidalHeight(activePort, nowUnix) * 100) / 100
-        : null;
-
-    // Prochaine marée (si aujourd'hui)
-    let nextTide = null;
-    if (isToday) {
-        nextTide = tides.find(t => t.time > new Date());
-    }
-
-    // Sélecteur de port
-    const portOptions = Object.entries(TIDAL_PORTS)
-        .map(([key, p]) =>
-            `<option value="${key}" ${key === activePort ? "selected" : ""}>${p.label}</option>`
-        ).join("");
-
-    // Tableau des marées du jour
-    const tidesRows = tides.map(t => `
-        <div class="tide-row ${t.type === 'PM' ? 'tide-pm' : 'tide-bm'}">
-            <span class="tide-type">${t.type === 'PM' ? '▲ Pleine Mer' : '▽ Basse Mer'}</span>
-            <span class="tide-time">${formatTideTime(t.time)}</span>
-            <span class="tide-height">${t.height.toFixed(2)} m</span>
-        </div>
-    `).join("") || `<p class="no-tide">Données indisponibles pour ce jour.</p>`;
-
-    // Jauge de hauteur actuelle
-    let gaugeHTML = "";
-    if (currentH !== null) {
-        const port    = TIDAL_PORTS[activePort];
-        const maxH    = port.ZO + port.M2[0] + port.S2[0] + port.N2[0];
-        const pct     = Math.max(0, Math.min(100, (currentH / maxH) * 100));
-        const rising  = isRisingTide(activePort, nowUnix);
-        gaugeHTML = `
-            <div class="tide-now">
-                <div class="tide-now-label">
-                    Niveau actuel : <strong>${currentH.toFixed(2)} m</strong>
-                    <span class="tide-arrow">${rising ? "↑ montante" : "↓ descendante"}</span>
-                </div>
-                <div class="tide-gauge">
-                    <div class="tide-gauge-fill" style="width:${pct}%"></div>
-                    <div class="tide-gauge-label">${Math.round(pct)}%</div>
-                </div>
-                ${nextTide ? `
-                <div class="tide-next">
-                    Prochaine : <strong>${nextTide.type === 'PM' ? '▲ Pleine Mer' : '▽ Basse Mer'}</strong>
-                    à <strong>${formatTideTime(nextTide.time)}</strong>
-                    (${nextTide.height.toFixed(2)} m)
-                </div>` : ""}
-            </div>
-        `;
-    }
-
-    container.innerHTML = `
-        <div class="tides-header">
-            <div class="tides-port-select">
-                <label for="port-select">⚓ Port :</label>
-                <select id="port-select">${portOptions}</select>
-            </div>
-            <div class="tide-coeff" style="color:${cLabel.color}">
-                <span class="coeff-number">${coeff}</span>
-                <span class="coeff-label">${cLabel.text}</span>
-            </div>
-        </div>
-        ${gaugeHTML}
-        <div class="tides-table">
-            ${tidesRows}
-        </div>
-        <p class="tides-source">Calcul harmonique SHOM · Composantes M2 S2 N2 K2 K1 O1 P1 Q1</p>
-    `;
-
-    // Écouter le changement de port
-    document.getElementById("port-select").addEventListener("change", e => {
-        activePort = e.target.value;
-        renderTides(date);
-    });
-}
-
-/**
- * Détermine si la marée monte ou descend à l'instant t
- */
-function isRisingTide(port, tUnix) {
-    const h1 = tidalHeight(port, tUnix - 300);
-    const h2 = tidalHeight(port, tUnix + 300);
-    return h2 > h1;
-}
 
 // ═══════════════════════════════════════════════════════
 // LEVER / COUCHER / TRANSIT DE LA LUNE
@@ -3558,14 +3249,8 @@ function generateShareImage(date) {
     const saint  = getSaintOfDay(date);
     const dicton = getDictonForDay(date);
     const season = getSeason(date);
-    const dow    = getDayOfYear(date);
-    const week   = getWeekNumber(date);
     const ferie  = isFerie(date);
     const garden = getGardenData(date, moon.phaseAngle);
-
-    // Marées (port Brest par défaut pour l'image)
-    const tides  = getTidesForDay("Brest", date);
-    const coeff  = tidalCoefficient("Brest", moon.phaseAngle);
 
     // ── COLONNE 1 : Soleil ────────────────────────────
     const col1X = 80, col2X = 420, col3X = 760, colW = 310;
@@ -3590,16 +3275,16 @@ function generateShareImage(date) {
         ["Transit",      moonRS.transit],
     ], colW, "#c8cfd8");
 
-    // ── COLONNE 3 : Marées ────────────────────────────
-    const tideLines = tides.slice(0, 4).map(t =>
-        [(t.type === "PM" ? "▲ PM" : "▽ BM"),
-         `${formatTideTime(t.time)}  ${t.height.toFixed(2)}m`]
-    );
-    if (!tideLines.length) tideLines.push(["—", "—"]);
-
-    drawDataColumn(ctx, C, col3X, dataY, "〜  MARÉES · BREST", [
-        ["Coefficient",  coeff + " — " + coeffLabel(coeff).text],
-        ...tideLines,
+    // ── COLONNE 3 : Jardinier lunaire ────────────────
+    const dow  = getDayOfYear(date);
+    const week = getWeekNumber(date);
+    drawDataColumn(ctx, C, col3X, dataY, "🌿  JARDINIER LUNAIRE", [
+        ["Type de jour",   garden.dayType],
+        ["Conseil",        garden.advice.length > 28 ? garden.advice.slice(0, 27) + "…" : garden.advice],
+        ["Position lune",  garden.moonPos],
+        ["Tendance sève",  garden.trend],
+        ["Semaine",        "N° " + week],
+        ["Jour de l'an",   "J " + dow + " / 365"],
     ], colW, "#7ec8e3");
 
     // ── Bande du bas : saint + dicton + saison ────────
@@ -3774,9 +3459,8 @@ function initShare() {
 
                 await navigator.share({
                     title: "Almanach du Jour",
-                    text:  `${dateStr.charAt(0).toUpperCase() + dateStr.slice(1)} — Soleil, Lune & Marées bretonnes Soleil, Lune, Marées bretonnes, Éphémérides historiques, Calendrier jardinier biodynamique et Dictons du terroir, tous les calculs sont effectués localement, sans connexion requise. Installable sur mobile comme application. - https://patrick-1963.github.io/almanach/index.html`,
+                    text:  `${dateStr.charAt(0).toUpperCase() + dateStr.slice(1)} — Soleil, Lune & Marées bretonnes`,
                     files: [file],
-                    
                 });
             }, "image/png");
         } catch (err) {
