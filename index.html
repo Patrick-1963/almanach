@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Almanach du Jour — Soleil, Lune, Éphémérides &amp; Traditions</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="L'almanach de référence : lever et coucher du soleil, phases de la lune, marées bretonnes, saints du jour, éphémérides historiques, calendrier jardinier biodynamique et dictons du terroir.">
+
+    <!-- PWA -->
+    <link rel="manifest" href="manifest.json">
+    <meta name="theme-color" content="#1a1f2e">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Almanach">
+    <link rel="apple-touch-icon" href="icons/icon-152.png">
+    <link rel="apple-touch-icon" sizes="192x192" href="icons/icon-192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="icons/favicon-32.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="icons/icon-192.png">
+
+    <!-- Open Graph (partage réseaux sociaux) -->
+    <meta property="og:title" content="Almanach du Jour">
+    <meta property="og:description" content="Soleil, Lune, Marées bretonnes, Éphémérides et traditions — calculs locaux, sans API.">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="icons/icon-512.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="Almanach du Jour">
+    <meta name="twitter:image" content="icons/icon-512.png">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="header-inner">
+            <div class="header-ornament">✦</div>
+            <h1>Almanach du Jour</h1>
+            <p class="subtitle">Soleil · Lune · Éphémérides · Traditions</p>
+            <div class="header-ornament">✦</div>
+        </div>
+    </header>
+
+    <main>
+
+        <!-- BLOC DU JOUR -->
+        <section id="today-block">
+            <div class="today-date-wrap">
+                <h2 id="date-display">—</h2>
+                <p id="meta-date" class="meta-line">—</p>
+            </div>
+
+            <div class="primary-cards">
+
+                <article class="card card-sun">
+                    <div class="card-icon">☀</div>
+                    <h3>Soleil</h3>
+                    <ul class="data-list">
+                        <li><span class="lbl">Lever</span><span id="sunrise" class="val">--:--</span></li>
+                        <li><span class="lbl">Coucher</span><span id="sunset" class="val">--:--</span></li>
+                        <li><span class="lbl">Durée du jour</span><span id="day-length" class="val">--h--</span></li>
+                    </ul>
+                </article>
+
+                <article class="card card-moon">
+                    <div class="card-icon-canvas">
+                        <canvas id="moon-icon" class="moon-icon" width="64" height="64"></canvas>
+                    </div>
+                    <h3>Lune</h3>
+                    <ul class="data-list">
+                        <li><span class="lbl">Phase</span><span id="moon-phase" class="val">—</span></li>
+                        <li><span class="lbl">Illumination</span><span id="moon-illumination" class="val">--%</span></li>
+                        <li><span class="lbl">Âge</span><span id="moon-age" class="val">-- j</span></li>
+                        <li><span class="lbl">Prochaine pleine</span><span id="next-full-moon" class="val">—</span></li>
+                    </ul>
+                </article>
+
+                <article class="card card-garden">
+                    <div class="card-icon">🌿</div>
+                    <h3>Jardinier lunaire</h3>
+                    <ul class="data-list">
+                        <li><span class="lbl">Type de jour</span><span id="garden-day-type" class="val">—</span></li>
+                        <li><span class="lbl">Activité conseillée</span><span id="garden-advice" class="val">—</span></li>
+                        <li><span class="lbl">Lune</span><span id="garden-moon-pos" class="val">—</span></li>
+                        <li><span class="lbl">Tendance</span><span id="garden-trend" class="val">—</span></li>
+                    </ul>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- SAINT + DICTON -->
+        <section id="tradition-block">
+            <div class="tradition-grid">
+                <div class="tradition-item">
+                    <span class="trad-icon">✝</span>
+                    <div>
+                        <div class="trad-label">Saint du jour</div>
+                        <div id="saint" class="trad-value">—</div>
+                    </div>
+                </div>
+                <div class="trad-divider"></div>
+                <div class="tradition-item">
+                    <span class="trad-icon">❝</span>
+                    <div>
+                        <div class="trad-label">Dicton du jour</div>
+                        <div id="dicton" class="trad-value trad-dicton">—</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <!-- MARÉES -->
+        <section id="marees-section">
+            <div class="section-header">
+                <span class="orn">◈</span>
+                <h2>Marées — Bretagne</h2>
+                <span class="orn">◈</span>
+            </div>
+            <div id="tides-block" class="tides-block">
+                <p style="text-align:center;color:var(--ink-muted);padding:1rem;">Calcul en cours…</p>
+            </div>
+        </section>
+
+                <!-- ÉPHÉMÉRIDES -->
+        <section id="ephemerides-block">
+            <div class="section-header">
+                <span class="orn">◈</span>
+                <h2>En ce jour dans l'Histoire</h2>
+                <span class="orn">◈</span>
+            </div>
+            <div id="ephemerides-list" class="ephemerides-list"></div>
+        </section>
+
+        <!-- CALENDRIER -->
+        <section id="calendar-section">
+            <div class="section-header">
+                <span class="orn">◈</span>
+                <h2>Calendrier</h2>
+                <span class="orn">◈</span>
+            </div>
+            <div class="calendar-nav">
+                <button id="prev-month" type="button">◀</button>
+                <h3 id="calendar-title">—</h3>
+                <button id="next-month" type="button">▶</button>
+            </div>
+            <table id="calendar" role="grid">
+                <thead>
+                    <tr>
+                        <th>L</th><th>M</th><th>M</th>
+                        <th>J</th><th>V</th><th>S</th><th>D</th>
+                    </tr>
+                </thead>
+                <tbody id="calendar-body"></tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <p>📍 Calculs pour <strong>Guer, Bretagne</strong> — 47.9°N · 2.1°O</p>
+            <p class="footer-note">Calculs locaux · Sans API externe · Astronomie NOAA &amp; Meeus · Calendrier biodynamique Maria Thun</p>
+        </div>
+    </footer>
+
+    <!-- Bannière mise à jour PWA -->
+    <div id="pwa-update-banner" class="pwa-banner pwa-update" hidden>
+        <span>✦ Une mise à jour de l'Almanach est disponible.</span>
+        <button id="pwa-update-btn">Mettre à jour</button>
+        <button id="pwa-update-close" aria-label="Fermer">✕</button>
+    </div>
+
+    <!-- Bouton d'installation PWA -->
+    <div id="pwa-install-banner" class="pwa-banner pwa-install" hidden>
+        <span>📲 Installer l'Almanach sur votre écran d'accueil</span>
+        <button id="pwa-install-btn">Installer</button>
+        <button id="pwa-install-close" aria-label="Fermer">✕</button>
+    </div>
+
+    <script src="almanach.js"></script>
+    <script src="pwa.js"></script>
+</body>
+</html>
