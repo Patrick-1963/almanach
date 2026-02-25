@@ -833,3 +833,117 @@ main {
         padding-bottom: env(safe-area-inset-bottom, 0);
     }
 }
+
+/* ── Séparateur dans les listes de données ─────────── */
+.data-separator {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: .35rem 0;
+    padding: 0;
+    height: 0;
+}
+
+/* Légère mise en valeur azimut / élévation */
+.data-list .val[id*="az"],
+.data-list .val[id*="elevation"],
+.data-list .val[id*="noon"] {
+    color: var(--gold);
+    font-size: .82rem;
+}
+
+/* ══════════════════════════════════════════════════════
+   PARTAGE DU JOUR
+   ══════════════════════════════════════════════════════ */
+
+#share-block {
+    background: var(--parchment2);
+    border: 1px solid var(--border-strong);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+.share-inner {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+/* Aperçu canvas — affiché en 100% de largeur, ratio 1.91:1 */
+.share-preview-wrap {
+    width: 100%;
+    border-radius: var(--radius);
+    overflow: hidden;
+    box-shadow: 0 4px 24px rgba(0,0,0,.25);
+    border: 1px solid var(--border);
+    background: var(--night);
+    line-height: 0; /* évite l'espace sous le canvas */
+}
+
+#share-canvas {
+    width: 100%;
+    height: auto;
+    display: block;
+    cursor: pointer;
+}
+
+/* Boutons d'action */
+.share-actions {
+    display: flex;
+    gap: .75rem;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.share-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
+    padding: .65rem 1.4rem;
+    border: none;
+    border-radius: var(--radius);
+    font-family: var(--font-body);
+    font-size: .9rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all .2s;
+    letter-spacing: .04em;
+}
+
+.share-btn-dl {
+    background: var(--night);
+    color: var(--gold);
+    border: 1px solid var(--gold);
+}
+.share-btn-dl:hover {
+    background: var(--gold);
+    color: var(--night);
+}
+
+.share-btn-share {
+    background: var(--gold);
+    color: var(--night);
+}
+.share-btn-share:hover {
+    background: var(--gold-light);
+}
+
+.share-hint {
+    font-size: .75rem;
+    color: var(--ink-muted);
+    text-align: center;
+    letter-spacing: .05em;
+}
+
+/* Clic sur l'aperçu = téléchargement direct */
+#share-canvas:active {
+    opacity: .9;
+    transform: scale(.99);
+}
+
+@media (max-width: 480px) {
+    .share-btn { width: 100%; justify-content: center; }
+    .share-actions { width: 100%; }
+}

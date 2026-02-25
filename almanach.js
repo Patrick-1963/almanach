@@ -2455,6 +2455,7 @@ document.addEventListener("DOMContentLoaded", () => {
     updateDayView(currentDate);
     document.getElementById("prev-month").addEventListener("click", () => changeMonth(-1));
     document.getElementById("next-month").addEventListener("click", () => changeMonth(1));
+    initShare();
 });
 
 
@@ -2550,21 +2551,39 @@ function updateDayView(date) {
 
     // ── Soleil ────────────────────────────────────────
     const sun = getSunTimes(date, LAT, LON);
-    document.getElementById("sunrise").textContent   = sun.sunrise;
-    document.getElementById("sunset").textContent    = sun.sunset;
-    document.getElementById("day-length").textContent = sun.dayLength;
+    document.getElementById("sunrise").textContent        = sun.sunrise;
+    document.getElementById("sunset").textContent         = sun.sunset;
+    document.getElementById("day-length").textContent     = sun.dayLength;
+    document.getElementById("sun-noon").textContent       = sun.noonTime;
+    document.getElementById("sun-elevation").textContent  = sun.noonElevation + "°";
+    document.getElementById("sun-az-rise").textContent    =
+        sun.azimuthRise + "° " + azimuthToCompass(sun.azimuthRise);
+    document.getElementById("sun-az-set").textContent     =
+        sun.azimuthSet  + "° " + azimuthToCompass(sun.azimuthSet);
 
     // ── Lune ─────────────────────────────────────────
     const moon = getMoonData(date);
-    document.getElementById("moon-phase").textContent       = moon.phaseName;
+    document.getElementById("moon-phase").textContent        = moon.phaseName;
     document.getElementById("moon-illumination").textContent = moon.illumination + " %";
-    document.getElementById("moon-age").textContent         = moon.age + " j";
+    document.getElementById("moon-age").textContent          = moon.age + " j";
 
     updateMoonIcon(moon.illumination, moon.phaseName, moon.phaseAngle);
 
     const nextFull = getNextMoonPhase(date, 180);
     document.getElementById("next-full-moon").textContent =
         nextFull.toLocaleDateString("fr-FR", { day: "numeric", month: "long" });
+
+    // Lever / coucher / transit lune
+    const moonRS = getMoonRiseSet(date, LAT, LON);
+    document.getElementById("moonrise").textContent        = moonRS.rise;
+    document.getElementById("moonset").textContent         = moonRS.set;
+    document.getElementById("moon-transit").textContent    = moonRS.transit;
+    document.getElementById("moon-elevation").textContent  =
+        moonRS.maxElevation !== "—" ? moonRS.maxElevation + "°" : "—";
+    document.getElementById("moon-az-rise").textContent    =
+        moonRS.azimuthRise !== "—"
+        ? moonRS.azimuthRise + "° " + azimuthToCompass(moonRS.azimuthRise)
+        : "—";
 
     // ── Jardinier ─────────────────────────────────────
     const garden = getGardenData(date, moon.phaseAngle);
@@ -2583,6 +2602,9 @@ function updateDayView(date) {
 
     // ── Marées ────────────────────────────────────────
     renderTides(date);
+
+    // ── Image de partage ──────────────────────────────
+    refreshShareImage(date);
 
     // ── Éphémérides ───────────────────────────────────
     renderEphemerides(date);
@@ -2674,16 +2696,39 @@ function getSunTimes(date, lat, lon) {
     const eqTime = getEquationOfTime(T, L0, e, M);
     const ha = getHourAngle(lat, decl);
 
-    if (ha === null) return { sunrise: "—", sunset: "—", dayLength: "—" };
+    if (ha === null) return { sunrise: "—", sunset: "—", dayLength: "—",
+        azimuthRise: "—", azimuthSet: "—", noonElevation: "—", noonTime: "—" };
 
     const sunriseMinutes = 720 - 4 * (lon + ha) - eqTime;
     const sunsetMinutes  = 720 - 4 * (lon - ha) - eqTime;
+    const noonMinutes    = 720 - 4 * lon - eqTime;
+
+    // Azimut lever/coucher : cos(az) = sin(decl)/cos(lat) quand alt=0
+    const cosAzRise  = Math.sin(toRad(decl)) / Math.cos(toRad(lat));
+    const azRiseDeg  = toDeg(Math.acos(Math.max(-1, Math.min(1, cosAzRise))));
+    const azimuthRise = Math.round(azRiseDeg);       // depuis Nord, côté Est
+    const azimuthSet  = Math.round(360 - azRiseDeg); // symétrique côté Ouest
+
+    // Hauteur maximale au méridien (midi solaire)
+    const noonElevDeg = 90 - Math.abs(lat - decl);
 
     return {
-        sunrise: minutesToHHMM(sunriseMinutes),
-        sunset: minutesToHHMM(sunsetMinutes),
-        dayLength: minutesToHHMM(sunsetMinutes - sunriseMinutes, true)
+        sunrise:       minutesToHHMM(sunriseMinutes),
+        sunset:        minutesToHHMM(sunsetMinutes),
+        dayLength:     minutesToHHMM(sunsetMinutes - sunriseMinutes, true),
+        noonTime:      minutesToHHMM(noonMinutes),
+        noonElevation: Math.round(noonElevDeg * 10) / 10,
+        azimuthRise,
+        azimuthSet,
+        declination:   Math.round(decl * 10) / 10,
     };
+}
+
+// Direction cardinale depuis l'azimut
+function azimuthToCompass(deg) {
+    const dirs = ["N","NNE","NE","ENE","E","ESE","SE","SSE",
+                  "S","SSO","SO","OSO","O","ONO","NO","NNO"];
+    return dirs[Math.round(deg / 22.5) % 16];
 }
 
 function getEquationOfTime(T, L0, e, M) {
@@ -3241,4 +3286,506 @@ function isRisingTide(port, tUnix) {
     const h1 = tidalHeight(port, tUnix - 300);
     const h2 = tidalHeight(port, tUnix + 300);
     return h2 > h1;
+}
+
+// ═══════════════════════════════════════════════════════
+// LEVER / COUCHER / TRANSIT DE LA LUNE
+// Algorithme de Meeus, "Astronomical Algorithms" ch.15
+//
+// Principe : on calcule l'angle horaire de la Lune au
+// lever/coucher par interpolation sur 3 jours consécutifs,
+// puis on affine par itération jusqu'à convergence < 1 min.
+// ═══════════════════════════════════════════════════════
+
+function getMoonRiseSet(date, lat, lon) {
+    // On calcule la déclinaison et l'ascension droite de la
+    // Lune pour J-1, J, J+1 puis on interpole.
+    const results = [-1, 0, 1].map(offset => {
+        const d = new Date(date.getFullYear(), date.getMonth(), date.getDate() + offset);
+        return getMoonRADec(d);
+    });
+
+    const [prev, curr, next] = results;
+
+    // Interpolation des coordonnées équatoriales
+    function interp(y1, y2, y3, n) {
+        const a = y2 - y1;
+        const b = y3 - y2;
+        const c = b - a;
+        return y2 + n / 2 * (a + b + n * c);
+    }
+
+    // Heure sidérale à Greenwich à 0h UT
+    const JD0  = getJulianDay(new Date(date.getFullYear(), date.getMonth(), date.getDate()));
+    const T0   = (JD0 - 2451545.0) / 36525;
+    const theta0 = normalizeAngle(100.46061837 + 36000.770053608 * T0
+                 + 0.000387933 * T0 * T0);
+
+    // Parallaxe horizontale de la Lune (~57')
+    const pi_moon = 0.9507; // degrés (parallaxe horizontale standard)
+    // Correction de réfraction + parallaxe pour le lever/coucher
+    const h0 = 0.7275 * pi_moon - 0.5667; // environ 0.125°
+
+    const cosH0 = (Math.sin(toRad(h0)) - Math.sin(toRad(lat)) * Math.sin(toRad(curr.dec)))
+                / (Math.cos(toRad(lat)) * Math.cos(toRad(curr.dec)));
+
+    // Pas de lever/coucher possible (Lune circumpolaire ou jamais visible)
+    if (cosH0 < -1 || cosH0 > 1) {
+        return { rise: "—", set: "—", transit: "—", maxElevation: "—",
+                 azimuthRise: "—", azimuthSet: "—" };
+    }
+
+    const H0 = toDeg(Math.acos(cosH0));
+
+    // Estimation initiale (en fractions de jour, 0–1)
+    let m0 = (curr.ra - lon - theta0) / 360; // transit
+    let m1 = m0 - H0 / 360;                  // lever
+    let m2 = m0 + H0 / 360;                  // coucher
+
+    // Normaliser dans [0, 1]
+    m0 = ((m0 % 1) + 1) % 1;
+    m1 = ((m1 % 1) + 1) % 1;
+    m2 = ((m2 % 1) + 1) % 1;
+
+    // Affinage itératif (3 iterations suffisent)
+    for (let iter = 0; iter < 3; iter++) {
+        // Transit
+        const theta_t = normalizeAngle(theta0 + 360.985647 * m0);
+        const n_t = m0 + (lon > 0 ? lon : lon) / 360; // approximation
+        const ra_t  = interp(prev.ra,  curr.ra,  next.ra,  m0 * 2 - 1);
+        const H_t   = normalizeAngle(theta_t + lon - ra_t);
+        if (H_t > 180) m0 -= H_t / 360; else m0 += (360 - H_t) / 360;
+        m0 = ((m0 % 1) + 1) % 1;
+
+        // Lever
+        const theta_r = normalizeAngle(theta0 + 360.985647 * m1);
+        const ra_r    = interp(prev.ra,  curr.ra,  next.ra,  m1 * 2 - 1);
+        const dec_r   = interp(prev.dec, curr.dec, next.dec, m1 * 2 - 1);
+        const H_r     = normalizeAngle(theta_r + lon - ra_r);
+        const h_r     = toDeg(Math.asin(
+            Math.sin(toRad(lat)) * Math.sin(toRad(dec_r)) +
+            Math.cos(toRad(lat)) * Math.cos(toRad(dec_r)) * Math.cos(toRad(H_r))
+        ));
+        m1 += (h_r - h0) / (360 * Math.cos(toRad(dec_r)) * Math.cos(toRad(lat)) * Math.sin(toRad(H_r)));
+        m1 = ((m1 % 1) + 1) % 1;
+
+        // Coucher
+        const theta_s = normalizeAngle(theta0 + 360.985647 * m2);
+        const ra_s    = interp(prev.ra,  curr.ra,  next.ra,  m2 * 2 - 1);
+        const dec_s   = interp(prev.dec, curr.dec, next.dec, m2 * 2 - 1);
+        const H_s     = normalizeAngle(theta_s + lon - ra_s);
+        const h_s     = toDeg(Math.asin(
+            Math.sin(toRad(lat)) * Math.sin(toRad(dec_s)) +
+            Math.cos(toRad(lat)) * Math.cos(toRad(dec_s)) * Math.cos(toRad(H_s))
+        ));
+        m2 += (h_s - h0) / (360 * Math.cos(toRad(dec_s)) * Math.cos(toRad(lat)) * Math.sin(toRad(H_s)));
+        m2 = ((m2 % 1) + 1) % 1;
+    }
+
+    // Convertir fractions de jour → HH:MM
+    const toHHMM = m => {
+        const totalMin = Math.round(m * 24 * 60);
+        const h = Math.floor(totalMin / 60) % 24;
+        const mn = totalMin % 60;
+        return `${String(h).padStart(2,"0")}:${String(mn).padStart(2,"0")}`;
+    };
+
+    // Azimut au lever/coucher
+    const cosAzR = (Math.sin(toRad(curr.dec)) - Math.sin(toRad(lat)) * Math.sin(toRad(h0)))
+                 / (Math.cos(toRad(lat)) * Math.cos(toRad(h0)));
+    const azRise = Math.round(toDeg(Math.acos(Math.max(-1, Math.min(1, cosAzR)))));
+    const azSet  = 360 - azRise;
+
+    // Hauteur maximale au transit
+    const maxElev = Math.round((90 - Math.abs(lat - curr.dec)) * 10) / 10;
+
+    return {
+        rise:         toHHMM(m1),
+        set:          toHHMM(m2),
+        transit:      toHHMM(m0),
+        maxElevation: maxElev,
+        azimuthRise:  azRise,
+        azimuthSet:   azSet,
+    };
+}
+
+/**
+ * Calcule l'ascension droite (°) et la déclinaison (°) de la Lune
+ * pour un jour donné.
+ */
+function getMoonRADec(date) {
+    const JD = getJulianDay(date);
+    const T  = (JD - 2451545.0) / 36525;
+
+    // Longitude écliptique de la Lune
+    const L0   = normalizeAngle(218.3164477 + 481267.88123421 * T);
+    const Mm   = normalizeAngle(134.9633964 + 477198.8675055 * T);
+    const Msun = normalizeAngle(357.5291092 + 35999.0502909 * T);
+    const D    = normalizeAngle(297.8501921 + 445267.1114034 * T);
+    const F    = normalizeAngle(93.2720950  + 483202.0175233 * T);
+
+    const moonLon = normalizeAngle(
+        L0
+        + 6.289  * Math.sin(toRad(Mm))
+        + 1.274  * Math.sin(toRad(2*D - Mm))
+        + 0.658  * Math.sin(toRad(2*D))
+        - 0.186  * Math.sin(toRad(Msun))
+        - 0.114  * Math.sin(toRad(2*F))
+        + 0.059  * Math.sin(toRad(2*D - 2*Mm))
+        + 0.057  * Math.sin(toRad(2*D - Msun - Mm))
+    );
+
+    // Latitude écliptique
+    const moonLat =
+        + 5.128  * Math.sin(toRad(F))
+        + 0.281  * Math.sin(toRad(Mm + F))
+        - 0.274  * Math.sin(toRad(F - Mm))
+        - 0.173  * Math.sin(toRad(2*D - F));
+
+    // Obliquité de l'écliptique
+    const eps = 23.439291 - 0.013004 * T;
+
+    // Conversion écliptique → équatorial
+    const sinLon = Math.sin(toRad(moonLon));
+    const cosLon = Math.cos(toRad(moonLon));
+    const sinLat = Math.sin(toRad(moonLat));
+    const cosLat = Math.cos(toRad(moonLat));
+    const sinEps = Math.sin(toRad(eps));
+    const cosEps = Math.cos(toRad(eps));
+
+    const x = cosLat * cosLon;
+    const y = cosEps * cosLat * sinLon - sinEps * sinLat;
+    const z = sinEps * cosLat * sinLon + cosEps * sinLat;
+
+    const ra  = normalizeAngle(toDeg(Math.atan2(y, x)));
+    const dec = toDeg(Math.asin(z));
+
+    return { ra, dec };
+}
+
+// ═══════════════════════════════════════════════════════
+// PARTAGE DU JOUR — Génération d'image canvas 1200×630
+//
+// Design : almanach imprimé, fond nuit, typographie
+// éditoriale, données clés du jour en colonnes.
+// Format parfait pour Twitter/X, Facebook, WhatsApp,
+// LinkedIn (ratio 1.91:1).
+// ═══════════════════════════════════════════════════════
+
+function generateShareImage(date) {
+    const canvas = document.getElementById("share-canvas");
+    if (!canvas) return;
+
+    const ctx = canvas.getContext("2d");
+    const W = 1200, H = 630;
+
+    // ── Palette ───────────────────────────────────────
+    const C = {
+        bg:        "#1a1f2e",
+        bg2:       "#20263a",
+        gold:      "#c9a84c",
+        goldLight: "#e8c96a",
+        parchment: "#f7f2e8",
+        parchment2:"#c8bfa8",
+        muted:     "#7a6e60",
+        night2:    "#252b3d",
+        rust:      "#8b3a2a",
+        ocean:     "#2a5a7a",
+        sage:      "#3a6040",
+    };
+
+    // ── Fond ──────────────────────────────────────────
+    ctx.fillStyle = C.bg;
+    ctx.fillRect(0, 0, W, H);
+
+    // Dégradé radial subtil
+    const grad = ctx.createRadialGradient(W/2, H/2, 0, W/2, H/2, W*0.7);
+    grad.addColorStop(0,   "rgba(154,124,60,0.06)");
+    grad.addColorStop(0.5, "rgba(154,124,60,0.02)");
+    grad.addColorStop(1,   "rgba(0,0,0,0)");
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, 0, W, H);
+
+    // ── Bordure dorée double ──────────────────────────
+    ctx.strokeStyle = C.gold;
+    ctx.lineWidth = 3;
+    roundRect(ctx, 16, 16, W-32, H-32, 12, false, true);
+    ctx.strokeStyle = "rgba(201,168,76,0.3)";
+    ctx.lineWidth = 1;
+    roundRect(ctx, 26, 26, W-52, H-52, 8, false, true);
+
+    // ── Bande de titre (haut) ─────────────────────────
+    ctx.fillStyle = C.night2;
+    roundRect(ctx, 16, 16, W-32, 90, 12, true, false, true, false); // top only
+    ctx.fill();
+    ctx.strokeStyle = C.gold;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(16, 106);
+    ctx.lineTo(W-16, 106);
+    ctx.stroke();
+
+    // Ornements dans le titre
+    ctx.fillStyle = C.gold;
+    ctx.font = "bold 22px Georgia, serif";
+    ctx.textAlign = "center";
+    ctx.fillText("✦  ALMANACH DU JOUR  ✦", W/2, 70);
+
+    // ── Date principale ───────────────────────────────
+    const dateStr = date.toLocaleDateString("fr-FR", {
+        weekday: "long", day: "numeric", month: "long", year: "numeric"
+    });
+    const dateCapitalized = dateStr.charAt(0).toUpperCase() + dateStr.slice(1);
+
+    ctx.fillStyle = C.parchment;
+    ctx.font = "italic bold 42px Georgia, serif";
+    ctx.textAlign = "center";
+    ctx.fillText(dateCapitalized, W/2, 158);
+
+    // Ligne dorée sous la date
+    ctx.strokeStyle = C.gold;
+    ctx.lineWidth = 1;
+    const dateWidth = ctx.measureText(dateCapitalized).width;
+    ctx.beginPath();
+    ctx.moveTo(W/2 - dateWidth/2 - 20, 170);
+    ctx.lineTo(W/2 + dateWidth/2 + 20, 170);
+    ctx.stroke();
+
+    // ── Récupérer les données ─────────────────────────
+    const sun    = getSunTimes(date, LAT, LON);
+    const moon   = getMoonData(date);
+    const moonRS = getMoonRiseSet(date, LAT, LON);
+    const saint  = getSaintOfDay(date);
+    const dicton = getDictonForDay(date);
+    const season = getSeason(date);
+    const dow    = getDayOfYear(date);
+    const week   = getWeekNumber(date);
+    const ferie  = isFerie(date);
+    const garden = getGardenData(date, moon.phaseAngle);
+
+    // Marées (port Brest par défaut pour l'image)
+    const tides  = getTidesForDay("Brest", date);
+    const coeff  = tidalCoefficient("Brest", moon.phaseAngle);
+
+    // ── COLONNE 1 : Soleil ────────────────────────────
+    const col1X = 80, col2X = 420, col3X = 760, colW = 310;
+    const dataY  = 220;
+
+    drawDataColumn(ctx, C, col1X, dataY, "☀  SOLEIL", [
+        ["Lever",        sun.sunrise],
+        ["Coucher",      sun.sunset],
+        ["Durée",        sun.dayLength],
+        ["Midi solaire", sun.noonTime],
+        ["Hauteur max.", sun.noonElevation + "°"],
+        ["Az. lever",    sun.azimuthRise + "° " + azimuthToCompass(sun.azimuthRise)],
+    ], colW, C.goldLight);
+
+    // ── COLONNE 2 : Lune ──────────────────────────────
+    drawDataColumn(ctx, C, col2X, dataY, "☽  LUNE", [
+        ["Phase",        moon.phaseName],
+        ["Illumination", moon.illumination + " %"],
+        ["Âge",          moon.age + " j"],
+        ["Lever",        moonRS.rise],
+        ["Coucher",      moonRS.set],
+        ["Transit",      moonRS.transit],
+    ], colW, "#c8cfd8");
+
+    // ── COLONNE 3 : Marées ────────────────────────────
+    const tideLines = tides.slice(0, 4).map(t =>
+        [(t.type === "PM" ? "▲ PM" : "▽ BM"),
+         `${formatTideTime(t.time)}  ${t.height.toFixed(2)}m`]
+    );
+    if (!tideLines.length) tideLines.push(["—", "—"]);
+
+    drawDataColumn(ctx, C, col3X, dataY, "〜  MARÉES · BREST", [
+        ["Coefficient",  coeff + " — " + coeffLabel(coeff).text],
+        ...tideLines,
+    ], colW, "#7ec8e3");
+
+    // ── Bande du bas : saint + dicton + saison ────────
+    const bottomY = 490;
+
+    // Fond bande bas
+    ctx.fillStyle = C.night2;
+    ctx.fillRect(16, bottomY, W-32, H-bottomY-16);
+    ctx.strokeStyle = C.gold;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(16, bottomY);
+    ctx.lineTo(W-16, bottomY);
+    ctx.stroke();
+
+    // Saint
+    ctx.fillStyle = C.gold;
+    ctx.font = "300 16px Georgia, serif";
+    ctx.textAlign = "left";
+    ctx.fillText("✝  " + saint, 48, bottomY + 36);
+
+    // Saison + semaine
+    ctx.textAlign = "right";
+    ctx.fillStyle = C.parchment2;
+    ctx.font = "300 14px Georgia, serif";
+    ctx.fillText(`${season}  ·  Semaine ${week}  ·  Jour ${dow}${ferie ? "  ·  🇫🇷 " + ferie.label : ""}`, W-48, bottomY + 36);
+
+    // Jardinier
+    ctx.fillStyle = C.parchment2;
+    ctx.font = "300 14px Georgia, serif";
+    ctx.textAlign = "left";
+    ctx.fillText("🌿  " + garden.dayType, 48, bottomY + 60);
+
+    // Dicton — tronqué si trop long
+    ctx.fillStyle = C.parchment;
+    ctx.font = "italic 16px Georgia, serif";
+    ctx.textAlign = "center";
+    const dictonMaxWidth = W - 160;
+    const dictonTrunc = truncateText(ctx, "❝ " + dicton + " ❞", dictonMaxWidth);
+    ctx.fillText(dictonTrunc, W/2, bottomY + 85);
+
+    // URL en bas
+    ctx.fillStyle = C.gold;
+    ctx.globalAlpha = 0.5;
+    ctx.font = "300 13px Georgia, serif";
+    ctx.textAlign = "center";
+    ctx.fillText("almanach-du-jour.fr", W/2, H - 28);
+    ctx.globalAlpha = 1;
+}
+
+// ── Helpers canvas ────────────────────────────────────
+
+function drawDataColumn(ctx, C, x, y, title, rows, width, accentColor) {
+    // Fond colonne
+    ctx.fillStyle = "rgba(255,255,255,0.03)";
+    roundRect(ctx, x - 16, y - 10, width + 32, rows.length * 34 + 60, 6, true, false);
+    ctx.fill();
+
+    // Bordure gauche colorée
+    ctx.fillStyle = accentColor;
+    ctx.globalAlpha = 0.6;
+    ctx.fillRect(x - 16, y - 10, 3, rows.length * 34 + 60);
+    ctx.globalAlpha = 1;
+
+    // Titre colonne
+    ctx.fillStyle = accentColor;
+    ctx.font = "bold 17px Georgia, serif";
+    ctx.textAlign = "left";
+    ctx.fillText(title, x, y + 22);
+
+    // Ligne sous titre
+    ctx.strokeStyle = accentColor;
+    ctx.globalAlpha = 0.3;
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(x, y + 30);
+    ctx.lineTo(x + width, y + 30);
+    ctx.stroke();
+    ctx.globalAlpha = 1;
+
+    // Lignes de données
+    rows.forEach(([label, value], i) => {
+        const rowY = y + 56 + i * 34;
+
+        ctx.fillStyle = "rgba(200,191,168,0.7)";
+        ctx.font = "300 14px Georgia, serif";
+        ctx.textAlign = "left";
+        ctx.fillText(label, x, rowY);
+
+        ctx.fillStyle = "#f7f2e8";
+        ctx.font = "400 15px Georgia, serif";
+        ctx.textAlign = "right";
+        const val = String(value);
+        ctx.fillText(val, x + width, rowY);
+    });
+}
+
+function roundRect(ctx, x, y, w, h, r, fill, stroke,
+                   roundTopOnly = false, roundBottomOnly = false) {
+    ctx.beginPath();
+    if (roundTopOnly) {
+        ctx.moveTo(x + r, y);
+        ctx.lineTo(x + w - r, y);
+        ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+        ctx.lineTo(x + w, y + h);
+        ctx.lineTo(x, y + h);
+        ctx.lineTo(x, y + r);
+        ctx.quadraticCurveTo(x, y, x + r, y);
+    } else {
+        ctx.moveTo(x + r, y);
+        ctx.lineTo(x + w - r, y);
+        ctx.quadraticCurveTo(x + w, y, x + w, y + r);
+        ctx.lineTo(x + w, y + h - r);
+        ctx.quadraticCurveTo(x + w, y + h, x + w - r, y + h);
+        ctx.lineTo(x + r, y + h);
+        ctx.quadraticCurveTo(x, y + h, x, y + h - r);
+        ctx.lineTo(x, y + r);
+        ctx.quadraticCurveTo(x, y, x + r, y);
+    }
+    ctx.closePath();
+    if (fill)   ctx.fill();
+    if (stroke) ctx.stroke();
+}
+
+function truncateText(ctx, text, maxWidth) {
+    if (ctx.measureText(text).width <= maxWidth) return text;
+    let t = text;
+    while (ctx.measureText(t + "…").width > maxWidth && t.length > 0) {
+        t = t.slice(0, -1);
+    }
+    return t + "…";
+}
+
+// ── Initialisation partage ────────────────────────────
+
+function initShare() {
+    const btnDl     = document.getElementById("share-download");
+    const btnNative = document.getElementById("share-native");
+
+    // Masquer le bouton natif si Web Share API non supportée
+    if (!navigator.share) {
+        btnNative.style.display = "none";
+    }
+
+    btnDl.addEventListener("click", () => {
+        const canvas = document.getElementById("share-canvas");
+        const link   = document.createElement("a");
+        const date   = currentDate;
+        const fname  = `almanach-${date.getFullYear()}-${
+            String(date.getMonth()+1).padStart(2,"0")}-${
+            String(date.getDate()).padStart(2,"0")}.png`;
+        link.download = fname;
+        link.href     = canvas.toDataURL("image/png");
+        link.click();
+    });
+
+    btnNative.addEventListener("click", async () => {
+        const canvas = document.getElementById("share-canvas");
+        const date   = currentDate;
+
+        try {
+            canvas.toBlob(async blob => {
+                const fname = `almanach-${date.getFullYear()}-${
+                    String(date.getMonth()+1).padStart(2,"0")}-${
+                    String(date.getDate()).padStart(2,"0")}.png`;
+
+                const file = new File([blob], fname, { type: "image/png" });
+
+                const dateStr = date.toLocaleDateString("fr-FR", {
+                    weekday: "long", day: "numeric", month: "long", year: "numeric"
+                });
+
+                await navigator.share({
+                    title: "Almanach du Jour",
+                    text:  `${dateStr.charAt(0).toUpperCase() + dateStr.slice(1)} — Soleil, Lune & Marées bretonnes`,
+                    files: [file],
+                });
+            }, "image/png");
+        } catch (err) {
+            if (err.name !== "AbortError") console.error("Partage échoué :", err);
+        }
+    });
+}
+
+// Regénérer l'image à chaque changement de date
+// (appelé depuis updateDayView)
+function refreshShareImage(date) {
+    generateShareImage(date);
 }

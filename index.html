@@ -61,6 +61,11 @@
                         <li><span class="lbl">Lever</span><span id="sunrise" class="val">--:--</span></li>
                         <li><span class="lbl">Coucher</span><span id="sunset" class="val">--:--</span></li>
                         <li><span class="lbl">Durée du jour</span><span id="day-length" class="val">--h--</span></li>
+                        <li class="data-separator"></li>
+                        <li><span class="lbl">Midi solaire</span><span id="sun-noon" class="val">--:--</span></li>
+                        <li><span class="lbl">Hauteur max.</span><span id="sun-elevation" class="val">--°</span></li>
+                        <li><span class="lbl">Az. lever</span><span id="sun-az-rise" class="val">--°</span></li>
+                        <li><span class="lbl">Az. coucher</span><span id="sun-az-set" class="val">--°</span></li>
                     </ul>
                 </article>
 
@@ -74,6 +79,12 @@
                         <li><span class="lbl">Illumination</span><span id="moon-illumination" class="val">--%</span></li>
                         <li><span class="lbl">Âge</span><span id="moon-age" class="val">-- j</span></li>
                         <li><span class="lbl">Prochaine pleine</span><span id="next-full-moon" class="val">—</span></li>
+                        <li class="data-separator"></li>
+                        <li><span class="lbl">Lever</span><span id="moonrise" class="val">--:--</span></li>
+                        <li><span class="lbl">Coucher</span><span id="moonset" class="val">--:--</span></li>
+                        <li><span class="lbl">Transit</span><span id="moon-transit" class="val">--:--</span></li>
+                        <li><span class="lbl">Hauteur max.</span><span id="moon-elevation" class="val">--°</span></li>
+                        <li><span class="lbl">Az. lever</span><span id="moon-az-rise" class="val">--°</span></li>
                     </ul>
                 </article>
 
@@ -112,6 +123,24 @@
             </div>
         </section>
 
+        <!-- PARTAGE DU JOUR -->
+        <section id="share-block">
+            <div class="share-inner">
+                <div class="share-preview-wrap">
+                    <canvas id="share-canvas" width="1200" height="630"
+                            aria-label="Aperçu de l'image à partager"></canvas>
+                </div>
+                <div class="share-actions">
+                    <button id="share-download" class="share-btn share-btn-dl" type="button">
+                        ⬇ Télécharger l'image
+                    </button>
+                    <button id="share-native" class="share-btn share-btn-share" type="button">
+                        ↗ Partager
+                    </button>
+                </div>
+                <p class="share-hint">Image 1200×630 px · Format optimal pour tous les réseaux sociaux</p>
+            </div>
+        </section>
 
         <!-- MARÉES -->
         <section id="marees-section">
