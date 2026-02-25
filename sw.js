@@ -10,7 +10,7 @@
 // la mise à jour chez tous les utilisateurs.
 // ═══════════════════════════════════════════════════════
 
-const CACHE_VERSION  = "almanach-v1.0";
+const CACHE_VERSION  = "almanach-v1.1";
 const STATIC_CACHE   = `${CACHE_VERSION}-static`;
 const DYNAMIC_CACHE  = `${CACHE_VERSION}-dynamic`;
 
