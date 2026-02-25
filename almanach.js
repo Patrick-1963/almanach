@@ -3646,7 +3646,7 @@ function generateShareImage(date) {
     ctx.globalAlpha = 0.5;
     ctx.font = "300 13px Georgia, serif";
     ctx.textAlign = "center";
-    ctx.fillText("almanach-du-jour.fr", W/2, H - 28);
+    ctx.fillText("patrick-1963.github.io/almanach", W/2, H - 28);
     ctx.globalAlpha = 1;
 }
 
@@ -3776,6 +3776,7 @@ function initShare() {
                     title: "Almanach du Jour",
                     text:  `${dateStr.charAt(0).toUpperCase() + dateStr.slice(1)} — Soleil, Lune & Marées bretonnes`,
                     files: [file],
+                    body: "Soleil, Lune, Marées bretonnes, Éphémérides historiques, Calendrier jardinier biodynamique et Dictons du terroir, tous les calculs sont effectués localement, sans connexion requise. Installable sur mobile comme application."
                 });
             }, "image/png");
         } catch (err) {
