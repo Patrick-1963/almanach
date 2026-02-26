@@ -1527,6 +1527,2677 @@ function getEphemeridesForDay(date) {
     return ephemerides[`${mm}-${dd}`] || [];
 }
 
+// ═══════════════════════════════════════════════════════
+// NAISSANCES CÉLÈBRES
+// ═══════════════════════════════════════════════════════
+const naissances = {
+    "01-01": [
+        { year: 1449, name: "Lorenzo de Médicis", desc: "Prince florentin, grand mécène de la Renaissance" },
+        { year: 1735, name: "Paul Revere", desc: "Patriote américain, héros de la Révolution" },
+        { year: 1752, name: "Betsy Ross", desc: "Couturière américaine, créatrice présumée du drapeau américain" },
+    ],
+    "01-02": [
+        { year: 1920, name: "Isaac Asimov", desc: "Écrivain américain, maître de la science-fiction" },
+        { year: 1727, name: "James Wolfe", desc: "Général britannique, vainqueur de Québec" },
+    ],
+    "01-03": [
+        { year: 1892, name: "J.R.R. Tolkien", desc: "Écrivain britannique, auteur du Seigneur des Anneaux" },
+        { year: 1840, name: "Damien de Veuster", desc: "Prêtre belge, apôtre des lépreux de Molokaï" },
+        { year: 1956, name: "Mel Gibson", desc: "Acteur et réalisateur américano-australien" },
+    ],
+    "01-04": [
+        { year: 1643, name: "Isaac Newton", desc: "Physicien et mathématicien britannique, loi de la gravitation" },
+        { year: 1809, name: "Louis Braille", desc: "Inventeur français du système d'écriture pour les aveugles" },
+        { year: 1785, name: "Jakob Grimm", desc: "Philologue allemand, co-auteur des Contes de Grimm" },
+    ],
+    "01-05": [
+        { year: 1876, name: "Konrad Adenauer", desc: "Homme d'État allemand, premier chancelier de la RFA" },
+        { year: 1855, name: "King Camp Gillette", desc: "Inventeur américain du rasoir à lame jetable" },
+        { year: 1779, name: "Zebulon Pike", desc: "Explorateur américain, découvreur du pic Pike's Peak" },
+    ],
+    "01-06": [
+        { year: 1412, name: "Jeanne d'Arc", desc: "Héroïne nationale française, sainte de l'Église catholique" },
+        { year: 1822, name: "Heinrich Schliemann", desc: "Archéologue allemand, découvreur de Troie" },
+        { year: 1878, name: "Carl Sandburg", desc: "Poète américain, biographe d'Abraham Lincoln" },
+    ],
+    "01-07": [
+        { year: 1745, name: "Jacques-Étienne Montgolfier", desc: "Inventeur français de la montgolfière" },
+        { year: 1800, name: "Millard Fillmore", desc: "13e président des États-Unis" },
+    ],
+    "01-08": [
+        { year: 1935, name: "Elvis Presley", desc: "Chanteur américain, roi du rock and roll" },
+        { year: 1942, name: "Stephen Hawking", desc: "Physicien britannique, théoricien des trous noirs" },
+        { year: 1624, name: "Infante Marie-Thérèse d'Autriche", desc: "Reine de France, épouse de Louis XIV" },
+    ],
+    "01-09": [
+        { year: 1890, name: "Karel Čapek", desc: "Écrivain tchèque, a inventé le mot 'robot'" },
+        { year: 1913, name: "Richard Nixon", desc: "37e président des États-Unis" },
+        { year: 1941, name: "Joan Baez", desc: "Chanteuse folk américaine, icône pacifiste" },
+    ],
+    "01-10": [
+        { year: 1769, name: "Michel Ney", desc: "Maréchal de France, 'brave des braves' de Napoléon" },
+        { year: 1945, name: "Rod Stewart", desc: "Chanteur de rock britannique" },
+    ],
+    "01-11": [
+        { year: 1755, name: "Alexander Hamilton", desc: "Père fondateur des États-Unis, premier secrétaire au Trésor" },
+        { year: 1842, name: "William James", desc: "Philosophe et psychologue américain, père du pragmatisme" },
+    ],
+    "01-12": [
+        { year: 1628, name: "Charles Perrault", desc: "Écrivain français, auteur des Contes (Cendrillon, Le Petit Chaperon rouge…)" },
+        { year: 1964, name: "Jeff Bezos", desc: "Entrepreneur américain, fondateur d'Amazon" },
+        { year: 1729, name: "Edmund Burke", desc: "Philosophe et homme politique irlando-britannique" },
+    ],
+    "01-13": [
+        { year: 1832, name: "Horatio Alger", desc: "Écrivain américain du 'rêve américain'" },
+        { year: 1961, name: "Julia Louis-Dreyfus", desc: "Actrice américaine, célèbre pour Seinfeld" },
+    ],
+    "01-14": [
+        { year: 1741, name: "Benedict Arnold", desc: "Général américain passé du côté britannique" },
+        { year: 1875, name: "Albert Schweitzer", desc: "Médecin et philosophe franco-allemand, prix Nobel de la Paix" },
+    ],
+    "01-15": [
+        { year: 1622, name: "Molière", desc: "Dramaturge et comédien français, maître de la comédie classique" },
+        { year: 1929, name: "Martin Luther King Jr.", desc: "Pasteur américain, leader des droits civiques, prix Nobel de la Paix" },
+        { year: 1759, name: "Jean-Baptiste Lamarck", desc: "Naturaliste français, précurseur de la théorie de l'évolution" },
+    ],
+    "01-16": [
+        { year: 1853, name: "André Michelin", desc: "Industriel français, cofondateur des pneumatiques Michelin" },
+        { year: 1728, name: "Nicolas Ledoux", desc: "Architecte français, visionnaire des Lumières" },
+    ],
+    "01-17": [
+        { year: 1706, name: "Benjamin Franklin", desc: "Inventeur, diplomate et Père fondateur des États-Unis" },
+        { year: 1942, name: "Muhammad Ali", desc: "Boxeur américain, triple champion du monde des lourds" },
+        { year: 1820, name: "Anne Brontë", desc: "Romancière britannique, auteure d'Agnes Grey" },
+    ],
+    "01-18": [
+        { year: 1689, name: "Montesquieu", desc: "Philosophe français, auteur de L'Esprit des lois" },
+        { year: 1955, name: "Kevin Costner", desc: "Acteur et réalisateur américain" },
+    ],
+    "01-19": [
+        { year: 1736, name: "James Watt", desc: "Ingénieur écossais, perfectionneur de la machine à vapeur" },
+        { year: 1809, name: "Edgar Allan Poe", desc: "Écrivain américain, maître du roman noir et fantastique" },
+        { year: 1946, name: "Dolly Parton", desc: "Chanteuse country et actrice américaine" },
+    ],
+    "01-20": [
+        { year: 1775, name: "André-Marie Ampère", desc: "Physicien français, fondateur de l'électrodynamique" },
+        { year: 1926, name: "Patricia Neal", desc: "Actrice américaine, prix Oscar" },
+    ],
+    "01-21": [
+        { year: 1824, name: "Thomas 'Stonewall' Jackson", desc: "Général confédéré de la guerre de Sécession" },
+        { year: 1940, name: "Jack Nicklaus", desc: "Golfeur américain, 18 titres en Grand Chelem" },
+    ],
+    "01-22": [
+        { year: 1561, name: "Francis Bacon", desc: "Philosophe anglais, père de la méthode scientifique" },
+        { year: 1788, name: "Lord Byron", desc: "Poète romantique britannique" },
+    ],
+    "01-23": [
+        { year: 1737, name: "John Hancock", desc: "Père fondateur, premier signataire de la Déclaration d'indépendance" },
+        { year: 1832, name: "Édouard Manet", desc: "Peintre français, précurseur de l'impressionnisme" },
+    ],
+    "01-24": [
+        { year: 1776, name: "E.T.A. Hoffmann", desc: "Écrivain et compositeur allemand, auteur des Contes d'Hoffmann" },
+        { year: 1955, name: "Alain Prost", desc: "Pilote français de Formule 1, quadruple champion du monde" },
+    ],
+    "01-25": [
+        { year: 1759, name: "Robert Burns", desc: "Poète national écossais, auteur d'Auld Lang Syne" },
+        { year: 1882, name: "Virginia Woolf", desc: "Romancière britannique, figure majeure du modernisme" },
+        { year: 1938, name: "Etta James", desc: "Chanteuse américaine de blues et soul" },
+    ],
+    "01-26": [
+        { year: 1823, name: "Joseph Farwell Glidden", desc: "Inventeur américain du fil de fer barbelé" },
+        { year: 1955, name: "Eddie Van Halen", desc: "Guitariste américain, co-fondateur de Van Halen" },
+    ],
+    "01-27": [
+        { year: 1756, name: "Wolfgang Amadeus Mozart", desc: "Compositeur autrichien, génie de la musique classique" },
+        { year: 1832, name: "Lewis Carroll", desc: "Écrivain britannique, auteur d'Alice au Pays des Merveilles" },
+    ],
+    "01-28": [
+        { year: 1841, name: "Henry Morton Stanley", desc: "Journaliste et explorateur, retrouva Livingstone en Afrique" },
+        { year: 1936, name: "Alan Alda", desc: "Acteur américain, connu pour M.A.S.H." },
+    ],
+    "01-29": [
+        { year: 1860, name: "Anton Tchekhov", desc: "Écrivain et dramaturge russe, maître de la nouvelle" },
+        { year: 1688, name: "Emanuel Swedenborg", desc: "Scientifique et mystique suédois" },
+    ],
+    "01-30": [
+        { year: 1882, name: "Franklin D. Roosevelt", desc: "32e président des États-Unis, artisan du New Deal" },
+        { year: 1937, name: "Boris Spassky", desc: "Champion du monde d'échecs soviétique" },
+    ],
+    "01-31": [
+        { year: 1797, name: "Franz Schubert", desc: "Compositeur autrichien, maître du lied romantique" },
+        { year: 1965, name: "J.K. Rowling (non, née le 31 juillet)", desc: "" },
+        { year: 1947, name: "Nolan Ryan", desc: "Joueur de baseball américain, 7 no-hitters au compteur" },
+    ],
+    "02-01": [
+        { year: 1901, name: "Clark Gable", desc: "Acteur américain, 'roi d'Hollywood'" },
+        { year: 1874, name: "Hugo von Hofmannsthal", desc: "Poète et dramaturge autrichien" },
+    ],
+    "02-02": [
+        { year: 1882, name: "James Joyce", desc: "Écrivain irlandais, auteur d'Ulysse" },
+        { year: 1650, name: "Nell Gwyn", desc: "Actrice britannique, maîtresse de Charles II d'Angleterre" },
+    ],
+    "02-03": [
+        { year: 1874, name: "Gertrude Stein", desc: "Écrivaine américaine, figure de l'avant-garde parisienne" },
+        { year: 1811, name: "Horace Greeley", desc: "Journaliste américain, fondateur du New York Tribune" },
+    ],
+    "02-04": [
+        { year: 1688, name: "Pierre de Marivaux", desc: "Dramaturge et romancier français, maître du 'marivaudage'" },
+        { year: 1902, name: "Charles Lindbergh", desc: "Aviateur américain, premier vol transatlantique en solitaire" },
+    ],
+    "02-05": [
+        { year: 1626, name: "Madame de Sévigné", desc: "Épistolière française, figure du Grand Siècle" },
+        { year: 1934, name: "Hank Aaron", desc: "Joueur de baseball américain, roi des home runs" },
+    ],
+    "02-06": [
+        { year: 1564, name: "Christopher Marlowe", desc: "Dramaturge anglais, contemporain de Shakespeare" },
+        { year: 1932, name: "François Truffaut", desc: "Cinéaste français, figure de la Nouvelle Vague" },
+    ],
+    "02-07": [
+        { year: 1478, name: "Thomas More", desc: "Humaniste anglais, canonisé par l'Église catholique" },
+        { year: 1812, name: "Charles Dickens", desc: "Romancier britannique, auteur d'Oliver Twist" },
+        { year: 1926, name: "Dora Bryan", desc: "Actrice et comédienne britannique" },
+    ],
+    "02-08": [
+        { year: 1820, name: "William Tecumseh Sherman", desc: "Général unioniste de la guerre de Sécession" },
+        { year: 1931, name: "James Dean", desc: "Acteur américain, icône de la rébellion des années 1950" },
+    ],
+    "02-09": [
+        { year: 1773, name: "William Henry Harrison", desc: "9e président des États-Unis" },
+        { year: 1943, name: "Joe Pesci", desc: "Acteur américain, oscarisé pour Les Affranchis" },
+    ],
+    "02-10": [
+        { year: 1837, name: "Alexandra de Danemark", desc: "Reine d'Angleterre, épouse d'Édouard VII" },
+        { year: 1775, name: "Charles Lamb", desc: "Essayiste et poète britannique" },
+    ],
+    "02-11": [
+        { year: 1847, name: "Thomas Edison", desc: "Inventeur américain, plus de 1 000 brevets déposés" },
+        { year: 1936, name: "Burt Reynolds", desc: "Acteur américain" },
+        { year: 1657, name: "Bernard de Fontenelle", desc: "Écrivain français, vulgarisateur des sciences" },
+    ],
+    "02-12": [
+        { year: 1809, name: "Charles Darwin", desc: "Naturaliste britannique, père de la théorie de l'évolution" },
+        { year: 1809, name: "Abraham Lincoln", desc: "16e président des États-Unis, abolitionniste" },
+        { year: 1938, name: "Judy Blume", desc: "Romancière américaine pour la jeunesse" },
+    ],
+    "02-13": [
+        { year: 1728, name: "John Hunter", desc: "Chirurgien écossais, fondateur de la chirurgie moderne" },
+        { year: 1944, name: "Jerry Springer", desc: "Animateur de télévision américain" },
+    ],
+    "02-14": [
+        { year: 1483, name: "Babur", desc: "Conquérant moghol, fondateur de l'Empire moghol en Inde" },
+        { year: 1766, name: "Thomas Robert Malthus", desc: "Économiste britannique, théoricien de la surpopulation" },
+    ],
+    "02-15": [
+        { year: 1564, name: "Galileo Galilei", desc: "Astronome et physicien italien, père de la science moderne" },
+        { year: 1820, name: "Susan B. Anthony", desc: "Militante américaine pour le droit de vote des femmes" },
+        { year: 1951, name: "Jane Seymour", desc: "Actrice britannique" },
+    ],
+    "02-16": [
+        { year: 1959, name: "John McEnroe", desc: "Joueur de tennis américain, 7 titres en Grand Chelem" },
+        { year: 1848, name: "Hugo de Vries", desc: "Botaniste néerlandais, pionnier de la génétique" },
+    ],
+    "02-17": [
+        { year: 1963, name: "Michael Jordan", desc: "Basketteur américain, six fois champion NBA" },
+        { year: 1844, name: "Frédéric Auguste Bartholdi", desc: "Sculpteur alsacien, créateur de la Statue de la Liberté" },
+        { year: 1740, name: "Horace-Bénédict de Saussure", desc: "Géologue et alpiniste suisse, explorateur du Mont-Blanc" },
+    ],
+    "02-18": [
+        { year: 1745, name: "Alessandro Volta", desc: "Physicien italien, inventeur de la pile électrique" },
+        { year: 1954, name: "John Travolta", desc: "Acteur américain" },
+    ],
+    "02-19": [
+        { year: 1473, name: "Nicolas Copernic", desc: "Astronome polonais, fondateur de l'astronomie héliocentrique" },
+        { year: 1940, name: "Smokey Robinson", desc: "Chanteur et compositeur américain de soul" },
+    ],
+    "02-20": [
+        { year: 1927, name: "Sidney Poitier", desc: "Acteur bahaméen-américain, premier Oscar pour un acteur noir" },
+        { year: 1844, name: "Ludwig Boltzmann", desc: "Physicien autrichien, père de la mécanique statistique" },
+    ],
+    "02-21": [
+        { year: 1801, name: "Alexis de Tocqueville", desc: "Historien français, auteur de De la Démocratie en Amérique" },
+        { year: 1946, name: "Alan Rickman", desc: "Acteur britannique, interprète de Snape dans Harry Potter" },
+    ],
+    "02-22": [
+        { year: 1732, name: "George Washington", desc: "Premier président des États-Unis, père de la nation américaine" },
+        { year: 1857, name: "Robert Baden-Powell", desc: "Général britannique, fondateur du scoutisme" },
+        { year: 1975, name: "Drew Barrymore", desc: "Actrice et productrice américaine" },
+    ],
+    "02-23": [
+        { year: 1685, name: "Georg Friedrich Händel", desc: "Compositeur baroque germano-britannique, auteur du Messie" },
+        { year: 1944, name: "Johnny Winter", desc: "Guitariste américain de blues rock" },
+    ],
+    "02-24": [
+        { year: 1500, name: "Charles Quint", desc: "Roi d'Espagne et Empereur du Saint-Empire romain germanique" },
+        { year: 1786, name: "Wilhelm Grimm", desc: "Philologue allemand, co-auteur des Contes de Grimm" },
+    ],
+    "02-25": [
+        { year: 1873, name: "Enrico Caruso", desc: "Ténor italien légendaire" },
+        { year: 1943, name: "George Harrison", desc: "Guitariste britannique des Beatles" },
+        { year: 1707, name: "Carlo Goldoni", desc: "Dramaturge italien, réformateur de la commedia dell'arte" },
+    ],
+    "02-26": [
+        { year: 1802, name: "Victor Hugo", desc: "Écrivain français, auteur des Misérables et Notre-Dame de Paris" },
+        { year: 1846, name: "Buffalo Bill", desc: "Éclaireur et showman américain, star du Far West" },
+        { year: 1928, name: "Fats Domino", desc: "Pianiste et chanteur américain, pionnier du rock and roll" },
+    ],
+    "02-27": [
+        { year: 1807, name: "Henry Wadsworth Longfellow", desc: "Poète américain" },
+        { year: 1902, name: "John Steinbeck", desc: "Écrivain américain, prix Nobel, auteur des Raisins de la colère" },
+        { year: 1932, name: "Elizabeth Taylor", desc: "Actrice américano-britannique, deux fois oscarisée" },
+    ],
+    "02-28": [
+        { year: 1820, name: "John Tenniel", desc: "Illustrateur britannique, auteur des dessins d'Alice au Pays des Merveilles" },
+        { year: 1833, name: "Modeste Moussorgski", desc: "Compositeur russe, auteur des Tableaux d'une exposition" },
+        { year: 1940, name: "Mario Andretti", desc: "Pilote de course italo-américain, champion du monde F1" },
+    ],
+    "02-29": [
+        { year: 1792, name: "Gioacchino Rossini", desc: "Compositeur italien, auteur du Barbier de Séville" },
+        { year: 1904, name: "Jimmy Dorsey", desc: "Clarinettiste américain de jazz" },
+    ],
+    "03-01": [
+        { year: 1445, name: "Sandro Botticelli", desc: "Peintre florentin de la Renaissance, auteur de La Naissance de Vénus" },
+        { year: 1810, name: "Frédéric Chopin", desc: "Compositeur et pianiste polonais, poète du piano" },
+        { year: 1954, name: "Ron Howard", desc: "Réalisateur américain oscarisé pour Un homme d'exception" },
+    ],
+    "03-02": [
+        { year: 1904, name: "Dr. Seuss", desc: "Auteur et illustrateur américain de livres pour enfants" },
+        { year: 1931, name: "Mikhail Gorbatchev", desc: "Dernier dirigeant de l'URSS, prix Nobel de la Paix" },
+    ],
+    "03-03": [
+        { year: 1847, name: "Alexander Graham Bell", desc: "Inventeur américano-écossais, breveteur du téléphone" },
+        { year: 1962, name: "Jackie Joyner-Kersee", desc: "Athlète américaine, six fois médaillée olympique" },
+    ],
+    "03-04": [
+        { year: 1678, name: "Antonio Vivaldi", desc: "Compositeur et violoniste baroque vénitien, auteur des Quatre Saisons" },
+        { year: 1394, name: "Henri le Navigateur", desc: "Prince portugais, initiateur des grandes explorations maritimes" },
+    ],
+    "03-05": [
+        { year: 1512, name: "Gerardus Mercator", desc: "Géographe flamand, auteur de la projection cartographique Mercator" },
+        { year: 1958, name: "Andy Gibb", desc: "Chanteur australien, frère des Bee Gees" },
+    ],
+    "03-06": [
+        { year: 1475, name: "Michel-Ange", desc: "Peintre, sculpteur et architecte de la Renaissance italienne" },
+        { year: 1806, name: "Elizabeth Barrett Browning", desc: "Poétesse britannique de l'ère victorienne" },
+        { year: 1927, name: "Gabriel García Márquez", desc: "Écrivain colombien, prix Nobel, auteur de Cent ans de solitude" },
+    ],
+    "03-07": [
+        { year: 1765, name: "Joseph Nicéphore Niépce", desc: "Inventeur français, pionnier de la photographie" },
+        { year: 1875, name: "Maurice Ravel", desc: "Compositeur français, auteur du Boléro" },
+    ],
+    "03-08": [
+        { year: 1859, name: "Kenneth Grahame", desc: "Écrivain britannique, auteur du Vent dans les saules" },
+        { year: 1943, name: "Carole King", desc: "Auteure-compositrice américaine, figure du folk-pop" },
+    ],
+    "03-09": [
+        { year: 1451, name: "Amerigo Vespucci", desc: "Navigateur florentin qui a donné son nom à l'Amérique" },
+        { year: 1934, name: "Yuri Gagarine", desc: "Cosmonaute soviétique, premier homme dans l'espace" },
+        { year: 1943, name: "Bobby Fischer", desc: "Joueur d'échecs américain, champion du monde 1972" },
+    ],
+    "03-10": [
+        { year: 1772, name: "Friedrich Hölderlin", desc: "Poète romantique allemand" },
+        { year: 1958, name: "Sharon Stone", desc: "Actrice américaine" },
+    ],
+    "03-11": [
+        { year: 1952, name: "Douglas Adams", desc: "Romancier britannique, auteur du Guide du voyageur galactique" },
+    ],
+    "03-12": [
+        { year: 1685, name: "George Berkeley", desc: "Philosophe irlandais, fondateur de l'idéalisme subjectif" },
+        { year: 1946, name: "Liza Minnelli", desc: "Actrice et chanteuse américaine, oscarisée pour Cabaret" },
+    ],
+    "03-13": [
+        { year: 1733, name: "Joseph Priestley", desc: "Chimiste britannique, découvreur de l'oxygène" },
+        { year: 1939, name: "Neil Sedaka", desc: "Chanteur et compositeur américain" },
+    ],
+    "03-14": [
+        { year: 1879, name: "Albert Einstein", desc: "Physicien théoricien germano-américain, auteur de la relativité" },
+        { year: 1933, name: "Michael Caine", desc: "Acteur britannique, deux fois oscarisé" },
+    ],
+    "03-15": [
+        { year: 1767, name: "Andrew Jackson", desc: "7e président des États-Unis" },
+        { year: 1944, name: "Sly Stone", desc: "Musicien américain, fondateur de Sly and the Family Stone" },
+    ],
+    "03-16": [
+        { year: 1751, name: "James Madison", desc: "4e président des États-Unis, père de la Constitution" },
+        { year: 1926, name: "Jerry Lewis", desc: "Comédien et réalisateur américain, roi du burlesque" },
+    ],
+    "03-17": [
+        { year: 1834, name: "Gottlieb Daimler", desc: "Ingénieur allemand, pionnier de l'automobile" },
+        { year: 1938, name: "Rudolf Noureïev", desc: "Danseur soviéto-français, figure du ballet mondial" },
+    ],
+    "03-18": [
+        { year: 1858, name: "Rudolf Diesel", desc: "Ingénieur franco-allemand, inventeur du moteur diesel" },
+        { year: 1869, name: "Neville Chamberlain", desc: "Homme d'État britannique, Premier ministre de 1937 à 1940" },
+    ],
+    "03-19": [
+        { year: 1848, name: "Wyatt Earp", desc: "Shérif américain du Far West, héros de la fusillade de OK Corral" },
+        { year: 1955, name: "Bruce Willis", desc: "Acteur américain, star du film d'action" },
+    ],
+    "03-20": [
+        { year: 1828, name: "Henrik Ibsen", desc: "Dramaturge norvégien, père du théâtre réaliste" },
+        { year: 1856, name: "Frédéric Mistral", desc: "Poète provençal, prix Nobel de Littérature" },
+    ],
+    "03-21": [
+        { year: 1685, name: "Johann Sebastian Bach", desc: "Compositeur baroque allemand, maître de la polyphonie" },
+        { year: 1768, name: "Jean-Baptiste Fourier", desc: "Mathématicien et physicien français, transformée de Fourier" },
+    ],
+    "03-22": [
+        { year: 1599, name: "Anthony van Dyck", desc: "Peintre flamand, portraitiste des cours royales d'Europe" },
+        { year: 1948, name: "Andrew Lloyd Webber", desc: "Compositeur britannique de comédies musicales" },
+    ],
+    "03-23": [
+        { year: 1749, name: "Pierre-Simon de Laplace", desc: "Mathématicien et astronome français, mécanique céleste" },
+        { year: 1910, name: "Akira Kurosawa", desc: "Cinéaste japonais, maître du cinéma mondial" },
+    ],
+    "03-24": [
+        { year: 1930, name: "Steve McQueen", desc: "Acteur américain, 'roi du cool'" },
+        { year: 1657, name: "Friedrich Casimir Medicus", desc: "Médecin et botaniste allemand" },
+    ],
+    "03-25": [
+        { year: 1347, name: "Catherine de Sienne", desc: "Mystique italienne, Docteure de l'Église catholique" },
+        { year: 1867, name: "Arturo Toscanini", desc: "Chef d'orchestre italien de renommée mondiale" },
+        { year: 1942, name: "Aretha Franklin", desc: "Chanteuse américaine, 'reine de la soul'" },
+    ],
+    "03-26": [
+        { year: 1931, name: "Leonard Nimoy", desc: "Acteur américain, interprète de Spock dans Star Trek" },
+        { year: 1769, name: "Goya", desc: "Peintre et graveur espagnol, précurseur de l'art moderne" },
+    ],
+    "03-27": [
+        { year: 1845, name: "Wilhelm Conrad Röntgen", desc: "Physicien allemand, découvreur des rayons X, premier prix Nobel de physique" },
+        { year: 1963, name: "Quentin Tarantino", desc: "Cinéaste américain" },
+    ],
+    "03-28": [
+        { year: 1868, name: "Maxime Gorki", desc: "Écrivain russe, père du réalisme socialiste" },
+        { year: 1986, name: "Lady Gaga", desc: "Chanteuse et actrice américaine" },
+    ],
+    "03-29": [
+        { year: 1790, name: "John Tyler", desc: "10e président des États-Unis" },
+        { year: 1943, name: "John Major", desc: "Homme politique britannique, Premier ministre de 1990 à 1997" },
+    ],
+    "03-30": [
+        { year: 1853, name: "Vincent van Gogh", desc: "Peintre néerlandais, maître du post-impressionnisme" },
+        { year: 1945, name: "Eric Clapton", desc: "Guitariste britannique, légende du blues-rock" },
+    ],
+    "03-31": [
+        { year: 1596, name: "René Descartes", desc: "Philosophe et mathématicien français, 'je pense donc je suis'" },
+        { year: 1934, name: "Shirley Jones", desc: "Actrice américaine, oscarisée" },
+    ],
+    "04-01": [
+        { year: 1578, name: "William Harvey", desc: "Médecin anglais, découvreur de la circulation sanguine" },
+        { year: 1932, name: "Debbie Reynolds", desc: "Actrice et chanteuse américaine" },
+    ],
+    "04-02": [
+        { year: 1805, name: "Hans Christian Andersen", desc: "Conteur danois, auteur de La Petite Sirène et La Reine des neiges" },
+        { year: 1840, name: "Émile Zola", desc: "Romancier français, chef de file du naturalisme" },
+        { year: 1928, name: "Serge Gainsbourg", desc: "Chanteur, compositeur et réalisateur français" },
+    ],
+    "04-03": [
+        { year: 1783, name: "Washington Irving", desc: "Auteur américain, créateur de Sleepy Hollow" },
+        { year: 1961, name: "Eddie Murphy", desc: "Acteur et comédien américain" },
+    ],
+    "04-04": [
+        { year: 1914, name: "Marguerite Duras", desc: "Écrivaine et cinéaste française" },
+        { year: 1932, name: "Anthony Perkins", desc: "Acteur américain, inoubliable Norman Bates dans Psycho" },
+    ],
+    "04-05": [
+        { year: 1588, name: "Thomas Hobbes", desc: "Philosophe anglais, auteur du Léviathan" },
+        { year: 1937, name: "Colin Powell", desc: "Général américain, 65e Secrétaire d'État" },
+    ],
+    "04-06": [
+        { year: 1483, name: "Raphaël", desc: "Peintre et architecte de la Haute Renaissance italienne" },
+        { year: 1937, name: "Merle Haggard", desc: "Chanteur américain de musique country" },
+    ],
+    "04-07": [
+        { year: 1770, name: "William Wordsworth", desc: "Poète romantique britannique" },
+        { year: 1954, name: "Jackie Chan", desc: "Acteur et cascadeur hongkongais" },
+    ],
+    "04-08": [
+        { year: 1963, name: "Julian Lennon", desc: "Chanteur britannique, fils de John Lennon" },
+    ],
+    "04-09": [
+        { year: 1806, name: "Isambard Kingdom Brunel", desc: "Ingénieur britannique, génie du XIXe siècle" },
+        { year: 1933, name: "Jean-Paul Belmondo", desc: "Acteur français, monstre sacré du cinéma" },
+    ],
+    "04-10": [
+        { year: 1847, name: "Joseph Pulitzer", desc: "Journaliste et éditeur américain, fondateur du prix Pulitzer" },
+        { year: 1932, name: "Omar Sharif", desc: "Acteur égypto-britannique" },
+    ],
+    "04-11": [
+        { year: 1966, name: "Lisa Stansfield", desc: "Chanteuse britannique de pop et soul" },
+    ],
+    "04-12": [
+        { year: 1777, name: "Henry Clay", desc: "Homme d'État américain, 'le Grand Conciliateur'" },
+        { year: 1947, name: "Tom Clancy", desc: "Romancier américain, auteur de thrillers géopolitiques" },
+    ],
+    "04-13": [
+        { year: 1743, name: "Thomas Jefferson", desc: "3e président des États-Unis, auteur de la Déclaration d'indépendance" },
+        { year: 1939, name: "Seamus Heaney", desc: "Poète irlandais, prix Nobel de Littérature" },
+    ],
+    "04-14": [
+        { year: 1629, name: "Christiaan Huygens", desc: "Physicien et astronome néerlandais, découvreur de Titan" },
+        { year: 1941, name: "Pete Rose", desc: "Joueur de baseball américain, record du plus grand nombre de coups sûrs" },
+    ],
+    "04-15": [
+        { year: 1452, name: "Léonard de Vinci", desc: "Génie universel de la Renaissance : peintre, ingénieur, scientifique" },
+        { year: 1843, name: "Henry James", desc: "Romancier américano-britannique, maître du roman psychologique" },
+        { year: 1959, name: "Emma Thompson", desc: "Actrice britannique, deux fois oscarisée" },
+    ],
+    "04-16": [
+        { year: 1844, name: "Anatole France", desc: "Écrivain français, prix Nobel de Littérature" },
+        { year: 1889, name: "Charlie Chaplin", desc: "Comédien britannique, génie du cinéma muet" },
+    ],
+    "04-17": [
+        { year: 1820, name: "Herbert Spencer", desc: "Philosophe britannique, évolutionniste social" },
+        { year: 1885, name: "Isak Dinesen", desc: "Écrivaine danoise, auteure de La Ferme africaine" },
+    ],
+    "04-18": [
+        { year: 1857, name: "Clarence Darrow", desc: "Avocat américain, défenseur des causes impossibles" },
+    ],
+    "04-19": [
+        { year: 1772, name: "David Ricardo", desc: "Économiste britannique, théoricien de la valeur-travail" },
+        { year: 1935, name: "Dudley Moore", desc: "Acteur, comédien et musicien britannique" },
+    ],
+    "04-20": [
+        { year: 1808, name: "Napoléon III", desc: "Neveu de Napoléon Ier, Empereur des Français" },
+        { year: 1949, name: "Jessica Lange", desc: "Actrice américaine, deux fois oscarisée" },
+    ],
+    "04-21": [
+        { year: 1729, name: "Catherine II de Russie", desc: "Impératrice de Russie, 'la Grande', figure des Lumières" },
+        { year: 1816, name: "Charlotte Brontë", desc: "Romancière britannique, auteure de Jane Eyre" },
+        { year: 1926, name: "Élisabeth II", desc: "Reine du Royaume-Uni de 1952 à 2022" },
+    ],
+    "04-22": [
+        { year: 1724, name: "Emmanuel Kant", desc: "Philosophe prussien, fondateur de la philosophie critique" },
+        { year: 1870, name: "Vladimir Lénine", desc: "Révolutionnaire et homme d'État soviétique, fondateur de l'URSS" },
+        { year: 1937, name: "Jack Nicholson", desc: "Acteur américain, trois fois oscarisé" },
+    ],
+    "04-23": [
+        { year: 1564, name: "William Shakespeare", desc: "Dramaturge et poète anglais, le plus grand écrivain de langue anglaise" },
+        { year: 1858, name: "Max Planck", desc: "Physicien allemand, fondateur de la mécanique quantique, prix Nobel" },
+        { year: 1928, name: "Shirley Temple", desc: "Actrice enfant américaine devenue diplomate" },
+    ],
+    "04-24": [
+        { year: 1815, name: "Anthony Trollope", desc: "Romancier britannique victorien" },
+        { year: 1942, name: "Barbra Streisand", desc: "Chanteuse et actrice américaine, oscarisée" },
+    ],
+    "04-25": [
+        { year: 1874, name: "Guglielmo Marconi", desc: "Inventeur italien de la radio sans fil, prix Nobel" },
+        { year: 1940, name: "Al Pacino", desc: "Acteur américain, oscarisé pour Scent of a Woman" },
+    ],
+    "04-26": [
+        { year: 1711, name: "David Hume", desc: "Philosophe et historien écossais, figure des Lumières" },
+        { year: 1798, name: "Eugène Delacroix", desc: "Peintre français romantique, auteur de La Liberté guidant le peuple" },
+    ],
+    "04-27": [
+        { year: 1791, name: "Samuel Morse", desc: "Inventeur américain du télégraphe et du code Morse" },
+        { year: 1822, name: "Ulysses S. Grant", desc: "18e président des États-Unis, général en chef des armées de l'Union" },
+        { year: 1759, name: "Mary Wollstonecraft", desc: "Philosophe britannique, précurseure du féminisme" },
+    ],
+    "04-28": [
+        { year: 1758, name: "James Monroe", desc: "5e président des États-Unis" },
+        { year: 1926, name: "Harper Lee", desc: "Romancière américaine, auteure de Ne tirez pas sur l'oiseau moqueur" },
+    ],
+    "04-29": [
+        { year: 1863, name: "William Randolph Hearst", desc: "Magnat de la presse américain, inspiration de Citizen Kane" },
+        { year: 1970, name: "Uma Thurman", desc: "Actrice américaine" },
+    ],
+    "04-30": [
+        { year: 1777, name: "Carl Friedrich Gauss", desc: "Mathématicien et physicien allemand, 'prince des mathématiciens'" },
+        { year: 1933, name: "Willie Nelson", desc: "Chanteur country américain" },
+    ],
+    "05-01": [
+        { year: 1769, name: "Duke of Wellington", desc: "Général britannique vainqueur de Napoléon à Waterloo" },
+        { year: 1925, name: "Scott Carpenter", desc: "Astronaute américain" },
+    ],
+    "05-02": [
+        { year: 1975, name: "David Beckham", desc: "Footballeur anglais" },
+        { year: 1729, name: "Catherine la Grande", desc: "Impératrice de Russie" },
+    ],
+    "05-03": [
+        { year: 1469, name: "Nicolas Machiavel", desc: "Philosophe politique florentin, auteur du Prince" },
+        { year: 1934, name: "James Brown", desc: "Chanteur américain, 'parrain de la soul'" },
+    ],
+    "05-04": [
+        { year: 1825, name: "Thomas Henry Huxley", desc: "Biologiste britannique, ardent défenseur de Darwin" },
+        { year: 1929, name: "Audrey Hepburn", desc: "Actrice britannique, icône du style et ambassadrice UNICEF" },
+    ],
+    "05-05": [
+        { year: 1818, name: "Karl Marx", desc: "Philosophe et économiste allemand, fondateur du marxisme" },
+        { year: 1813, name: "Søren Kierkegaard", desc: "Philosophe danois, père de l'existentialisme" },
+        { year: 1989, name: "Adele", desc: "Chanteuse britannique, multiple lauréate des Grammy" },
+    ],
+    "05-06": [
+        { year: 1758, name: "Maximilien de Robespierre", desc: "Révolutionnaire français, figure de la Terreur" },
+        { year: 1856, name: "Sigmund Freud", desc: "Neurologue autrichien, fondateur de la psychanalyse" },
+        { year: 1961, name: "George Clooney", desc: "Acteur américain" },
+    ],
+    "05-07": [
+        { year: 1840, name: "Piotr Ilitch Tchaïkovski", desc: "Compositeur russe, auteur du Lac des Cygnes" },
+        { year: 1901, name: "Gary Cooper", desc: "Acteur américain, deux fois oscarisé" },
+    ],
+    "05-08": [
+        { year: 1884, name: "Harry S. Truman", desc: "33e président des États-Unis" },
+        { year: 1940, name: "Peter Benchley", desc: "Romancier américain, auteur des Dents de la mer" },
+    ],
+    "05-09": [
+        { year: 1860, name: "James Matthew Barrie", desc: "Romancier écossais, créateur de Peter Pan" },
+        { year: 1949, name: "Billy Joel", desc: "Pianiste et chanteur américain" },
+    ],
+    "05-10": [
+        { year: 1838, name: "John Wilkes Booth", desc: "Acteur américain, assassin d'Abraham Lincoln" },
+        { year: 1960, name: "Bono", desc: "Chanteur irlandais, leader de U2" },
+    ],
+    "05-11": [
+        { year: 1888, name: "Irving Berlin", desc: "Compositeur américain, auteur de White Christmas" },
+        { year: 1904, name: "Salvador Dalí", desc: "Peintre surréaliste espagnol" },
+    ],
+    "05-12": [
+        { year: 1820, name: "Florence Nightingale", desc: "Infirmière britannique, fondatrice des soins infirmiers modernes" },
+        { year: 1945, name: "Steve Winwood", desc: "Musicien britannique, co-fondateur de Traffic" },
+    ],
+    "05-13": [
+        { year: 1914, name: "Joe Louis", desc: "Boxeur américain, champion du monde des poids lourds (1937-1949)" },
+        { year: 1950, name: "Stevie Wonder", desc: "Chanteur, compositeur et multi-instrumentiste américain" },
+    ],
+    "05-14": [
+        { year: 1686, name: "Gabriel Fahrenheit", desc: "Physicien allemand, inventeur du thermomètre à mercure" },
+        { year: 1944, name: "George Lucas", desc: "Cinéaste américain, créateur de Star Wars" },
+    ],
+    "05-15": [
+        { year: 1567, name: "Claudio Monteverdi", desc: "Compositeur italien, père de l'opéra moderne" },
+    ],
+    "05-16": [
+        { year: 1966, name: "Janet Jackson", desc: "Chanteuse américaine" },
+    ],
+    "05-17": [
+        { year: 1749, name: "Edward Jenner", desc: "Médecin britannique, inventeur du vaccin contre la variole" },
+        { year: 1866, name: "Erik Satie", desc: "Compositeur français, figure du dadaïsme musical" },
+    ],
+    "05-18": [
+        { year: 1048, name: "Omar Khayyam", desc: "Poète, mathématicien et astronome persan" },
+        { year: 1872, name: "Bertrand Russell", desc: "Philosophe britannique, prix Nobel de Littérature" },
+    ],
+    "05-19": [
+        { year: 1795, name: "Johns Hopkins", desc: "Banquier américain, fondateur de l'université et de l'hôpital du même nom" },
+        { year: 1951, name: "Joey Ramone", desc: "Chanteur américain, fondateur des Ramones" },
+    ],
+    "05-20": [
+        { year: 1799, name: "Honoré de Balzac", desc: "Romancier français, auteur de La Comédie humaine" },
+        { year: 1806, name: "John Stuart Mill", desc: "Philosophe et économiste britannique, père du libéralisme" },
+        { year: 1946, name: "Cher", desc: "Chanteuse et actrice américaine" },
+    ],
+    "05-21": [
+        { year: 1471, name: "Albrecht Dürer", desc: "Peintre et graveur allemand, maître de la Renaissance nordique" },
+    ],
+    "05-22": [
+        { year: 1813, name: "Richard Wagner", desc: "Compositeur allemand, maître de l'opéra romantique" },
+        { year: 1859, name: "Arthur Conan Doyle", desc: "Écrivain britannique, créateur de Sherlock Holmes" },
+        { year: 1907, name: "Laurence Olivier", desc: "Acteur et réalisateur britannique" },
+    ],
+    "05-23": [
+        { year: 1707, name: "Carl von Linné", desc: "Naturaliste suédois, fondateur de la taxonomie moderne" },
+        { year: 1933, name: "Joan Collins", desc: "Actrice britannique" },
+    ],
+    "05-24": [
+        { year: 1819, name: "Victoria Ire du Royaume-Uni", desc: "Reine du Royaume-Uni de 1837 à 1901" },
+        { year: 1941, name: "Bob Dylan", desc: "Chanteur américain, prix Nobel de Littérature" },
+    ],
+    "05-25": [
+        { year: 1803, name: "Ralph Waldo Emerson", desc: "Essayiste et philosophe américain, fondateur du transcendantalisme" },
+        { year: 1963, name: "Mike Myers", desc: "Acteur canadien, connu pour Austin Powers et Shrek" },
+    ],
+    "05-26": [
+        { year: 1907, name: "John Wayne", desc: "Acteur américain, icône du western hollywoodien" },
+        { year: 1966, name: "Helena Bonham Carter", desc: "Actrice britannique" },
+    ],
+    "05-27": [
+        { year: 1332, name: "Ibn Khaldoun", desc: "Historien et philosophe arabe, père de la sociologie" },
+        { year: 1837, name: "Wild Bill Hickok", desc: "Shérif américain du Far West" },
+        { year: 1923, name: "Henry Kissinger", desc: "Diplomate américain, prix Nobel de la Paix" },
+    ],
+    "05-28": [
+        { year: 1738, name: "Joseph-Ignace Guillotin", desc: "Médecin français, promoteur de la guillotine" },
+        { year: 1908, name: "Ian Fleming", desc: "Romancier britannique, créateur de James Bond" },
+    ],
+    "05-29": [
+        { year: 1630, name: "Charles II d'Angleterre", desc: "Roi d'Angleterre de 1660 à 1685" },
+        { year: 1917, name: "John F. Kennedy", desc: "35e président des États-Unis, assassiné à Dallas en 1963" },
+    ],
+    "05-30": [
+        { year: 1672, name: "Pierre le Grand", desc: "Tsar de Russie, modernisateur de l'Empire russe" },
+        { year: 1908, name: "Mel Blanc", desc: "Comédien américain, voix de Bugs Bunny" },
+    ],
+    "05-31": [
+        { year: 1819, name: "Walt Whitman", desc: "Poète américain, auteur de Feuilles d'herbe" },
+        { year: 1930, name: "Clint Eastwood", desc: "Acteur et réalisateur américain" },
+    ],
+    "06-01": [
+        { year: 1926, name: "Marilyn Monroe", desc: "Actrice américaine, sex-symbol et icône culturelle mondiale" },
+        { year: 1937, name: "Morgan Freeman", desc: "Acteur américain, oscarisé pour Million Dollar Baby" },
+    ],
+    "06-02": [
+        { year: 1840, name: "Thomas Hardy", desc: "Romancier et poète britannique victorien" },
+    ],
+    "06-03": [
+        { year: 1726, name: "James Hutton", desc: "Géologue écossais, père de la géologie moderne" },
+        { year: 1926, name: "Allen Ginsberg", desc: "Poète américain, figure de la Beat Generation" },
+    ],
+    "06-04": [
+        { year: 1738, name: "George III du Royaume-Uni", desc: "Roi lors de la révolution américaine" },
+        { year: 1975, name: "Angelina Jolie", desc: "Actrice américaine, ambassadrice de l'UNHCR" },
+    ],
+    "06-05": [
+        { year: 1819, name: "John Couch Adams", desc: "Astronome britannique, prédicteur de la position de Neptune" },
+        { year: 1947, name: "Laurie Anderson", desc: "Artiste et musicienne américaine" },
+    ],
+    "06-06": [
+        { year: 1606, name: "Pierre Corneille", desc: "Dramaturge français, père du théâtre classique (Le Cid)" },
+        { year: 1799, name: "Alexandre Pouchkine", desc: "Poète russe, père de la littérature russe moderne" },
+        { year: 1875, name: "Thomas Mann", desc: "Romancier allemand, prix Nobel de Littérature" },
+    ],
+    "06-07": [
+        { year: 1848, name: "Paul Gauguin", desc: "Peintre post-impressionniste français" },
+        { year: 1958, name: "Prince", desc: "Musicien américain, génie de la pop et du funk" },
+    ],
+    "06-08": [
+        { year: 1810, name: "Robert Schumann", desc: "Compositeur romantique allemand" },
+        { year: 1869, name: "Frank Lloyd Wright", desc: "Architecte américain, figure de l'architecture organique" },
+    ],
+    "06-09": [
+        { year: 1781, name: "George Stephenson", desc: "Ingénieur britannique, père du chemin de fer à vapeur" },
+        { year: 1961, name: "Michael J. Fox", desc: "Acteur canadien, Marty McFly dans Retour vers le futur" },
+    ],
+    "06-10": [
+        { year: 1819, name: "Gustave Courbet", desc: "Peintre réaliste français" },
+        { year: 1922, name: "Judy Garland", desc: "Actrice et chanteuse américaine, Dorothy dans Le Magicien d'Oz" },
+    ],
+    "06-11": [
+        { year: 1864, name: "Richard Strauss", desc: "Compositeur et chef d'orchestre allemand" },
+        { year: 1910, name: "Jacques Cousteau", desc: "Explorateur et cinéaste sous-marin français" },
+    ],
+    "06-12": [
+        { year: 1929, name: "Anne Frank", desc: "Jeune Juive allemande, auteure du Journal d'Anne Frank" },
+        { year: 1941, name: "Chick Corea", desc: "Pianiste américain de jazz fusion" },
+    ],
+    "06-13": [
+        { year: 1865, name: "William Butler Yeats", desc: "Poète irlandais, prix Nobel de Littérature" },
+    ],
+    "06-14": [
+        { year: 1736, name: "Charles-Augustin de Coulomb", desc: "Physicien français, loi de Coulomb en électrostatique" },
+        { year: 1811, name: "Harriet Beecher Stowe", desc: "Romancière américaine, auteure de La Case de l'oncle Tom" },
+        { year: 1969, name: "Steffi Graf", desc: "Joueuse de tennis allemande, 22 titres en Grand Chelem" },
+    ],
+    "06-15": [
+        { year: 1843, name: "Edvard Grieg", desc: "Compositeur norvégien, auteur du Concerto en la mineur" },
+        { year: 1937, name: "Waylon Jennings", desc: "Chanteur country américain" },
+    ],
+    "06-16": [
+        { year: 1890, name: "Stan Laurel", desc: "Comédien britannique, moitié de Laurel et Hardy" },
+        { year: 1971, name: "Tupac Shakur", desc: "Rappeur américain, icône du hip-hop" },
+    ],
+    "06-17": [
+        { year: 1703, name: "John Wesley", desc: "Théologien anglais, fondateur du méthodisme" },
+        { year: 1882, name: "Igor Stravinski", desc: "Compositeur russo-américain, auteur du Sacre du Printemps" },
+    ],
+    "06-18": [
+        { year: 1942, name: "Paul McCartney", desc: "Chanteur et compositeur britannique des Beatles" },
+    ],
+    "06-19": [
+        { year: 1623, name: "Blaise Pascal", desc: "Mathématicien, physicien et philosophe français" },
+        { year: 1947, name: "Salman Rushdie", desc: "Romancier britannico-indien, auteur des Versets sataniques" },
+    ],
+    "06-20": [
+        { year: 1819, name: "Jacques Offenbach", desc: "Compositeur français, auteur des Contes d'Hoffmann" },
+        { year: 1967, name: "Nicole Kidman", desc: "Actrice australo-américaine, oscarisée" },
+    ],
+    "06-21": [
+        { year: 1905, name: "Jean-Paul Sartre", desc: "Philosophe, dramaturge et romancier français, existentialisme" },
+        { year: 1982, name: "Prince William", desc: "Prince de Galles, héritier du trône britannique" },
+    ],
+    "06-22": [
+        { year: 1898, name: "Erich Maria Remarque", desc: "Romancier allemand, auteur de À l'Ouest rien de nouveau" },
+        { year: 1949, name: "Meryl Streep", desc: "Actrice américaine, trois fois oscarisée" },
+    ],
+    "06-23": [
+        { year: 1763, name: "Joséphine de Beauharnais", desc: "Première épouse de Napoléon Ier, Impératrice des Français" },
+        { year: 1912, name: "Alan Turing", desc: "Mathématicien britannique, père de l'informatique et de l'IA" },
+    ],
+    "06-24": [
+        { year: 1542, name: "Jean de la Croix", desc: "Mystique espagnol, docteur de l'Église catholique" },
+        { year: 1944, name: "Jeff Beck", desc: "Guitariste britannique de rock" },
+    ],
+    "06-25": [
+        { year: 1903, name: "George Orwell", desc: "Écrivain britannique, auteur de 1984 et La Ferme des animaux" },
+        { year: 1945, name: "Carly Simon", desc: "Chanteuse et compositrice américaine" },
+    ],
+    "06-26": [
+        { year: 1730, name: "Charles Messier", desc: "Astronome français, catalogue d'objets célestes" },
+        { year: 1892, name: "Pearl Buck", desc: "Romancière américaine, prix Nobel de Littérature" },
+    ],
+    "06-27": [
+        { year: 1880, name: "Helen Keller", desc: "Écrivaine et militante américaine, aveugle et sourde de naissance" },
+    ],
+    "06-28": [
+        { year: 1491, name: "Henri VIII d'Angleterre", desc: "Roi d'Angleterre, fondateur de l'Église anglicane" },
+        { year: 1712, name: "Jean-Jacques Rousseau", desc: "Philosophe genevois, auteur du Contrat social" },
+    ],
+    "06-29": [
+        { year: 1798, name: "Giacomo Leopardi", desc: "Poète et philosophe romantique italien" },
+        { year: 1970, name: "Gary Barlow", desc: "Chanteur britannique, leader de Take That" },
+    ],
+    "06-30": [
+        { year: 1966, name: "Mike Tyson", desc: "Boxeur américain, plus jeune champion du monde des lourds" },
+    ],
+    "07-01": [
+        { year: 1646, name: "Gottfried Wilhelm Leibniz", desc: "Philosophe et mathématicien allemand, inventeur du calcul infinitésimal" },
+        { year: 1804, name: "George Sand", desc: "Romancière française, figure du romantisme et du féminisme" },
+        { year: 1961, name: "Diana Spencer", desc: "Princesse de Galles, 'la princesse du peuple'" },
+    ],
+    "07-02": [
+        { year: 1714, name: "Christoph Willibald Gluck", desc: "Compositeur allemand, réformateur de l'opéra" },
+        { year: 1877, name: "Hermann Hesse", desc: "Écrivain allemand, prix Nobel, auteur du Loup des steppes" },
+    ],
+    "07-03": [
+        { year: 1883, name: "Franz Kafka", desc: "Écrivain austro-hongrois, auteur du Procès et de La Métamorphose" },
+        { year: 1962, name: "Tom Cruise", desc: "Acteur américain" },
+    ],
+    "07-04": [
+        { year: 1804, name: "Nathaniel Hawthorne", desc: "Romancier américain, auteur de La Lettre écarlate" },
+        { year: 1900, name: "Louis Armstrong", desc: "Trompettiste américain, légende du jazz" },
+    ],
+    "07-05": [
+        { year: 1810, name: "P.T. Barnum", desc: "Entrepreneur américain du spectacle, fondateur du cirque Barnum" },
+    ],
+    "07-06": [
+        { year: 1747, name: "John Paul Jones", desc: "Officier de marine américain, héros de la guerre d'indépendance" },
+        { year: 1907, name: "Frida Kahlo", desc: "Peintre mexicaine, icône du surréalisme et du féminisme" },
+        { year: 1946, name: "Sylvester Stallone", desc: "Acteur et réalisateur américain" },
+    ],
+    "07-07": [
+        { year: 1752, name: "Joseph-Marie Jacquard", desc: "Inventeur français du métier à tisser à cartes perforées" },
+        { year: 1860, name: "Gustav Mahler", desc: "Compositeur austro-bohémien, géant de la symphonie" },
+        { year: 1940, name: "Ringo Starr", desc: "Batteur britannique des Beatles" },
+    ],
+    "07-08": [
+        { year: 1792, name: "Percy Bysshe Shelley", desc: "Poète romantique britannique" },
+        { year: 1839, name: "John D. Rockefeller", desc: "Industriel américain, premier milliardaire de l'histoire" },
+    ],
+    "07-09": [
+        { year: 1764, name: "Ann Radcliffe", desc: "Romancière anglaise, mère du roman gothique" },
+        { year: 1956, name: "Tom Hanks", desc: "Acteur américain, deux fois oscarisé" },
+    ],
+    "07-10": [
+        { year: 1509, name: "Jean Calvin", desc: "Réformateur religieux français, fondateur du calvinisme" },
+        { year: 1943, name: "Arthur Ashe", desc: "Joueur de tennis américain, premier noir à remporter l'US Open" },
+    ],
+    "07-11": [
+        { year: 1767, name: "John Quincy Adams", desc: "6e président des États-Unis" },
+        { year: 1920, name: "Yul Brynner", desc: "Acteur américano-russe, oscarisé pour Le Roi et Moi" },
+    ],
+    "07-12": [
+        { year: 100, name: "Jules César", desc: "Général et homme d'État romain, père de l'Empire romain" },
+        { year: 1817, name: "Henry David Thoreau", desc: "Écrivain et philosophe américain, auteur de Walden" },
+    ],
+    "07-13": [
+        { year: 1942, name: "Harrison Ford", desc: "Acteur américain, Indiana Jones et Han Solo" },
+    ],
+    "07-14": [
+        { year: 1858, name: "Emmeline Pankhurst", desc: "Suffragette britannique, militante pour le droit de vote des femmes" },
+        { year: 1913, name: "Gerald Ford", desc: "38e président des États-Unis" },
+    ],
+    "07-15": [
+        { year: 1606, name: "Rembrandt van Rijn", desc: "Peintre et graveur néerlandais, maître du clair-obscur" },
+        { year: 1946, name: "Linda Ronstadt", desc: "Chanteuse américaine" },
+    ],
+    "07-16": [
+        { year: 1723, name: "Joshua Reynolds", desc: "Peintre portraitiste britannique, fondateur de la Royal Academy" },
+        { year: 1872, name: "Roald Amundsen", desc: "Explorateur norvégien, premier à atteindre le pôle Sud" },
+        { year: 1911, name: "Ginger Rogers", desc: "Actrice et danseuse américaine, partenaire de Fred Astaire" },
+    ],
+    "07-17": [
+        { year: 1763, name: "John Jacob Astor", desc: "Homme d'affaires americano-allemand, premier millionnaire américain" },
+        { year: 1952, name: "David Hasselhoff", desc: "Acteur américain connu pour K 2000 et Alerte à Malibu" },
+    ],
+    "07-18": [
+        { year: 1635, name: "Robert Hooke", desc: "Scientifique britannique, loi de Hooke en élasticité" },
+        { year: 1918, name: "Nelson Mandela", desc: "Homme d'État sud-africain, prix Nobel de la Paix" },
+    ],
+    "07-19": [
+        { year: 1814, name: "Samuel Colt", desc: "Inventeur américain, créateur du revolver" },
+        { year: 1834, name: "Edgar Degas", desc: "Peintre et sculpteur français, maître de l'impressionnisme" },
+        { year: 1947, name: "Brian May", desc: "Guitariste britannique de Queen" },
+    ],
+    "07-20": [
+        { year: 1822, name: "Gregor Mendel", desc: "Moine et biologiste autrichien, père de la génétique" },
+        { year: 1947, name: "Carlos Santana", desc: "Guitariste mexicano-américain, maître de la fusion rock-latin" },
+    ],
+    "07-21": [
+        { year: 1899, name: "Ernest Hemingway", desc: "Romancier américain, prix Nobel de Littérature" },
+        { year: 1952, name: "Robin Williams", desc: "Acteur et comédien américain, oscarisé pour Will Hunting" },
+    ],
+    "07-22": [
+        { year: 1849, name: "Emma Lazarus", desc: "Poétesse américaine, auteure du texte gravé sur la Statue de la Liberté" },
+    ],
+    "07-23": [
+        { year: 1989, name: "Daniel Radcliffe", desc: "Acteur britannique, interprète de Harry Potter" },
+    ],
+    "07-24": [
+        { year: 1783, name: "Simón Bolívar", desc: "Général vénézuélien, libérateur de l'Amérique du Sud" },
+        { year: 1802, name: "Alexandre Dumas père", desc: "Romancier français, auteur des Trois Mousquetaires" },
+        { year: 1969, name: "Jennifer Lopez", desc: "Chanteuse, danseuse et actrice américaine" },
+    ],
+    "07-25": [
+        { year: 1802, name: "Alexandre Dumas fils", desc: "Romancier et dramaturge français, auteur de La Dame aux Camélias" },
+    ],
+    "07-26": [
+        { year: 1856, name: "George Bernard Shaw", desc: "Dramaturge irlandais, prix Nobel, auteur de Pygmalion" },
+        { year: 1875, name: "Carl Gustav Jung", desc: "Psychiatre suisse, fondateur de la psychologie analytique" },
+        { year: 1943, name: "Mick Jagger", desc: "Chanteur britannique, leader des Rolling Stones" },
+    ],
+    "07-27": [
+        { year: 1948, name: "Peggy Fleming", desc: "Patineuse artistique américaine, championne olympique" },
+    ],
+    "07-28": [
+        { year: 1929, name: "Jacqueline Onassis", desc: "Première dame des États-Unis, épouse de JFK" },
+    ],
+    "07-29": [
+        { year: 1869, name: "Booth Tarkington", desc: "Romancier américain, prix Pulitzer" },
+    ],
+    "07-30": [
+        { year: 1818, name: "Emily Brontë", desc: "Romancière et poétesse britannique, auteure des Hauts de Hurlevent" },
+        { year: 1863, name: "Henry Ford", desc: "Industriel américain, fondateur de Ford et créateur de la chaîne de montage" },
+        { year: 1947, name: "Arnold Schwarzenegger", desc: "Acteur et homme politique autrichien-américain" },
+    ],
+    "07-31": [
+        { year: 1800, name: "Friedrich Wöhler", desc: "Chimiste allemand, synthèse de l'urée, début de la chimie organique" },
+        { year: 1965, name: "J.K. Rowling", desc: "Romancière britannique, créatrice de Harry Potter" },
+    ],
+    "08-01": [
+        { year: 1744, name: "Jean-Baptiste Lamarck", desc: "Naturaliste français, précurseur de Darwin" },
+        { year: 1936, name: "Yves Saint Laurent", desc: "Couturier français, révolutionnaire de la mode" },
+    ],
+    "08-02": [
+        { year: 1932, name: "Peter O'Toole", desc: "Acteur irlando-britannique, Lawrence d'Arabie" },
+    ],
+    "08-03": [
+        { year: 1905, name: "Dolores del Río", desc: "Actrice mexicaine, première grande star latino d'Hollywood" },
+        { year: 1941, name: "Martha Stewart", desc: "Femme d'affaires américaine, reine de l'art de vivre" },
+    ],
+    "08-04": [
+        { year: 1961, name: "Barack Obama", desc: "44e président des États-Unis, premier président afro-américain" },
+        { year: 1900, name: "Queen Elizabeth the Queen Mother", desc: "Mère de la reine Élisabeth II" },
+    ],
+    "08-05": [
+        { year: 1930, name: "Neil Armstrong", desc: "Astronaute américain, premier homme à marcher sur la Lune" },
+        { year: 1906, name: "John Huston", desc: "Réalisateur américain, Le Faucon maltais" },
+    ],
+    "08-06": [
+        { year: 1809, name: "Alfred Tennyson", desc: "Poète britannique victorien" },
+        { year: 1881, name: "Alexander Fleming", desc: "Biologiste britannique, découvreur de la pénicilline, prix Nobel" },
+    ],
+    "08-07": [
+        { year: 1876, name: "Mata Hari", desc: "Danseuse et espionne néerlandaise" },
+    ],
+    "08-08": [
+        { year: 1834, name: "Nikolaus August Otto", desc: "Ingénieur allemand, inventeur du moteur à 4 temps" },
+        { year: 1937, name: "Dustin Hoffman", desc: "Acteur américain, deux fois oscarisé" },
+    ],
+    "08-09": [
+        { year: 1896, name: "Jean Piaget", desc: "Psychologue suisse, spécialiste du développement de l'enfant" },
+        { year: 1963, name: "Whitney Houston", desc: "Chanteuse américaine, voix considérée comme l'une des plus grandes" },
+    ],
+    "08-10": [
+        { year: 1874, name: "Herbert Hoover", desc: "31e président des États-Unis" },
+        { year: 1960, name: "Antonio Banderas", desc: "Acteur espagnol" },
+    ],
+    "08-11": [
+        { year: 1921, name: "Alex Haley", desc: "Journaliste et écrivain américain, auteur de Racines" },
+        { year: 1950, name: "Steve Wozniak", desc: "Ingénieur américain, cofondateur d'Apple" },
+    ],
+    "08-12": [
+        { year: 1774, name: "Robert Southey", desc: "Poète britannique, poète lauréat de 1813 à 1843" },
+    ],
+    "08-13": [
+        { year: 1860, name: "Annie Oakley", desc: "Tireuse d'élite américaine, star du Wild West Show de Buffalo Bill" },
+        { year: 1926, name: "Fidel Castro", desc: "Homme d'État cubain, chef de la révolution cubaine" },
+    ],
+    "08-14": [
+        { year: 1777, name: "Hans Christian Ørsted", desc: "Physicien danois, découvreur de l'électromagnétisme" },
+        { year: 1945, name: "Steve Martin", desc: "Acteur et comédien américain" },
+    ],
+    "08-15": [
+        { year: 1769, name: "Napoléon Bonaparte", desc: "Général et Empereur des Français, l'un des plus grands stratèges militaires" },
+        { year: 1888, name: "T.E. Lawrence", desc: "Officier et écrivain britannique, 'Lawrence d'Arabie'" },
+        { year: 1925, name: "Oscar Peterson", desc: "Pianiste canadien de jazz" },
+    ],
+    "08-16": [
+        { year: 1845, name: "Gabriel Lippmann", desc: "Physicien, prix Nobel, pionnier de la photographie couleur" },
+        { year: 1958, name: "Madonna", desc: "Chanteuse et actrice américaine, 'reine de la pop'" },
+    ],
+    "08-17": [
+        { year: 1786, name: "Davy Crockett", desc: "Explorateur américain, héros de la frontière" },
+        { year: 1943, name: "Robert De Niro", desc: "Acteur américain, deux fois oscarisé" },
+    ],
+    "08-18": [
+        { year: 1774, name: "Meriwether Lewis", desc: "Explorateur américain de l'expédition Lewis & Clark" },
+        { year: 1936, name: "Robert Redford", desc: "Acteur et réalisateur américain" },
+    ],
+    "08-19": [
+        { year: 1871, name: "Orville Wright", desc: "Aviateur américain, cofondateur de l'aviation avec son frère Wilbur" },
+        { year: 1883, name: "Coco Chanel", desc: "Couturière française, créatrice de la maison Chanel" },
+        { year: 1946, name: "Bill Clinton", desc: "42e président des États-Unis" },
+    ],
+    "08-20": [
+        { year: 1779, name: "Jöns Jacob Berzelius", desc: "Chimiste suédois, père de la nomenclature chimique moderne" },
+        { year: 1948, name: "Robert Plant", desc: "Chanteur britannique de Led Zeppelin" },
+    ],
+    "08-21": [
+        { year: 1789, name: "Augustin-Louis Cauchy", desc: "Mathématicien français, fondateur de l'analyse mathématique" },
+        { year: 1936, name: "Wilt Chamberlain", desc: "Basketteur américain, seul à avoir marqué 100 points en un match" },
+    ],
+    "08-22": [
+        { year: 1834, name: "Samuel Pierpont Langley", desc: "Astronome américain, pionnier de l'aéronautique" },
+    ],
+    "08-23": [
+        { year: 1754, name: "Louis XVI", desc: "Roi de France, guillotiné pendant la Révolution française" },
+        { year: 1769, name: "Georges Cuvier", desc: "Naturaliste français, père de la paléontologie" },
+        { year: 1970, name: "River Phoenix", desc: "Acteur américain" },
+    ],
+    "08-24": [
+        { year: 1759, name: "William Wilberforce", desc: "Homme politique britannique, militant abolitionniste" },
+        { year: 1899, name: "Jorge Luis Borges", desc: "Écrivain argentin, maître du fantastique littéraire" },
+    ],
+    "08-25": [
+        { year: 1530, name: "Ivan le Terrible", desc: "Premier tsar de Russie" },
+        { year: 1918, name: "Leonard Bernstein", desc: "Compositeur et chef d'orchestre américain, auteur de West Side Story" },
+    ],
+    "08-26": [
+        { year: 1676, name: "Robert Walpole", desc: "Homme d'État britannique, considéré comme le premier Premier ministre" },
+        { year: 1935, name: "Geraldine Ferraro", desc: "Femme politique américaine, première candidate à la vice-présidence" },
+    ],
+    "08-27": [
+        { year: 1770, name: "Georg Wilhelm Friedrich Hegel", desc: "Philosophe allemand, maître de l'idéalisme" },
+        { year: 1910, name: "Mère Teresa", desc: "Religieuse albanaise-indienne, fondatrice des Missionnaires de la Charité" },
+    ],
+    "08-28": [
+        { year: 1749, name: "Johann Wolfgang von Goethe", desc: "Écrivain et savant allemand, auteur de Faust" },
+        { year: 1828, name: "Léon Tolstoï", desc: "Romancier russe, auteur de Guerre et Paix" },
+        { year: 1969, name: "Jack Black", desc: "Acteur et musicien américain" },
+    ],
+    "08-29": [
+        { year: 1632, name: "John Locke", desc: "Philosophe anglais, père du libéralisme politique" },
+        { year: 1958, name: "Michael Jackson", desc: "Chanteur américain, 'roi de la pop'" },
+    ],
+    "08-30": [
+        { year: 1797, name: "Mary Shelley", desc: "Romancière britannique, auteure de Frankenstein" },
+        { year: 1871, name: "Ernest Rutherford", desc: "Physicien néo-zélandais-britannique, père de la physique nucléaire" },
+    ],
+    "08-31": [
+        { year: 1821, name: "Hermann von Helmholtz", desc: "Physicien et médecin allemand, conservation de l'énergie" },
+        { year: 1870, name: "Maria Montessori", desc: "Pédagogue italienne, fondatrice de la méthode Montessori" },
+        { year: 1945, name: "Van Morrison", desc: "Chanteur et musicien nord-irlandais, légende du rock blues" },
+    ],
+    "09-01": [
+        { year: 1875, name: "Edgar Rice Burroughs", desc: "Écrivain américain, créateur de Tarzan" },
+        { year: 1923, name: "Rocky Marciano", desc: "Boxeur américain, seul champion du monde des lourds invaincu" },
+        { year: 1957, name: "Gloria Estefan", desc: "Chanteuse cubano-américaine" },
+    ],
+    "09-02": [
+        { year: 1964, name: "Keanu Reeves", desc: "Acteur canadien, connu pour Matrix et John Wick" },
+    ],
+    "09-03": [
+        { year: 1875, name: "Ferdinand Porsche", desc: "Ingénieur autrichien, fondateur de la marque Porsche" },
+    ],
+    "09-04": [
+        { year: 1768, name: "François-René de Chateaubriand", desc: "Écrivain français, père du romantisme" },
+        { year: 1981, name: "Beyoncé", desc: "Chanteuse américaine, icône mondiale de la pop" },
+    ],
+    "09-05": [
+        { year: 1638, name: "Louis XIV de France", desc: "Roi de France, 'le Roi-Soleil', plus long règne de l'histoire" },
+        { year: 1847, name: "Jesse James", desc: "Hors-la-loi américain du Far West, figure légendaire" },
+        { year: 1940, name: "Raquel Welch", desc: "Actrice et mannequin américaine" },
+    ],
+    "09-06": [
+        { year: 1766, name: "John Dalton", desc: "Chimiste britannique, père de la théorie atomique moderne" },
+        { year: 1860, name: "Jane Addams", desc: "Militante américaine, prix Nobel de la Paix" },
+    ],
+    "09-07": [
+        { year: 1936, name: "Buddy Holly", desc: "Musicien américain, pionnier du rock and roll" },
+        { year: 1707, name: "Georges-Louis Leclerc de Buffon", desc: "Naturaliste français, auteur de l'Histoire naturelle" },
+    ],
+    "09-08": [
+        { year: 1157, name: "Richard Cœur de Lion", desc: "Roi d'Angleterre, héros des Croisades" },
+        { year: 1841, name: "Antonín Dvořák", desc: "Compositeur tchèque, auteur de la Symphonie du Nouveau Monde" },
+        { year: 1925, name: "Peter Sellers", desc: "Acteur et comédien britannique" },
+    ],
+    "09-09": [
+        { year: 1585, name: "Cardinal Richelieu", desc: "Homme d'État français, artisan de l'absolutisme royal" },
+        { year: 1960, name: "Hugh Grant", desc: "Acteur britannique" },
+    ],
+    "09-10": [
+        { year: 1839, name: "Charles Sanders Peirce", desc: "Philosophe américain, fondateur du pragmatisme" },
+        { year: 1934, name: "Charles Kuralt", desc: "Journaliste américain" },
+    ],
+    "09-11": [
+        { year: 1862, name: "O. Henry", desc: "Nouvelliste américain, maître de la chute inattendue" },
+    ],
+    "09-12": [
+        { year: 1818, name: "Richard Jordan Gatling", desc: "Inventeur américain de la mitrailleuse Gatling" },
+    ],
+    "09-13": [
+        { year: 1857, name: "Milton Hershey", desc: "Industriel américain, fondateur de la chocolaterie Hershey" },
+    ],
+    "09-14": [
+        { year: 1769, name: "Alexander von Humboldt", desc: "Naturaliste prussien, explorateur de l'Amérique du Sud" },
+        { year: 1849, name: "Ivan Pavlov", desc: "Physiologiste russe, réflexes conditionnés, prix Nobel" },
+        { year: 1983, name: "Amy Winehouse", desc: "Chanteuse britannique de soul et jazz" },
+    ],
+    "09-15": [
+        { year: 1789, name: "James Fenimore Cooper", desc: "Romancier américain, auteur du Dernier des Mohicans" },
+        { year: 1890, name: "Agatha Christie", desc: "Romancière britannique, reine du roman policier" },
+        { year: 1946, name: "Tommy Lee Jones", desc: "Acteur américain, oscarisé" },
+    ],
+    "09-16": [
+        { year: 1925, name: "B.B. King", desc: "Guitariste américain, 'roi du blues'" },
+        { year: 1887, name: "Nadia Boulanger", desc: "Chef d'orchestre et pédagogue française" },
+    ],
+    "09-17": [
+        { year: 1826, name: "Georg Friedrich Bernhard Riemann", desc: "Mathématicien allemand, géométrie riemannienne" },
+    ],
+    "09-18": [
+        { year: 1709, name: "Samuel Johnson", desc: "Lexicographe britannique, auteur du premier dictionnaire anglais" },
+        { year: 1819, name: "Léon Foucault", desc: "Physicien français, pendule de Foucault" },
+        { year: 1905, name: "Greta Garbo", desc: "Actrice suédoise, icône d'Hollywood des années 1920-30" },
+    ],
+    "09-19": [
+        { year: 1948, name: "Jeremy Irons", desc: "Acteur britannique, oscarisé" },
+    ],
+    "09-20": [
+        { year: 1878, name: "Upton Sinclair", desc: "Romancier américain, auteur de La Jungle" },
+        { year: 1934, name: "Sophia Loren", desc: "Actrice italienne, oscarisée" },
+    ],
+    "09-21": [
+        { year: 1866, name: "H.G. Wells", desc: "Romancier britannique de science-fiction, auteur de La Guerre des mondes" },
+        { year: 1947, name: "Stephen King", desc: "Romancier américain, maître de l'horreur" },
+    ],
+    "09-22": [
+        { year: 1791, name: "Michael Faraday", desc: "Physicien et chimiste britannique, père de l'électromagnétisme" },
+    ],
+    "09-23": [
+        { year: 63, name: "Auguste", desc: "Premier Empereur romain" },
+        { year: 1949, name: "Bruce Springsteen", desc: "Chanteur américain, 'Le Boss'" },
+    ],
+    "09-24": [
+        { year: 1755, name: "John Marshall", desc: "Juriste américain, fondateur de la Cour suprême moderne" },
+        { year: 1896, name: "F. Scott Fitzgerald", desc: "Romancier américain, auteur de Gatsby le Magnifique" },
+        { year: 1936, name: "Jim Henson", desc: "Marionnettiste américain, créateur des Muppets" },
+    ],
+    "09-25": [
+        { year: 1897, name: "William Faulkner", desc: "Romancier américain, prix Nobel de Littérature" },
+        { year: 1944, name: "Michael Douglas", desc: "Acteur américain, oscarisé pour Wall Street" },
+    ],
+    "09-26": [
+        { year: 1791, name: "Théodore Géricault", desc: "Peintre romantique français, auteur du Radeau de la Méduse" },
+        { year: 1888, name: "T.S. Eliot", desc: "Poète américano-britannique, prix Nobel, auteur de La Terre vaine" },
+        { year: 1981, name: "Serena Williams", desc: "Joueuse de tennis américaine, 23 titres en Grand Chelem" },
+    ],
+    "09-27": [
+        { year: 1840, name: "Thomas Nast", desc: "Caricaturiste américain, créateur du Père Noël moderne" },
+    ],
+    "09-28": [
+        { year: 551, name: "Confucius", desc: "Philosophe chinois, fondateur du confucianisme" },
+        { year: 1573, name: "Le Caravage", desc: "Peintre baroque italien, maître du clair-obscur" },
+        { year: 1934, name: "Brigitte Bardot", desc: "Actrice française, icône de la Nouvelle Vague" },
+    ],
+    "09-29": [
+        { year: 1758, name: "Horatio Nelson", desc: "Amiral britannique, vainqueur de Trafalgar" },
+        { year: 1935, name: "Jerry Lee Lewis", desc: "Pianiste américain, pionnier du rock and roll" },
+    ],
+    "09-30": [
+        { year: 1732, name: "Jacques Necker", desc: "Banquier et ministre des Finances français" },
+        { year: 1882, name: "Hans Geiger", desc: "Physicien allemand, inventeur du compteur Geiger" },
+    ],
+    "10-01": [
+        { year: 1847, name: "Annie Besant", desc: "Militante britannique pour l'indépendance de l'Inde" },
+        { year: 1896, name: "Buster Keaton", desc: "Acteur américain du cinéma muet, 'l'homme qui ne sourit jamais'" },
+        { year: 1935, name: "Julie Andrews", desc: "Actrice et chanteuse britannique, Mary Poppins" },
+    ],
+    "10-02": [
+        { year: 1869, name: "Mahatma Gandhi", desc: "Avocat et militant indien, père de la non-violence" },
+        { year: 1951, name: "Sting", desc: "Chanteur et compositeur britannique, leader de The Police" },
+    ],
+    "10-03": [
+        { year: 1867, name: "Pierre Bonnard", desc: "Peintre français, figure des Nabis" },
+        { year: 1941, name: "Chubby Checker", desc: "Chanteur américain, popularisateur du twist" },
+    ],
+    "10-04": [
+        { year: 1822, name: "Rutherford B. Hayes", desc: "19e président des États-Unis" },
+        { year: 1924, name: "Charlton Heston", desc: "Acteur américain, président de la NRA" },
+    ],
+    "10-05": [
+        { year: 1713, name: "Denis Diderot", desc: "Philosophe français, directeur de l'Encyclopédie" },
+        { year: 1975, name: "Kate Winslet", desc: "Actrice britannique, oscarisée pour The Reader" },
+    ],
+    "10-06": [
+        { year: 1887, name: "Le Corbusier", desc: "Architecte suisse-français, fondateur de l'architecture moderne" },
+    ],
+    "10-07": [
+        { year: 1885, name: "Niels Bohr", desc: "Physicien danois, modèle atomique de Bohr, prix Nobel" },
+        { year: 1952, name: "Vladimir Poutine", desc: "Homme d'État russe, président de la Fédération de Russie" },
+    ],
+    "10-08": [
+        { year: 1754, name: "Henry Cavendish", desc: "Physicien et chimiste britannique, découvreur de l'hydrogène" },
+        { year: 1895, name: "Juan Perón", desc: "Homme d'État argentin, président de 1946 à 1955" },
+    ],
+    "10-09": [
+        { year: 1547, name: "Miguel de Cervantes", desc: "Écrivain espagnol, auteur de Don Quichotte" },
+        { year: 1835, name: "Camille Saint-Saëns", desc: "Compositeur français, auteur du Carnaval des animaux" },
+        { year: 1940, name: "John Lennon", desc: "Chanteur-compositeur britannique des Beatles" },
+    ],
+    "10-10": [
+        { year: 1813, name: "Giuseppe Verdi", desc: "Compositeur d'opéra italien, auteur de la Traviata et d'Aida" },
+        { year: 1900, name: "Helen Hayes", desc: "Actrice américaine" },
+    ],
+    "10-11": [
+        { year: 1844, name: "Henry Heinz", desc: "Industriel américain, fondateur de la marque de condiments Heinz" },
+        { year: 1948, name: "Daryl Hall", desc: "Musicien américain de Hall and Oates" },
+    ],
+    "10-12": [
+        { year: 1935, name: "Luciano Pavarotti", desc: "Ténor italien, l'une des plus grandes voix du XXe siècle" },
+    ],
+    "10-13": [
+        { year: 1735, name: "Horace Walpole", desc: "Écrivain britannique, père du roman gothique" },
+        { year: 1925, name: "Margaret Thatcher", desc: "Femme d'État britannique, première femme Premier ministre du Royaume-Uni" },
+    ],
+    "10-14": [
+        { year: 1644, name: "William Penn", desc: "Quaker anglais, fondateur de la Pennsylvanie" },
+        { year: 1890, name: "Dwight D. Eisenhower", desc: "34e président des États-Unis, général en chef des forces alliées" },
+    ],
+    "10-15": [
+        { year: 1844, name: "Friedrich Nietzsche", desc: "Philosophe allemand, auteur de Ainsi parlait Zarathoustra" },
+        { year: 1946, name: "Richard Carpenter", desc: "Musicien américain des Carpenters" },
+    ],
+    "10-16": [
+        { year: 1758, name: "Noah Webster", desc: "Lexicographe américain, auteur du premier dictionnaire américain" },
+        { year: 1854, name: "Oscar Wilde", desc: "Écrivain irlandais, maître de l'esprit et du paradoxe" },
+    ],
+    "10-17": [
+        { year: 1760, name: "Claude Henri de Saint-Simon", desc: "Philosophe français, père du socialisme utopique" },
+        { year: 1972, name: "Eminem", desc: "Rappeur américain" },
+    ],
+    "10-18": [
+        { year: 1697, name: "Canaletto", desc: "Peintre vénitien, maître de la veduta" },
+        { year: 1859, name: "Henri Bergson", desc: "Philosophe français, prix Nobel de Littérature" },
+    ],
+    "10-19": [
+        { year: 1910, name: "Subrahmanyan Chandrasekhar", desc: "Astrophysicien américano-indien, limite de Chandrasekhar, prix Nobel" },
+        { year: 1945, name: "John Lithgow", desc: "Acteur américain" },
+    ],
+    "10-20": [
+        { year: 1859, name: "John Dewey", desc: "Philosophe américain, père du pragmatisme éducatif" },
+        { year: 1882, name: "Béla Lugosi", desc: "Acteur hongrois, interprète légendaire de Dracula" },
+    ],
+    "10-21": [
+        { year: 1772, name: "Samuel Taylor Coleridge", desc: "Poète romantique britannique, auteur de La Ballade du vieux marin" },
+        { year: 1956, name: "Carrie Fisher", desc: "Actrice américaine, Princesse Leia dans Star Wars" },
+    ],
+    "10-22": [
+        { year: 1811, name: "Franz Liszt", desc: "Compositeur et pianiste hongrois, virtuose romantique" },
+        { year: 1943, name: "Catherine Deneuve", desc: "Actrice française, icône du cinéma mondial" },
+    ],
+    "10-23": [
+        { year: 1940, name: "Pelé", desc: "Footballeur brésilien, considéré comme le meilleur de tous les temps" },
+    ],
+    "10-24": [
+        { year: 1632, name: "Antoni van Leeuwenhoek", desc: "Savant néerlandais, père de la microbiologie" },
+        { year: 1947, name: "Kevin Kline", desc: "Acteur américain, oscarisé pour A Fish Called Wanda" },
+    ],
+    "10-25": [
+        { year: 1881, name: "Pablo Picasso", desc: "Peintre et sculpteur espagnol, cofondateur du cubisme" },
+        { year: 1984, name: "Katy Perry", desc: "Chanteuse américaine de pop" },
+    ],
+    "10-26": [
+        { year: 1685, name: "Domenico Scarlatti", desc: "Compositeur baroque italo-espagnol" },
+        { year: 1947, name: "Hillary Clinton", desc: "Femme politique américaine, première femme candidate d'un grand parti à la présidence" },
+    ],
+    "10-27": [
+        { year: 1728, name: "James Cook", desc: "Navigateur et explorateur britannique, circumnavigateur" },
+        { year: 1858, name: "Theodore Roosevelt", desc: "26e président des États-Unis, prix Nobel de la Paix" },
+        { year: 1939, name: "John Cleese", desc: "Acteur et humoriste britannique, les Monty Python" },
+    ],
+    "10-28": [
+        { year: 1466, name: "Érasme", desc: "Humaniste et théologien néerlandais, figure de la Renaissance" },
+        { year: 1914, name: "Jonas Salk", desc: "Virologue américain, créateur du vaccin contre la polio" },
+        { year: 1955, name: "Bill Gates", desc: "Informaticien américain, cofondateur de Microsoft" },
+    ],
+    "10-29": [
+        { year: 1740, name: "James Boswell", desc: "Juriste et écrivain écossais, biographe de Samuel Johnson" },
+        { year: 1971, name: "Winona Ryder", desc: "Actrice américaine" },
+    ],
+    "10-30": [
+        { year: 1751, name: "Richard Brinsley Sheridan", desc: "Dramaturge irlandais, auteur de L'École de la médisance" },
+        { year: 1885, name: "Ezra Pound", desc: "Poète américain moderniste" },
+    ],
+    "10-31": [
+        { year: 1632, name: "Jan Vermeer", desc: "Peintre néerlandais, auteur de La Jeune Fille à la perle" },
+        { year: 1860, name: "Juliette Gordon Low", desc: "Fondatrice des Girl Scouts of America" },
+    ],
+    "11-01": [
+        { year: 1530, name: "Étienne de La Boétie", desc: "Écrivain et magistrat français, auteur du Discours de la servitude volontaire" },
+        { year: 1871, name: "Stephen Crane", desc: "Romancier américain, auteur de La Conquête du courage" },
+    ],
+    "11-02": [
+        { year: 1734, name: "Daniel Boone", desc: "Pionnier américain, explorateur du Kentucky" },
+        { year: 1865, name: "Warren G. Harding", desc: "29e président des États-Unis" },
+        { year: 1913, name: "Burt Lancaster", desc: "Acteur américain, oscarisé" },
+    ],
+    "11-03": [
+        { year: 1500, name: "Benvenuto Cellini", desc: "Orfèvre et sculpteur florentin de la Renaissance" },
+        { year: 1749, name: "Daniel Boone", desc: "Explorateur américain" },
+    ],
+    "11-04": [
+        { year: 1879, name: "Will Rogers", desc: "Humoriste et acteur américain" },
+        { year: 1916, name: "Walter Cronkite", desc: "Journaliste américain, présentateur vedette de CBS News" },
+    ],
+    "11-05": [
+        { year: 1913, name: "Vivien Leigh", desc: "Actrice britannique, deux fois oscarisée, Scarlett O'Hara" },
+    ],
+    "11-06": [
+        { year: 1854, name: "John Philip Sousa", desc: "Compositeur américain, 'le roi de la marche'" },
+        { year: 1946, name: "Sally Field", desc: "Actrice américaine, deux fois oscarisée" },
+    ],
+    "11-07": [
+        { year: 1867, name: "Marie Curie", desc: "Physicienne et chimiste franco-polonaise, deux prix Nobel" },
+        { year: 1888, name: "C.S. Lewis", desc: "Écrivain irlando-britannique, auteur du Monde de Narnia" },
+        { year: 1943, name: "Joni Mitchell", desc: "Chanteuse et compositrice canadienne" },
+    ],
+    "11-08": [
+        { year: 1848, name: "Gottlob Frege", desc: "Mathématicien et logicien allemand, fondateur de la logique moderne" },
+        { year: 1900, name: "Margaret Mitchell", desc: "Romancière américaine, auteure d'Autant en emporte le vent" },
+    ],
+    "11-09": [
+        { year: 1841, name: "Édouard VII", desc: "Roi du Royaume-Uni et Empereur des Indes" },
+        { year: 1934, name: "Carl Sagan", desc: "Astronome et écrivain américain, auteur de Cosmos" },
+    ],
+    "11-10": [
+        { year: 1483, name: "Martin Luther", desc: "Théologien allemand, initiateur de la Réforme protestante" },
+        { year: 1925, name: "Richard Burton", desc: "Acteur gallois" },
+    ],
+    "11-11": [
+        { year: 1821, name: "Fiodor Dostoïevski", desc: "Romancier russe, auteur de Crime et Châtiment" },
+        { year: 1885, name: "George Patton", desc: "Général américain, héros de la Seconde Guerre mondiale" },
+        { year: 1962, name: "Demi Moore", desc: "Actrice américaine" },
+    ],
+    "11-12": [
+        { year: 1840, name: "Auguste Rodin", desc: "Sculpteur français, auteur du Penseur et du Baiser" },
+        { year: 1945, name: "Neil Young", desc: "Musicien canadien, légende du rock" },
+    ],
+    "11-13": [
+        { year: 1850, name: "Robert Louis Stevenson", desc: "Romancier écossais, auteur de L'Île au trésor" },
+        { year: 1955, name: "Whoopi Goldberg", desc: "Actrice américaine, oscarisée" },
+    ],
+    "11-14": [
+        { year: 1840, name: "Claude Monet", desc: "Peintre impressionniste français, fondateur du mouvement" },
+        { year: 1948, name: "Prince Charles (Charles III)", desc: "Roi du Royaume-Uni" },
+    ],
+    "11-15": [
+        { year: 1738, name: "William Herschel", desc: "Astronome britannico-allemand, découvreur d'Uranus" },
+        { year: 1929, name: "Ed Asner", desc: "Acteur américain" },
+    ],
+    "11-16": [
+        { year: 1717, name: "Jean Le Rond d'Alembert", desc: "Mathématicien et philosophe français des Lumières" },
+        { year: 1873, name: "W.C. Handy", desc: "Compositeur américain, 'père du blues'" },
+    ],
+    "11-17": [
+        { year: 1925, name: "Rock Hudson", desc: "Acteur américain" },
+    ],
+    "11-18": [
+        { year: 1786, name: "Carl Maria von Weber", desc: "Compositeur romantique allemand, père de l'opéra romantique" },
+        { year: 1939, name: "Margaret Atwood", desc: "Romancière canadienne, auteure de La Servante écarlate" },
+    ],
+    "11-19": [
+        { year: 1600, name: "Charles Ier d'Angleterre", desc: "Roi d'Angleterre décapité pendant la Révolution anglaise" },
+        { year: 1942, name: "Calvin Klein", desc: "Créateur de mode américain" },
+    ],
+    "11-20": [
+        { year: 1858, name: "Selma Lagerlöf", desc: "Romancière suédoise, première femme prix Nobel de Littérature" },
+        { year: 1924, name: "Estée Lauder", desc: "Femme d'affaires américaine, fondatrice de la marque de cosmétiques" },
+    ],
+    "11-21": [
+        { year: 1694, name: "Voltaire", desc: "Écrivain et philosophe français des Lumières, auteur de Candide" },
+        { year: 1945, name: "Goldie Hawn", desc: "Actrice américaine, oscarisée" },
+    ],
+    "11-22": [
+        { year: 1819, name: "George Eliot", desc: "Romancière britannique, auteure de Middlemarch" },
+        { year: 1869, name: "André Gide", desc: "Écrivain français, prix Nobel de Littérature" },
+    ],
+    "11-23": [
+        { year: 1804, name: "Franklin Pierce", desc: "14e président des États-Unis" },
+        { year: 1992, name: "Miley Cyrus", desc: "Chanteuse et actrice américaine" },
+    ],
+    "11-24": [
+        { year: 1713, name: "Laurence Sterne", desc: "Romancier irlando-britannique, auteur de Tristram Shandy" },
+        { year: 1864, name: "Henri de Toulouse-Lautrec", desc: "Peintre et affichiste français, chroniqueur de Montmartre" },
+        { year: 1826, name: "Carlo Collodi", desc: "Écrivain italien, créateur de Pinocchio" },
+    ],
+    "11-25": [
+        { year: 1562, name: "Lope de Vega", desc: "Dramaturge espagnol, figure du Siècle d'Or espagnol" },
+        { year: 1835, name: "Andrew Carnegie", desc: "Industriel américano-écossais, philanthrope de l'acier" },
+    ],
+    "11-26": [
+        { year: 1857, name: "Ferdinand de Saussure", desc: "Linguiste suisse, fondateur de la linguistique moderne" },
+        { year: 1939, name: "Tina Turner", desc: "Chanteuse américaine de rock et soul" },
+    ],
+    "11-27": [
+        { year: 1701, name: "Anders Celsius", desc: "Astronome suédois, inventeur de l'échelle Celsius" },
+        { year: 1940, name: "Bruce Lee", desc: "Acteur et maître d'arts martiaux sino-américain" },
+    ],
+    "11-28": [
+        { year: 1757, name: "William Blake", desc: "Poète et peintre romantique britannique" },
+        { year: 1820, name: "Friedrich Engels", desc: "Philosophe allemand, co-auteur du Manifeste communiste" },
+    ],
+    "11-29": [
+        { year: 1832, name: "Louisa May Alcott", desc: "Romancière américaine, auteure des Quatre Filles du docteur March" },
+        { year: 1967, name: "Ryan Giggs", desc: "Footballeur gallois, légende de Manchester United" },
+    ],
+    "11-30": [
+        { year: 1667, name: "Jonathan Swift", desc: "Écrivain irlando-britannique, auteur des Voyages de Gulliver" },
+        { year: 1835, name: "Mark Twain", desc: "Romancier américain, auteur de Tom Sawyer et Huckleberry Finn" },
+        { year: 1874, name: "Winston Churchill", desc: "Premier ministre britannique, prix Nobel de Littérature" },
+    ],
+    "12-01": [
+        { year: 1761, name: "Marie Tussaud", desc: "Sculptrice franco-britannique, fondatrice du musée de cire Madame Tussaud" },
+        { year: 1945, name: "Bette Midler", desc: "Chanteuse et actrice américaine" },
+    ],
+    "12-02": [
+        { year: 1859, name: "Georges Seurat", desc: "Peintre français, inventeur du pointillisme" },
+        { year: 1923, name: "Maria Callas", desc: "Soprano américano-grecque, l'une des plus grandes cantatrices" },
+        { year: 1981, name: "Britney Spears", desc: "Chanteuse américaine de pop" },
+    ],
+    "12-03": [
+        { year: 1857, name: "Joseph Conrad", desc: "Romancier polonais-britannique, auteur de Lord Jim" },
+        { year: 1930, name: "Andy Williams", desc: "Chanteur américain de variétés" },
+    ],
+    "12-04": [
+        { year: 1866, name: "Wassily Kandinsky", desc: "Peintre russo-français, fondateur de l'art abstrait" },
+        { year: 1949, name: "Jeff Bridges", desc: "Acteur américain, oscarisé" },
+    ],
+    "12-05": [
+        { year: 1782, name: "Martin Van Buren", desc: "8e président des États-Unis" },
+        { year: 1932, name: "Little Richard", desc: "Musicien américain, pionnier du rock and roll" },
+    ],
+    "12-06": [
+        { year: 1732, name: "Warren Hastings", desc: "Administrateur britannique, premier gouverneur général de l'Inde" },
+    ],
+    "12-07": [
+        { year: 1598, name: "Gian Lorenzo Bernini", desc: "Architecte et sculpteur baroque, génie de la Contre-Réforme" },
+        { year: 1956, name: "Larry Bird", desc: "Basketteur américain, légende des Celtics de Boston" },
+    ],
+    "12-08": [
+        { year: 1865, name: "Jean Sibelius", desc: "Compositeur finlandais, auteur de Finlandia" },
+        { year: 1943, name: "Jim Morrison", desc: "Chanteur américain des Doors" },
+    ],
+    "12-09": [
+        { year: 1608, name: "John Milton", desc: "Poète épique anglais, auteur du Paradis perdu" },
+        { year: 1953, name: "John Malkovich", desc: "Acteur américain" },
+    ],
+    "12-10": [
+        { year: 1822, name: "César Franck", desc: "Compositeur franco-belge" },
+        { year: 1954, name: "Ennio Morricone", desc: "Compositeur italien, maître de la musique de film" },
+    ],
+    "12-11": [
+        { year: 1781, name: "David Brewster", desc: "Physicien écossais, inventeur du kaléidoscope" },
+        { year: 1843, name: "Robert Koch", desc: "Médecin allemand, découvreur du bacille de la tuberculose, prix Nobel" },
+    ],
+    "12-12": [
+        { year: 1745, name: "John Jay", desc: "Père fondateur américain, premier président de la Cour suprême" },
+        { year: 1821, name: "Gustave Flaubert", desc: "Romancier français, auteur de Madame Bovary" },
+        { year: 1915, name: "Frank Sinatra", desc: "Chanteur et acteur américain, 'Ol' Blue Eyes'" },
+    ],
+    "12-13": [
+        { year: 1818, name: "Mary Todd Lincoln", desc: "Première dame des États-Unis, épouse d'Abraham Lincoln" },
+    ],
+    "12-14": [
+        { year: 1546, name: "Tycho Brahe", desc: "Astronome danois, observations précises des planètes" },
+        { year: 1895, name: "Paul Éluard", desc: "Poète surréaliste français" },
+    ],
+    "12-15": [
+        { year: 1832, name: "Alexandre Gustave Eiffel", desc: "Ingénieur français, créateur de la Tour Eiffel" },
+        { year: 1949, name: "Don Johnson", desc: "Acteur américain, Miami Vice" },
+    ],
+    "12-16": [
+        { year: 1770, name: "Ludwig van Beethoven", desc: "Compositeur allemand, génie de la musique classique et romantique" },
+        { year: 1775, name: "Jane Austen", desc: "Romancière britannique, auteure d'Orgueil et Préjugés" },
+        { year: 1901, name: "Margaret Mead", desc: "Anthropologue américaine" },
+    ],
+    "12-17": [
+        { year: 1778, name: "Humphry Davy", desc: "Chimiste britannique, pionnier de l'électrolyse" },
+    ],
+    "12-18": [
+        { year: 1879, name: "Paul Klee", desc: "Peintre suisse expressionniste" },
+        { year: 1916, name: "Betty Grable", desc: "Actrice américaine, pin-up de la Seconde Guerre mondiale" },
+    ],
+    "12-19": [
+        { year: 1683, name: "Philippe II d'Orléans", desc: "Régent de France de 1715 à 1723" },
+    ],
+    "12-20": [
+        { year: 1803, name: "Robert Heinlein", desc: "Romancier américain de science-fiction" },
+    ],
+    "12-21": [
+        { year: 1879, name: "Joseph Staline", desc: "Homme d'État soviétique, secrétaire général du Parti communiste" },
+        { year: 1937, name: "Jane Fonda", desc: "Actrice américaine, deux fois oscarisée" },
+    ],
+    "12-22": [
+        { year: 1858, name: "Giacomo Puccini", desc: "Compositeur d'opéra italien, auteur de La Bohème et Madame Butterfly" },
+        { year: 1949, name: "Robin Gibb", desc: "Chanteur britannique des Bee Gees" },
+    ],
+    "12-23": [
+        { year: 1732, name: "Richard Arkwright", desc: "Inventeur britannique, pionnier de la Révolution industrielle" },
+        { year: 1790, name: "Jean-François Champollion", desc: "Égyptologue français, déchiffreur des hiéroglyphes" },
+    ],
+    "12-24": [
+        { year: 1809, name: "Kit Carson", desc: "Trappeur et guide américain du Far West" },
+        { year: 1922, name: "Ava Gardner", desc: "Actrice américaine, l'une des grandes stars d'Hollywood" },
+    ],
+    "12-25": [
+        { year: 1642, name: "Isaac Newton", desc: "Physicien et mathématicien britannique (calendrier julien)" },
+        { year: 1821, name: "Clara Barton", desc: "Infirmière américaine, fondatrice de la Croix-Rouge américaine" },
+        { year: 1954, name: "Annie Lennox", desc: "Chanteuse britannique" },
+    ],
+    "12-26": [
+        { year: 1791, name: "Charles Babbage", desc: "Mathématicien britannique, concepteur de la première calculatrice mécanique" },
+        { year: 1893, name: "Mao Zedong", desc: "Homme d'État révolutionnaire chinois, fondateur de la République populaire de Chine" },
+    ],
+    "12-27": [
+        { year: 1571, name: "Johannes Kepler", desc: "Astronome allemand, lois du mouvement des planètes" },
+        { year: 1822, name: "Louis Pasteur", desc: "Chimiste et biologiste français, pasteurisation et vaccins" },
+        { year: 1901, name: "Marlene Dietrich", desc: "Actrice et chanteuse germano-américaine" },
+    ],
+    "12-28": [
+        { year: 1856, name: "Woodrow Wilson", desc: "28e président des États-Unis, prix Nobel de la Paix" },
+        { year: 1934, name: "Maggie Smith", desc: "Actrice britannique, oscarisée" },
+    ],
+    "12-29": [
+        { year: 1721, name: "Madame de Pompadour", desc: "Maîtresse officielle de Louis XV, mécène des arts et des lettres" },
+        { year: 1800, name: "Charles Goodyear", desc: "Inventeur américain, vulcanisation du caoutchouc" },
+    ],
+    "12-30": [
+        { year: 1865, name: "Rudyard Kipling", desc: "Écrivain britannique, prix Nobel, auteur du Livre de la Jungle" },
+        { year: 1975, name: "Tiger Woods", desc: "Golfeur américain, 15 titres en Grand Chelem" },
+    ],
+    "12-31": [
+        { year: 1869, name: "Henri Matisse", desc: "Peintre français, fondateur du fauvisme" },
+        { year: 1937, name: "Anthony Hopkins", desc: "Acteur britannique, oscarisé pour Le Silence des agneaux" },
+    ],
+};
+
+function getNaissancesForDay(date) {
+    const mm = String(date.getMonth() + 1).padStart(2, "0");
+    const dd = String(date.getDate()).padStart(2, "0");
+    return naissances[`${mm}-${dd}`] || [];
+}
+
+// ═══════════════════════════════════════════════════════
+// NÉCROLOGIE CÉLÈBRE
+// ═══════════════════════════════════════════════════════
+const necrologie = {
+    "01-01": [
+        { year: 1515, name: "Louis XII", desc: "Roi de France, dit 'Père du peuple'" },
+        { year: 1894, name: "Heinrich Hertz", desc: "Physicien allemand, découvreur des ondes électromagnétiques" },
+    ],
+    "01-02": [
+        { year: 1969, name: "Brian Jones", desc: "Musicien britannique, fondateur des Rolling Stones" },
+        { year: 1872, name: "Théophile Gautier", desc: "Poète et romancier français, figure du Parnasse" },
+    ],
+    "01-03": [
+        { year: 1945, name: "Glenn Miller", desc: "Chef d'orchestre américain de jazz, disparu en vol" },
+        { year: 1966, name: "Giacomo Balla", desc: "Peintre italien, figure du futurisme" },
+    ],
+    "01-04": [
+        { year: 1965, name: "T.S. Eliot", desc: "Poète américano-britannique, prix Nobel" },
+        { year: 1960, name: "Albert Camus", desc: "Écrivain français, prix Nobel, auteur de L'Étranger" },
+    ],
+    "01-05": [
+        { year: 1066, name: "Édouard le Confesseur", desc: "Roi d'Angleterre, canonisé par l'Église catholique" },
+        { year: 1941, name: "Amy Johnson", desc: "Aviatrice britannique, première femme à voler seule de Londres à Sydney" },
+    ],
+    "01-06": [
+        { year: 1852, name: "Louis Braille", desc: "Inventeur français du système de lecture pour les aveugles" },
+        { year: 1919, name: "Theodore Roosevelt", desc: "26e président des États-Unis" },
+    ],
+    "01-07": [
+        { year: 1943, name: "Nikola Tesla", desc: "Inventeur américano-serbe, génie de l'électricité" },
+        { year: 1989, name: "Hirohito", desc: "Empereur du Japon pendant la Seconde Guerre mondiale" },
+    ],
+    "01-08": [
+        { year: 1642, name: "Galileo Galilei", desc: "Astronome et physicien italien, père de la science moderne" },
+        { year: 1996, name: "François Mitterrand", desc: "Président de la République française de 1981 à 1995" },
+    ],
+    "01-09": [
+        { year: 1873, name: "Napoléon III", desc: "Neveu de Napoléon Ier, dernier Empereur des Français" },
+        { year: 1923, name: "Katherine Mansfield", desc: "Nouvelliste néo-zélandaise, figure du modernisme" },
+    ],
+    "01-10": [
+        { year: 1645, name: "William Laud", desc: "Archevêque de Canterbury, décapité pendant la Révolution anglaise" },
+        { year: 1946, name: "Countee Cullen", desc: "Poète américain de la Renaissance de Harlem" },
+    ],
+    "01-11": [
+        { year: 630, name: "Héraclius Ier", desc: "Empereur byzantin" },
+        { year: 1928, name: "Thomas Hardy", desc: "Romancier et poète britannique victorien" },
+    ],
+    "01-12": [
+        { year: 1976, name: "Agatha Christie", desc: "Romancière britannique, reine du roman policier" },
+        { year: 2010, name: "Erich Segal", desc: "Romancier américain, auteur de Love Story" },
+    ],
+    "01-13": [
+        { year: 1324, name: "Marco Polo", desc: "Explorateur vénitien, voyageur de la route de la soie" },
+        { year: 1941, name: "James Joyce", desc: "Écrivain irlandais, auteur d'Ulysse" },
+    ],
+    "01-14": [
+        { year: 1742, name: "Edmond Halley", desc: "Astronome britannique, découvreur de la comète qui porte son nom" },
+        { year: 1898, name: "Lewis Carroll", desc: "Écrivain britannique, auteur d'Alice au Pays des Merveilles" },
+    ],
+    "01-15": [
+        { year: 1919, name: "Rosa Luxemburg", desc: "Révolutionnaire marxiste germano-polonaise, assassinée" },
+        { year: 1850, name: "Joanna Southcott", desc: "Prophétesse anglaise" },
+    ],
+    "01-16": [
+        { year: 2002, name: "Peggy Lee", desc: "Chanteuse américaine de jazz" },
+        { year: 1920, name: "Émilienne d'Alençon", desc: "Courtisane et acrobate française de la Belle Époque" },
+    ],
+    "01-17": [
+        { year: 2016, name: "Alan Rickman", desc: "Acteur britannique, Severus Snape dans Harry Potter" },
+        { year: 1600, name: "Giordano Bruno", desc: "Philosophe et astronome italien, brûlé pour ses idées héliocentristes" },
+    ],
+    "01-18": [
+        { year: 2003, name: "Nell Carter", desc: "Actrice et chanteuse américaine" },
+    ],
+    "01-19": [
+        { year: 1990, name: "Bhagwan Shree Rajneesh (Osho)", desc: "Gourou indien, fondateur du mouvement Rajneeshisme" },
+    ],
+    "01-20": [
+        { year: 1936, name: "George V", desc: "Roi du Royaume-Uni de 1910 à 1936" },
+        { year: 1980, name: "William O. Douglas", desc: "Juge américain le plus longtemps en fonction à la Cour suprême" },
+    ],
+    "01-21": [
+        { year: 1793, name: "Louis XVI", desc: "Roi de France, guillotiné pendant la Révolution" },
+        { year: 1950, name: "George Orwell", desc: "Écrivain britannique, auteur de 1984 et La Ferme des animaux" },
+    ],
+    "01-22": [
+        { year: 1901, name: "Victoria Ire", desc: "Reine du Royaume-Uni, plus long règne britannique avant Élisabeth II" },
+        { year: 1973, name: "Lyndon B. Johnson", desc: "36e président des États-Unis, artisan des droits civiques" },
+    ],
+    "01-23": [
+        { year: 1265, name: "Simon de Montfort", desc: "Fondateur du parlement anglais" },
+        { year: 1997, name: "Claudette Colbert", desc: "Actrice franco-américaine, oscarisée" },
+    ],
+    "01-24": [
+        { year: 41, name: "Caligula", desc: "Empereur romain, connu pour sa tyrannie, assassiné" },
+        { year: 1965, name: "Winston Churchill", desc: "Premier ministre britannique, prix Nobel de Littérature" },
+    ],
+    "01-25": [
+        { year: 1947, name: "Al Capone", desc: "Gangster américain d'origine italienne, figure de la prohibition" },
+        { year: 1974, name: "Samuel Goldwyn", desc: "Producteur américain, co-fondateur de MGM" },
+    ],
+    "01-26": [
+        { year: 1823, name: "Edward Jenner", desc: "Médecin britannique, inventeur du vaccin contre la variole" },
+        { year: 1993, name: "Dizzy Gillespie", desc: "Trompettiste américain de jazz bebop" },
+    ],
+    "01-27": [
+        { year: 1901, name: "Giuseppe Verdi", desc: "Compositeur d'opéra italien" },
+        { year: 1945, name: "Libération d'Auschwitz", desc: "L'Armée rouge libère le camp d'extermination" },
+    ],
+    "01-28": [
+        { year: 814, name: "Charlemagne", desc: "Roi des Francs, Lombards et Empereur d'Occident" },
+        { year: 1986, name: "Christa McAuliffe", desc: "Institutrice américaine, décédée dans la catastrophe Challenger" },
+    ],
+    "01-29": [
+        { year: 1820, name: "George III", desc: "Roi du Royaume-Uni" },
+        { year: 1963, name: "Robert Frost", desc: "Poète américain, quatre fois prix Pulitzer" },
+    ],
+    "01-30": [
+        { year: 1948, name: "Mahatma Gandhi", desc: "Leader de l'indépendance de l'Inde, père de la non-violence, assassiné" },
+        { year: 1649, name: "Charles Ier d'Angleterre", desc: "Roi d'Angleterre, décapité" },
+    ],
+    "01-31": [
+        { year: 1606, name: "Guy Fawkes", desc: "Catholique anglais, exécuté après la Conspiration des poudres" },
+        { year: 1956, name: "A.A. Milne", desc: "Auteur britannique, créateur de Winnie l'Ourson" },
+    ],
+    "02-01": [
+        { year: 1979, name: "Sid Vicious", desc: "Bassiste britannique des Sex Pistols" },
+        { year: 1948, name: "Orville Wright", desc: "Pionnier américain de l'aviation" },
+    ],
+    "02-02": [
+        { year: 1907, name: "Dmitri Mendeleïev", desc: "Chimiste russe, créateur du tableau périodique des éléments" },
+        { year: 1970, name: "Bertrand Russell", desc: "Philosophe et mathématicien britannique, prix Nobel de Littérature" },
+    ],
+    "02-03": [
+        { year: 1959, name: "Buddy Holly", desc: "Musicien américain pionnier du rock and roll" },
+        { year: 1468, name: "Johannes Gutenberg", desc: "Imprimeur allemand, inventeur de l'imprimerie à caractères mobiles" },
+    ],
+    "02-04": [
+        { year: 1983, name: "Karen Carpenter", desc: "Chanteuse américaine des Carpenters" },
+        { year: 2004, name: "Alistair Cooke", desc: "Journaliste américano-britannique, Lettre d'Amérique" },
+    ],
+    "02-05": [
+        { year: 1881, name: "Thomas Carlyle", desc: "Historien et essayiste écossais" },
+        { year: 1998, name: "Falco", desc: "Chanteur autrichien, mort dans un accident de voiture" },
+    ],
+    "02-06": [
+        { year: 1804, name: "Joseph Priestley", desc: "Chimiste britannique, découvreur de l'oxygène" },
+        { year: 1952, name: "George VI", desc: "Roi du Royaume-Uni pendant la Seconde Guerre mondiale" },
+    ],
+    "02-07": [
+        { year: 1960, name: "Boris Pasternak", desc: "Écrivain russe, prix Nobel, auteur du Docteur Jivago" },
+        { year: 2013, name: "Ed Koch", desc: "Homme politique américain, maire de New York 1978-1989" },
+    ],
+    "02-08": [
+        { year: 1587, name: "Marie Stuart", desc: "Reine d'Écosse, décapitée sur ordre d'Élisabeth Ire" },
+        { year: 1828, name: "Franz Schubert", desc: "Compositeur autrichien, maître du lied romantique" },
+    ],
+    "02-09": [
+        { year: 1881, name: "Fiodor Dostoïevski", desc: "Romancier russe, auteur de Crime et Châtiment" },
+        { year: 1828, name: "Franz Schubert", desc: "Compositeur autrichien" },
+    ],
+    "02-10": [
+        { year: 1837, name: "Alexandre Pouchkine", desc: "Poète russe, tué en duel" },
+        { year: 1975, name: "P.G. Wodehouse", desc: "Romancier britannique, créateur de Jeeves" },
+    ],
+    "02-11": [
+        { year: 1650, name: "René Descartes", desc: "Philosophe et mathématicien français" },
+        { year: 2012, name: "Whitney Houston", desc: "Chanteuse américaine, l'une des plus grandes voix du XXe siècle" },
+    ],
+    "02-12": [
+        { year: 1804, name: "Immanuel Kant", desc: "Philosophe prussien" },
+        { year: 1955, name: "Alexander Fleming", desc: "Biologiste britannique, découvreur de la pénicilline" },
+    ],
+    "02-13": [
+        { year: 1883, name: "Richard Wagner", desc: "Compositeur allemand, maître de l'opéra romantique" },
+        { year: 1945, name: "Bombardement de Dresde", desc: "Destruction de la ville par les Alliés, dizaines de milliers de morts" },
+    ],
+    "02-14": [
+        { year: 270, name: "Saint Valentin", desc: "Martyr chrétien, patron des amoureux" },
+        { year: 1929, name: "Massacre de la Saint-Valentin", desc: "7 gangsters de Chicago assassinés par la bande d'Al Capone" },
+    ],
+    "02-15": [
+        { year: 1989, name: "Retrait soviétique d'Afghanistan", desc: "Dernier soldat soviétique quitte le pays" },
+        { year: 1990, name: "Malcolm Forbes", desc: "Éditeur américain" },
+    ],
+    "02-16": [
+        { year: 1856, name: "Heinrich Heine", desc: "Poète romantique allemand" },
+        { year: 2003, name: "Dolly la brebis", desc: "Premier mammifère cloné, euthanasié à 6 ans" },
+    ],
+    "02-17": [
+        { year: 1600, name: "Giordano Bruno", desc: "Philosophe et astronome italien, brûlé vif pour hérésie" },
+        { year: 1934, name: "Albert Ier de Belgique", desc: "Roi des Belges, mort en montagne" },
+    ],
+    "02-18": [
+        { year: 1546, name: "Martin Luther", desc: "Réformateur protestant allemand" },
+        { year: 2001, name: "Dale Earnhardt Sr.", desc: "Pilote de NASCAR américain, mort à Daytona" },
+    ],
+    "02-19": [
+        { year: 1952, name: "Knut Hamsun", desc: "Romancier norvégien, prix Nobel de Littérature" },
+        { year: 1987, name: "Andy Warhol", desc: "Artiste américain, pape du Pop Art" },
+    ],
+    "02-20": [
+        { year: 2005, name: "Hunter S. Thompson", desc: "Journaliste américain, père du journalisme gonzo, suicide" },
+        { year: 1816, name: "Johann Heinrich Pestalozzi", desc: "Pédagogue suisse, réformateur de l'éducation" },
+    ],
+    "02-21": [
+        { year: 1965, name: "Malcolm X", desc: "Militant américain des droits civiques, assassiné" },
+        { year: 2020, name: "Katherine Johnson", desc: "Mathématicienne afro-américaine de la NASA" },
+    ],
+    "02-22": [
+        { year: 1500, name: "Piero di Cosimo", desc: "Peintre florentin de la Renaissance" },
+        { year: 1987, name: "Andy Warhol", desc: "Artiste américain du Pop Art" },
+    ],
+    "02-23": [
+        { year: 1821, name: "John Keats", desc: "Poète romantique britannique, mort à 25 ans de la tuberculose" },
+        { year: 1955, name: "Paul Claudel", desc: "Écrivain et diplomate français" },
+    ],
+    "02-24": [
+        { year: 1823, name: "Joséphine de Beauharnais", desc: "Première épouse de Napoléon, Impératrice" },
+        { year: 1998, name: "Dr. Benjamin Spock", desc: "Pédiatre américain, auteur de la Bible des parents" },
+    ],
+    "02-25": [
+        { year: 1723, name: "Christopher Wren", desc: "Architecte britannique, concepteur de la cathédrale Saint-Paul" },
+        { year: 1983, name: "Tennessee Williams", desc: "Dramaturge américain, La Ménagerie de verre" },
+    ],
+    "02-26": [
+        { year: 1971, name: "Satchel Paige", desc: "Lanceur légendaire de baseball américain" },
+        { year: 1802, name: "Joséphine de Beauharnais", desc: "Impératrice des Français" },
+    ],
+    "02-27": [
+        { year: 2021, name: "Lawrence Ferlinghetti", desc: "Poète américain de la Beat Generation" },
+        { year: 1936, name: "Ivan Pavlov", desc: "Physiologiste russe, réflexes conditionnés" },
+    ],
+    "02-28": [
+        { year: 1974, name: "Oskar Schindler", desc: "Industriel allemand, sauva plus de 1 200 Juifs pendant la Shoah" },
+        { year: 1994, name: "Witold Lutosławski", desc: "Compositeur polonais, figure de la musique contemporaine" },
+    ],
+    "03-01": [
+        { year: 1792, name: "Léopold II du Saint-Empire", desc: "Dernier Empereur du Saint-Empire romain germanique" },
+        { year: 2004, name: "Spalding Gray", desc: "Acteur et écrivain américain" },
+    ],
+    "03-02": [
+        { year: 1791, name: "John Wesley", desc: "Fondateur du méthodisme" },
+        { year: 1930, name: "D.H. Lawrence", desc: "Romancier britannique, auteur de L'Amant de Lady Chatterley" },
+    ],
+    "03-03": [
+        { year: 1703, name: "Robert Hooke", desc: "Scientifique britannique, loi de Hooke" },
+        { year: 1847, name: "Alexander Graham Bell (naissance)", desc: "" },
+    ],
+    "03-04": [
+        { year: 1238, name: "Bertold V de Zähringen", desc: "Duc germanique" },
+        { year: 1946, name: "Gertrude Stein", desc: "Écrivaine américaine expatriée à Paris" },
+    ],
+    "03-05": [
+        { year: 1827, name: "Alessandro Volta", desc: "Physicien italien, inventeur de la pile" },
+        { year: 1953, name: "Joseph Staline", desc: "Dirigeant soviétique" },
+    ],
+    "03-06": [
+        { year: 1836, name: "Davy Crockett", desc: "Pionnier américain, tombé à Fort Alamo" },
+        { year: 1900, name: "Gottlieb Daimler", desc: "Ingénieur allemand, pionnier de l'automobile" },
+    ],
+    "03-07": [
+        { year: 1274, name: "Thomas d'Aquin", desc: "Philosophe et théologien dominicain" },
+        { year: 1999, name: "Stanley Kubrick", desc: "Cinéaste américain, 2001, l'Odyssée de l'espace" },
+    ],
+    "03-08": [
+        { year: 1702, name: "Guillaume III d'Orange", desc: "Roi d'Angleterre et d'Irlande" },
+        { year: 2014, name: "Disparition du vol MH370", desc: "Boeing 777 de Malaysia Airlines, 239 personnes à bord" },
+    ],
+    "03-09": [
+        { year: 1888, name: "Guillaume Ier de Prusse", desc: "Roi de Prusse et premier Empereur allemand" },
+    ],
+    "03-10": [
+        { year: 1872, name: "Giuseppe Mazzini", desc: "Révolutionnaire et patriote italien" },
+        { year: 1913, name: "Harriet Tubman", desc: "Militante abolitionniste américaine, 'Moïse des esclaves'" },
+    ],
+    "03-11": [
+        { year: 1955, name: "Alexander Fleming", desc: "Biologiste britannique, découvreur de la pénicilline" },
+        { year: 2004, name: "Attentats de Madrid", desc: "193 morts dans des attentats à la bombe dans les trains de banlieue" },
+    ],
+    "03-12": [
+        { year: 1925, name: "Sun Yat-sen", desc: "Père de la Chine moderne" },
+        { year: 1955, name: "Charlie Parker", desc: "Saxophoniste américain, père du jazz bebop" },
+    ],
+    "03-13": [
+        { year: 1881, name: "Alexandre II de Russie", desc: "Tsar de Russie, assassiné par une bombe" },
+    ],
+    "03-14": [
+        { year: 1883, name: "Karl Marx", desc: "Philosophe et économiste allemand, auteur du Capital" },
+        { year: 2018, name: "Stephen Hawking", desc: "Physicien britannique, théoricien des trous noirs" },
+    ],
+    "03-15": [
+        { year: -44, name: "Jules César", desc: "Général et homme d'État romain, assassiné aux Ides de Mars" },
+        { year: 1937, name: "H.P. Lovecraft", desc: "Écrivain américain de fantastique et d'horreur" },
+    ],
+    "03-16": [
+        { year: 1792, name: "Gustave III de Suède", desc: "Roi de Suède, assassiné lors d'un bal masqué" },
+    ],
+    "03-17": [
+        { year: 1680, name: "François de La Rochefoucauld", desc: "Écrivain moraliste français" },
+        { year: 2015, name: "Leonard Nimoy", desc: "Acteur américain, Spock dans Star Trek" },
+    ],
+    "03-18": [
+        { year: 1314, name: "Jacques de Molay", desc: "Dernier grand maître de l'Ordre des Templiers, brûlé vif" },
+        { year: 1584, name: "Ivan le Terrible", desc: "Premier tsar de Russie" },
+    ],
+    "03-19": [
+        { year: 1687, name: "René-Robert Cavelier de La Salle", desc: "Explorateur français, découvreur du Mississippi, assassiné" },
+        { year: 2005, name: "Johnnie Cochran", desc: "Avocat américain de O.J. Simpson" },
+    ],
+    "03-20": [
+        { year: 1727, name: "Isaac Newton", desc: "Physicien et mathématicien britannique, père de la mécanique classique" },
+        { year: 2015, name: "Lee Kuan Yew", desc: "Fondateur et premier ministre de Singapour" },
+    ],
+    "03-21": [
+        { year: 1617, name: "Pocahontas", desc: "Princesse amérindienne algonquine" },
+        { year: 1963, name: "William Beveridge", desc: "Économiste britannique, père de l'État-providence" },
+    ],
+    "03-22": [
+        { year: 1687, name: "Jean-Baptiste Lully", desc: "Compositeur baroque franco-italien, père de l'opéra français" },
+        { year: 1832, name: "Johann Wolfgang von Goethe", desc: "Écrivain et savant allemand, auteur de Faust" },
+    ],
+    "03-23": [
+        { year: 1801, name: "Paul Ier de Russie", desc: "Tsar de Russie, assassiné" },
+        { year: 2009, name: "Jade Goody", desc: "Personnalité médiatique britannique" },
+    ],
+    "03-24": [
+        { year: 1603, name: "Élisabeth Ire d'Angleterre", desc: "Reine d'Angleterre, 'la Reine vierge'" },
+        { year: 1905, name: "Jules Verne", desc: "Romancier français, père de la science-fiction moderne" },
+    ],
+    "03-25": [
+        { year: 1195, name: "Saladin", desc: "Sultan d'Égypte et de Syrie, adversaire des Croisés" },
+        { year: 1975, name: "King Fayçal d'Arabie Saoudite", desc: "Roi d'Arabie Saoudite, assassiné" },
+    ],
+    "03-26": [
+        { year: 1827, name: "Ludwig van Beethoven", desc: "Compositeur allemand, génie de la musique classique" },
+        { year: 1991, name: "Robert Maxwell", desc: "Magnat de la presse britannique" },
+    ],
+    "03-27": [
+        { year: 1855, name: "Charlotte Brontë", desc: "Romancière britannique, auteure de Jane Eyre" },
+    ],
+    "03-28": [
+        { year: 1941, name: "Virginia Woolf", desc: "Romancière moderniste britannique, se noie dans la rivière Ouse" },
+        { year: 1969, name: "Dwight D. Eisenhower", desc: "34e président des États-Unis" },
+    ],
+    "03-29": [
+        { year: 1972, name: "Ed Sullivan", desc: "Animateur américain de télévision" },
+        { year: 2009, name: "Maurice Jarre", desc: "Compositeur français, musiques de Lawrence d'Arabie" },
+    ],
+    "03-30": [
+        { year: 1987, name: "Harold Macmillan", desc: "Premier ministre britannique 1957-1963" },
+        { year: 1282, name: "Vêpres siciliennes", desc: "Massacre des Français en Sicile, coup d'envoi de l'insurrection" },
+    ],
+    "03-31": [
+        { year: 1631, name: "John Donne", desc: "Poète et prédicateur anglais métaphysique" },
+        { year: 1968, name: "Lyman Frank Baum", desc: "Écrivain américain, auteur du Magicien d'Oz" },
+    ],
+    "04-01": [
+        { year: 1204, name: "Aliénor d'Aquitaine", desc: "Reine de France puis d'Angleterre, l'une des femmes les plus puissantes du Moyen Âge" },
+        { year: 1977, name: "Ethel Waters", desc: "Actrice et chanteuse américaine" },
+    ],
+    "04-02": [
+        { year: 1872, name: "Samuel Morse", desc: "Inventeur américain du télégraphe et du code Morse" },
+        { year: 1955, name: "Albert Einstein", desc: "Physicien germano-américain, père de la relativité" },
+    ],
+    "04-03": [
+        { year: 1897, name: "Johannes Brahms", desc: "Compositeur et pianiste allemand" },
+        { year: 1882, name: "Jesse James", desc: "Hors-la-loi américain, assassiné dans son propre salon" },
+    ],
+    "04-04": [
+        { year: 1968, name: "Martin Luther King Jr.", desc: "Leader américain des droits civiques, assassiné à Memphis" },
+        { year: 2005, name: "Jean-Paul II", desc: "Pape de 1978 à 2005" },
+    ],
+    "04-05": [
+        { year: 1955, name: "Winston Churchill", desc: "Premier ministre britannique" },
+        { year: 1994, name: "Kurt Cobain", desc: "Chanteur américain, leader de Nirvana, suicide" },
+    ],
+    "04-06": [
+        { year: 1528, name: "Albrecht Dürer", desc: "Peintre et graveur allemand de la Renaissance" },
+        { year: 1992, name: "Isaac Asimov", desc: "Écrivain américain de science-fiction" },
+    ],
+    "04-07": [
+        { year: 1498, name: "Charles VIII de France", desc: "Roi de France, mort d'une chute de tête contre un linteau" },
+        { year: 2001, name: "Joey Ramone", desc: "Chanteur américain, fondateur des Ramones" },
+    ],
+    "04-08": [
+        { year: 1973, name: "Pablo Picasso", desc: "Peintre et sculpteur espagnol, cofondateur du cubisme" },
+        { year: 2013, name: "Margaret Thatcher", desc: "Première femme Premier ministre du Royaume-Uni" },
+    ],
+    "04-09": [
+        { year: 1553, name: "François Rabelais", desc: "Écrivain humaniste français" },
+        { year: 1945, name: "Dietrich Bonhoeffer", desc: "Théologien allemand, pendu par les nazis" },
+    ],
+    "04-10": [
+        { year: 1919, name: "Emiliano Zapata", desc: "Révolutionnaire mexicain, assassiné" },
+        { year: 2010, name: "Lech Kaczyński", desc: "Président de la Pologne, mort dans un crash à Smolensk" },
+    ],
+    "04-11": [
+        { year: 1987, name: "Primo Levi", desc: "Écrivain et chimiste italien, survivant d'Auschwitz" },
+    ],
+    "04-12": [
+        { year: 1945, name: "Franklin D. Roosevelt", desc: "32e président des États-Unis" },
+        { year: 1981, name: "Joe Louis", desc: "Boxeur américain, champion du monde des lourds" },
+    ],
+    "04-13": [
+        { year: 1695, name: "Jean de La Fontaine", desc: "Poète français, auteur des Fables" },
+    ],
+    "04-14": [
+        { year: 1759, name: "Georg Friedrich Händel", desc: "Compositeur baroque germano-britannique, auteur du Messie" },
+        { year: 1865, name: "Abraham Lincoln", desc: "16e président des États-Unis, touché par balle au théâtre Ford" },
+    ],
+    "04-15": [
+        { year: 1865, name: "Abraham Lincoln", desc: "Président américain, décédé des suites de son assassinat" },
+        { year: 1912, name: "Naufrage du Titanic", desc: "Le paquebot coule, environ 1 500 morts" },
+    ],
+    "04-16": [
+        { year: 1828, name: "Francisco de Goya", desc: "Peintre espagnol" },
+    ],
+    "04-17": [
+        { year: 1790, name: "Benjamin Franklin", desc: "Inventeur et Père fondateur des États-Unis" },
+        { year: 1998, name: "Octavio Paz", desc: "Poète mexicain, prix Nobel de Littérature" },
+    ],
+    "04-18": [
+        { year: 1882, name: "Charles Darwin", desc: "Naturaliste britannique, père de l'évolution" },
+    ],
+    "04-19": [
+        { year: 1995, name: "Attentat d'Oklahoma City", desc: "168 morts dans l'explosion d'un immeuble fédéral américain" },
+    ],
+    "04-20": [
+        { year: 2010, name: "Explosion de Deepwater Horizon", desc: "Pire marée noire de l'histoire américaine" },
+    ],
+    "04-21": [
+        { year: 2016, name: "Prince (Rogers Nelson)", desc: "Musicien américain, génie de la pop et du funk" },
+    ],
+    "04-22": [
+        { year: 1616, name: "Miguel de Cervantes", desc: "Écrivain espagnol, auteur de Don Quichotte" },
+        { year: 1994, name: "Richard Nixon", desc: "37e président des États-Unis" },
+    ],
+    "04-23": [
+        { year: 1616, name: "William Shakespeare", desc: "Dramaturge et poète anglais" },
+        { year: 1616, name: "Miguel de Cervantes", desc: "Écrivain espagnol" },
+    ],
+    "04-24": [
+        { year: 1731, name: "Daniel Defoe", desc: "Romancier britannique, auteur de Robinson Crusoé" },
+        { year: 1915, name: "Génocide arménien", desc: "Début du génocide arménien par l'Empire ottoman" },
+    ],
+    "04-26": [
+        { year: 1986, name: "Catastrophe de Tchernobyl", desc: "Explosion du réacteur nucléaire soviétique, pire accident nucléaire" },
+        { year: 1937, name: "Bombardement de Guernica", desc: "Ville basque détruite par l'aviation nazie et fasciste" },
+    ],
+    "04-27": [
+        { year: 1521, name: "Fernand de Magellan", desc: "Explorateur portugais, tué aux Philippines lors de la circumnavigation" },
+        { year: 1937, name: "Antonio Gramsci", desc: "Philosophe marxiste et homme politique italien" },
+    ],
+    "04-28": [
+        { year: 1945, name: "Benito Mussolini", desc: "Dictateur fasciste italien, fusillé avec sa maîtresse" },
+        { year: 1980, name: "Alfred Hitchcock", desc: "Cinéaste britannique, maître du suspense" },
+    ],
+    "04-30": [
+        { year: 1945, name: "Adolf Hitler", desc: "Dictateur nazi, suicide dans son bunker berlinois" },
+        { year: 1945, name: "Eva Braun", desc: "Compagne d'Adolf Hitler, suicide le même jour" },
+    ],
+    "05-01": [
+        { year: 1945, name: "Joseph Goebbels", desc: "Ministre de la Propagande du IIIe Reich, suicide" },
+        { year: 1873, name: "David Livingstone", desc: "Explorateur et missionnaire britannique en Afrique" },
+    ],
+    "05-02": [
+        { year: 1519, name: "Léonard de Vinci", desc: "Génie de la Renaissance, décédé à Amboise" },
+        { year: 1945, name: "Chute de Berlin", desc: "Capitulation de la garnison allemande de Berlin" },
+    ],
+    "05-03": [
+        { year: 2013, name: "Jeff Hanneman", desc: "Guitariste américain de Slayer" },
+    ],
+    "05-05": [
+        { year: 1821, name: "Napoléon Bonaparte", desc: "Général et Empereur des Français, exilé à Sainte-Hélène" },
+        { year: 1980, name: "Josip Broz Tito", desc: "Dirigeant yougoslave, fondateur de la Yougoslavie" },
+    ],
+    "05-06": [
+        { year: 1862, name: "Henry David Thoreau", desc: "Écrivain et philosophe américain" },
+    ],
+    "05-07": [
+        { year: 1915, name: "Naufrage du Lusitania", desc: "Le paquebot torpillé par un sous-marin allemand, 1 198 morts" },
+    ],
+    "05-08": [
+        { year: 1945, name: "Capitulation de l'Allemagne nazie", desc: "Fin de la Seconde Guerre mondiale en Europe" },
+    ],
+    "05-09": [
+        { year: 1978, name: "Aldo Moro", desc: "Premier ministre italien, assassiné par les Brigades Rouges" },
+        { year: 1986, name: "Tenzing Norgay", desc: "Sherpa népalais, premier au sommet de l'Everest avec Hillary" },
+    ],
+    "05-11": [
+        { year: 1981, name: "Bob Marley", desc: "Musicien jamaïcain de reggae, roi du reggae mondial" },
+    ],
+    "05-13": [
+        { year: 1981, name: "Attentat contre Jean-Paul II", desc: "Le pape blessé place Saint-Pierre par Mehmet Ali Ağca" },
+        { year: 2013, name: "Ray Manzarek", desc: "Claviériste américain des Doors" },
+    ],
+    "05-14": [
+        { year: 1610, name: "Henri IV de France", desc: "Roi de France, assassiné par Ravaillac" },
+    ],
+    "05-17": [
+        { year: 1510, name: "Sandro Botticelli", desc: "Peintre florentin de la Renaissance" },
+        { year: 2012, name: "Donna Summer", desc: "Chanteuse américaine, reine du disco" },
+    ],
+    "05-19": [
+        { year: 1536, name: "Anne Boleyn", desc: "Reine d'Angleterre, mère d'Élisabeth Ire, décapitée" },
+        { year: 1994, name: "Jacqueline Onassis", desc: "Première dame des États-Unis, épouse de JFK" },
+    ],
+    "05-20": [
+        { year: 1834, name: "Marquis de Lafayette", desc: "Militaire français, héros de la Révolution américaine" },
+        { year: 1990, name: "Sammy Davis Jr.", desc: "Chanteur et acteur américain des Rat Pack" },
+    ],
+    "05-21": [
+        { year: 1991, name: "Rajiv Gandhi", desc: "Premier ministre indien, assassiné" },
+    ],
+    "05-22": [
+        { year: 1885, name: "Victor Hugo", desc: "Écrivain français, auteur des Misérables" },
+        { year: 1968, name: "Yuri Gagarine", desc: "Cosmonaute soviétique, mort dans un accident d'avion" },
+    ],
+    "05-23": [
+        { year: 1543, name: "Nicolas Copernic", desc: "Astronome polonais, mort le jour de la publication de son grand œuvre" },
+        { year: 1934, name: "Bonnie Parker et Clyde Barrow", desc: "Hors-la-loi américains, tués dans une embuscade policière" },
+    ],
+    "05-25": [
+        { year: 2020, name: "George Floyd", desc: "Mort aux États-Unis, déclenchant des manifestations mondiales" },
+    ],
+    "05-27": [
+        { year: 1564, name: "Jean Calvin", desc: "Réformateur protestant" },
+        { year: 1941, name: "Naufrage du Bismarck", desc: "Le cuirassé nazi coulé en Atlantique nord" },
+    ],
+    "05-29": [
+        { year: 1453, name: "Chute de Constantinople", desc: "Fin de l'Empire byzantin sous les coups des Ottomans" },
+        { year: 2019, name: "Dr. John", desc: "Musicien américain de blues de la Nouvelle-Orléans" },
+    ],
+    "05-30": [
+        { year: 1431, name: "Jeanne d'Arc", desc: "Héroïne nationale française, brûlée vive à Rouen" },
+        { year: 1912, name: "Wilbur Wright", desc: "Pionnier américain de l'aviation" },
+    ],
+    "05-31": [
+        { year: 1968, name: "Helen Keller", desc: "Écrivaine et militante américaine, aveugle et sourde" },
+    ],
+    "06-01": [
+        { year: 1916, name: "Bataille du Jutland", desc: "Plus grande bataille navale de la Première Guerre mondiale" },
+    ],
+    "06-02": [
+        { year: 1882, name: "Giuseppe Garibaldi", desc: "Général et patriote italien, unificateur de l'Italie" },
+        { year: 1941, name: "Lou Gehrig", desc: "Joueur de baseball américain, la 'Fierté des Yankees'" },
+    ],
+    "06-03": [
+        { year: 1875, name: "Georges Bizet", desc: "Compositeur français, auteur de Carmen" },
+        { year: 1963, name: "Pape Jean XXIII", desc: "Pontife du Concile Vatican II" },
+    ],
+    "06-04": [
+        { year: 1989, name: "Massacre de la Place Tiananmen", desc: "Répression des manifestations étudiantes par l'armée chinoise" },
+    ],
+    "06-05": [
+        { year: 1968, name: "Robert F. Kennedy", desc: "Homme politique américain, assassiné à Los Angeles" },
+    ],
+    "06-06": [
+        { year: 1944, name: "Jour J — Débarquement de Normandie", desc: "Opération Overlord, 10 000 soldats alliés morts ce jour" },
+    ],
+    "06-07": [
+        { year: 1954, name: "Alan Turing", desc: "Mathématicien britannique, père de l'informatique, mort suspecte" },
+        { year: 1329, name: "Robert Ier d'Écosse (Robert the Bruce)", desc: "Roi d'Écosse, héros de l'indépendance" },
+    ],
+    "06-08": [
+        { year: 632, name: "Mahomet", desc: "Prophète et fondateur de l'islam" },
+    ],
+    "06-09": [
+        { year: 68, name: "Néron", desc: "Empereur romain, suicide" },
+        { year: 1870, name: "Charles Dickens", desc: "Romancier britannique" },
+    ],
+    "06-10": [
+        { year: 1836, name: "André-Marie Ampère", desc: "Physicien français, père de l'électrodynamique" },
+    ],
+    "06-11": [
+        { year: 1727, name: "George Ier de Grande-Bretagne", desc: "Premier roi de la maison de Hanovre" },
+        { year: 1963, name: "Thích Quảng Đức", desc: "Moine bouddhiste vietnamien, immolé par le feu en protestation" },
+    ],
+    "06-13": [
+        { year: 1886, name: "Louis II de Bavière", desc: "Roi 'fou' de Bavière, retrouvé noyé" },
+    ],
+    "06-14": [
+        { year: 1928, name: "Emmeline Pankhurst", desc: "Leader des suffragettes britanniques" },
+    ],
+    "06-15": [
+        { year: 1888, name: "Frédéric III d'Allemagne", desc: "Empereur d'Allemagne, mort de cancer après 99 jours de règne" },
+    ],
+    "06-16": [
+        { year: 1977, name: "Werner von Braun", desc: "Ingénieur américano-allemand, père des fusées V2 et de la NASA" },
+        { year: 1976, name: "Émeutes de Soweto", desc: "Jeunes Noirs tués par la police de l'apartheid en Afrique du Sud" },
+    ],
+    "06-17": [
+        { year: 1997, name: "Jacques Cousteau", desc: "Explorateur et cinéaste sous-marin français" },
+    ],
+    "06-18": [
+        { year: 1815, name: "Bataille de Waterloo", desc: "Défaite finale de Napoléon contre les forces alliées" },
+    ],
+    "06-19": [
+        { year: 1867, name: "Maximilien Ier du Mexique", desc: "Archiduc autrichien et Empereur du Mexique, fusillé" },
+        { year: 1953, name: "Julius et Ethel Rosenberg", desc: "Époux américains exécutés pour espionnage au profit de l'URSS" },
+    ],
+    "06-20": [
+        { year: 1837, name: "Guillaume IV du Royaume-Uni", desc: "Roi du Royaume-Uni" },
+        { year: 2017, name: "Helmut Kohl", desc: "Chancelier allemand, artisan de la réunification" },
+    ],
+    "06-21": [
+        { year: 1377, name: "Édouard III d'Angleterre", desc: "Roi d'Angleterre, longuement régnant" },
+        { year: 1908, name: "Nikolaï Rimski-Korsakov", desc: "Compositeur russe" },
+    ],
+    "06-22": [
+        { year: 1633, name: "Galilée abjure ses théories", desc: "L'Inquisition oblige Galilée à se rétracter" },
+        { year: 1969, name: "Judy Garland", desc: "Actrice américaine, Dorothy dans Le Magicien d'Oz" },
+    ],
+    "06-23": [
+        { year: 1984, name: "Michel Foucault", desc: "Philosophe français, maître de la pensée critique" },
+    ],
+    "06-24": [
+        { year: 1519, name: "Lucrèce Borgia", desc: "Duchesse italienne, figure de la Renaissance" },
+    ],
+    "06-25": [
+        { year: 2009, name: "Michael Jackson", desc: "Chanteur américain, 'roi de la pop'" },
+        { year: 1876, name: "Bataille de Little Bighorn", desc: "Custer et ses soldats massacrés par les Sioux de Sitting Bull" },
+    ],
+    "06-27": [
+        { year: 1844, name: "Joseph Smith Jr.", desc: "Fondateur de l'Église des Saints des Derniers Jours, assassiné" },
+    ],
+    "06-28": [
+        { year: 1914, name: "Archiduc François-Ferdinand", desc: "Héritier d'Autriche-Hongrie, assassiné à Sarajevo — déclencheur de la Grande Guerre" },
+    ],
+    "07-01": [
+        { year: 1916, name: "Bataille de la Somme", desc: "Le jour le plus meurtrier de l'armée britannique : 57 000 victimes" },
+        { year: 1961, name: "Ernest Hemingway", desc: "Romancier américain, prix Nobel, suicide" },
+    ],
+    "07-03": [
+        { year: 1971, name: "Jim Morrison", desc: "Chanteur américain des Doors, mort à Paris à 27 ans" },
+    ],
+    "07-04": [
+        { year: 1826, name: "John Adams", desc: "2e président des États-Unis" },
+        { year: 1826, name: "Thomas Jefferson", desc: "3e président des États-Unis — mêmes jour et année qu'Adams" },
+    ],
+    "07-06": [
+        { year: 1415, name: "Jan Hus", desc: "Théologien tchèque, brûlé vif pour hérésie au Concile de Constance" },
+        { year: 1971, name: "Louis Armstrong", desc: "Trompettiste américain, génie du jazz" },
+    ],
+    "07-07": [
+        { year: 1930, name: "Arthur Conan Doyle", desc: "Romancier britannique, créateur de Sherlock Holmes" },
+        { year: 2005, name: "Attentats de Londres", desc: "52 morts dans des bombes au métro et dans un bus" },
+    ],
+    "07-08": [
+        { year: 1822, name: "Percy Bysshe Shelley", desc: "Poète romantique britannique, noyé en mer" },
+    ],
+    "07-09": [
+        { year: 1850, name: "Zachary Taylor", desc: "12e président des États-Unis" },
+        { year: 1987, name: "Andrés Segovia", desc: "Guitariste espagnol, maître de la guitare classique" },
+    ],
+    "07-10": [
+        { year: 1985, name: "Rainbow Warrior", desc: "Navire de Greenpeace coulé par les services secrets français en Nouvelle-Zélande" },
+    ],
+    "07-11": [
+        { year: 1995, name: "Massacre de Srebrenica", desc: "Plus de 8 000 Bosniaques musulmans tués par les forces serbes" },
+    ],
+    "07-12": [
+        { year: 1804, name: "Alexander Hamilton", desc: "Père fondateur américain, tué en duel par Aaron Burr" },
+    ],
+    "07-13": [
+        { year: 1793, name: "Jean-Paul Marat", desc: "Révolutionnaire français, assassiné dans sa baignoire par Charlotte Corday" },
+        { year: 1954, name: "Frida Kahlo", desc: "Peintre mexicaine, icône du surréalisme et du féminisme" },
+    ],
+    "07-14": [
+        { year: 1223, name: "Philippe II Auguste", desc: "Roi de France, vainqueur de la bataille de Bouvines" },
+        { year: 2016, name: "Attentat de Nice", desc: "86 morts après qu'un camion fonce sur la foule du 14 juillet" },
+    ],
+    "07-16": [
+        { year: 1918, name: "Nicolas II de Russie", desc: "Dernier Tsar, fusillé avec toute sa famille à Iekaterinbourg" },
+        { year: 1999, name: "John F. Kennedy Jr.", desc: "Fils du président Kennedy, mort dans un crash aérien" },
+    ],
+    "07-17": [
+        { year: 2014, name: "Vol MH17", desc: "Avion de Malaysian Airlines abattu au-dessus de l'Ukraine, 298 morts" },
+    ],
+    "07-18": [
+        { year: 64, name: "Grand incendie de Rome", desc: "Rome brûle pendant 6 jours sous Néron" },
+        { year: 1817, name: "Jane Austen", desc: "Romancière britannique, auteure d'Orgueil et Préjugés" },
+    ],
+    "07-20": [
+        { year: 1944, name: "Attentat contre Hitler", desc: "Stauffenberg fait exploser une bombe dans le bunker du Führer — Hitler survit" },
+        { year: 1973, name: "Bruce Lee", desc: "Acteur et maître d'arts martiaux sino-américain" },
+    ],
+    "07-22": [
+        { year: 2011, name: "Massacre d'Utøya", desc: "77 personnes tuées par Anders Breivik en Norvège" },
+    ],
+    "07-23": [
+        { year: 1885, name: "Ulysses S. Grant", desc: "18e président des États-Unis, général de l'Union" },
+    ],
+    "07-25": [
+        { year: 2000, name: "Crash du Concorde", desc: "113 morts dans l'accident du supersonique à Roissy" },
+    ],
+    "07-26": [
+        { year: 1952, name: "Évita Perón", desc: "Première dame d'Argentine, figure populaire" },
+    ],
+    "07-27": [
+        { year: 1890, name: "Vincent van Gogh", desc: "Peintre néerlandais, décède des suites d'une blessure par balle" },
+        { year: 1953, name: "Armistice de Corée", desc: "Fin des combats en Corée, sans traité de paix" },
+    ],
+    "07-28": [
+        { year: 1750, name: "Johann Sebastian Bach", desc: "Compositeur baroque allemand, maître de la polyphonie" },
+        { year: 1914, name: "Début de la Première Guerre mondiale", desc: "L'Autriche-Hongrie déclare la guerre à la Serbie" },
+    ],
+    "08-01": [
+        { year: 1944, name: "Anne Frank entre en clandestinité", desc: "Famille Frank arrêtée à Amsterdam par la Gestapo" },
+    ],
+    "08-04": [
+        { year: 1914, name: "Déclaration de guerre britannique", desc: "Le Royaume-Uni entre en Première Guerre mondiale" },
+    ],
+    "08-05": [
+        { year: 1895, name: "Friedrich Engels", desc: "Philosophe allemand, co-auteur du Manifeste communiste" },
+        { year: 1962, name: "Marilyn Monroe", desc: "Actrice américaine, sex-symbol et icône mondiale" },
+    ],
+    "08-06": [
+        { year: 1945, name: "Bombardement atomique d'Hiroshima", desc: "Première bombe atomique larguée sur une ville, 140 000 morts" },
+        { year: 1978, name: "Paul VI", desc: "Pape de 1963 à 1978" },
+    ],
+    "08-07": [
+        { year: 1876, name: "Mata Hari exécutée", desc: "Danseuse et espionne néerlandaise, fusillée" },
+    ],
+    "08-09": [
+        { year: 1945, name: "Bombardement atomique de Nagasaki", desc: "Deuxième bombe atomique, 70 000 morts immédiats" },
+        { year: 1969, name: "Meurtres de la famille Manson", desc: "Sharon Tate et ses amis assassinés à Los Angeles" },
+    ],
+    "08-11": [
+        { year: 1979, name: "Minoru Yamasaki", desc: "Architecte américain, concepteur des tours du World Trade Center" },
+    ],
+    "08-12": [
+        { year: 2000, name: "Naufrage du Koursk", desc: "Sous-marin nucléaire russe coule en mer de Barents, 118 morts" },
+    ],
+    "08-13": [
+        { year: 1946, name: "H.G. Wells", desc: "Romancier britannique de science-fiction" },
+    ],
+    "08-15": [
+        { year: 1057, name: "Macbeth, roi d'Écosse", desc: "Tué à la bataille d'Lumphanan" },
+        { year: 1945, name: "Capitulation du Japon", desc: "Fin de la Seconde Guerre mondiale" },
+    ],
+    "08-16": [
+        { year: 1977, name: "Elvis Presley", desc: "Chanteur américain, roi du rock and roll" },
+        { year: 1997, name: "Charles Bukowski (naissance)", desc: "" },
+    ],
+    "08-17": [
+        { year: 1958, name: "Imre Nagy", desc: "Premier ministre hongrois, pendu après la répression de 1956" },
+    ],
+    "08-18": [
+        { year: 1227, name: "Gengis Khan", desc: "Fondateur de l'Empire mongol, le plus grand empire contigu de l'histoire" },
+    ],
+    "08-19": [
+        { year: 14, name: "Auguste", desc: "Premier Empereur romain" },
+        { year: 1662, name: "Blaise Pascal", desc: "Mathématicien, physicien et philosophe français" },
+    ],
+    "08-20": [
+        { year: 1940, name: "Léon Trotski", desc: "Révolutionnaire soviétique, assassiné à Mexico" },
+    ],
+    "08-22": [
+        { year: 1485, name: "Richard III d'Angleterre", desc: "Roi d'Angleterre, tué à la bataille de Bosworth" },
+    ],
+    "08-23": [
+        { year: 1806, name: "Charles James Fox", desc: "Homme politique britannique libéral" },
+    ],
+    "08-24": [
+        { year: 79, name: "Éruption du Vésuve", desc: "Pompéi et Herculanum ensevelies, mort de Pline l'Ancien" },
+        { year: 1572, name: "Massacre de la Saint-Barthélemy", desc: "Milliers de Huguenots assassinés à Paris" },
+    ],
+    "08-25": [
+        { year: 1900, name: "Friedrich Nietzsche", desc: "Philosophe allemand, auteur de Ainsi parlait Zarathoustra" },
+        { year: 1984, name: "Truman Capote", desc: "Romancier américain, auteur de Breakfast at Tiffany's" },
+    ],
+    "08-26": [
+        { year: 1910, name: "William James", desc: "Philosophe et psychologue américain" },
+    ],
+    "08-27": [
+        { year: 1896, name: "Médori Seiji", desc: "Compositeur" },
+        { year: 1979, name: "Lord Mountbatten", desc: "Amiral britannique, assassiné par l'IRA en mer d'Irlande" },
+    ],
+    "08-28": [
+        { year: 1645, name: "Hugo Grotius", desc: "Juriste et philosophe néerlandais, père du droit international" },
+    ],
+    "08-29": [
+        { year: 1533, name: "Atahualpa", desc: "Dernier Inca, exécuté par Pizarro" },
+    ],
+    "08-30": [
+        { year: 1871, name: "Arthur Schopenhauer", desc: "Philosophe allemand pessimiste" },
+    ],
+    "08-31": [
+        { year: 1422, name: "Henri V d'Angleterre", desc: "Roi d'Angleterre, vainqueur d'Azincourt" },
+        { year: 1997, name: "Diana Spencer", desc: "Princesse de Galles, morte dans un accident de voiture à Paris" },
+    ],
+    "09-01": [
+        { year: 1939, name: "Invasion de la Pologne", desc: "L'Allemagne nazie envahit la Pologne — début de la Seconde Guerre mondiale" },
+        { year: 1715, name: "Louis XIV", desc: "Roi de France, 'le Roi-Soleil', le plus long règne de l'histoire" },
+    ],
+    "09-02": [
+        { year: 1945, name: "Capitulation du Japon", desc: "Signature officielle de la reddition japonaise à bord du Missouri" },
+    ],
+    "09-03": [
+        { year: 1658, name: "Oliver Cromwell", desc: "Lord Protecteur d'Angleterre, chef de la Révolution anglaise" },
+    ],
+    "09-04": [
+        { year: 420, name: "Saint Jérôme", desc: "Prêtre et théologien latin, traducteur de la Bible (Vulgate)" },
+    ],
+    "09-05": [
+        { year: 1972, name: "Massacre de Munich", desc: "11 athlètes israéliens assassinés par des terroristes palestiniens aux JO" },
+        { year: 1997, name: "Mère Teresa", desc: "Religieuse albanaise-indienne, fondatrice des Missionnaires de la Charité" },
+    ],
+    "09-06": [
+        { year: 1901, name: "William McKinley", desc: "25e président des États-Unis, blessé lors d'un attentat" },
+    ],
+    "09-08": [
+        { year: 1157, name: "Richard Cœur de Lion", desc: "Roi d'Angleterre (naissance)" },
+        { year: 1380, name: "Charles V de France", desc: "Roi de France, dit 'le Sage'" },
+    ],
+    "09-09": [
+        { year: 1087, name: "Guillaume le Conquérant", desc: "Roi d'Angleterre, vainqueur de la bataille de Hastings" },
+    ],
+    "09-11": [
+        { year: 2001, name: "Attentats du 11 septembre", desc: "Nearly 3 000 morts dans des attaques terroristes à New York, Washington et Pennsylvanie" },
+    ],
+    "09-13": [
+        { year: 1759, name: "Bataille des Plaines d'Abraham", desc: "Québec tombe aux mains des Britanniques" },
+        { year: 1996, name: "Tupac Shakur", desc: "Rappeur américain, icône du hip-hop, décédé des suites d'une fusillade" },
+    ],
+    "09-14": [
+        { year: 1321, name: "Dante Alighieri", desc: "Poète florentin, auteur de La Divine Comédie" },
+        { year: 1982, name: "Grace Kelly", desc: "Actrice américaine devenue princesse de Monaco, morte dans un accident" },
+    ],
+    "09-15": [
+        { year: 1916, name: "Première utilisation des chars de combat", desc: "Les Britanniques utilisent des tanks pour la première fois" },
+    ],
+    "09-17": [
+        { year: 1787, name: "Signature de la Constitution américaine", desc: "Les Pères fondateurs signent la Constitution des États-Unis" },
+    ],
+    "09-18": [
+        { year: 1970, name: "Jimi Hendrix", desc: "Guitariste américain, virtuose du rock et du blues" },
+    ],
+    "09-19": [
+        { year: 1881, name: "James Garfield", desc: "20e président des États-Unis, décédé des suites d'un attentat" },
+    ],
+    "09-20": [
+        { year: 1870, name: "Prise de Rome", desc: "Les troupes italiennes entrent dans Rome — fin du pouvoir temporel du pape" },
+    ],
+    "09-22": [
+        { year: 1791, name: "Thomas Day", desc: "Écrivain britannique, philanthrope" },
+    ],
+    "09-23": [
+        { year: 1939, name: "Sigmund Freud", desc: "Neurologue autrichien, fondateur de la psychanalyse" },
+    ],
+    "09-24": [
+        { year: 1564, name: "Pierre de Ronsard", desc: "Poète français, prince des poètes de la Pléiade" },
+    ],
+    "09-25": [
+        { year: 1513, name: "Balboa découvre le Pacifique", desc: "Premier Européen à voir l'océan Pacifique" },
+    ],
+    "09-26": [
+        { year: 1990, name: "Alberto Moravia", desc: "Romancier italien" },
+    ],
+    "09-27": [
+        { year: 1936, name: "Louis Blériot", desc: "Aviateur français, premier à traverser la Manche en avion" },
+    ],
+    "09-28": [
+        { year: 1895, name: "Louis Pasteur", desc: "Chimiste et biologiste français, pasteurisation et vaccins" },
+        { year: 1970, name: "Gamal Abdel Nasser", desc: "Président égyptien, symbole du nationalisme arabe" },
+    ],
+    "09-29": [
+        { year: 1758, name: "Horatio Nelson", desc: "Amiral britannique (naissance)" },
+        { year: 1902, name: "Émile Zola", desc: "Romancier français, asphyxié chez lui" },
+    ],
+    "09-30": [
+        { year: 1955, name: "James Dean", desc: "Acteur américain, icône de la rébellion, mort dans un accident de voiture" },
+    ],
+    "10-01": [
+        { year: 1553, name: "Lucas Cranach l'Ancien", desc: "Peintre allemand, ami de Martin Luther" },
+    ],
+    "10-02": [
+        { year: 1803, name: "Samuel Adams", desc: "Père fondateur américain, agitateur de la Révolution" },
+    ],
+    "10-04": [
+        { year: 1582, name: "Réforme du calendrier", desc: "Le 15 octobre succède au 4 octobre avec le calendrier grégorien" },
+        { year: 1970, name: "Janis Joplin", desc: "Chanteuse américaine de blues-rock, morte d'une overdose à 27 ans" },
+    ],
+    "10-05": [
+        { year: 1984, name: "Richard Burton", desc: "Acteur gallois" },
+    ],
+    "10-06": [
+        { year: 1892, name: "Alfred Lord Tennyson", desc: "Poète britannique victorien" },
+        { year: 1981, name: "Anouar el-Sadate", desc: "Président égyptien, prix Nobel de la Paix, assassiné" },
+    ],
+    "10-07": [
+        { year: 1571, name: "Bataille de Lépante", desc: "La flotte chrétienne écrase les Ottomans — tournant de l'histoire" },
+        { year: 1849, name: "Edgar Allan Poe", desc: "Écrivain américain, maître du fantastique et du roman noir" },
+    ],
+    "10-08": [
+        { year: 1967, name: "Che Guevara", desc: "Révolutionnaire marxiste argentin, exécuté en Bolivie" },
+    ],
+    "10-09": [
+        { year: 1967, name: "Che Guevara", desc: "Révolutionnaire argentin, capturé et exécuté en Bolivie" },
+        { year: 1985, name: "Orson Welles", desc: "Réalisateur américain, Citizen Kane" },
+    ],
+    "10-10": [
+        { year: 732, name: "Bataille de Poitiers", desc: "Charles Martel stoppe l'avancée arabe en Europe" },
+        { year: 1957, name: "Incendie de Windscale", desc: "Pire accident nucléaire de l'histoire britannique" },
+    ],
+    "10-11": [
+        { year: 1899, name: "Guerre des Boers", desc: "Début de la Seconde Guerre des Boers en Afrique du Sud" },
+    ],
+    "10-13": [
+        { year: 54, name: "Claude Ier", desc: "Empereur romain, empoisonné par sa femme Agrippine" },
+    ],
+    "10-14": [
+        { year: 1066, name: "Bataille de Hastings", desc: "Harold II d'Angleterre tué, début de la conquête normande" },
+    ],
+    "10-15": [
+        { year: 70, name: "Virgile", desc: "Poète latin, auteur de l'Énéide" },
+        { year: 1917, name: "Mata Hari", desc: "Danseuse et espionne néerlandaise, fusillée par les Français" },
+    ],
+    "10-16": [
+        { year: 1793, name: "Marie-Antoinette", desc: "Reine de France, épouse de Louis XVI, guillotinée" },
+        { year: 1946, name: "Pendaisons de Nuremberg", desc: "10 criminels de guerre nazis pendus après le procès de Nuremberg" },
+    ],
+    "10-17": [
+        { year: 1849, name: "Frédéric Chopin", desc: "Compositeur et pianiste polonais" },
+        { year: 1961, name: "Massacre du 17 octobre", desc: "Des dizaines d'Algériens massacrés par la police de Paris" },
+    ],
+    "10-18": [
+        { year: 1016, name: "Éthelred le Mal-Avisé", desc: "Roi d'Angleterre" },
+    ],
+    "10-19": [
+        { year: 1812, name: "Début de la retraite de Russie", desc: "Napoléon quitte Moscou, désastre de la Grande Armée" },
+    ],
+    "10-20": [
+        { year: 1827, name: "Bataille de Navarin", desc: "La flotte ottomane détruite, indépendance grecque assurée" },
+    ],
+    "10-21": [
+        { year: 1805, name: "Bataille de Trafalgar", desc: "Victoire de Nelson, mort de l'amiral britannique" },
+    ],
+    "10-22": [
+        { year: 1934, name: "Pretty Boy Floyd", desc: "Gangster américain de la Grande Dépression, abattu par le FBI" },
+    ],
+    "10-25": [
+        { year: 1400, name: "Geoffrey Chaucer", desc: "Poète anglais, auteur des Contes de Canterbury" },
+        { year: 1917, name: "Révolution d'Octobre", desc: "Les bolcheviks prennent le pouvoir en Russie" },
+    ],
+    "10-27": [
+        { year: 1553, name: "Michel Servet", desc: "Médecin et théologien espagnol, brûlé vif à Genève" },
+    ],
+    "10-28": [
+        { year: 1962, name: "Fin de la crise des missiles de Cuba", desc: "L'URSS retire ses missiles, évitant la guerre nucléaire" },
+    ],
+    "10-29": [
+        { year: 1929, name: "Jeudi noir", desc: "Krach boursier à Wall Street, début de la Grande Dépression" },
+    ],
+    "10-30": [
+        { year: 1938, name: "La Guerre des mondes", desc: "Radio d'Orson Welles déclenche une panique collective aux États-Unis" },
+    ],
+    "10-31": [
+        { year: 1926, name: "Harry Houdini", desc: "Illusionniste américano-hongrois, roi de l'évasion" },
+        { year: 1984, name: "Indira Gandhi", desc: "Première ministre indienne, assassinée par ses gardes du corps" },
+    ],
+    "11-01": [
+        { year: 1755, name: "Tremblement de terre de Lisbonne", desc: "50 000 à 100 000 morts, la catastrophe naturelle la plus meurtrière d'Europe" },
+    ],
+    "11-02": [
+        { year: 1950, name: "George Bernard Shaw", desc: "Dramaturge irlandais, prix Nobel de Littérature" },
+    ],
+    "11-03": [
+        { year: 1918, name: "Fin de la guerre austro-hongroise", desc: "L'Autriche-Hongrie signe l'armistice" },
+    ],
+    "11-05": [
+        { year: 1414, name: "Concile de Constance", desc: "Ouverture du concile qui condamnera Jan Hus" },
+    ],
+    "11-07": [
+        { year: 1867, name: "Marie Curie", desc: "Née en 1867, prix Nobel 1903 et 1911" },
+        { year: 1940, name: "Effondrement du pont Tacoma Narrows", desc: "Le pont s'effondre en oscillant sous le vent" },
+    ],
+    "11-08": [
+        { year: 1895, name: "Découverte des rayons X", desc: "Wilhelm Röntgen découvre les rayons X, révolution médicale" },
+    ],
+    "11-09": [
+        { year: 1938, name: "Nuit de Cristal", desc: "Pogroms anti-juifs organisés par les nazis en Allemagne" },
+        { year: 1989, name: "Chute du Mur de Berlin", desc: "Ouverture des frontières de l'Allemagne de l'Est" },
+    ],
+    "11-10": [
+        { year: 1938, name: "Nuit de Cristal (fin)", desc: "Les pogroms se terminent après une nuit de violence" },
+    ],
+    "11-11": [
+        { year: 1918, name: "Armistice de la Première Guerre mondiale", desc: "Cessez-le-feu à 11h11, fin de la Grande Guerre" },
+        { year: 1975, name: "Dissolution du Parlement australien", desc: "Crise constitutionnelle sans précédent" },
+    ],
+    "11-12": [
+        { year: 1944, name: "Naufrage du Tirpitz", desc: "Le cuirassé nazi coulé par des bombardiers britanniques" },
+    ],
+    "11-13": [
+        { year: 2015, name: "Attentats de Paris", desc: "130 morts dans plusieurs attaques terroristes coordonnées" },
+    ],
+    "11-14": [
+        { year: 1223, name: "Philippe II Auguste", desc: "Roi de France" },
+    ],
+    "11-15": [
+        { year: 1908, name: "Léopold II de Belgique", desc: "Roi des Belges, responsable des atrocités au Congo" },
+    ],
+    "11-16": [
+        { year: 1945, name: "UNESCO fondée", desc: "Organisation des Nations Unies pour l'éducation, la science et la culture" },
+    ],
+    "11-18": [
+        { year: 1978, name: "Massacre de Jonestown", desc: "918 membres de la secte Jim Jones meurent au Guyana" },
+    ],
+    "11-19": [
+        { year: 1461, name: "Robert Henryson", desc: "Poète écossais" },
+    ],
+    "11-20": [
+        { year: 1945, name: "Procès de Nuremberg", desc: "Ouverture du procès des grands criminels de guerre nazis" },
+        { year: 1975, name: "Francisco Franco", desc: "Dictateur espagnol, après 36 ans au pouvoir" },
+    ],
+    "11-21": [
+        { year: 1970, name: "De Gaulle (Charles)", desc: "Général et président français, père de la Ve République" },
+    ],
+    "11-22": [
+        { year: 1963, name: "John F. Kennedy", desc: "35e président des États-Unis, assassiné à Dallas" },
+    ],
+    "11-24": [
+        { year: 1859, name: "Publication de L'Origine des espèces", desc: "Darwin publie son chef-d'œuvre sur l'évolution" },
+        { year: 1991, name: "Freddie Mercury", desc: "Chanteur britannique de Queen, mort du sida" },
+    ],
+    "11-25": [
+        { year: 1952, name: "Publication d'Agatha Christie", desc: "La Souricière débute au Savoy Theatre — la plus longue pièce de l'histoire" },
+    ],
+    "11-26": [
+        { year: 1922, name: "Ouverture du tombeau de Toutânkhamon", desc: "Howard Carter découvre la chambre funéraire intacte" },
+    ],
+    "11-27": [
+        { year: 2016, name: "Fidel Castro", desc: "Homme d'État cubain, chef de la révolution cubaine" },
+    ],
+    "11-28": [
+        { year: 1680, name: "Gian Lorenzo Bernini", desc: "Architecte et sculpteur baroque, génie de la Contre-Réforme" },
+        { year: 1994, name: "Jeffrey Dahmer", desc: "Tueur en série américain, tué en prison" },
+    ],
+    "11-29": [
+        { year: 1314, name: "Philippe IV le Bel", desc: "Roi de France, destructeur des Templiers" },
+    ],
+    "11-30": [
+        { year: 2016, name: "Fidel Castro (funérailles)", desc: "Funérailles du leader cubain à Santiago de Cuba" },
+    ],
+    "12-01": [
+        { year: 1521, name: "Léon X", desc: "Pape de la Renaissance, contemporain de Luther" },
+    ],
+    "12-02": [
+        { year: 1594, name: "Gerardus Mercator", desc: "Géographe flamand, auteur de la projection cartographique Mercator" },
+    ],
+    "12-03": [
+        { year: 1828, name: "Franz Schubert", desc: "Compositeur autrichien, maître du lied romantique" },
+    ],
+    "12-04": [
+        { year: 1961, name: "Franz Fanon", desc: "Psychiatre et philosophe martiniquais, auteur des Damnés de la Terre" },
+    ],
+    "12-05": [
+        { year: 1791, name: "Wolfgang Amadeus Mozart", desc: "Compositeur autrichien, génie de la musique classique, mort à 35 ans" },
+        { year: 1360, name: "Jean II le Bon", desc: "Roi de France" },
+    ],
+    "12-06": [
+        { year: 1882, name: "Anthony Trollope", desc: "Romancier britannique victorien" },
+    ],
+    "12-07": [
+        { year: 1941, name: "Attaque de Pearl Harbor", desc: "Le Japon bombarde la flotte américaine, les États-Unis entrent en guerre" },
+        { year: 1547, name: "Hernán Cortés", desc: "Conquistador espagnol, vainqueur des Aztèques" },
+    ],
+    "12-08": [
+        { year: 1980, name: "John Lennon", desc: "Chanteur britannique des Beatles, assassiné à New York" },
+    ],
+    "12-09": [
+        { year: 1968, name: "Karl Barth", desc: "Théologien protestant suisse" },
+    ],
+    "12-10": [
+        { year: 1896, name: "Alfred Nobel", desc: "Chimiste suédois, inventeur de la dynamite, fondateur des prix Nobel" },
+    ],
+    "12-11": [
+        { year: 1937, name: "Massacre de Nankin", desc: "Début du massacre de Nankin par l'armée japonaise en Chine" },
+    ],
+    "12-12": [
+        { year: 1741, name: "Anders Celsius", desc: "Astronome suédois, inventeur de l'échelle Celsius" },
+    ],
+    "12-13": [
+        { year: 1784, name: "Samuel Johnson", desc: "Lexicographe et essayiste britannique" },
+    ],
+    "12-14": [
+        { year: 1799, name: "George Washington", desc: "Premier président des États-Unis" },
+        { year: 1911, name: "Roald Amundsen atteint le pôle Sud", desc: "Premier homme à atteindre le pôle Sud" },
+    ],
+    "12-15": [
+        { year: 1966, name: "Walt Disney", desc: "Producteur et réalisateur américain, fondateur de l'empire Disney" },
+    ],
+    "12-16": [
+        { year: 1944, name: "Début de la Bataille des Ardennes", desc: "Dernière grande offensive allemande à l'Ouest" },
+    ],
+    "12-17": [
+        { year: 1830, name: "Simón Bolívar", desc: "Général vénézuélien, libérateur de l'Amérique du Sud" },
+    ],
+    "12-18": [
+        { year: 1916, name: "Raspoutine assassiné", desc: "Le mystique russe, conseiller des Romanov, tué par des nobles" },
+    ],
+    "12-19": [
+        { year: 1974, name: "Jack Benny", desc: "Comédien américain" },
+    ],
+    "12-20": [
+        { year: 1915, name: "Evacuation de Gallipoli", desc: "Fin de la campagne des Dardanelles, défaite des Alliés" },
+    ],
+    "12-21": [
+        { year: 1940, name: "F. Scott Fitzgerald", desc: "Romancier américain, auteur de Gatsby le Magnifique" },
+        { year: 1988, name: "Attentat de Lockerbie", desc: "Boeing 747 explosé au-dessus de l'Écosse, 270 morts" },
+    ],
+    "12-22": [
+        { year: 1954, name: "Enrico Fermi", desc: "Physicien italo-américain, père du réacteur nucléaire" },
+    ],
+    "12-23": [
+        { year: 1888, name: "Vincent van Gogh se mutile l'oreille", desc: "Crise de folie, van Gogh se coupe le lobe de l'oreille" },
+    ],
+    "12-24": [
+        { year: 1914, name: "Trêve de Noël", desc: "Soldats français et allemands fraternisent dans les tranchées" },
+    ],
+    "12-25": [
+        { year: 1977, name: "Charlie Chaplin", desc: "Comédien, réalisateur et compositeur britannique" },
+        { year: 1991, name: "Dissolution de l'URSS", desc: "Mikhaïl Gorbatchev démissionne, fin de l'Union soviétique" },
+    ],
+    "12-26": [
+        { year: 2004, name: "Tsunami de l'océan Indien", desc: "Plus de 230 000 morts en Asie du Sud-Est" },
+    ],
+    "12-27": [
+        { year: 1585, name: "Pierre de Ronsard", desc: "Poète français, prince des poètes de la Pléiade" },
+    ],
+    "12-28": [
+        { year: 1694, name: "Marie II d'Angleterre", desc: "Reine d'Angleterre" },
+        { year: 1937, name: "Maurice Ravel", desc: "Compositeur français, auteur du Boléro" },
+    ],
+    "12-29": [
+        { year: 1170, name: "Thomas Becket", desc: "Archevêque de Canterbury, assassiné dans sa cathédrale" },
+        { year: 1890, name: "Massacre de Wounded Knee", desc: "300 Sioux massacrés par la cavalerie américaine" },
+    ],
+    "12-30": [
+        { year: 1916, name: "Raspoutine", desc: "Moine mystique russe, assassiné" },
+        { year: 1922, name: "Naissance de l'URSS", desc: "Union des Républiques socialistes soviétiques proclamée" },
+    ],
+    "12-31": [
+        { year: 1384, name: "John Wycliffe", desc: "Théologien anglais, précurseur de la Réforme" },
+        { year: 1938, name: "Karel Čapek", desc: "Écrivain tchèque, inventeur du mot 'robot'" },
+    ],
+};
+
+function getNecrologieForDay(date) {
+    const mm = String(date.getMonth() + 1).padStart(2, "0");
+    const dd = String(date.getDate()).padStart(2, "0");
+    return necrologie[`${mm}-${dd}`] || [];
+}
+
+
+
+
+
 // Dictons simples (à compléter)
 
 const dictons = {
@@ -2606,6 +5277,38 @@ function updateDayView(date) {
 
     // ── Éphémérides ───────────────────────────────────
     renderEphemerides(date);
+
+    // ── Naissances ────────────────────────────────────
+    renderNaissances(date);
+
+    // ── Nécrologie ────────────────────────────────────
+    renderNecrologie(date);
+}
+
+
+function renderNaissances(date) {
+    const list  = document.getElementById("naissances-list");
+    if (!list) return;
+    const items = getNaissancesForDay(date).filter(p => p.name && p.desc);
+
+    if (!items.length) {
+        list.innerHTML = `<p style="text-align:center; color:var(--ink-muted); padding:1rem; font-style:italic;">
+            Aucune naissance célèbre enregistrée pour ce jour.
+        </p>`;
+        return;
+    }
+
+    list.innerHTML = items
+        .sort((a, b) => a.year - b.year)
+        .map(item => `
+            <div class="bio-item bio-naissance">
+                <div class="bio-year">${item.year < 0 ? Math.abs(item.year) + " av. J.-C." : item.year}</div>
+                <div class="bio-text">
+                    <span class="bio-name">🎂 ${item.name}</span>
+                    <span class="bio-desc">${item.desc}</span>
+                </div>
+            </div>
+        `).join("");
 }
 
 function renderEphemerides(date) {
@@ -2627,6 +5330,32 @@ function renderEphemerides(date) {
                 <div class="ephem-text">
                     <span class="ephem-cat">${item.cat}</span>
                     ${item.text}
+                </div>
+            </div>
+        `).join("");
+}
+
+
+function renderNecrologie(date) {
+    const list = document.getElementById("necrologie-list");
+    if (!list) return;
+    const items = getNecrologieForDay(date).filter(p => p.name && p.desc);
+
+    if (!items.length) {
+        list.innerHTML = `<p style="text-align:center; color:var(--ink-muted); padding:1rem; font-style:italic;">
+            Aucun décès célèbre enregistré pour ce jour.
+        </p>`;
+        return;
+    }
+
+    list.innerHTML = items
+        .sort((a, b) => a.year - b.year)
+        .map(item => `
+            <div class="bio-item bio-necrologie">
+                <div class="bio-year">${item.year < 0 ? Math.abs(item.year) + " av. J.-C." : item.year}</div>
+                <div class="bio-text">
+                    <span class="bio-name">✝ ${item.name}</span>
+                    <span class="bio-desc">${item.desc}</span>
                 </div>
             </div>
         `).join("");
