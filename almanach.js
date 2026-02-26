@@ -3477,7 +3477,7 @@ function initShare() {
 
                 await navigator.share({
                     title: "Almanach du Jour",
-                    text:  `${dateStr.charAt(0).toUpperCase() + dateStr.slice(1)} — https://patrick-1963.github.io/almanach/ , un almanach avec Soleil, Lune, Marées,... `,
+                    text:  `${dateStr.charAt(0).toUpperCase() + dateStr.slice(1)} —  un almanach avec Soleil, Lune, Marées,...   https://patrick-1963.github.io/almanach/index.html `,
                     files: [file],
                 });
             }, "image/png");
