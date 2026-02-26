@@ -1,5 +1,5 @@
 // ═══════════════════════════════════════════════════════
-// ALMANACH DU JOUR — Service Worker v1.2
+// ALMANACH DU JOUR — Service Worker v1.3
 //
 // Stratégie :
 //   • Installation  → mise en cache de tous les assets
@@ -10,7 +10,7 @@
 // la mise à jour chez tous les utilisateurs.
 // ═══════════════════════════════════════════════════════
 
-const CACHE_VERSION  = "almanach-v1.1";
+const CACHE_VERSION  = "almanach-v1.3";
 const STATIC_CACHE   = `${CACHE_VERSION}-static`;
 const DYNAMIC_CACHE  = `${CACHE_VERSION}-dynamic`;
 

@@ -5301,11 +5301,11 @@ function renderNaissances(date) {
     list.innerHTML = items
         .sort((a, b) => a.year - b.year)
         .map(item => `
-            <div class="bio-item bio-naissance">
-                <div class="bio-year">${item.year < 0 ? Math.abs(item.year) + " av. J.-C." : item.year}</div>
-                <div class="bio-text">
-                    <span class="bio-name">🎂 ${item.name}</span>
-                    <span class="bio-desc">${item.desc}</span>
+            <div class="ephem-item">
+                <div class="ephem-year">${item.year < 0 ? Math.abs(item.year) + " av. J.-C." : item.year}</div>
+                <div class="ephem-text">
+                    <span class="ephem-cat">${item.name}</span>
+                    ${item.desc}
                 </div>
             </div>
         `).join("");
@@ -5351,11 +5351,11 @@ function renderNecrologie(date) {
     list.innerHTML = items
         .sort((a, b) => a.year - b.year)
         .map(item => `
-            <div class="bio-item bio-necrologie">
-                <div class="bio-year">${item.year < 0 ? Math.abs(item.year) + " av. J.-C." : item.year}</div>
-                <div class="bio-text">
-                    <span class="bio-name">✝ ${item.name}</span>
-                    <span class="bio-desc">${item.desc}</span>
+            <div class="ephem-item">
+                <div class="ephem-year">${item.year < 0 ? Math.abs(item.year) + " av. J.-C." : item.year}</div>
+                <div class="ephem-text">
+                    <span class="ephem-cat">${item.name}</span>
+                    ${item.desc}
                 </div>
             </div>
         `).join("");
