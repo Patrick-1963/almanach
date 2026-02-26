@@ -3475,11 +3475,18 @@ function initShare() {
                     weekday: "long", day: "numeric", month: "long", year: "numeric"
                 });
 
-                await navigator.share({
-                    title: "Almanach du Jour",
-                    text:  `${dateStr.charAt(0).toUpperCase() + dateStr.slice(1)} —  un almanach avec Soleil, Lune, Marées,...   https://patrick-1963.github.io/almanach/index.html `,
-                    files: [file],
-                });
+                const shareUrl  = "https://patrick-1963.github.io/almanach/index.html";
+                const shareText = dateStr.charAt(0).toUpperCase() + dateStr.slice(1)
+                                + "\nSoleil, Lune & Marées bretonnes\n"
+                                + shareUrl;
+
+                // iOS/Android : files + url simultanés non supportés.
+                // Le lien est placé dans le texte — méthode la plus fiable.
+                const shareData = (navigator.canShare && navigator.canShare({ files: [file] }))
+                    ? { title: "Almanach du Jour", text: shareText, files: [file] }
+                    : { title: "Almanach du Jour", text: shareText, url: shareUrl };
+
+                await navigator.share(shareData);
             }, "image/png");
         } catch (err) {
             if (err.name !== "AbortError") console.error("Partage échoué :", err);
