@@ -2543,9 +2543,10 @@ function updateDayView(date) {
     const dow    = getDayOfYear(date);
     const week   = getWeekNumber(date);
     const season = getSeason(date);
+    const zodiac = getZodiacSign(date);
     const ferie  = isFerie(date);
 
-    let metaLine = `Semaine ${week} — Jour ${dow} de l'année — ${season}`;
+    let metaLine = `Semaine ${week} — Jour ${dow} de l'année — ${season} · ${zodiac}`;
     if (ferie) metaLine += ` — 🇫🇷 ${ferie.label}`;
     document.getElementById("meta-date").textContent = metaLine;
 
@@ -2649,6 +2650,22 @@ function getWeekNumber(date) {
     tmp.setUTCDate(tmp.getUTCDate() - dayNum + 3);
     const firstThursday = new Date(Date.UTC(tmp.getUTCFullYear(), 0, 4));
     return 1 + Math.round((tmp - firstThursday) / (7 * 86400000));
+}
+
+function getZodiacSign(date) {
+    const m = date.getMonth() + 1, d = date.getDate();
+    if ((m === 3 && d >= 21) || (m === 4 && d <= 19)) return "♈ Bélier";
+    if ((m === 4 && d >= 20) || (m === 5 && d <= 20)) return "♉ Taureau";
+    if ((m === 5 && d >= 21) || (m === 6 && d <= 20)) return "♊ Gémeaux";
+    if ((m === 6 && d >= 21) || (m === 7 && d <= 22)) return "♋ Cancer";
+    if ((m === 7 && d >= 23) || (m === 8 && d <= 22)) return "♌ Lion";
+    if ((m === 8 && d >= 23) || (m === 9 && d <= 22)) return "♍ Vierge";
+    if ((m === 9 && d >= 23) || (m === 10 && d <= 22)) return "♎ Balance";
+    if ((m === 10 && d >= 23) || (m === 11 && d <= 21)) return "♏ Scorpion";
+    if ((m === 11 && d >= 22) || (m === 12 && d <= 21)) return "♐ Sagittaire";
+    if ((m === 12 && d >= 22) || (m === 1 && d <= 19)) return "♑ Capricorne";
+    if ((m === 1 && d >= 20) || (m === 2 && d <= 18)) return "♒ Verseau";
+    return "♓ Poissons";
 }
 
 function getSeason(date) {
@@ -3249,6 +3266,7 @@ function generateShareImage(date) {
     const saint  = getSaintOfDay(date);
     const dicton = getDictonForDay(date);
     const season = getSeason(date);
+    const zodiac = getZodiacSign(date);
     const ferie  = isFerie(date);
     const garden = getGardenData(date, moon.phaseAngle);
 
@@ -3282,7 +3300,7 @@ function generateShareImage(date) {
         ["Type de jour",   garden.dayType],
         ["Conseil",        garden.advice.length > 28 ? garden.advice.slice(0, 27) + "…" : garden.advice],
         ["Position lune",  garden.moonPos],
-        ["Tendance sève",  garden.trend],
+        ["Tendance sève",  garden.trend.includes("montante") ? "🌙↑ Montante (aérienne)" : "🌙↓ Descendante (racines)"],
         ["Semaine",        "N° " + week],
         ["Jour de l'an",   "J " + dow + " / 365"],
     ], colW, "#7ec8e3");
@@ -3310,7 +3328,7 @@ function generateShareImage(date) {
     ctx.textAlign = "right";
     ctx.fillStyle = C.parchment2;
     ctx.font = "300 14px Georgia, serif";
-    ctx.fillText(`${season}  ·  Semaine ${week}  ·  Jour ${dow}${ferie ? "  ·  🇫🇷 " + ferie.label : ""}`, W-48, bottomY + 36);
+    ctx.fillText(`${season}  ·  ${zodiac}  ·  Semaine ${week}  ·  Jour ${dow}${ferie ? "  ·  🇫🇷 " + ferie.label : ""}`, W-48, bottomY + 36);
 
     // Jardinier
     ctx.fillStyle = C.parchment2;
@@ -3459,7 +3477,7 @@ function initShare() {
 
                 await navigator.share({
                     title: "Almanach du Jour",
-                    text:  `${dateStr.charAt(0).toUpperCase() + dateStr.slice(1)} — Soleil, Lune & Marées bretonnes`,
+                    text:  `${dateStr.charAt(0).toUpperCase() + dateStr.slice(1)} — https://patrick-1963.github.io/almanach/, un almanach avec Soleil, Lune, Marées,... `,
                     files: [file],
                 });
             }, "image/png");
