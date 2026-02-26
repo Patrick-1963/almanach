@@ -27,6 +27,67 @@
     <meta name="twitter:title" content="Almanach du Jour">
     <meta name="twitter:image" content="icons/icon-512.png">
 
+
+    <style>
+    /* ── Rubriques Naissances & Nécrologie ── */
+    .bio-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        padding: 0 1rem 1rem;
+    }
+    .bio-item {
+        display: grid;
+        grid-template-columns: 72px 1fr;
+        gap: 1rem;
+        align-items: start;
+        padding: 0.85rem 1rem;
+        border-radius: 6px;
+        background: rgba(255,255,255,0.03);
+        border-left: 3px solid transparent;
+    }
+    .bio-naissance {
+        border-left-color: #7ec8e3;
+    }
+    .bio-year {
+        font-size: 1.05rem;
+        font-weight: 700;
+        font-family: 'Playfair Display', serif;
+        color: var(--gold, #c8a96e);
+        text-align: right;
+        padding-top: 0.1rem;
+        white-space: nowrap;
+    }
+    .bio-text {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2rem;
+    }
+    .bio-name {
+        font-weight: 600;
+        font-family: 'Playfair Display', serif;
+        color: var(--parchment, #f7f2e8);
+        font-size: 1rem;
+    }
+    .bio-desc {
+        font-size: 0.88rem;
+        color: var(--ink-muted, rgba(200,191,168,0.75));
+        font-style: italic;
+        line-height: 1.4;
+    }
+    </style>
+
+
+    <style>
+    /* ── Nécrologie ── */
+    .bio-necrologie {
+        border-left-color: #c47a6a;
+    }
+    .bio-necrologie .bio-name {
+        color: #e8cfc9;
+    }
+    </style>
+
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -167,7 +228,29 @@
             </div>
         </section>
 
-                <!-- ÉPHÉMÉRIDES -->
+        
+        <!-- NAISSANCES CÉLÈBRES -->
+        <section id="naissances-section">
+            <div class="section-header">
+                <span class="orn">◈</span>
+                <h2>Nés un jour comme aujourd'hui</h2>
+                <span class="orn">◈</span>
+            </div>
+            <div id="naissances-list" class="bio-list"></div>
+        </section>
+
+
+        <!-- NÉCROLOGIE -->
+        <section id="necrologie-section">
+            <div class="section-header">
+                <span class="orn">◈</span>
+                <h2>Disparus un jour comme aujourd'hui</h2>
+                <span class="orn">◈</span>
+            </div>
+            <div id="necrologie-list" class="bio-list"></div>
+        </section>
+
+        <!-- ÉPHÉMÉRIDES -->
         <section id="ephemerides-block">
             <div class="section-header">
                 <span class="orn">◈</span>
