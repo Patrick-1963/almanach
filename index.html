@@ -27,6 +27,24 @@
     <meta name="twitter:title" content="Almanach du Jour">
     <meta name="twitter:image" content="icons/icon-512.png">
 
+
+    <style>
+    /* ── Plat du jour : lien recette ── */
+    .plat-link {
+        display: inline-block;
+        margin-top: 0.4rem;
+        color: var(--gold, #c8a96e);
+        text-decoration: none;
+        font-style: normal;
+        font-size: 0.9rem;
+        border-bottom: 1px solid transparent;
+        transition: border-color 0.2s;
+    }
+    .plat-link:hover {
+        border-bottom-color: var(--gold, #c8a96e);
+    }
+    </style>
+
     <!-- Styles -->
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -44,6 +62,17 @@
     </header>
 
     <main>
+
+
+        <!-- PLAT DU JOUR -->
+        <section id="plat-du-jour-section">
+            <div class="section-header">
+                <span class="orn">◈</span>
+                <h2>Plat du jour</h2>
+                <span class="orn">◈</span>
+            </div>
+            <div id="plat-du-jour-content" class="ephemerides-list"></div>
+        </section>
 
         <!-- BLOC DU JOUR -->
         <section id="today-block">
@@ -169,7 +198,7 @@
 
         
         <!-- NAISSANCES CÉLÈBRES -->
-        <section id="ephemerides-block">
+        <section id="naissances-section">
             <div class="section-header">
                 <span class="orn">◈</span>
                 <h2>Nés un jour comme aujourd'hui</h2>
@@ -180,7 +209,7 @@
 
 
         <!-- NÉCROLOGIE -->
-       <section id="ephemerides-block">
+        <section id="necrologie-section">
             <div class="section-header">
                 <span class="orn">◈</span>
                 <h2>Disparus un jour comme aujourd'hui</h2>
@@ -258,6 +287,7 @@
         <button id="pwa-install-close" aria-label="Fermer">✕</button>
     </div>
 
+    <script src="recettes/Recettes.js"></script>
     <script src="almanach.js"></script>
     <script src="pwa.js"></script>
 </body>
