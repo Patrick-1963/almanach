@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Recette — Almanach du Jour</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet">
+    <!-- Le style.css de l'almanach est un niveau au-dessus -->
+    <link rel="stylesheet" href="../style.css">
+
+    <style>
+        :root {
+            --bg-deep:    #12151f;
+            --bg-card:    #1a1f2e;
+            --bg-page:    #f5f0e8;
+            --gold:       #c8a96e;
+            --gold-light: #e2c890;
+            --ink:        #2c2416;
+            --ink-muted:  rgba(44,36,22,0.62);
+            --border:     rgba(200,169,110,0.25);
+            --radius:     8px;
+            --serif:      'Playfair Display', Georgia, serif;
+            --body:       'Source Serif 4', Georgia, serif;
+        }
+
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            background: var(--bg-page);
+            color: var(--ink);
+            font-family: var(--body);
+            font-size: 1rem;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        /* ── EN-TÊTE ────────────────────────────────── */
+        .recipe-header {
+            background: var(--bg-deep);
+            color: #f7f2e8;
+            padding: 2.5rem 1.5rem 2rem;
+            text-align: center;
+            border-bottom: 2px solid var(--gold);
+            position: relative;
+        }
+
+        .back-link {
+            position: absolute;
+            top: 1.2rem;
+            left: 1.5rem;
+            color: var(--gold);
+            text-decoration: none;
+            font-family: var(--serif);
+            font-size: 0.88rem;
+            letter-spacing: 0.04em;
+            display: flex;
+            align-items: center;
+            gap: 0.35rem;
+            transition: opacity .2s;
+        }
+        .back-link:hover { opacity: .7; }
+
+        .header-label {
+            color: var(--gold);
+            font-size: 0.75rem;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+            margin-bottom: 0.7rem;
+            display: block;
+            font-family: var(--serif);
+        }
+
+        .recipe-header h1 {
+            font-family: var(--serif);
+            font-size: clamp(1.7rem, 5vw, 2.8rem);
+            font-weight: 700;
+            color: var(--gold-light);
+            line-height: 1.2;
+            margin-bottom: 0.9rem;
+        }
+
+        .meta-tags {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        .tag {
+            background: rgba(200,169,110,.12);
+            border: 1px solid var(--border);
+            color: var(--gold);
+            border-radius: 20px;
+            padding: .22rem .8rem;
+            font-size: .78rem;
+            font-family: var(--serif);
+            letter-spacing: .03em;
+        }
+
+        /* ── CORPS ──────────────────────────────────── */
+        .recipe-body {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 4rem;
+        }
+
+        /* ── ANECDOTE ───────────────────────────────── */
+        .recipe-intro {
+            background: var(--bg-card);
+            color: #f7f2e8;
+            border-left: 3px solid var(--gold);
+            border-radius: 0 var(--radius) var(--radius) 0;
+            padding: 1.1rem 1.4rem;
+            margin-bottom: 2rem;
+            font-style: italic;
+            font-size: 1.02rem;
+            line-height: 1.65;
+        }
+        .recipe-intro::before { content: '✦  '; color: var(--gold); font-style: normal; }
+
+        /* ── INFOS RAPIDES ──────────────────────────── */
+        .quick-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+            gap: 1px;
+            background: var(--border);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            overflow: hidden;
+            margin-bottom: 2.5rem;
+        }
+        .qi {
+            background: #f7f2e8;
+            padding: .9rem 1rem;
+            text-align: center;
+        }
+        .qi-icon { font-size: 1.3rem; display: block; margin-bottom: .25rem; }
+        .qi-label {
+            font-size: .7rem;
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            color: var(--ink-muted);
+            font-family: var(--serif);
+            display: block;
+            margin-bottom: .2rem;
+        }
+        .qi-value {
+            font-family: var(--serif);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--ink);
+        }
+
+        /* ── TITRE DE SECTION ───────────────────────── */
+        .section-title {
+            font-family: var(--serif);
+            font-size: 1.15rem;
+            font-weight: 700;
+            border-bottom: 2px solid var(--gold);
+            padding-bottom: .35rem;
+            margin-bottom: 1.2rem;
+            display: flex;
+            align-items: center;
+            gap: .45rem;
+            color: var(--ink);
+        }
+
+        /* ── INGRÉDIENTS ────────────────────────────── */
+        .ingredients-block { margin-bottom: 2.5rem; }
+
+        .ing-groupe { margin-bottom: 1.2rem; }
+        .ing-groupe h4 {
+            font-family: var(--serif);
+            font-size: .82rem;
+            text-transform: uppercase;
+            letter-spacing: .1em;
+            color: var(--ink-muted);
+            margin-bottom: .55rem;
+        }
+
+        .ing-list { list-style: none; }
+        .ing-list li {
+            display: grid;
+            grid-template-columns: 1.8rem 80px 1fr auto;
+            align-items: baseline;
+            gap: .4rem;
+            padding: .42rem 0;
+            border-bottom: 1px solid rgba(44,36,22,.07);
+            font-size: .96rem;
+        }
+        .ing-list li:last-child { border-bottom: none; }
+        .ing-bullet { color: var(--gold); font-size: .8rem; }
+        .ing-qty { font-weight: 600; color: var(--ink); white-space: nowrap; }
+        .ing-name { color: var(--ink); }
+        .ing-note { color: var(--ink-muted); font-style: italic; font-size: .85rem; text-align: right; }
+
+        /* ── ÉTAPES ─────────────────────────────────── */
+        .steps-block { margin-bottom: 2.5rem; }
+
+        .step {
+            display: grid;
+            grid-template-columns: 2.4rem 1fr;
+            gap: .9rem;
+            margin-bottom: 1.5rem;
+            align-items: start;
+        }
+        .step-num {
+            width: 2.4rem; height: 2.4rem;
+            background: var(--bg-card);
+            color: var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--serif);
+            font-weight: 700;
+            font-size: .95rem;
+            flex-shrink: 0;
+            margin-top: .1rem;
+        }
+        .step-content h4 {
+            font-family: var(--serif);
+            font-size: 1rem;
+            font-weight: 700;
+            color: var(--ink);
+            margin-bottom: .25rem;
+        }
+        .step-content p { font-size: .96rem; line-height: 1.65; }
+        .step-timer {
+            display: inline-flex;
+            align-items: center;
+            gap: .3rem;
+            background: rgba(200,169,110,.1);
+            border: 1px solid var(--border);
+            color: var(--gold);
+            border-radius: 20px;
+            padding: .12rem .6rem;
+            font-size: .76rem;
+            font-family: var(--serif);
+            margin-top: .45rem;
+        }
+
+        /* ── CONSEILS ───────────────────────────────── */
+        .conseil {
+            background: rgba(200,169,110,.07);
+            border: 1px solid var(--border);
+            border-radius: var(--radius);
+            padding: 1.1rem 1.4rem;
+            margin-bottom: 1rem;
+        }
+        .conseil h4 {
+            font-family: var(--serif);
+            font-size: .92rem;
+            font-weight: 700;
+            color: var(--gold);
+            margin-bottom: .4rem;
+        }
+        .conseil p { font-size: .92rem; color: var(--ink-muted); line-height: 1.6; }
+
+        /* ── RECETTE VIDE (pas encore saisie) ────────── */
+        .empty-state {
+            text-align: center;
+            padding: 3rem 1rem;
+            color: var(--ink-muted);
+        }
+        .empty-state .empty-icon { font-size: 3rem; margin-bottom: 1rem; display: block; }
+        .empty-state h3 {
+            font-family: var(--serif);
+            font-size: 1.2rem;
+            margin-bottom: .6rem;
+            color: var(--ink);
+        }
+        .empty-state p { font-size: .93rem; line-height: 1.6; max-width: 400px; margin: 0 auto; }
+        .empty-state code {
+            display: inline-block;
+            background: var(--bg-card);
+            color: var(--gold);
+            border-radius: 4px;
+            padding: .15rem .5rem;
+            font-size: .82rem;
+            margin-top: .8rem;
+        }
+
+        /* ── NAVIGATION ─────────────────────────────── */
+        .recipe-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-top: 1px solid var(--border);
+            padding-top: 1.5rem;
+            margin-top: 2.5rem;
+            gap: 1rem;
+        }
+        .recipe-nav a {
+            color: var(--gold);
+            text-decoration: none;
+            font-family: var(--serif);
+            font-size: .88rem;
+            display: flex;
+            align-items: center;
+            gap: .35rem;
+            transition: opacity .2s;
+        }
+        .recipe-nav a:hover { opacity: .7; }
+        .nav-home {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            padding: .38rem 1.1rem;
+            font-size: .82rem;
+            letter-spacing: .05em;
+        }
+
+        /* ── RESPONSIVE ─────────────────────────────── */
+        @media (max-width: 600px) {
+            .recipe-header { padding: 3rem 1rem 1.5rem; }
+            .recipe-body { padding: 1.5rem 1rem 3rem; }
+            .step { grid-template-columns: 2rem 1fr; gap: .65rem; }
+            .step-num { width: 2rem; height: 2rem; font-size: .82rem; }
+            .ing-list li { grid-template-columns: 1.5rem 70px 1fr; }
+            .ing-note { display: none; }
+            .back-link span { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="recipe-header">
+    <a href="../index.html" class="back-link">← <span>Almanach</span></a>
+    <span class="header-label">◈ Recettes de l'Almanach ◈</span>
+    <h1 id="r-title">Chargement…</h1>
+    <div class="meta-tags" id="r-tags"></div>
+</header>
+
+<main class="recipe-body">
+
+    <!-- ANECDOTE -->
+    <p class="recipe-intro" id="r-intro"></p>
+
+    <!-- INFOS RAPIDES -->
+    <div class="quick-grid" id="r-quick"></div>
+
+    <!-- INGRÉDIENTS -->
+    <section class="ingredients-block" id="r-ingredients-block">
+        <h2 class="section-title"><span>🧄</span> Ingrédients</h2>
+        <div id="r-ingredients"></div>
+    </section>
+
+    <!-- ÉTAPES -->
+    <section class="steps-block" id="r-steps-block">
+        <h2 class="section-title"><span>👨‍🍳</span> Préparation</h2>
+        <div id="r-steps"></div>
+    </section>
+
+    <!-- CONSEILS -->
+    <section id="r-conseils-block"></section>
+
+    <!-- NAVIGATION -->
+    <nav class="recipe-nav">
+        <a id="nav-prev" href="#">← Précédente</a>
+        <a href="../index.html" class="nav-home">◈ Almanach</a>
+        <a id="nav-next" href="#">Suivante →</a>
+    </nav>
+
+</main>
+
+<!-- Fichier de données unique -->
+<script src="Recettes.js"></script>
+
+<script>
+// ═══════════════════════════════════════════════════════
+// MOTEUR D'AFFICHAGE
+// ═══════════════════════════════════════════════════════
+
+(function () {
+
+    // 1. Lire le slug depuis ?plat=xxx
+    const params = new URLSearchParams(window.location.search);
+    const slug   = params.get('plat') || '';
+    const recette = RECETTES[slug];
+
+    // 2. Slug inconnu → page 404 douce
+    if (!recette) {
+        document.getElementById('r-title').textContent = 'Recette introuvable';
+        document.getElementById('r-intro').textContent =
+            'Le slug "' + slug + '" n\'existe pas dans recettes.js.';
+        document.getElementById('r-quick').style.display = 'none';
+        document.getElementById('r-ingredients-block').style.display = 'none';
+        document.getElementById('r-steps-block').style.display = 'none';
+        return;
+    }
+
+    // 3. Titre de la page
+    document.title = recette.name + ' — Almanach du Jour';
+    set('r-title', recette.name);
+
+    // 4. Tags
+    const tagsEl = document.getElementById('r-tags');
+    const tags = [];
+    if (recette.region)     tags.push('🗺 ' + recette.region);
+    if (recette.tags)       recette.tags.forEach(t => tags.push(t));
+    if (recette.personnes)  tags.push('👥 ' + recette.personnes + ' pers.');
+    if (recette.difficulte) tags.push('⭐ ' + recette.difficulte);
+    tagsEl.innerHTML = tags.map(t => `<span class="tag">${t}</span>`).join('');
+
+    // 5. Anecdote
+    set('r-intro', recette.anecdote || '');
+
+    // 6. Infos rapides
+    const quickData = [
+        { icon: '⏱', label: 'Préparation', value: recette.prep     || '—' },
+        { icon: '🔥', label: 'Cuisson',     value: recette.cuisson  || '—' },
+        { icon: '👥', label: 'Personnes',   value: recette.personnes || '4' },
+        { icon: '📊', label: 'Difficulté',  value: recette.difficulte || '—' },
+    ];
+    document.getElementById('r-quick').innerHTML = quickData.map(d => `
+        <div class="qi">
+            <span class="qi-icon">${d.icon}</span>
+            <span class="qi-label">${d.label}</span>
+            <span class="qi-value">${d.value}</span>
+        </div>
+    `).join('');
+
+    // 7. Ingrédients
+    const ingEl = document.getElementById('r-ingredients');
+    if (recette.ingredients && recette.ingredients.length) {
+        ingEl.innerHTML = recette.ingredients.map(groupe => `
+            <div class="ing-groupe">
+                ${groupe.groupe ? `<h4>${groupe.groupe}</h4>` : ''}
+                <ul class="ing-list">
+                    ${groupe.items.map(it => `
+                        <li>
+                            <span class="ing-bullet">—</span>
+                            <span class="ing-qty">${it.qty || ''}</span>
+                            <span class="ing-name">${it.name}</span>
+                            <span class="ing-note">${it.note || ''}</span>
+                        </li>
+                    `).join('')}
+                </ul>
+            </div>
+        `).join('');
+    } else {
+        ingEl.innerHTML = emptyState(recette.name, 'ingredients');
+        document.getElementById('r-ingredients-block')
+            .querySelector('.section-title').style.display = 'none';
+    }
+
+    // 8. Étapes
+    const stepsEl = document.getElementById('r-steps');
+    if (recette.etapes && recette.etapes.length) {
+        stepsEl.innerHTML = recette.etapes.map((e, i) => `
+            <div class="step">
+                <div class="step-num">${i + 1}</div>
+                <div class="step-content">
+                    <h4>${e.titre}</h4>
+                    <p>${e.texte}</p>
+                    ${e.timer ? `<span class="step-timer">⏱ ${e.timer}</span>` : ''}
+                </div>
+            </div>
+        `).join('');
+    } else {
+        stepsEl.innerHTML = emptyState(recette.name, 'etapes');
+        document.getElementById('r-steps-block')
+            .querySelector('.section-title').style.display = 'none';
+    }
+
+    // 9. Conseils
+    const conseilsEl = document.getElementById('r-conseils-block');
+    if (recette.conseils && recette.conseils.length) {
+        const labels = ['💡 Le conseil de l\'almanach', '🔄 Variante', '📌 À savoir', '🍷 Accord'];
+        conseilsEl.innerHTML = recette.conseils.map((c, i) => `
+            <div class="conseil">
+                <h4>${labels[i] || '💡 Conseil'}</h4>
+                <p>${c}</p>
+            </div>
+        `).join('');
+    }
+
+    // 10. Navigation prev/next parmi les slugs
+    const slugs = Object.keys(RECETTES).sort();
+    const idx   = slugs.indexOf(slug);
+    const prev  = slugs[idx - 1];
+    const next  = slugs[idx + 1];
+
+    const navPrev = document.getElementById('nav-prev');
+    const navNext = document.getElementById('nav-next');
+
+    if (prev) {
+        navPrev.href = 'recette.html?plat=' + prev;
+        navPrev.title = RECETTES[prev].name;
+    } else {
+        navPrev.style.visibility = 'hidden';
+    }
+    if (next) {
+        navNext.href = 'recette.html?plat=' + next;
+        navNext.title = RECETTES[next].name;
+    } else {
+        navNext.style.visibility = 'hidden';
+    }
+
+    // ── Helpers ────────────────────────────────────────
+    function set(id, text) {
+        const el = document.getElementById(id);
+        if (el) el.textContent = text;
+    }
+
+    function emptyState(name, type) {
+        const msgs = {
+            ingredients: 'Les ingrédients de cette recette n\'ont pas encore été saisis.',
+            etapes:      'Les étapes de cette recette n\'ont pas encore été saisies.',
+        };
+        return `
+            <div class="empty-state">
+                <span class="empty-icon">📝</span>
+                <h3>Recette à compléter</h3>
+                <p>${msgs[type] || 'Contenu à venir.'}<br>
+                   Pour l'ajouter, éditez l'entrée <code>${slug}</code> dans <code>recettes.js</code>.</p>
+            </div>`;
+    }
+
+})();
+</script>
+
+</body>
+</html>
