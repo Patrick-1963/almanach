@@ -1,0 +1,9028 @@
+// ═══════════════════════════════════════════════════════
+// RECETTES DE L'ALMANACH
+// ═══════════════════════════════════════════════════════
+// Structure de chaque recette :
+// {
+//   name       : string   — Nom du plat
+//   region     : string   — Région d'origine
+//   anecdote   : string   — Texte court (repris de l'almanach)
+//   tags       : string[] — [saison, type, difficulté]
+//   prep       : string   — Temps de préparation
+//   cuisson    : string   — Temps de cuisson
+//   personnes  : number
+//   difficulte : string   — Facile / Moyen / Élaboré
+//   ingredients: [ { groupe, items: [{qty, name, note}] } ]
+//   etapes     : [ { titre, texte, timer? } ]
+//   conseils   : string[] — tableau de conseils/variantes
+// }
+
+const RECETTES = {
+    'agneau-de-paques': {
+        name:       'Agneau de Pâques au four',
+        region:     'France entière',
+        anecdote:   'L\'agneau pascal rôti au four avec ail et thym est la tradition de Pâques dans toutes les régions de France.',
+        tags:       ["Printemps", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '1 h 30',
+        personnes:  6,
+        difficulte: 'Moyen',
+        ingredients: [
+            { groupe: 'Le gigot', items: [
+                { qty: '1 (2 kg)', name: 'gigot d\'agneau', note: 'à l\'os' },
+                { qty: '6 gousses', name: 'ail', note: '' },
+                { qty: '2 branches', name: 'romarin frais', note: '' },
+                { qty: '3 c.s.', name: 'huile d\'olive', note: '' },
+                { qty: '', name: 'sel, poivre', note: '' },
+            ]},
+            { groupe: 'Les flageolets', items: [
+                { qty: '500 g', name: 'flageolets en boîte', note: 'égouttés' },
+                { qty: '1', name: 'oignon', note: '' },
+                { qty: '2 gousses', name: 'ail', note: '' },
+                { qty: '30 g', name: 'beurre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Piquer et mariner', texte: 'Éplucher l\'ail, couper en lamelles. Piquer le gigot en 20 endroits, glisser ail et romarin dans chaque incision. Frotter d\'huile d\'olive, sel et poivre. Reposer 1 h à température ambiante.', timer: '1 h de repos' },
+            { titre: 'Rôtir', texte: 'Four à 220 °C. Enfourner 15 min pour saisir, puis baisser à 180 °C et poursuivre en arrosant toutes les 20 min.', timer: '1 h 15 à 180 °C' },
+            { titre: 'Flageolets', texte: 'Faire suer l\'oignon et l\'ail dans le beurre. Ajouter les flageolets égouttés avec un verre d\'eau. Mijoter 15 min. Saler, poivrer.', timer: '15 min' },
+            { titre: 'Reposer et servir', texte: 'Couvrir le gigot d\'aluminium, laisser reposer 10 min. Découper et servir avec les flageolets et le jus de cuisson déglacé.', timer: '10 min de repos' },
+        ],
+        conseils: [
+            'Pour une cuisson rosée : 58 °C à cœur. À point : 65 °C. Utiliser une sonde pour un résultat parfait.',
+            'Le gigot d\'agneau de Sisteron (AOP) est le plus réputé de France.',
+        ],
+    },
+
+    'agneau-flageolets': {
+        name:       'Agneau printanier aux flageolets',
+        region:     'Ile-de-France / Berry',
+        anecdote:   'Le gigot d\'agneau aux flageolets verts est le plat de Pâques classique depuis la cuisine bourgeoise du XIXe siècle.',
+        tags:       ["Printemps", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
+        personnes:  4,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: 'L\'agneau', items: [
+                { qty: '8', name: 'côtelettes d\'agneau', note: '' },
+                { qty: '2 gousses', name: 'ail', note: 'écrasées' },
+                { qty: '2 branches', name: 'thym', note: '' },
+                { qty: '2 c.s.', name: 'huile d\'olive', note: '' },
+                { qty: '', name: 'sel, poivre', note: '' },
+            ]},
+            { groupe: 'Les flageolets', items: [
+                { qty: '2 boîtes', name: 'flageolets', note: 'égouttés (800 g)' },
+                { qty: '1', name: 'échalote', note: 'ciselée' },
+                { qty: '20 cl', name: 'bouillon de volaille', note: '' },
+                { qty: '20 g', name: 'beurre', note: '' },
+                { qty: '1 bouquet', name: 'persil plat', note: 'ciselé' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Mijoter les flageolets', texte: 'Faire suer l\'échalote dans le beurre. Ajouter les flageolets et le bouillon, mijoter 15 min. Parsemer de persil.', timer: '15 min' },
+            { titre: 'Griller l\'agneau', texte: 'Frotter les côtelettes d\'ail, thym, huile, sel et poivre. Cuire à la poêle très chaude 3 min par face. Laisser reposer 2 min.', timer: '6-8 min' },
+            { titre: 'Déglacer et dresser', texte: 'Déglacer la poêle avec un filet d\'eau. Verser le jus sur l\'agneau. Dresser sur les flageolets.' },
+        ],
+        conseils: [
+            'Les flageolets de Paimpol AOP sont les meilleurs de France : petits, fondants et peu farineux.',
+        ],
+    },
+
+    'aligot': {
+        name:       'Aligot',
+        region:     'Aubrac / Aveyron',
+        anecdote:   'Pommes de terre et tome fraîche filant sur la cuillère, l\'aligot réchauffe les nuits de l\'Aubrac enneigé.',
+        tags:       ["Hiver", "Accompagnement", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
+        personnes:  4,
+        difficulte: 'Moyen',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '1 kg', name: 'pommes de terre farineuses', note: 'type Bintje' },
+                { qty: '400 g', name: 'tome fraîche de l\'Aubrac', note: 'ou tome de Cantal fraîche' },
+                { qty: '150 g', name: 'crème fraîche épaisse', note: '' },
+                { qty: '50 g', name: 'beurre demi-sel', note: '' },
+                { qty: '2 gousses', name: 'ail', note: 'écrasées' },
+                { qty: '', name: 'sel', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Cuire les pommes de terre', texte: 'Éplucher et cuire les pommes de terre entières dans l\'eau bouillante salée jusqu\'à ce qu\'elles soient très tendres.', timer: '25-30 min' },
+            { titre: 'Purée', texte: 'Passer au moulin à légumes (jamais au mixeur). Ajouter beurre, crème et ail. Travailler sur feu doux. La purée doit être très souple et bien chaude.' },
+            { titre: 'Incorporer la tome', texte: 'Couper la tome en lamelles fines. Sur feu moyen, incorporer progressivement en remuant sans arrêt à la spatule en décrivant des 8. L\'aligot doit filer et se détacher des parois.', timer: '5-8 min de travail' },
+        ],
+        conseils: [
+            'Le secret : purée très chaude + tome fraîche (non affinée). Travailler sans cesse pour obtenir le fil. Servir immédiatement avec des saucisses grillées.',
+        ],
+    },
+
+    'anchois-marines': {
+        name:       'Anchois marinés maison',
+        region:     'Languedoc / Côte d\'Azur',
+        anecdote:   'Les anchois frais de juin marinés dans le sel, l\'huile et le citron sont un trésor de la cuisine catalane.',
+        tags:       ["Été", "Entrée", "Facile"],
+        prep:       '30 min',
+        cuisson:    '0 min',
+        personnes:  4,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '500 g', name: 'anchois frais', note: 'très frais' },
+                { qty: '3', name: 'citrons', note: 'jus' },
+                { qty: '4 gousses', name: 'ail', note: 'finement émincé' },
+                { qty: '1 bouquet', name: 'persil plat', note: 'ciselé' },
+                { qty: '10 cl', name: 'huile d\'olive extra-vierge', note: '' },
+                { qty: '1 c.c.', name: 'piment d\'Espelette', note: '' },
+                { qty: '', name: 'fleur de sel', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Lever les filets', texte: 'Décapiter les anchois, ouvrir en deux et retirer l\'arête centrale avec les doigts. Rincer et bien sécher.' },
+            { titre: 'Mariner au citron', texte: 'Disposer les filets dans un plat creux. Couvrir entièrement de jus de citron. Filmer et réfrigérer : les filets vont blanchir (cuisson à l\'acide).', timer: '2 h au réfrigérateur' },
+            { titre: 'Assaisonner', texte: 'Égoutter les filets. Disposer sur le plat. Parsemer d\'ail, persil, piment d\'Espelette. Arroser d\'huile d\'olive. Fleur de sel. Servir frais.' },
+        ],
+        conseils: [
+            'Acheter les anchois le matin même chez le poissonnier. Ce ceviche méditerranéen est parfait sur une tartine grillée frottée à l\'ail.',
+        ],
+    },
+
+    'andouille-vire-croute': {
+        name:       'Andouille de Vire en croûte',
+        region:     'Normandie',
+        anecdote:   'L\'andouille de Vire, fumée et ferme, cuite en croûte avec moutarde et herbes est une entrée charcutière normande.',
+        tags:       ["Automne", "Entrée", "Facile"],
+        prep:       '15 min',
+        cuisson:    '25 min',
+        personnes:  4,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '1', name: 'andouille de Vire', note: 'environ 400 g' },
+                { qty: '1 rouleau', name: 'pâte feuilletée pur beurre', note: '' },
+                { qty: '2 c.s.', name: 'moutarde à l\'ancienne', note: '' },
+                { qty: '1', name: 'jaune d\'œuf', note: '' },
+                { qty: '1 c.s.', name: 'lait', note: '' },
+                { qty: 'quelques branches', name: 'thym frais', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Préparer', texte: 'Retirer la peau de l\'andouille. La couper en tranches épaisses ou laisser entière selon la présentation voulue.' },
+            { titre: 'Enrouler', texte: 'Dérouler la pâte feuilletée. Badigeonner de moutarde à l\'ancienne. Déposer l\'andouille, parsemer de thym. Enrouler en soudant bien les bords avec un peu d\'eau.' },
+            { titre: 'Dorer et cuire', texte: 'Badigeonner de jaune d\'œuf dilué dans le lait. Strier à la fourchette. Enfourner à 200 °C.', timer: '20-25 min à 200 °C' },
+        ],
+        conseils: [
+            'Servir avec une salade verte et une sauce au cidre normand : réduire 15 cl de cidre brut avec une échalote, finir à la crème.',
+        ],
+    },
+
+    'andouillette-troyes': {
+        name:       'Andouillette de Troyes grillée',
+        region:     'Champagne',
+        anecdote:   'L\'andouillette de Troyes labellisée AAAAA est une institution charcutière française depuis le Moyen Âge.',
+        tags:       ["Toute l'année", "Plat principal", "Facile"],
+        prep:       '5 min',
+        cuisson:    '15 min',
+        personnes:  4,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '4', name: 'andouillettes de Troyes AAAAA', note: '~200 g chacune' },
+                { qty: '20 cl', name: 'vin blanc sec', note: 'Chablis ou Mâcon' },
+                { qty: '20 cl', name: 'crème fraîche épaisse', note: '' },
+                { qty: '2 c.s.', name: 'moutarde de Dijon', note: '' },
+                { qty: '2', name: 'échalotes', note: 'ciselées' },
+                { qty: '20 g', name: 'beurre', note: '' },
+                { qty: '', name: 'sel, poivre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Griller', texte: 'Inciser la peau en croix. Placer dans un plat et passer sous le gril du four 8-10 min en retournant à mi-cuisson.', timer: '8-10 min sous le gril' },
+            { titre: 'Sauce moutarde', texte: 'Faire suer les échalotes dans le beurre. Déglacer au vin blanc, réduire de moitié. Ajouter crème et moutarde, laisser épaissir 3 min. Assaisonner.', timer: '8 min' },
+            { titre: 'Servir', texte: 'Napper les andouillettes de sauce. Accompagner de pommes de terre vapeur ou de purée maison.' },
+        ],
+        conseils: [
+            'Le label AAAAA est décerné par l\'Association Amicale des Amateurs d\'Andouillette Authentique. Exiger ce label chez le charcutier.',
+        ],
+    },
+
+    'asperges-plancha': {
+        name:       'Asperges vertes rôties à la plancha',
+        region:     'Provence / Languedoc',
+        anecdote:   'Les asperges vertes du Gard ou du Vaucluse passées rapidement à la plancha sont croustillantes et fumées.',
+        tags:       ["Printemps", "Entrée", "Facile"],
+        prep:       '10 min',
+        cuisson:    '10 min',
+        personnes:  4,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '500 g', name: 'asperges vertes', note: 'calibre moyen' },
+                { qty: '3 c.s.', name: 'huile d\'olive', note: '' },
+                { qty: '1', name: 'citron', note: 'zeste et jus' },
+                { qty: '1 gousse', name: 'ail', note: 'émincée' },
+                { qty: '', name: 'fleur de sel, poivre', note: '' },
+                { qty: '', name: 'copeaux de parmesan', note: 'facultatif' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Préparer', texte: 'Couper les 3 derniers cm (partie ligneuse). Laver, sécher et badigeonner d\'huile d\'olive.' },
+            { titre: 'Plancha', texte: 'Chauffer la plancha ou une poêle en fonte à feu très vif. Déposer les asperges en une couche. Cuire 3-4 min sans toucher, retourner, encore 3 min. Légèrement colorées mais encore croquantes.', timer: '6-8 min' },
+            { titre: 'Assaisonner', texte: 'Dresser sur le plat. Parsemer d\'ail émincé. Arroser d\'huile d\'olive et de jus de citron. Zester par-dessus. Fleur de sel, poivre, copeaux de parmesan.' },
+        ],
+        conseils: [
+            'La plancha très chaude crée une caramélisation qui apporte un léger goût fumé incomparable. Ne pas trop cuire : elles doivent rester légèrement croquantes.',
+        ],
+    },
+
+    'asperges-sauce-mousseline': {
+        name:       'Asperges blanches sauce mousseline',
+        region:     'Val de Loire / Landes',
+        anecdote:   'Les premières asperges blanches d\'Argenteuil ou des Landes arrivent en avril, fines et délicates.',
+        tags:       ["Printemps", "Entrée", "Élaboré"],
+        prep:       '20 min',
+        cuisson:    '20 min',
+        personnes:  4,
+        difficulte: 'Élaboré',
+        ingredients: [
+            { groupe: 'Les asperges', items: [
+                { qty: '1 kg', name: 'asperges blanches', note: '' },
+                { qty: '', name: 'gros sel', note: '' },
+            ]},
+            { groupe: 'Sauce mousseline', items: [
+                { qty: '3', name: 'jaunes d\'œufs', note: '' },
+                { qty: '3 c.s.', name: 'eau froide', note: '' },
+                { qty: '200 g', name: 'beurre doux', note: '' },
+                { qty: '1', name: 'citron', note: 'jus' },
+                { qty: '10 cl', name: 'crème liquide entière', note: 'bien froide' },
+                { qty: '', name: 'sel, poivre blanc', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Éplucher', texte: 'Éplucher les asperges du haut vers le bas avec un économe. Couper les extrémités ligneuses. Lier en botte.' },
+            { titre: 'Cuire', texte: 'Plonger dans l\'eau bouillante salée, cuire 15-18 min. Une lame doit pénétrer sans résistance à 3 cm de la tête.', timer: '15-18 min' },
+            { titre: 'Sabayon', texte: 'Fouetter jaunes et eau au bain-marie jusqu\'à obtenir un ruban épais et chaud. Le mélange doit tripler de volume.', timer: '5-8 min' },
+            { titre: 'Monter', texte: 'Incorporer le beurre fondu en filet en fouettant hors du feu. Saler, poivrer, citronner. Monter la crème en chantilly ferme. Incorporer délicatement à la spatule.' },
+            { titre: 'Dresser', texte: 'Égoutter les asperges sur un torchon. Dresser sur assiette chaude. Napper de sauce mousseline. Servir immédiatement.' },
+        ],
+        conseils: [
+            'La sauce mousseline est une hollandaise allégée à la crème fouettée. Elle doit être servie immédiatement car elle retombe en reposant.',
+        ],
+    },
+
+    'aspic-legumes': {
+        name:       'Aspic de légumes printaniers',
+        region:     'France entière',
+        anecdote:   'Petits pois, carottes, asperges et œufs durs pris dans une gelée au bouillon : un plat de fête printanier.',
+        tags:       ["Printemps", "Entrée", "Élaboré"],
+        prep:       '30 min',
+        cuisson:    '20 min',
+        personnes:  6,
+        difficulte: 'Élaboré',
+        ingredients: [
+            { groupe: 'Légumes', items: [
+                { qty: '150 g', name: 'petits pois', note: '' },
+                { qty: '3', name: 'carottes', note: 'en dés' },
+                { qty: '6', name: 'asperges vertes', note: 'en tronçons' },
+                { qty: '4', name: 'œufs durs', note: 'en rondelles' },
+                { qty: '1 bouquet', name: 'cerfeuil ou estragon', note: '' },
+            ]},
+            { groupe: 'Gelée', items: [
+                { qty: '1 litre', name: 'bouillon de volaille', note: 'bien assaisonné' },
+                { qty: '6 feuilles', name: 'gélatine', note: '' },
+                { qty: '2 c.s.', name: 'porto blanc', note: 'facultatif' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Cuire les légumes', texte: 'Cuire chaque légume séparément à l\'eau bouillante salée en les gardant croquants. Refroidir dans l\'eau glacée. Égoutter et sécher.' },
+            { titre: 'Préparer la gelée', texte: 'Ramollir la gélatine dans l\'eau froide 5 min. Chauffer le bouillon, y dissoudre la gélatine essorée. Ajouter le porto. Laisser tiédir jusqu\'à consistance sirupeuse.' },
+            { titre: 'Monter l\'aspic', texte: 'Huiler un moule à cake. Verser 1 cm de gelée, réfrigérer jusqu\'à prise. Disposer légumes, œufs et herbes en couches. Couler la gelée entre chaque couche.', timer: '2 h minimum' },
+            { titre: 'Démouler', texte: 'Tremper le moule 5 secondes dans l\'eau chaude. Retourner sur le plat de service. Servir tranché avec une vinaigrette à l\'estragon.' },
+        ],
+        conseils: [
+            'Un bel aspic doit être parfaitement transparent. Clarifier le bouillon si nécessaire avec un blanc d\'œuf.',
+        ],
+    },
+
+    'aubergines-orientales': {
+        name:       'Aubergines en gratin à l\'orientale',
+        region:     'Provence / Maroc',
+        anecdote:   'Les aubergines farcies au ras-el-hanout, tomates et agneau haché rappellent les cuisines de l\'autre rive de la Méditerranée.',
+        tags:       ["Été", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '40 min',
+        personnes:  4,
+        difficulte: 'Moyen',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '4', name: 'aubergines rondes', note: '' },
+                { qty: '400 g', name: 'agneau haché', note: 'ou bœuf' },
+                { qty: '2', name: 'oignons', note: 'émincés' },
+                { qty: '3 gousses', name: 'ail', note: 'écrasées' },
+                { qty: '1 boîte', name: 'tomates concassées', note: '400 g' },
+                { qty: '2 c.c.', name: 'ras-el-hanout', note: '' },
+                { qty: '1 c.c.', name: 'cumin', note: '' },
+                { qty: '1 c.c.', name: 'cannelle', note: '' },
+                { qty: '1 bouquet', name: 'coriandre fraîche', note: '' },
+                { qty: '4 c.s.', name: 'huile d\'olive', note: '' },
+                { qty: '', name: 'sel, poivre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Cuire les aubergines', texte: 'Couper en deux, quadriller la chair, saler, laisser dégorger 20 min. Éponger, badigeonner d\'huile. Enfourner à 200 °C jusqu\'à ce que la chair soit tendre.', timer: '20 min à 200 °C' },
+            { titre: 'Préparer la farce', texte: 'Faire dorer les oignons dans l\'huile, ajouter l\'ail et la viande. Bien saisir. Incorporer les épices, les tomates. Mijoter 15 min jusqu\'à absorption du jus.', timer: '15 min' },
+            { titre: 'Farcir et gratiner', texte: 'Creuser légèrement les aubergines, incorporer la chair dans la farce. Farcir généreusement. Enfourner 10 min.', timer: '10 min' },
+            { titre: 'Servir', texte: 'Parsemer de coriandre fraîche. Servir avec du riz blanc ou du pain pita.' },
+        ],
+        conseils: [
+            'Le ras-el-hanout est un mélange de 20 à 30 épices. Demander un mélange orienté "viande" à votre épicier.',
+        ],
+    },
+
+    'baeckeoffe': {
+        name:       'Baeckeoffe',
+        region:     'Alsace',
+        anecdote:   'Plat du lundi de lessive : les femmes alsaciennes déposaient leur terrine chez le boulanger avant de partir travailler.',
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '30 min',
+        cuisson:    '2 h 30',
+        personnes:  6,
+        difficulte: 'Moyen',
+        ingredients: [
+            { groupe: 'Viandes (mariner la veille)', items: [
+                { qty: '400 g', name: 'épaule d\'agneau', note: 'en cubes' },
+                { qty: '400 g', name: 'échine de porc', note: 'en cubes' },
+                { qty: '400 g', name: 'paleron de bœuf', note: 'en cubes' },
+                { qty: '75 cl', name: 'Riesling d\'Alsace', note: '' },
+                { qty: '2', name: 'oignons', note: 'émincés' },
+                { qty: '3 gousses', name: 'ail', note: '' },
+                { qty: '5', name: 'baies de genièvre', note: '' },
+                { qty: '1', name: 'bouquet garni', note: '' },
+            ]},
+            { groupe: 'La terrine', items: [
+                { qty: '1,5 kg', name: 'pommes de terre', note: 'à chair ferme, en rondelles' },
+                { qty: '2', name: 'poireaux', note: 'en rondelles' },
+                { qty: '3', name: 'carottes', note: 'en rondelles' },
+                { qty: '', name: 'sel, poivre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Mariner la veille', texte: 'Placer les viandes dans un bol avec le vin, oignons, ail, bouquet garni et genièvre. Couvrir et réfrigérer toute la nuit.', timer: '12 h de marinade' },
+            { titre: 'Monter', texte: 'Beurrer une grande terrine en terre. Alterner couches de légumes et de viandes marinées en assaisonnant. Terminer par les pommes de terre. Mouiller avec la marinade filtrée jusqu\'à mi-hauteur.' },
+            { titre: 'Luter et cuire', texte: 'Préparer une pâte à luter (farine + eau). Sceller le couvercle avec cette pâte. Enfourner à 180 °C.', timer: '2 h 30 à 180 °C' },
+            { titre: 'Servir', texte: 'Casser le lut devant les convives. Servir directement à la terrine.' },
+        ],
+        conseils: [
+            'Le lut (pâte de farine et eau) rend la terrine hermétique et concentre les arômes. Tradition alsacienne : les femmes portaient leur terrine chez le boulanger le lundi matin.',
+        ],
+    },
+
+    'beignets-courgettes': {
+        name:       'Beignets de courgettes',
+        region:     'Nice / Provence',
+        anecdote:   'Les beignets de courgettes à la ricotta et au basilic frits à l\'huile d\'olive sont une spécialité niçoise.',
+        tags:       ["Été", "Entrée", "Facile"],
+        prep:       '15 min',
+        cuisson:    '15 min',
+        personnes:  4,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '3', name: 'courgettes moyennes', note: '' },
+                { qty: '150 g', name: 'ricotta', note: '' },
+                { qty: '50 g', name: 'parmesan râpé', note: '' },
+                { qty: '1 bouquet', name: 'basilic frais', note: 'ciselé' },
+                { qty: '2', name: 'œufs', note: '' },
+                { qty: '80 g', name: 'farine', note: '' },
+                { qty: '', name: 'sel, poivre, muscade', note: '' },
+                { qty: '', name: 'huile d\'olive', note: 'pour frire' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Préparer les courgettes', texte: 'Râper grossièrement les courgettes. Saler et laisser dégorger 15 min. Presser dans un torchon pour éliminer l\'eau.', timer: '15 min' },
+            { titre: 'Pâte', texte: 'Mélanger courgettes, ricotta, parmesan, œufs battus, farine et basilic. Assaisonner. La pâte doit être compacte.' },
+            { titre: 'Frire', texte: 'Chauffer 2 cm d\'huile. Former des galettes à la cuillère. Faire dorer 2-3 min de chaque côté. Égoutter sur papier absorbant.', timer: '5-6 min par fournée' },
+        ],
+        conseils: [
+            'Servir avec une sauce yaourt grec + ail + menthe + citron. Version plus légère possible au four à 200 °C sur plaque huilée.',
+        ],
+    },
+
+    'blanquette-de-veau': {
+        name:       'Blanquette de veau',
+        region:     'Île-de-France',
+        anecdote:   'L\'un des plats les plus aimés des Français depuis le XVIIIe siècle, douceur et onctuosité.',
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '30 min',
+        cuisson:    '1 h 30',
+        personnes:  6,
+        difficulte: 'Moyen',
+        ingredients: [
+            { groupe: 'Le veau', items: [
+                { qty: '1,2 kg', name: 'épaule de veau', note: 'en morceaux de 60 g' },
+                { qty: '2', name: 'carottes', note: 'en tronçons' },
+                { qty: '2', name: 'oignons', note: '(1 piqué d\'un clou de girofle)' },
+                { qty: '1', name: 'poireau', note: 'blanc seulement' },
+                { qty: '1', name: 'bouquet garni', note: '' },
+                { qty: '', name: 'gros sel, poivre blanc', note: '' },
+            ]},
+            { groupe: 'La sauce', items: [
+                { qty: '40 g', name: 'beurre', note: '' },
+                { qty: '40 g', name: 'farine', note: '' },
+                { qty: '20 cl', name: 'crème fraîche épaisse', note: '' },
+                { qty: '2', name: 'jaunes d\'œufs', note: '' },
+                { qty: '1', name: 'citron', note: 'jus' },
+                { qty: '200 g', name: 'champignons de Paris', note: 'émincés' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Blanchir le veau', texte: 'Plonger le veau dans l\'eau froide, porter à ébullition 3 min. Égoutter et rincer. Cette étape garantit une sauce bien blanche.' },
+            { titre: 'Cuire dans le bouillon', texte: 'Remettre le veau avec les légumes, bouquet garni, eau froide et sel. Porter à frémissement et cuire à couvert à feu doux.', timer: '1 h à feu doux' },
+            { titre: 'Velouté', texte: 'Roux blanc avec beurre et farine. Mouiller avec 60 cl de bouillon filtré en fouettant. Épaissir 5 min. Ajouter les champignons.', timer: '15 min' },
+            { titre: 'Lier à la crème', texte: 'Mélanger crème et jaunes d\'œufs. Incorporer hors du feu à la sauce. Ajouter le jus de citron. Ne plus faire bouillir.' },
+            { titre: 'Servir', texte: 'Remettre le veau dans la sauce. Réchauffer doucement. Servir avec riz blanc ou pommes de terre vapeur.' },
+        ],
+        conseils: [
+            'La liaison crème-jaunes d\'œufs donne onctuosité et brillance mais ne doit jamais bouillir après incorporation, sinon la sauce tranche.',
+        ],
+    },
+
+    'blanquette-legumes': {
+        name:       'Blanquette de légumes printaniers',
+        region:     'Île-de-France',
+        anecdote:   'Carottes fanes, navets nouveaux, asperges et petits pois cuisinés en blanquette végétale pour les jardins de mai.',
+        tags:       ["Printemps", "Plat principal", "Facile"],
+        prep:       '20 min',
+        cuisson:    '25 min',
+        personnes:  4,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: 'Les légumes', items: [
+                { qty: '3', name: 'carottes fanes', note: 'en bâtonnets' },
+                { qty: '2', name: 'navets nouveaux', note: 'en quartiers' },
+                { qty: '200 g', name: 'petits pois frais', note: '' },
+                { qty: '200 g', name: 'asperges vertes', note: 'en tronçons' },
+                { qty: '150 g', name: 'champignons de Paris', note: '' },
+            ]},
+            { groupe: 'Sauce', items: [
+                { qty: '30 g', name: 'beurre', note: '' },
+                { qty: '30 g', name: 'farine', note: '' },
+                { qty: '50 cl', name: 'bouillon de légumes chaud', note: '' },
+                { qty: '15 cl', name: 'crème fraîche', note: '' },
+                { qty: '1', name: 'citron', note: 'jus' },
+                { qty: '', name: 'sel, poivre, muscade', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Cuire les légumes', texte: 'Cuire chaque légume séparément à l\'eau bouillante salée en les gardant légèrement croquants. Égoutter.' },
+            { titre: 'Sauce velouté', texte: 'Roux blanc avec beurre et farine. Mouiller au bouillon chaud en fouettant. Cuire 5 min. Ajouter crème, citron et muscade. Rectifier.', timer: '10 min' },
+            { titre: 'Servir', texte: 'Réunir tous les légumes dans la sauce. Chauffer 2 min sans bouillir. Servir avec riz basmati.' },
+        ],
+        conseils: [
+            'Version végétarienne complète. On peut enrichir avec des jaunes d\'œufs comme dans la blanquette de veau classique.',
+        ],
+    },
+
+    'boeuf-bourgogne-champignons': {
+        name:       'Bourgogne aux lardons et champignons',
+        region:     'Bourgogne',
+        anecdote:   'Le bœuf bourguignon aux champignons et aux lardons est le grand plat de l\'automne bourguignon.',
+        tags:       ["Automne", "Plat principal", "Moyen"],
+        prep:       '30 min',
+        cuisson:    '3 h',
+        personnes:  6,
+        difficulte: 'Moyen',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '1,2 kg', name: 'paleron de bœuf', note: 'en cubes' },
+                { qty: '300 g', name: 'champignons sauvages mélangés', note: 'cèpes, girolles, trompettes' },
+                { qty: '150 g', name: 'lardons fumés', note: '' },
+                { qty: '75 cl', name: 'Bourgogne rouge', note: 'Pinot Noir' },
+                { qty: '2', name: 'carottes', note: 'en rondelles' },
+                { qty: '2', name: 'oignons', note: 'en quartiers' },
+                { qty: '3 gousses', name: 'ail', note: '' },
+                { qty: '1', name: 'bouquet garni', note: '' },
+                { qty: '2 c.s.', name: 'farine', note: '' },
+                { qty: '', name: 'huile, sel, poivre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Saisir', texte: 'Faire revenir les lardons, réserver. Saisir les cubes de bœuf sur toutes les faces en plusieurs fois. Réserver.', timer: '15 min' },
+            { titre: 'Déglacer et mijoter', texte: 'Faire revenir oignons et carottes. Saupoudrer de farine, remuer. Remettre bœuf et lardons. Verser le vin, ajouter ail et bouquet garni. Porter à ébullition, écumer, couvrir. Cuire à très feu doux.', timer: '2 h 30' },
+            { titre: 'Champignons', texte: '30 min avant la fin, poêler vivement les champignons dans du beurre. Incorporer à la cocotte. Rectifier l\'assaisonnement.', timer: '30 min' },
+        ],
+        conseils: [
+            'Encore meilleur réchauffé le lendemain. Préparer la veille pour le lendemain.',
+        ],
+    },
+
+    'boeuf-bourguignon': {
+        name:       'Bœuf bourguignon',
+        region:     'Bourgogne',
+        anecdote:   'Plat du dimanche par excellence, le bœuf bourguignon tire sa richesse du vin de Bourgogne et de la patience.',
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '30 min',
+        cuisson:    '3 h',
+        personnes:  6,
+        difficulte: 'Moyen',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '1,5 kg', name: 'paleron de bœuf', note: 'en cubes de 5 cm' },
+                { qty: '200 g', name: 'lardons demi-sel', note: '' },
+                { qty: '20', name: 'petits oignons grelots', note: '' },
+                { qty: '300 g', name: 'champignons de Paris', note: '' },
+                { qty: '75 cl', name: 'Bourgogne rouge (Pinot Noir)', note: '' },
+                { qty: '30 cl', name: 'fond de veau', note: '' },
+                { qty: '2', name: 'carottes', note: 'en rondelles' },
+                { qty: '1', name: 'bouquet garni', note: '' },
+                { qty: '2 c.s.', name: 'concentré de tomate', note: '' },
+                { qty: '2 c.s.', name: 'farine', note: '' },
+                { qty: '30 g', name: 'beurre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Saisir la viande', texte: 'Sécher les cubes. Saisir à feu vif dans l\'huile en petites quantités jusqu\'à coloration dorée sur toutes les faces. Réserver.' },
+            { titre: 'Fond de cocotte', texte: 'Faire dorer lardons et oignons grelots, ajouter les carottes. Saupoudrer de farine, remuer 2 min.' },
+            { titre: 'Mijoter', texte: 'Remettre la viande. Verser vin et fond, ajouter concentré de tomate et bouquet garni. Porter à ébullition, écumer, couvrir. Mijoter à feu très doux.', timer: '2 h 30 à 3 h' },
+            { titre: 'Finir', texte: '20 min avant la fin, poêler les champignons au beurre. Incorporer. Retirer le bouquet garni. Rectifier.' },
+        ],
+        conseils: [
+            'Ne jamais faire bouillir à gros bouillons : la viande durcirait. Un frémissement régulier suffit.',
+            'Pour une sauce brillante, la lier légèrement à la fécule en fin de cuisson.',
+        ],
+    },
+
+    'bouillabaisse': {
+        name:       'Bouillabaisse',
+        region:     'Marseille',
+        anecdote:   'La bouillabaisse de Marseille est un rite : rougets, vive, saint-pierre, rouille et croûtons dans le bouillon safraný.',
+        tags:       ["Été", "Plat principal", "Élaboré"],
+        prep:       '45 min',
+        cuisson:    '45 min',
+        personnes:  6,
+        difficulte: 'Élaboré',
+        ingredients: [
+            { groupe: 'Poissons (au moins 4 espèces)', items: [
+                { qty: '500 g', name: 'rouget grondin', note: 'en morceaux' },
+                { qty: '500 g', name: 'vive', note: 'en morceaux' },
+                { qty: '500 g', name: 'saint-pierre', note: 'en morceaux' },
+                { qty: '400 g', name: 'congre', note: 'en tronçons' },
+                { qty: '400 g', name: 'rascasse', note: '' },
+            ]},
+            { groupe: 'Le bouillon', items: [
+                { qty: '3', name: 'tomates mûres', note: 'concassées' },
+                { qty: '2', name: 'oignons', note: 'émincés' },
+                { qty: '4 gousses', name: 'ail', note: '' },
+                { qty: '1', name: 'fenouil', note: 'émincé' },
+                { qty: '1 généreuse pincée', name: 'safran', note: '' },
+                { qty: '1 c.c.', name: 'piment de Cayenne', note: '' },
+                { qty: '10 cl', name: 'huile d\'olive', note: '' },
+                { qty: '1 zeste', name: 'd\'orange', note: '' },
+            ]},
+            { groupe: 'Rouille et croûtons', items: [
+                { qty: '4 gousses', name: 'ail', note: '' },
+                { qty: '1', name: 'jaune d\'œuf', note: '' },
+                { qty: '1 pincée', name: 'safran', note: '' },
+                { qty: '15 cl', name: 'huile d\'olive', note: '' },
+                { qty: '1', name: 'baguette', note: 'en tranches grillées' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Base', texte: 'Faire revenir oignons, ail, tomates, fenouil dans l\'huile. Ajouter safran, piment, zeste d\'orange. Suer 10 min.', timer: '10 min' },
+            { titre: 'Cuire à gros bouillons', texte: 'Ajouter 2 litres d\'eau bouillante. Plonger les poissons fermes en premier (congre, grondin). Après 5 min, ajouter les plus délicats. La bouillabaisse doit cuire à gros bouillons — c\'est son secret.', timer: '15-20 min' },
+            { titre: 'Rouille', texte: 'Piler l\'ail avec safran et piment dans un mortier. Ajouter jaune d\'œuf, monter à l\'huile d\'olive comme une mayonnaise.' },
+            { titre: 'Servir', texte: 'Sortir les poissons sur un plat. Servir le bouillon en soupière avec croûtons et rouille à part.' },
+        ],
+        conseils: [
+            'La charte de la bouillabaisse marseillaise (1980) exige au minimum 4 espèces de poissons de roche.',
+            'La rouille se prépare à l\'avance et se conserve au réfrigérateur.',
+        ],
+    },
+
+    'bouillabaisse-fetes': {
+        name:       'Bouillabaisse de fêtes aux coquillages',
+        region:     'Marseille / Bretagne',
+        anecdote:   'La bouillabaisse enrichie des coquillages de fêtes — homard, langoustines — pour le réveillon.',
+        tags:       ["Hiver", "Plat principal", "Élaboré"],
+        prep:       '45 min',
+        cuisson:    '45 min',
+        personnes:  6,
+        difficulte: 'Élaboré',
+        ingredients: [
+            { groupe: 'Fruits de mer et poissons nobles', items: [
+                { qty: '1', name: 'homard breton', note: 'coupé en deux' },
+                { qty: '6', name: 'langoustines', note: '' },
+                { qty: '300 g', name: 'saint-pierre', note: 'en filets' },
+                { qty: '300 g', name: 'turbot', note: 'en filets' },
+                { qty: '300 g', name: 'noix de Saint-Jacques', note: '' },
+            ]},
+            { groupe: 'Base du bouillon', items: [
+                { qty: '1 kg', name: 'têtes et arêtes de poisson', note: 'pour le fumet' },
+                { qty: '1 pincée généreuse', name: 'safran', note: '' },
+                { qty: '20 cl', name: 'vin blanc sec', note: '' },
+                { qty: '2', name: 'tomates', note: '' },
+                { qty: '1', name: 'fenouil', note: 'émincé' },
+                { qty: '2', name: 'oignons', note: '' },
+                { qty: '', name: 'sel, poivre, huile d\'olive', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Fumet', texte: 'Faire revenir oignons, fenouil, tomates dans l\'huile. Ajouter arêtes et têtes, couvrir d\'eau froide, ajouter vin et safran. Cuire 30 min à frémissement, filtrer soigneusement.', timer: '30 min' },
+            { titre: 'Cuire les fruits de mer', texte: 'Plonger le homard dans le fumet bouillant 8 min. Réserver. Langoustines : 4 min. Filets : 3 min. Saint-Jacques : 1 min. Toujours réserver au chaud.' },
+            { titre: 'Finir et servir', texte: 'Mixer une partie des légumes dans le bouillon pour l\'épaissir. Rectifier assaisonnement et safran. Servir avec rouille et croûtons.' },
+        ],
+        conseils: [
+            'Préparer le fumet la veille pour un meilleur résultat. Version grand luxe parfaite pour les réveillons.',
+        ],
+    },
+
+    'bouillon-poule': {
+        name:       'Bouillon de poule aux légumes',
+        region:     'France entière',
+        anecdote:   'Le grand-mère disait : un bon bouillon de poule guérit tout. Les légumes racines d\'hiver finissent leur carrière ici.',
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '20 min',
+        cuisson:    '2 h',
+        personnes:  6,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '1 (1,5 kg)', name: 'poule', note: 'ou poulet fermier' },
+                { qty: '3', name: 'carottes', note: 'entières' },
+                { qty: '2', name: 'navets', note: '' },
+                { qty: '2', name: 'poireaux', note: '' },
+                { qty: '1 branche', name: 'céleri', note: '' },
+                { qty: '1', name: 'oignon piqué de clou de girofle', note: '' },
+                { qty: '1', name: 'bouquet garni', note: '' },
+                { qty: '10', name: 'grains de poivre', note: '' },
+                { qty: '', name: 'gros sel', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Blanchir', texte: 'Plonger la poule dans l\'eau froide, porter à ébullition, égoutter et rincer. Cette étape clarifie le bouillon.', timer: '5 min' },
+            { titre: 'Cuire', texte: 'Remettre la poule avec tous les légumes et aromates. Couvrir de 3 litres d\'eau froide. Porter à frémissement, écumer soigneusement. Saler légèrement. Cuire à feu doux à découvert.', timer: '2 h à feu doux' },
+            { titre: 'Servir', texte: 'Sortir la poule et les légumes. Filtrer le bouillon. Servir le bouillon en entrée avec vermicelles. Présenter la poule entourée des légumes avec cornichons et gros sel.' },
+        ],
+        conseils: [
+            'La poule donne un bouillon infiniment plus riche que le poulet. Demander au volailler.',
+            'Le bouillon se congèle 3 mois : base précieuse pour soupes, risottos et sauces.',
+        ],
+    },
+
+    'boule-neige-noix-coco': {
+        name:       'Sainte-Lucie : boule de neige suédoise',
+        region:     'Scandinavie / Alsace',
+        anecdote:   'Pour la Sainte-Lucie, on prépare en Alsace des boules de neige à la noix de coco, souvenir des échanges nordiques.',
+        tags:       ["Hiver", "Dessert", "Facile"],
+        prep:       '20 min',
+        cuisson:    '0 min',
+        personnes:  20,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '200 g', name: 'chocolat blanc de qualité', note: '' },
+                { qty: '20 cl', name: 'crème liquide entière', note: '' },
+                { qty: '50 g', name: 'beurre doux', note: '' },
+                { qty: '150 g', name: 'noix de coco râpée', note: '' },
+                { qty: '1 c.c.', name: 'extrait de vanille', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Ganache', texte: 'Chauffer la crème et le beurre sans bouillir. Verser sur le chocolat blanc cassé en morceaux. Attendre 2 min, lisser. Ajouter la vanille. Réfrigérer pour que la ganache raffermisse.', timer: '2 h au réfrigérateur' },
+            { titre: 'Former les boules', texte: 'Prélever des portions à la cuillère. Rouler rapidement entre les paumes (mains fraîches) pour former des boules régulières.' },
+            { titre: 'Enrober', texte: 'Rouler chaque boule dans la noix de coco râpée. Déposer sur plaque recouverte de papier cuisson. Réfrigérer.', timer: '1 h minimum' },
+        ],
+        conseils: [
+            'Se conservent 5 jours au réfrigérateur. Aromatiser avec du rhum, de la fleur d\'oranger ou du zeste de citron vert.',
+        ],
+    },
+
+    'bourride-de-lotte': {
+        name:       'Bourride de lotte',
+        region:     'Languedoc',
+        anecdote:   'La bourride est la grande soupe de poisson du Languedoc, liée à l\'aïoli, parfumée au safran.',
+        tags:       ["Été", "Plat principal", "Élaboré"],
+        prep:       '30 min',
+        cuisson:    '30 min',
+        personnes:  4,
+        difficulte: 'Élaboré',
+        ingredients: [
+            { groupe: 'La bourride', items: [
+                { qty: '800 g', name: 'queue de lotte', note: 'en médaillons' },
+                { qty: '2', name: 'poireaux', note: 'en rondelles' },
+                { qty: '2', name: 'fenouils', note: 'en lamelles' },
+                { qty: '2', name: 'tomates', note: 'concassées' },
+                { qty: '1 pincée', name: 'safran', note: '' },
+                { qty: '1 litre', name: 'fumet de poisson', note: '' },
+            ]},
+            { groupe: 'Aïoli liant', items: [
+                { qty: '6 gousses', name: 'ail', note: '' },
+                { qty: '2', name: 'jaunes d\'œufs', note: '' },
+                { qty: '20 cl', name: 'huile d\'olive', note: '' },
+                { qty: '', name: 'sel', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Légumes', texte: 'Faire revenir poireaux et fenouil dans l\'huile d\'olive. Ajouter tomates, safran. Mouiller avec le fumet. Cuire 15 min à frémissement.', timer: '15 min' },
+            { titre: 'Cuire la lotte', texte: 'Plonger les médaillons dans le bouillon frémissant. Cuire 8-10 min jusqu\'à ce que la chair s\'opacifie. Réserver au chaud.', timer: '8-10 min' },
+            { titre: 'Préparer l\'aïoli', texte: 'Piler l\'ail avec le sel dans un mortier. Ajouter jaunes d\'œufs, monter à l\'huile d\'olive comme une mayonnaise.' },
+            { titre: 'Lier la bourride', texte: 'Filtrer le bouillon. Le verser progressivement sur l\'aïoli en fouettant. Reverser dans la casserole et chauffer sans bouillir jusqu\'à légère épaisseur.', timer: '5 min' },
+            { titre: 'Dresser', texte: 'Servir la lotte nappée de sauce avec des pommes de terre vapeur.' },
+        ],
+        conseils: [
+            'Soupe de poisson du Languedoc, plus onctueuse que la bouillabaisse car liée à l\'aïoli. Ne jamais faire bouillir après l\'incorporation de l\'aïoli.',
+        ],
+    },
+
+    'brandade-cabillaud-herbes': {
+        name:       'Brandade de cabillaud aux herbes',
+        region:     'Languedoc',
+        anecdote:   'Le cabillaud frais en brandade aux herbes fraîches du jardin est une alternative légère et printanière.',
+        tags:       ["Printemps", "Plat principal", "Facile"],
+        prep:       '20 min',
+        cuisson:    '20 min',
+        personnes:  4,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '600 g', name: 'dos de cabillaud frais', note: 'sans peau' },
+                { qty: '300 g', name: 'pommes de terre', note: 'cuites en purée' },
+                { qty: '10 cl', name: 'huile d\'olive', note: '' },
+                { qty: '10 cl', name: 'lait chaud', note: '' },
+                { qty: '2 gousses', name: 'ail', note: 'écrasées' },
+                { qty: '1 bouquet', name: 'persil plat et ciboulette', note: 'ciselés' },
+                { qty: '1', name: 'citron', note: 'zeste et jus' },
+                { qty: '', name: 'sel, poivre blanc', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Pocher le cabillaud', texte: 'Pocher le cabillaud dans l\'eau frémissante salée avec l\'ail 8-10 min jusqu\'à ce qu\'il s\'effeuille facilement. Égoutter.', timer: '8-10 min' },
+            { titre: 'Monter la brandade', texte: 'Écraser le poisson à la fourchette. Incorporer alternativement huile d\'olive tiède et lait chaud en travaillant à la spatule. Ajouter la purée de pommes de terre.' },
+            { titre: 'Assaisonner', texte: 'Incorporer herbes, zeste et jus de citron. Rectifier l\'assaisonnement. Servir sur tartines grillées.' },
+        ],
+        conseils: [
+            'Version fraîche et légère de la brandade, sans dessalage. Se prépare en 30 min. Idéale avec du pain grillé au four.',
+        ],
+    },
+
+    'brandade-de-morue': {
+        name:       'Brandade de morue',
+        region:     'Languedoc / Provence',
+        anecdote:   'La morue dessalée et pilée avec l\'huile d\'olive est un trésor de la cuisine méditerranéenne hivernale.',
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '30 min',
+        cuisson:    '20 min',
+        personnes:  6,
+        difficulte: 'Moyen',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '600 g', name: 'morue salée', note: 'à dessaler 24-48 h' },
+                { qty: '30 cl', name: 'huile d\'olive', note: 'de qualité' },
+                { qty: '10 cl', name: 'lait entier', note: '' },
+                { qty: '3 gousses', name: 'ail', note: '' },
+                { qty: '1 branche', name: 'thym, 1 feuille laurier', note: '' },
+                { qty: '', name: 'poivre blanc', note: '(pas de sel, la morue en a assez)' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Dessaler la morue', texte: 'Rincer la morue. La placer dans un bain d\'eau froide, peau vers le haut, 24 à 48 h au réfrigérateur en changeant l\'eau 4-5 fois.', timer: '24-48 h de dessalage' },
+            { titre: 'Pocher', texte: 'Cuire la morue dans l\'eau frémissante (jamais bouillante) avec thym et laurier 10 min. Égoutter. Effeuiller en retirant peau et arêtes.', timer: '10 min' },
+            { titre: 'Monter la brandade', texte: 'Chauffer séparément l\'huile (tiède) et le lait (chaud). Écraser la morue avec l\'ail pilé. Incorporer alternativement huile et lait en montant vigoureusement à la spatule.' },
+        ],
+        conseils: [
+            'La brandade de Nîmes originale est sans pommes de terre. Servie chaude avec des croûtons frits à l\'huile d\'olive.',
+            'Pour une version plus légère, remplacer 1/3 de l\'huile par une purée de pommes de terre.',
+        ],
+    },
+
+    'brandade-gratinee-olives': {
+        name:       'Brandade gratinée aux olives',
+        region:     'Nîmes / Languedoc',
+        anecdote:   'La brandade de morue gratinée avec des olives noires de la région de Nîmes est un plat robuste et parfumé.',
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '30 min',
+        cuisson:    '30 min',
+        personnes:  6,
+        difficulte: 'Moyen',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '600 g', name: 'morue dessalée et effeuilléé', note: '' },
+                { qty: '400 g', name: 'pommes de terre', note: 'cuites en purée' },
+                { qty: '20 cl', name: 'huile d\'olive', note: '' },
+                { qty: '10 cl', name: 'lait chaud', note: '' },
+                { qty: '100 g', name: 'olives noires de Nîmes', note: 'dénoyautées et hachées' },
+                { qty: '2 gousses', name: 'ail', note: '' },
+                { qty: '50 g', name: 'chapelure', note: '' },
+                { qty: '3 c.s.', name: 'parmesan râpé', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Brandade', texte: 'Préparer une brandade de morue classique (voir recette). Incorporer la purée de pommes de terre et les olives noires hachées.' },
+            { titre: 'Gratiner', texte: 'Étaler dans un plat à gratin beurré. Mélanger chapelure et parmesan, parsemer. Arroser d\'un filet d\'huile d\'olive. Passer au gril ou au four à 200 °C.', timer: '15-20 min à 200 °C' },
+        ],
+        conseils: [
+            'Les olives noires de la région de Nîmes (Lucques, Picholine) sont idéales. Leur légère amertume contraste avec l\'onctuosité de la brandade.',
+        ],
+    },
+
+    'brandade-thon': {
+        name:       'Brandade de thon fraîche',
+        region:     'Provence',
+        anecdote:   'Variante printanière de la brandade, au thon frais de mer plutôt qu\'à la morue salée.',
+        tags:       ["Été", "Entrée", "Facile"],
+        prep:       '15 min',
+        cuisson:    '10 min',
+        personnes:  4,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '400 g', name: 'thon frais', note: 'en pavé' },
+                { qty: '250 g', name: 'pommes de terre', note: 'cuites en purée' },
+                { qty: '8 cl', name: 'huile d\'olive', note: '' },
+                { qty: '8 cl', name: 'lait chaud', note: '' },
+                { qty: '2 gousses', name: 'ail', note: 'écrasées' },
+                { qty: '1 bouquet', name: 'basilic frais', note: '' },
+                { qty: '1', name: 'citron', note: 'jus' },
+                { qty: '', name: 'sel, poivre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Cuire le thon', texte: 'Pocher les pavés dans l\'eau frémissante salée avec l\'ail 6-8 min. Égoutter et émietter grossièrement.', timer: '6-8 min' },
+            { titre: 'Monter', texte: 'Mélanger le thon émietté avec la purée chaude. Incorporer huile d\'olive et lait chaud en travaillant à la fourchette. Texture rustique, pas trop lisse.' },
+            { titre: 'Assaisonner', texte: 'Ajouter basilic ciselé et jus de citron. Rectifier. Servir sur pain grillé avec quelques feuilles de roquette.' },
+        ],
+        conseils: [
+            'Version estivale rapide. Le thon frais peut être remplacé par du thon en boîte à l\'huile d\'olive de qualité.',
+        ],
+    },
+
+    'bredele-alsaciens': {
+        name:       'Bredele alsaciens (biscuits de Noël)',
+        region:     'Alsace',
+        anecdote:   'Pour la Saint-Nicolas, la confection des bredele débute en Alsace. Anise, cannelle, vanille embaument la cuisine.',
+        tags:       ["Hiver", "Dessert", "Moyen"],
+        prep:       '45 min',
+        cuisson:    '12 min',
+        personnes:  50,
+        difficulte: 'Moyen',
+        ingredients: [
+            { groupe: 'Pâte de base', items: [
+                { qty: '250 g', name: 'beurre doux', note: 'ramolli' },
+                { qty: '250 g', name: 'sucre glace', note: '' },
+                { qty: '2', name: 'œufs', note: '' },
+                { qty: '500 g', name: 'farine', note: '' },
+                { qty: '1 sachet', name: 'sucre vanillé', note: '' },
+            ]},
+            { groupe: 'Épices', items: [
+                { qty: '2 c.c.', name: 'cannelle moulue', note: '' },
+                { qty: '1 c.c.', name: 'anis en poudre', note: '' },
+                { qty: '½ c.c.', name: 'cardamome', note: '' },
+                { qty: '½ c.c.', name: 'clou de girofle moulu', note: '' },
+            ]},
+            { groupe: 'Décoration', items: [
+                { qty: '', name: 'sucre glace', note: '' },
+                { qty: '', name: 'amandes entières, dragées argentées', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Pétrir', texte: 'Crémer le beurre avec le sucre glace. Incorporer les œufs un à un, puis farine et épices. Former une boule, filmer et réfrigérer.', timer: '1 h au réfrigérateur' },
+            { titre: 'Découper', texte: 'Sur un plan fariné, étaler la pâte à 4-5 mm. Découper avec des emporte-pièces (étoiles, sapins, cloches, cœurs). Déposer sur plaque beurrée.' },
+            { titre: 'Cuire', texte: 'Four à 170 °C jusqu\'à légère coloration dorée sur les bords. Les bredele doivent rester clairs au centre. Refroidir sur grille.', timer: '10-12 min à 170 °C' },
+            { titre: 'Décorer', texte: 'Une fois froids, décorer avec glaçage royal, amandes ou dragées argentées.' },
+        ],
+        conseils: [
+            'Se conservent 3-4 semaines dans une boîte en métal. En Alsace, la confection débute à la Saint-Nicolas (6 décembre).',
+        ],
+    },
+
+    'brochet-beurre-blanc': {
+        name:       'Filet de brochet au beurre blanc',
+        region:     'Val de Loire',
+        anecdote:   'Le beurre blanc nantais est né sur les rives de la Loire. Il accompagne à merveille le brochet de rivière.',
+        tags:       ["Printemps", "Plat principal", "Élaboré"],
+        prep:       '20 min',
+        cuisson:    '20 min',
+        personnes:  4,
+        difficulte: 'Élaboré',
+        ingredients: [
+            { groupe: 'Le brochet', items: [
+                { qty: '1 (1,5 kg)', name: 'brochet', note: 'vidé et écaillé' },
+                { qty: '1 litre', name: 'court-bouillon', note: 'eau, vin blanc, carotte, oignon, bouquet garni' },
+            ]},
+            { groupe: 'Beurre blanc nantais', items: [
+                { qty: '3', name: 'échalotes', note: 'ciselées finement' },
+                { qty: '10 cl', name: 'Muscadet sec', note: '' },
+                { qty: '5 cl', name: 'vinaigre de vin blanc', note: '' },
+                { qty: '250 g', name: 'beurre doux', note: 'bien froid, en cubes' },
+                { qty: '2 c.s.', name: 'crème fraîche épaisse', note: 'stabilisateur' },
+                { qty: '', name: 'sel, poivre blanc', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Pocher le brochet', texte: 'Préparer le court-bouillon et amener à frémissement. Plonger le brochet et pocher 15-18 min. Ne jamais faire bouillir.', timer: '15-18 min' },
+            { titre: 'Réduire la base', texte: 'Mettre échalotes, vin blanc et vinaigre dans une petite casserole. Réduire presque à sec (1-2 c.s. de liquide restant).', timer: '8 min' },
+            { titre: 'Monter le beurre blanc', texte: 'Ajouter la crème fraîche. Sur feu très doux, incorporer le beurre froid cube par cube en fouettant constamment. Sauce crémeuse et nacrée. Ne jamais faire bouillir.', timer: '5-8 min' },
+            { titre: 'Dresser', texte: 'Lever les filets du brochet. Napper de beurre blanc. Servir avec des pommes de terre vapeur et des épinards.' },
+        ],
+        conseils: [
+            'Le beurre blanc est né en Loire-Atlantique. La crème fraîche stabilise la sauce et évite qu\'elle tranche.',
+        ],
+    },
+
+    'brochettes-barbecue': {
+        name:       'Barbecue de la fête de la musique',
+        region:     'France entière',
+        anecdote:   'Le 21 juin est la fête de la musique et le solstice d\'été. On sort le barbecue et on grille tout ce qu\'on aime.',
+        tags:       ["Été", "Plat principal", "Facile"],
+        prep:       '20 min',
+        cuisson:    '15 min',
+        personnes:  6,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: 'Brochettes', items: [
+                { qty: '500 g', name: 'épaule d\'agneau', note: 'en cubes' },
+                { qty: '400 g', name: 'blanc de poulet', note: 'en cubes' },
+                { qty: '300 g', name: 'merguez', note: 'en tronçons' },
+                { qty: '2', name: 'poivrons', note: 'en carrés' },
+                { qty: '2', name: 'oignons rouges', note: 'en quartiers' },
+            ]},
+            { groupe: 'Marinade', items: [
+                { qty: '10 cl', name: 'huile d\'olive', note: '' },
+                { qty: '2 gousses', name: 'ail', note: 'écrasées' },
+                { qty: '1', name: 'citron', note: 'jus' },
+                { qty: '1 c.c.', name: 'cumin', note: '' },
+                { qty: '1 c.c.', name: 'paprika fumé', note: '' },
+                { qty: '1 bouquet', name: 'persil ou coriandre', note: 'ciselé' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Mariner', texte: 'Mélanger la marinade. Enrober les viandes et légumes. Réfrigérer au moins 1 h, idéalement 4 h.', timer: '1-4 h de marinade' },
+            { titre: 'Monter les brochettes', texte: 'Enfiler en alternant viandes et légumes. Ne pas trop serrer.' },
+            { titre: 'Griller', texte: 'Cuire sur barbecue à braises incandescentes 12-15 min en retournant régulièrement.', timer: '12-15 min' },
+        ],
+        conseils: [
+            'Tremper les brochettes de bois 30 min dans l\'eau pour éviter qu\'elles brûlent.',
+        ],
+    },
+
+    'brochettes-crevettes-gingembre': {
+        name:       'Brochettes de crevettes au gingembre',
+        region:     'Bretagne / fusion',
+        anecdote:   'Les crevettes roses marinées au gingembre, sésame et sauce soja grillées sur brochette de bois.',
+        tags:       ["Été", "Entrée", "Facile"],
+        prep:       '15 min',
+        cuisson:    '6 min',
+        personnes:  4,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '24', name: 'crevettes crues décortiquées', note: 'queue conservée' },
+                { qty: '3 cm', name: 'gingembre frais', note: 'râpé' },
+                { qty: '2 gousses', name: 'ail', note: 'écrasées' },
+                { qty: '3 c.s.', name: 'sauce soja', note: '' },
+                { qty: '2 c.s.', name: 'huile de sésame', note: '' },
+                { qty: '1 c.s.', name: 'miel liquide', note: '' },
+                { qty: '1', name: 'citron vert', note: 'jus et zeste' },
+                { qty: '1 c.s.', name: 'graines de sésame', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Mariner', texte: 'Mélanger gingembre, ail, sauce soja, huile de sésame, miel et jus de citron. Enrober les crevettes. Mariner 30 min.', timer: '30 min' },
+            { titre: 'Griller', texte: 'Enfiler 3 crevettes par brochette. Cuire au barbecue ou plancha 2-3 min par face jusqu\'à ce qu\'elles soient roses et recourbées.', timer: '4-6 min' },
+            { titre: 'Servir', texte: 'Parsemer de graines de sésame et zeste de citron vert. Servir aussitôt avec une sauce sweet chili.' },
+        ],
+        conseils: [
+            'Ne pas trop cuire : dès que les crevettes forment un "C" et sont roses opaques, c\'est prêt. Trop cuites, elles deviennent caoutchouteuses.',
+        ],
+    },
+
+    'brochettes-legumes': {
+        name:       'Brochettes de légumes grillés',
+        region:     'Méditerranée',
+        anecdote:   'Courgettes, aubergines, poivrons, champignons sur la braise avec marinade à l\'huile d\'olive et herbes.',
+        tags:       ["Été", "Accompagnement", "Facile"],
+        prep:       '15 min',
+        cuisson:    '12 min',
+        personnes:  4,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '2', name: 'courgettes', note: 'en rondelles épaisses' },
+                { qty: '2', name: 'poivrons colorés', note: 'en carrés' },
+                { qty: '1', name: 'aubergine', note: 'en cubes' },
+                { qty: '200 g', name: 'champignons de Paris', note: 'entiers' },
+                { qty: '1', name: 'oignon rouge', note: 'en quartiers' },
+                { qty: '1 barquette', name: 'tomates cerises', note: '' },
+                { qty: '5 c.s.', name: 'huile d\'olive', note: '' },
+                { qty: '2 branches', name: 'thym et romarin effeuillés', note: '' },
+                { qty: '', name: 'sel, poivre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Assaisonner', texte: 'Mélanger tous les légumes avec huile d\'olive, herbes, sel et poivre. Mariner 15 min.' },
+            { titre: 'Monter les brochettes', texte: 'Enfiler en alternant les couleurs. Les tomates cerises en dernier.' },
+            { titre: 'Griller', texte: 'Cuire sur barbecue ou plancha à feu vif 10-12 min en tournant régulièrement. Colorés mais encore légèrement fermes.', timer: '10-12 min' },
+        ],
+        conseils: [
+            'Arroser d\'un filet de vinaigre balsamique en fin de cuisson. Accompagnent parfaitement tout barbecue.',
+        ],
+    },
+
+    'brochettes-poulet-citron': {
+        name:       'Brochettes de poulet mariné au citron',
+        region:     'Provence',
+        anecdote:   'Marinées au citron, ail et herbes toute la nuit, ces brochettes grillées sont les reines du barbecue de juin.',
+        tags:       ["Été", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '12 min',
+        personnes:  4,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '600 g', name: 'filet de poulet', note: 'en cubes de 3 cm' },
+                { qty: '2', name: 'citrons non traités', note: 'jus et zeste' },
+                { qty: '3 gousses', name: 'ail', note: 'écrasées' },
+                { qty: '1 c.c.', name: 'curcuma', note: '' },
+                { qty: '1 c.c.', name: 'cumin', note: '' },
+                { qty: '5 c.s.', name: 'huile d\'olive', note: '' },
+                { qty: '1 bouquet', name: 'coriandre ou persil', note: '' },
+                { qty: '', name: 'sel, poivre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Mariner', texte: 'Mélanger huile, jus et zeste de citron, ail, épices. Enrober le poulet. Couvrir et réfrigérer.', timer: '2-12 h de marinade' },
+            { titre: 'Brochettes', texte: 'Enfiler le poulet sur les brochettes.' },
+            { titre: 'Cuire', texte: 'Cuire sur barbecue chaud ou plancha, 3 min par face (4 faces) jusqu\'à légère coloration.', timer: '12 min' },
+            { titre: 'Servir', texte: 'Parsemer de coriandre ciselée. Servir avec pain pita, taboulé ou riz.' },
+        ],
+        conseils: [
+            'La marinade au citron attendrit légèrement la chair. Une nuit de marinade donne le meilleur résultat.',
+        ],
+    },
+
+    'bruschetta-tapenade': {
+        name:       'Tapenade sur bruschetta',
+        region:     'Provence',
+        anecdote:   'La tapenade aux olives noires de la Région de Nîmes écrasées avec câpres, anchois et huile d\'olive est généreuse.',
+        tags:       ["Été", "Entrée", "Facile"],
+        prep:       '15 min',
+        cuisson:    '5 min',
+        personnes:  6,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: 'Tapenade', items: [
+                { qty: '200 g', name: 'olives noires dénoyautées', note: 'Nyons ou Kalamata' },
+                { qty: '50 g', name: 'câpres', note: 'égouttées' },
+                { qty: '4', name: 'filets d\'anchois à l\'huile', note: '' },
+                { qty: '1 gousse', name: 'ail', note: '' },
+                { qty: '8 cl', name: 'huile d\'olive de qualité', note: '' },
+                { qty: '1 c.s.', name: 'jus de citron', note: '' },
+                { qty: '1 c.c.', name: 'thym frais effeuillé', note: '' },
+            ]},
+            { groupe: 'Bruschetta', items: [
+                { qty: '1', name: 'baguette de campagne', note: 'en tranches épaisses' },
+                { qty: '1 gousse', name: 'ail', note: 'pour frotter' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Tapenade', texte: 'Mixer (ou écraser au mortier) olives, câpres, anchois et ail. Ajouter l\'huile en filet. Garder une texture grossière. Assaisonner avec citron et thym.' },
+            { titre: 'Griller le pain', texte: 'Griller les tranches sur barbecue ou sous le gril du four.', timer: '3-4 min' },
+            { titre: 'Assembler', texte: 'Frotter chaque tranche avec la gousse d\'ail crue. Tartiner généreusement de tapenade. Servir aussitôt.' },
+        ],
+        conseils: [
+            'La tapenade se conserve 2 semaines au réfrigérateur couverte d\'huile d\'olive. "Tapena" signifie câpre en occitan : c\'est l\'ingrédient secret.',
+        ],
+    },
+
+    'bruschetta-tomates': {
+        name:       'Bruschetta aux tomates et basilic',
+        region:     'Provence / Côte d\'Azur',
+        anecdote:   'Le pain grillé à l\'ail avec tomates fraîches hachées, basilic et huile d\'olive est le symbole de l\'été.',
+        tags:       ["Été", "Entrée", "Facile"],
+        prep:       '10 min',
+        cuisson:    '5 min',
+        personnes:  4,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '4', name: 'tomates mûres à chair ferme', note: '' },
+                { qty: '1', name: 'baguette de campagne', note: 'en tranches' },
+                { qty: '2 gousses', name: 'ail', note: '' },
+                { qty: '10 feuilles', name: 'basilic frais', note: '' },
+                { qty: '4 c.s.', name: 'huile d\'olive extra-vierge', note: '' },
+                { qty: '', name: 'fleur de sel, poivre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Préparer les tomates', texte: 'Couper en dés. Égoutter 5 min dans une passoire. Assaisonner avec sel, poivre et basilic grossièrement ciselé.' },
+            { titre: 'Griller le pain', texte: 'Griller les tranches sous le gril ou sur barbecue.', timer: '3-4 min' },
+            { titre: 'Assembler', texte: 'Frotter énergiquement chaque tranche avec l\'ail cru. Arroser d\'huile d\'olive. Déposer les tomates. Servir immédiatement.' },
+        ],
+        conseils: [
+            'La qualité des tomates et de l\'huile d\'olive est tout. En été avec des tomates du jardin, c\'est un chef-d\'œuvre de simplicité.',
+        ],
+    },
+
+    'buche-marron-chocolat': {
+        name:       'Bûche roulée au marron et chocolat',
+        region:     'France entière',
+        anecdote:   'La bûche de Noël se prépare à partir de la mi-décembre. La version marron-chocolat est la plus gourmande.',
+        tags:       ["Hiver", "Dessert", "Élaboré"],
+        prep:       '45 min',
+        cuisson:    '12 min',
+        personnes:  10,
+        difficulte: 'Élaboré',
+        ingredients: [
+            { groupe: 'Biscuit roulé', items: [
+                { qty: '4', name: 'œufs séparés', note: '' },
+                { qty: '120 g', name: 'sucre', note: '' },
+                { qty: '80 g', name: 'farine', note: '' },
+                { qty: '20 g', name: 'cacao non sucré', note: '' },
+            ]},
+            { groupe: 'Crème marron', items: [
+                { qty: '300 g', name: 'crème de marrons Clément Faugier', note: '' },
+                { qty: '200 g', name: 'beurre doux ramolli', note: '' },
+                { qty: '2 c.s.', name: 'rhum brun', note: 'facultatif' },
+            ]},
+            { groupe: 'Ganache chocolat', items: [
+                { qty: '200 g', name: 'chocolat noir 70%', note: '' },
+                { qty: '20 cl', name: 'crème liquide entière', note: '' },
+                { qty: '30 g', name: 'beurre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Biscuit', texte: 'Battre jaunes et sucre jusqu\'au blanchiment. Incorporer farine et cacao tamisés. Monter les blancs en neige ferme, incorporer délicatement. Étaler sur plaque beurrée. Enfourner à 200 °C.', timer: '10-12 min à 200 °C' },
+            { titre: 'Rouler', texte: 'Dès la sortie du four, retourner sur un torchon humide. Retirer le papier. Rouler le biscuit chaud dans le torchon. Laisser refroidir.', timer: '30 min' },
+            { titre: 'Crème marron', texte: 'Battre le beurre mou en crème. Incorporer crème de marrons et rhum. Dérouler le biscuit, étaler la crème, rouler à nouveau. Réfrigérer.', timer: '1 h au réfrigérateur' },
+            { titre: 'Ganache', texte: 'Porter la crème à ébullition, verser sur le chocolat cassé. Lisser, ajouter le beurre. Laisser tiédir jusqu\'à consistance nappante.' },
+            { titre: 'Décorer', texte: 'Couper les extrémités en biais. Napper de ganache. Strier à la fourchette pour imiter l\'écorce. Décorer avec marrons glacés ou cacao.' },
+        ],
+        conseils: [
+            'Peut être préparée 2 jours à l\'avance. Sortir 30 min avant de servir.',
+        ],
+    },
+
+    'bugnes-lyonnaises': {
+        name:       'Bugnes lyonnaises',
+        region:     'Lyon',
+        anecdote:   'La fête des Lumières de Lyon, le 8 décembre, se célèbre aussi avec les bugnes frites saupoudrées de sucre glace.',
+        tags:       ["Hiver", "Dessert", "Moyen"],
+        prep:       '30 min',
+        cuisson:    '15 min',
+        personnes:  8,
+        difficulte: 'Moyen',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '500 g', name: 'farine', note: '' },
+                { qty: '3', name: 'œufs', note: '' },
+                { qty: '80 g', name: 'beurre doux ramolli', note: '' },
+                { qty: '60 g', name: 'sucre', note: '' },
+                { qty: '1 sachet', name: 'levure chimique', note: '' },
+                { qty: '1 c.s.', name: 'rhum brun ou fleur d\'oranger', note: '' },
+                { qty: '1 c.c.', name: 'zeste de citron', note: '' },
+                { qty: '1 pincée', name: 'sel', note: '' },
+                { qty: '', name: 'huile neutre pour friture', note: '' },
+                { qty: '', name: 'sucre glace', note: 'pour saupoudrer' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Pétrir', texte: 'Mélanger farine, sucre, sel, levure. Ajouter œufs, beurre mou, rhum et zeste. Pétrir jusqu\'à obtenir une pâte souple. Filmer et reposer.', timer: '1 h de repos' },
+            { titre: 'Découper', texte: 'Étaler la pâte très finement (2 mm). Découper des losanges de 8x4 cm. Faire une fente au centre et glisser une extrémité à travers pour la forme classique.' },
+            { titre: 'Frire', texte: 'Chauffer l\'huile à 170 °C. Frire en petites quantités 1-2 min de chaque côté jusqu\'à légère dorure. Égoutter.', timer: '1-2 min par face' },
+            { titre: 'Sucrer', texte: 'Saupoudrer abondamment de sucre glace encore chaud.' },
+        ],
+        conseils: [
+            'Le secret des bugnes lyonnaises : la pâte très fine. Elles se distinguent des merveilles bordelaises qui sont plus gonflées.',
+        ],
+    },
+
+    'cabillaud-beurre-agrumes': {
+        name:       'Dos de cabillaud au beurre d\'agrumes',
+        region:     'Bretagne / Pays de Loire',
+        anecdote:   'Le cabillaud de l\'Atlantique en fin de saison est excellent avec un beurre blanc aux zestes de citron.',
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '15 min',
+        cuisson:    '15 min',
+        personnes:  4,
+        difficulte: 'Moyen',
+        ingredients: [
+            { groupe: 'Le poisson', items: [
+                { qty: '4 (150 g)', name: 'dos de cabillaud', note: '' },
+                { qty: '1 c.s.', name: 'huile d\'olive', note: '' },
+                { qty: '', name: 'sel, poivre', note: '' },
+            ]},
+            { groupe: 'Beurre d\'agrumes', items: [
+                { qty: '150 g', name: 'beurre doux', note: 'en cubes froids' },
+                { qty: '2', name: 'échalotes', note: 'ciselées' },
+                { qty: '5 cl', name: 'vin blanc sec', note: '' },
+                { qty: '1', name: 'orange non traitée', note: 'jus et zeste' },
+                { qty: '1', name: 'citron non traité', note: 'jus et zeste' },
+                { qty: '1', name: 'pamplemousse', note: 'jus uniquement' },
+                { qty: '', name: 'sel, poivre blanc', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Beurre d\'agrumes', texte: 'Réduire échalotes, vin blanc et jus d\'agrumes jusqu\'à obtenir 3 c.s. Sur feu doux, incorporer le beurre froid cube par cube en fouettant. Assaisonner, ajouter les zestes. Tenir au chaud.' },
+            { titre: 'Cuire le cabillaud', texte: 'Assaisonner les dos. Chauffer l\'huile dans une poêle anti-adhésive. Cuire côté peau 4-5 min, retourner, encore 3 min. Doit s\'effeuiller.', timer: '7-8 min' },
+            { titre: 'Dresser', texte: 'Poser le cabillaud sur assiette chaude. Napper de beurre d\'agrumes. Servir avec riz basmati.' },
+        ],
+        conseils: [
+            'Le beurre d\'agrumes se prépare à la dernière minute. Le tenir à peine chaud au bain-marie.',
+        ],
+    },
+
+    'carbonnade-flamande': {
+        name:       'Carbonnade flamande',
+        region:     'Nord / Flandres',
+        anecdote:   'Bœuf mijoté à la bière brune du Nord, pain d\'épice et moutarde : le plat flamand par excellence.',
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '2 h 30',
+        personnes:  6,
+        difficulte: 'Moyen',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '1,2 kg', name: 'paleron ou joue de bœuf', note: 'en tranches épaisses' },
+                { qty: '75 cl', name: 'bière brune du Nord', note: 'Ch\'ti, Leffe brune…' },
+                { qty: '3', name: 'oignons', note: 'en lamelles' },
+                { qty: '2 c.s.', name: 'farine', note: '' },
+                { qty: '2 tranches', name: 'pain d\'épice', note: 'tartinées de moutarde forte' },
+                { qty: '1 c.s.', name: 'cassonade brune', note: '' },
+                { qty: '1', name: 'bouquet garni', note: '' },
+                { qty: '2 c.s.', name: 'beurre', note: '' },
+                { qty: '', name: 'sel, poivre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Saisir la viande', texte: 'Saler et poivrer les tranches. Faire dorer dans le beurre à feu vif sur les deux faces. Réserver.' },
+            { titre: 'Fondre les oignons', texte: 'Dans la même cocotte, faire fondre les oignons avec la cassonade à feu doux 15 min jusqu\'à légère caramélisation. Saupoudrer de farine.', timer: '15 min' },
+            { titre: 'Mijoter', texte: 'Remettre la viande. Verser la bière, ajouter le bouquet garni. Poser les tranches de pain d\'épice moutardées sur la viande (elles vont fondre et épaissir la sauce). Couvrir et cuire à très feu doux.', timer: '2 h' },
+        ],
+        conseils: [
+            'Le pain d\'épice moutardé est la signature de la carbonnade. Il épaissit la sauce avec des notes sucrées-amères.',
+            'Servir avec des frites belges ou de la purée. Encore meilleur le lendemain.',
+        ],
+    },
+
+    'carpaccio-boeuf': {
+        name:       'Carpaccio de bœuf à la roquette',
+        region:     'Île-de-France / Provence',
+        anecdote:   'Le carpaccio de bœuf cru tranché finement, huile d\'olive et parmesan, est frais et léger pour les beaux jours.',
+        tags:       ["Été", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '0 min',
+        personnes:  4,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '400 g', name: 'filet de bœuf', note: 'de qualité, bien froid' },
+                { qty: '60 g', name: 'parmesan', note: 'en copeaux' },
+                { qty: '2 poignées', name: 'roquette', note: '' },
+                { qty: '2 c.s.', name: 'câpres', note: 'égouttées' },
+                { qty: '4 c.s.', name: 'huile d\'olive extra-vierge', note: '' },
+                { qty: '1', name: 'citron', note: 'jus' },
+                { qty: '', name: 'fleur de sel, poivre du moulin', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Trancher', texte: 'Placer le filet 30 min au congélateur (plus facile à trancher). Trancher en carpaccio très fin (2 mm) au couteau bien aiguisé.' },
+            { titre: 'Disposer', texte: 'Déposer les tranches en rosette sur les assiettes en les faisant légèrement se chevaucher. Appuyer avec le plat de la main pour aplatir encore.' },
+            { titre: 'Assaisonner', texte: 'Arroser d\'huile d\'olive et de jus de citron. Fleur de sel et poivre. Parsemer de câpres, copeaux de parmesan et roquette.' },
+        ],
+        conseils: [
+            'Inventé en 1950 au Harry\'s Bar de Venise. Le rouge vif du bœuf rappelle les peintures du peintre Vittore Carpaccio.',
+        ],
+    },
+
+    'carpaccio-courgettes': {
+        name:       'Carpaccio de courgettes au citron',
+        region:     'Provence / Côte d\'Azur',
+        anecdote:   'Les courgettes crues à la mandoline, huile d\'olive, citron et parmesan sont une entrée fraîche et légère.',
+        tags:       ["Été", "Entrée", "Facile"],
+        prep:       '15 min',
+        cuisson:    '0 min',
+        personnes:  4,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '4', name: 'courgettes longues bien fermes', note: 'petites de préférence' },
+                { qty: '80 g', name: 'parmesan ou pecorino', note: 'en copeaux' },
+                { qty: '1 bouquet', name: 'menthe fraîche', note: '' },
+                { qty: '4 c.s.', name: 'huile d\'olive extra-vierge', note: '' },
+                { qty: '2', name: 'citrons', note: 'jus' },
+                { qty: '', name: 'fleur de sel, poivre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Trancher', texte: 'Laver les courgettes. Les trancher à la mandoline ou au couteau en fines rondelles de 2 mm maximum.' },
+            { titre: 'Assaisonner', texte: 'Disposer sur les assiettes en les chevauchant. Arroser d\'huile d\'olive et de jus de citron. Saler, poivrer.' },
+            { titre: 'Finir', texte: 'Parsemer de copeaux de fromage et feuilles de menthe fraîche. Servir immédiatement ou après 10 min de marinade.' },
+        ],
+        conseils: [
+            'Les petites courgettes du jardin ont moins de graines et plus de saveur. Ce plat se marie très bien avec des gambas poêlées.',
+        ],
+    },
+
+    'carpe-a-la-juive': {
+        name:       'Carpe à la juive',
+        region:     'Alsace / Lorraine',
+        anecdote:   'Recette séculaire de la cuisine juive alsacienne, la carpe à la juive se sert froide dans sa gelée au safran.',
+        tags:       ["Hiver", "Plat principal", "Élaboré"],
+        prep:       '30 min',
+        cuisson:    '45 min',
+        personnes:  6,
+        difficulte: 'Élaboré',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '1 (2 kg)', name: 'carpe', note: 'vidée et écaillée' },
+                { qty: '2', name: 'oignons', note: 'en lamelles' },
+                { qty: '2', name: 'carottes', note: 'en rondelles' },
+                { qty: '1 branche', name: 'céleri', note: '' },
+                { qty: '1 pincée', name: 'safran', note: '' },
+                { qty: '1 c.c.', name: 'sucre', note: '' },
+                { qty: '3 c.s.', name: 'huile neutre', note: '' },
+                { qty: '50 cl', name: 'eau', note: '' },
+                { qty: '1', name: 'citron', note: 'en rondelles' },
+                { qty: '', name: 'sel, poivre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Préparer la carpe', texte: 'Couper la carpe en tronçons de 5 cm. Saler légèrement et réserver 30 min.' },
+            { titre: 'Cuire', texte: 'Faire dorer les oignons dans l\'huile. Ajouter carottes et céleri, cuire 5 min. Disposer les tronçons de carpe, ajouter safran, sucre et eau. Cuire à frémissement.', timer: '20-25 min' },
+            { titre: 'Refroidir en gelée', texte: 'Retirer délicatement les tronçons. Réduire le bouillon à feu vif pour le concentrer et le faire gélifier naturellement. Verser sur les poissons avec les légumes. Laisser prendre au frais.', timer: '12 h au réfrigérateur' },
+            { titre: 'Servir', texte: 'Servir froid en gelée avec rondelles de citron et raifort.' },
+        ],
+        conseils: [
+            'Plat de la cuisine ashkénaze, traditionnel pour Pessah et Roch Hachana. La gelée naturelle provient de la peau et des arêtes de la carpe.',
+        ],
+    },
+
+    'cassolette-escargots': {
+        name:       'Cassolette d\'escargots au beurre de persil',
+        region:     'Bourgogne',
+        anecdote:   'Les escargots de Bourgogne dans leur beurre à l\'ail et au persil sont un classique festif des repas d\'automne.',
+        tags:       ["Automne", "Entrée", "Moyen"],
+        prep:       '15 min',
+        cuisson:    '15 min',
+        personnes:  4,
+        difficulte: 'Moyen',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '48', name: 'escargots de Bourgogne', note: 'en boîte, égouttés' },
+                { qty: '150 g', name: 'beurre doux', note: 'à température ambiante' },
+                { qty: '4 gousses', name: 'ail', note: 'écrasées' },
+                { qty: '1 bouquet', name: 'persil plat', note: 'finement ciselé' },
+                { qty: '2', name: 'échalotes', note: 'ciselées' },
+                { qty: '5 cl', name: 'Bourgogne blanc', note: '' },
+                { qty: '', name: 'sel, poivre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Beurre bourguignon', texte: 'Mélanger beurre mou, ail, persil, échalotes, sel et poivre à la fourchette jusqu\'à homogénéité.' },
+            { titre: 'Préparer les cassolettes', texte: 'Répartir les escargots dans des cassolettes individuelles. Arroser chacun d\'un trait de vin blanc.' },
+            { titre: 'Gratiner', texte: 'Déposer généreusement de beurre persillé sur chaque escargot. Passer sous le gril préchauffé au maximum jusqu\'à ce que le beurre bouillonne.', timer: '8-10 min sous le gril' },
+        ],
+        conseils: [
+            'Servir avec une baguette fraîche pour saucer le beurre. Le beurre d\'escargot se prépare en grande quantité et se congèle facilement.',
+        ],
+    },
+
+    'cassoulet': {
+        name:       'Cassoulet',
+        region:     'Languedoc',
+        anecdote:   'Plat emblématique du Languedoc, le cassoulet mijote des heures pour marier haricots blancs, confit et saucisse.',
+        tags:       ["Hiver", "Plat principal", "Élaboré"],
+        prep:       '30 min',
+        cuisson:    '3 h',
+        personnes:  8,
+        difficulte: 'Élaboré',
+        ingredients: [
+            { groupe: 'Les viandes', items: [
+                { qty: '4', name: 'cuisses de canard confites', note: '' },
+                { qty: '400 g', name: 'saucisses de Toulouse', note: '' },
+                { qty: '300 g', name: 'lard demi-sel en lardons', note: '' },
+                { qty: '300 g', name: 'épaule de porc', note: 'en cubes' },
+            ]},
+            { groupe: 'Haricots et aromates', items: [
+                { qty: '1 kg', name: 'haricots blancs secs', note: 'Tarbais ou lingots, trempés 12 h' },
+                { qty: '1 boîte', name: 'tomates concassées', note: '' },
+                { qty: '4 gousses', name: 'ail', note: '' },
+                { qty: '2', name: 'oignons', note: '' },
+                { qty: '1', name: 'bouquet garni', note: '' },
+                { qty: '1,5 litre', name: 'fond de veau ou bouillon', note: '' },
+                { qty: '50 g', name: 'chapelure', note: 'pour la croûte' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Cuire les haricots', texte: 'Égoutter les haricots trempés. Cuire 45 min dans l\'eau bouillante avec bouquet garni et oignons. Ils doivent être à peine cuits. Réserver dans leur jus.', timer: '45 min' },
+            { titre: 'Faire revenir les viandes', texte: 'Faire dorer lardons puis porc puis saucisses dans la graisse de canard. Réserver. Faire revenir l\'ail.' },
+            { titre: 'Monter le cassoulet', texte: 'Dans un grand plat en terre, alterner couches de haricots et de viandes. Terminer par les haricots. Mouiller avec le fond jusqu\'à hauteur. Ajouter les tomates. Enfoncer confits et saucisses.' },
+            { titre: 'Cuire et croûter', texte: 'Saupoudrer de chapelure. Enfourner à 150 °C. Quand la croûte se forme, l\'enfoncer dans les haricots et en reformer une nouvelle. Répéter 3-4 fois.', timer: '2 h à 150 °C' },
+        ],
+        conseils: [
+            'La querelle Castelnaudary-Carcassonne-Toulouse sur la vraie recette est ancestrale. À Castelnaudary : seulement confit, saucisse et porc. À Toulouse : on ajoute du mouton.',
+        ],
+    },
+
+    'cervelas-lyonnais': {
+        name:       'Cervelas lyonnais rôti',
+        region:     'Lyon',
+        anecdote:   'La charcuterie est reine à Lyon. Le cervelas aux truffes ou aux pistaches est une institution des bouchons.',
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '10 min',
+        cuisson:    '20 min',
+        personnes:  4,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '2', name: 'cervelas de Lyon', note: 'aux pistaches ou aux truffes' },
+                { qty: '20 cl', name: 'vin blanc du Beaujolais', note: '' },
+                { qty: '20 cl', name: 'crème fraîche', note: '' },
+                { qty: '2 c.s.', name: 'moutarde à l\'ancienne', note: '' },
+                { qty: '1', name: 'échalote', note: 'ciselée' },
+                { qty: '20 g', name: 'beurre', note: '' },
+                { qty: '1 bouquet', name: 'persil plat', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Griller', texte: 'Inciser les cervelas en croix sur les 2/3 de la longueur pour les faire fleurir. Passer sous le gril du four à 200 °C en retournant à mi-cuisson.', timer: '15-20 min au four' },
+            { titre: 'Sauce moutarde', texte: 'Faire revenir l\'échalote dans le beurre. Déglacer au vin blanc, réduire. Ajouter crème et moutarde. Épaissir 3 min.', timer: '5 min' },
+            { titre: 'Dresser', texte: 'Napper les cervelas de sauce. Parsemer de persil ciselé. Servir avec salade de mâche ou pommes de terre vapeur.' },
+        ],
+        conseils: [
+            'Le cervelas de Lyon est l\'emblème de la charcuterie lyonnaise. Avec truffes et pistaches, c\'est un produit de fête.',
+        ],
+    },
+
+    'ceviche-daurade': {
+        name:       'Ceviche de daurade',
+        region:     'Pays Basque / fusion',
+        anecdote:   'Le poisson cru mariné au citron vert, à la coriandre et au piment doux est arrivé au Pays Basque avec les surfeurs.',
+        tags:       ["Été", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '0 min',
+        personnes:  4,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '400 g', name: 'filet de daurade royale', note: 'très frais, peau retirée' },
+                { qty: '4', name: 'citrons verts', note: 'jus' },
+                { qty: '1', name: 'piment rouge frais', note: 'épépiné, finement haché' },
+                { qty: '1', name: 'oignon rouge', note: 'finement émincé' },
+                { qty: '1 bouquet', name: 'coriandre fraîche', note: '' },
+                { qty: '1', name: 'avocat mûr', note: 'en dés' },
+                { qty: '', name: 'fleur de sel', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Découper', texte: 'Couper la daurade en dés de 1,5 cm. Déposer dans un bol en verre.' },
+            { titre: 'Mariner', texte: 'Couvrir de jus de citron vert. Ajouter le piment et l\'oignon rouge. La chair va blanchir progressivement. Réfrigérer.', timer: '15-20 min au réfrigérateur' },
+            { titre: 'Finir', texte: 'Égoutter légèrement. Ajouter avocat, coriandre ciselée et fleur de sel. Mélanger délicatement. Servir immédiatement en verrine ou assiette fraîche.' },
+        ],
+        conseils: [
+            'Le poisson doit être d\'une fraîcheur irréprochable. Acheter le matin même chez le poissonnier.',
+        ],
+    },
+
+    'ceviche-daurade-tomates': {
+        name:       'Ceviche de daurade aux tomates',
+        region:     'Pays Basque / Atlantique',
+        anecdote:   'La daurade de l\'Atlantique en ceviche avec tomates anciennes et basilic est fraîche et estivale.',
+        tags:       ["Été", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '0 min',
+        personnes:  4,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '400 g', name: 'filet de daurade', note: 'très frais' },
+                { qty: '3', name: 'citrons verts', note: 'jus' },
+                { qty: '200 g', name: 'tomates cerises colorées', note: 'coupées en deux' },
+                { qty: '1', name: 'oignon rouge', note: 'émincé' },
+                { qty: '1', name: 'piment doux rouge', note: 'en dés' },
+                { qty: '1 bouquet', name: 'basilic frais', note: '' },
+                { qty: '3 c.s.', name: 'huile d\'olive', note: '' },
+                { qty: '', name: 'fleur de sel, poivre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Préparer', texte: 'Couper la daurade en dés. Couvrir de jus de citron vert, ajouter oignon et piment. Mariner 20 min au réfrigérateur.', timer: '20 min' },
+            { titre: 'Assembler', texte: 'Égoutter légèrement. Mélanger avec les tomates cerises, l\'huile d\'olive et le basilic. Assaisonner.' },
+            { titre: 'Servir', texte: 'Dresser en verrines ou assiettes avec quelques feuilles de basilic. Servir immédiatement.' },
+        ],
+        conseils: [
+            'Version méditerranéenne du ceviche avec les tomates du jardin d\'été. Parfait pour un apéritif dînatoire.',
+        ],
+    },
+
+    'chapon-farci-marrons': {
+        name:       'Chapon farci aux marrons et foie gras',
+        region:     'France entière',
+        anecdote:   'Le chapon, volaille royale de Noël, se commande chez le volailler et se farcit aux marrons et foie gras.',
+        tags:       ["Hiver", "Plat principal", "Élaboré"],
+        prep:       '45 min',
+        cuisson:    '3 h',
+        personnes:  8,
+        difficulte: 'Élaboré',
+        ingredients: [
+            { groupe: 'Le chapon', items: [
+                { qty: '1 (3,5 kg)', name: 'chapon de Bresse ou Label Rouge', note: 'à commander' },
+                { qty: '50 g', name: 'beurre doux', note: '' },
+                { qty: '30 cl', name: 'fond de volaille', note: '' },
+                { qty: '', name: 'sel, poivre', note: '' },
+            ]},
+            { groupe: 'La farce', items: [
+                { qty: '400 g', name: 'chair à saucisse de qualité', note: '' },
+                { qty: '200 g', name: 'marrons cuits', note: 'en boîte ou sous vide' },
+                { qty: '100 g', name: 'foie de volaille', note: 'haché' },
+                { qty: '50 g', name: 'foie gras mi-cuit', note: 'en dés' },
+                { qty: '1', name: 'échalote', note: 'ciselée' },
+                { qty: '1 c.s.', name: 'cognac', note: '' },
+                { qty: '1 bouquet', name: 'persil et thym effeuillés', note: '' },
+                { qty: '', name: 'sel, poivre, muscade', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Préparer la farce', texte: 'Faire revenir l\'échalote dans le beurre. Mélanger avec chair à saucisse, foie de volaille haché, marrons émiettés, foie gras, cognac et herbes. Assaisonner généreusement.' },
+            { titre: 'Farcir le chapon', texte: 'Sortir le chapon 1 h avant. Glisser du beurre sous la peau de la poitrine. Farcir la cavité sans trop tasser. Brider soigneusement.' },
+            { titre: 'Rôtir', texte: 'Badigeonner de beurre fondu. Saler, poivrer. Enfourner à 160 °C en arrosant toutes les 30 min du jus de cuisson.', timer: '3 h à 160 °C' },
+            { titre: 'Reposer et servir', texte: 'Laisser reposer 20 min sous aluminium. Déglacer le plat au fond de volaille. Servir avec haricots verts et marrons dorés.', timer: '20 min de repos' },
+        ],
+        conseils: [
+            'Le chapon (coq castré) a une chair incomparablement savoureuse. Commander chez un volailler au moins 2 semaines avant Noël.',
+            'Sonde de cuisson conseillée : 72 °C à cœur dans la cuisse.',
+        ],
+    },
+
+    'chartreuse-legumes': {
+        name:       'Chartreuse de légumes',
+        region:     'Île-de-France',
+        anecdote:   'Ce mille-feuille de légumes de printemps aux couleurs vives était le plat favori des moines chartreux.',
+        tags:       ["Printemps", "Entrée", "Élaboré"],
+        prep:       '45 min',
+        cuisson:    '30 min',
+        personnes:  6,
+        difficulte: 'Élaboré',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '2', name: 'carottes', note: 'en tranches fines dans la longueur' },
+                { qty: '2', name: 'courgettes', note: 'en tranches fines dans la longueur' },
+                { qty: '3', name: 'feuilles de chou vert', note: 'blanchies' },
+                { qty: '200 g', name: 'petits pois cuits', note: '' },
+                { qty: '200 g', name: 'haricots verts fins', note: 'cuits' },
+                { qty: '4', name: 'œufs', note: '' },
+                { qty: '20 cl', name: 'crème fraîche épaisse', note: '' },
+                { qty: '100 g', name: 'chèvre frais', note: 'ou ricotta' },
+                { qty: '', name: 'sel, poivre, muscade', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Cuire et tapisser', texte: 'Cuire les tranches de carottes et courgettes à la vapeur. Tapisser un moule à cake beurré avec les feuilles de chou, puis alterner les légumes en bandes colorées.' },
+            { titre: 'Appareil', texte: 'Battre les œufs avec la crème, le chèvre émietté, sel, poivre et muscade. Verser sur les légumes.' },
+            { titre: 'Cuire au bain-marie', texte: 'Couvrir de papier aluminium. Enfourner au bain-marie à 170 °C.', timer: '35-40 min au bain-marie' },
+            { titre: 'Démouler et servir', texte: 'Laisser tiédir avant de démouler. Trancher et servir avec un coulis de tomates ou une vinaigrette aux herbes.' },
+        ],
+        conseils: [
+            'La chartreuse tire son nom des moines chartreux qui cultivaient des légumes. Plat aussi beau que bon, parfait pour impressionner.',
+        ],
+    },
+
+    'choucroute-garnie': {
+        name:       'Choucroute garnie',
+        region:     'Alsace',
+        anecdote:   'La choucroute alsacienne réunit choux fermentés, charcuteries variées et pommes de terre dans un festin hivernal.',
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '2 h',
+        personnes:  8,
+        difficulte: 'Moyen',
+        ingredients: [
+            { groupe: 'La choucroute', items: [
+                { qty: '1,5 kg', name: 'choucroute crue', note: 'bien rincée et essorée' },
+                { qty: '75 cl', name: 'Riesling d\'Alsace', note: '' },
+                { qty: '2', name: 'oignons', note: 'émincés' },
+                { qty: '2 gousses', name: 'ail', note: '' },
+                { qty: '10', name: 'baies de genièvre', note: '' },
+                { qty: '5', name: 'clous de girofle', note: '' },
+                { qty: '1 bouquet garni', name: 'thym, laurier', note: '' },
+                { qty: '150 g', name: 'graisse d\'oie ou saindoux', note: '' },
+            ]},
+            { groupe: 'Les viandes', items: [
+                { qty: '600 g', name: 'palette de porc fumée', note: '' },
+                { qty: '400 g', name: 'lard fumé', note: 'en bloc' },
+                { qty: '6', name: 'saucisses de Strasbourg ou Francfort', note: '' },
+                { qty: '4', name: 'saucisses de Montbéliard', note: '' },
+                { qty: '800 g', name: 'pommes de terre', note: 'en rondelles' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Faire revenir', texte: 'Faire fondre la graisse d\'oie dans une cocotte. Faire revenir les oignons. Ajouter la choucroute, l\'ail, les épices, le bouquet garni. Bien mélanger.' },
+            { titre: 'Mouiller et cuire', texte: 'Enfoncer la palette et le lard dans la choucroute. Couvrir de Riesling et d\'un peu d\'eau. Couvrir hermétiquement et cuire à feu très doux.', timer: '1 h 30' },
+            { titre: 'Ajouter les pommes de terre', texte: 'Poser les pommes de terre sur la choucroute. Poursuivre la cuisson.', timer: '30 min' },
+            { titre: 'Réchauffer les saucisses', texte: '10 min avant de servir, plonger les saucisses dans la choucroute chaude sans faire bouillir pour qu\'elles chauffent uniformément.', timer: '10 min' },
+            { titre: 'Dresser', texte: 'Dresser la choucroute sur un grand plat, disposer les viandes découpées et les saucisses par-dessus. Servir bien chaud avec moutarde à l\'ancienne.' },
+        ],
+        conseils: [
+            'Bien rincer la choucroute pour adoucir l\'acidité. La choucroute se réchauffer admirablement le lendemain, encore meilleure.',
+        ],
+    },
+
+    'choux-braises-lard': {
+        name:       'Choux braisés au lard fumé',
+        region:     'Alsace / Auvergne',
+        anecdote:   'Le chou nouveau de l\'automne braisé avec lardons fumés et baies de genièvre est un plat terroir délicieux.',
+        tags:       ["Automne", "Accompagnement", "Facile"],
+        prep:       '15 min',
+        cuisson:    '40 min',
+        personnes:  4,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '1 (1 kg)', name: 'chou vert nouveau', note: 'en quartiers' },
+                { qty: '200 g', name: 'lardons fumés', note: '' },
+                { qty: '1', name: 'oignon', note: 'émincé' },
+                { qty: '2 gousses', name: 'ail', note: '' },
+                { qty: '5', name: 'baies de genièvre', note: 'légèrement écrasées' },
+                { qty: '20 cl', name: 'bouillon de volaille', note: '' },
+                { qty: '1 c.s.', name: 'saindoux ou beurre', note: '' },
+                { qty: '', name: 'sel, poivre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Faire revenir', texte: 'Faire revenir les lardons dans le saindoux ou beurre. Ajouter l\'oignon et l\'ail. Faire dorer légèrement.', timer: '5 min' },
+            { titre: 'Braiser', texte: 'Ajouter les quartiers de chou, les baies de genièvre. Mouiller avec le bouillon. Saler, poivrer. Couvrir et cuire à feu doux jusqu\'à ce que le chou soit tendre mais encore légèrement ferme.', timer: '35-40 min' },
+        ],
+        conseils: [
+            'Le chou braisé accompagne à merveille les gibiers d\'automne (perdrix, faisan) et les viandes fumées. Les baies de genièvre apportent une note résinée caractéristique.',
+        ],
+    },
+
+    'civet-de-lievre': {
+        name:       'Civet de lièvre',
+        region:     'Champagne / Ardennes',
+        anecdote:   'La saison de chasse en battue s\'ouvre. Le civet de lièvre mijoté au vin rouge est un plat de gibier classique.',
+        tags:       ["Automne", "Plat principal", "Élaboré"],
+        prep:       '30 min',
+        cuisson:    '2 h',
+        personnes:  6,
+        difficulte: 'Élaboré',
+        ingredients: [
+            { groupe: 'Le lièvre', items: [
+                { qty: '1', name: 'lièvre découpé en morceaux', note: '(commander chez le giboyeur)' },
+                { qty: '75 cl', name: 'vin rouge puissant', note: 'Cahors, Madiran ou Gevrey-Chambertin' },
+                { qty: '1', name: 'oignon', note: 'piqué de clous de girofle' },
+                { qty: '3 gousses', name: 'ail', note: '' },
+                { qty: '1', name: 'bouquet garni', note: '' },
+                { qty: '5', name: 'baies de genièvre', note: '' },
+                { qty: '', name: 'sel, poivre', note: '' },
+            ]},
+            { groupe: 'La sauce', items: [
+                { qty: '150 g', name: 'lardons fumés', note: '' },
+                { qty: '20', name: 'petits oignons grelots', note: '' },
+                { qty: '200 g', name: 'champignons de Paris', note: '' },
+                { qty: '2 c.s.', name: 'farine', note: '' },
+                { qty: '1', name: 'foie du lièvre', note: 'pour lier la sauce' },
+                { qty: '10 cl', name: 'crème fraîche', note: '' },
+                { qty: '2 c.s.', name: 'huile', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Mariner', texte: 'Placer les morceaux de lièvre dans le vin avec oignon, ail, bouquet garni, genièvre. Mariner 12 h au réfrigérateur.', timer: '12 h de marinade' },
+            { titre: 'Saisir et mijoter', texte: 'Égoutter et sécher les morceaux. Les saisir dans l\'huile avec les lardons. Saupoudrer de farine. Mouiller avec la marinade filtrée. Porter à ébullition, écumer. Ajouter oignons grelots et champignons. Couvrir et mijoter.', timer: '1 h 30' },
+            { titre: 'Lier la sauce', texte: 'Mixer le foie du lièvre avec la crème. Incorporer hors du feu à la sauce. Ne plus faire bouillir. Rectifier l\'assaisonnement.' },
+        ],
+        conseils: [
+            'La liaison au foie est la signature du civet. Elle donne à la sauce son onctuosité et sa couleur brun-roux caractéristique.',
+            'Servir avec des tagliatelles fraîches ou des pommes de terre vapeur.',
+        ],
+    },
+
+    'clafoutis-abricots': {
+        name:       'Clafoutis aux abricots',
+        region:     'Auvergne / Limousin',
+        anecdote:   '\'Variante de l\'été du clafoutis',
+        tags:       ["Été", "Dessert", "Facile"],
+        prep:       '15 min',
+        cuisson:    '40 min',
+        personnes:  6,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '500 g', name: 'abricots frais', note: 'dénoyautés, coupés en deux' },
+                { qty: '3', name: 'œufs', note: '' },
+                { qty: '120 g', name: 'sucre', note: '' },
+                { qty: '80 g', name: 'farine', note: '' },
+                { qty: '30 cl', name: 'lait entier', note: '' },
+                { qty: '10 cl', name: 'crème liquide', note: '' },
+                { qty: '30 g', name: 'beurre doux', note: 'fondu' },
+                { qty: '1 c.c.', name: 'extrait d\'amande amère', note: '' },
+                { qty: '', name: 'sucre glace', note: 'pour servir' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Appareil', texte: 'Fouetter œufs et sucre jusqu\'au blanchiment. Incorporer la farine, puis lait, crème et beurre fondu. Ajouter l\'extrait d\'amande amère.' },
+            { titre: 'Dresser et cuire', texte: 'Beurrer et sucrer un plat à gratin. Disposer les demi-abricots face bombée vers le bas. Verser l\'appareil. Enfourner à 180 °C.', timer: '35-40 min à 180 °C' },
+            { titre: 'Servir', texte: 'Saupoudrer de sucre glace tiède. Se déguste tiède ou à température ambiante.' },
+        ],
+        conseils: [
+            'L\'extrait d\'amande amère intensifie le goût de l\'abricot. Ne pas trop cuire : le clafoutis doit rester légèrement tremblotant au centre.',
+        ],
+    },
+
+    'clafoutis-cerises': {
+        name:       'Clafoutis aux cerises',
+        region:     'Limousin',
+        anecdote:   'Le clafoutis limousin aux cerises noires entières avec leurs noyaux est LE dessert de fin mai et juin.',
+        tags:       ["Été", "Dessert", "Facile"],
+        prep:       '15 min',
+        cuisson:    '40 min',
+        personnes:  6,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '500 g', name: 'cerises noires', note: 'non dénoyautées (tradition)' },
+                { qty: '3', name: 'œufs', note: '' },
+                { qty: '120 g', name: 'sucre', note: '' },
+                { qty: '80 g', name: 'farine', note: '' },
+                { qty: '30 cl', name: 'lait entier', note: '' },
+                { qty: '10 cl', name: 'crème liquide', note: '' },
+                { qty: '30 g', name: 'beurre doux', note: 'fondu + pour le plat' },
+                { qty: '1 sachet', name: 'sucre vanillé', note: '' },
+                { qty: '', name: 'sucre glace', note: 'pour servir' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Appareil', texte: 'Fouetter œufs, sucre et sucre vanillé. Incorporer la farine, puis lait, crème et beurre fondu. Laisser reposer 15 min.', timer: '15 min de repos' },
+            { titre: 'Cuire', texte: 'Beurrer et sucrer généreusement un plat à gratin. Disposer les cerises entières. Verser l\'appareil par-dessus. Enfourner à 180 °C.', timer: '35-40 min à 180 °C' },
+            { titre: 'Servir', texte: 'Saupoudrer de sucre glace. Servir tiède, dans le plat.' },
+        ],
+        conseils: [
+            'Le clafoutis aux cerises est traditionnellement préparé avec les noyaux : ils parfument le gâteau à la cuisson. Les amateurs enlèvent quand même les noyaux pour les enfants.',
+        ],
+    },
+
+    'colcannon': {
+        name:       'Colcannon (Saint-Patrick)',
+        region:     'Irlande / Bretagne',
+        anecdote:   '\'Pour la Saint-Patrick',
+        tags:       ["Hiver", "Accompagnement", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
+        personnes:  4,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '800 g', name: 'pommes de terre farineuses', note: '' },
+                { qty: '400 g', name: 'chou frisé', note: 'finement émincé' },
+                { qty: '4', name: 'oignons nouveaux', note: 'ou 1 poireau, émincé' },
+                { qty: '100 g', name: 'beurre demi-sel', note: '' },
+                { qty: '15 cl', name: 'lait chaud', note: 'ou crème' },
+                { qty: '', name: 'sel, poivre, muscade', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Cuire les pommes de terre', texte: 'Cuire les pommes de terre entières avec leur peau dans l\'eau bouillante salée. Éplucher à chaud.', timer: '25 min' },
+            { titre: 'Cuire le chou', texte: 'Blanchir le chou 3 min à l\'eau bouillante. Égoutter. Faire fondre dans 30 g de beurre avec les oignons nouveaux 5 min.', timer: '8 min' },
+            { titre: 'Assembler', texte: 'Écraser les pommes de terre au moulin. Incorporer le reste du beurre et le lait chaud. Ajouter le chou et les oignons. Bien mélanger. Assaisonner.' },
+            { titre: 'Servir', texte: 'Dresser en dôme. Faire un puits au centre et déposer une noisette de beurre qui fond doucement.' },
+        ],
+        conseils: [
+            'Plat national irlandais, traditionnellement servi à Halloween avec une pièce de monnaie cachée dedans. Simple et réconfortant.',
+        ],
+    },
+
+    'confit-canard-sarladaises': {
+        name:       'Confit de canard aux pommes de terre sarladaises',
+        region:     'Périgord',
+        anecdote:   'Le confit de canard cuit dans sa propre graisse avec les pommes sarladaises est un plat périgourdin complet.',
+        tags:       ["Automne", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '1 h 30',
+        personnes:  4,
+        difficulte: 'Moyen',
+        ingredients: [
+            { groupe: 'Le canard confit', items: [
+                { qty: '4', name: 'cuisses de canard confites', note: 'en conserve ou maison' },
+            ]},
+            { groupe: 'Pommes sarladaises', items: [
+                { qty: '1 kg', name: 'pommes de terre', note: 'à chair ferme (Charlotte ou Ratte)' },
+                { qty: '3 c.s.', name: 'graisse de canard', note: '(récupérée du confit)' },
+                { qty: '3 gousses', name: 'ail', note: 'émincées' },
+                { qty: '1 bouquet', name: 'persil plat', note: 'ciselé' },
+                { qty: '', name: 'sel, poivre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Pommes sarladaises', texte: 'Éplucher et trancher les pommes de terre en rondelles de 3 mm (mandoline ou couteau). Faire chauffer la graisse de canard dans une grande poêle. Faire revenir les pommes de terre à feu moyen en retournant régulièrement jusqu\'à coloration dorée.', timer: '30-40 min' },
+            { titre: 'Ajouter ail et persil', texte: '5 min avant la fin de cuisson, ajouter l\'ail et le persil. Saler et poivrer généreusement.', timer: '5 min' },
+            { titre: 'Réchauffer le confit', texte: 'Mettre les cuisses de canard dans un plat, côté peau vers le haut. Enfourner à 200 °C jusqu\'à ce que la peau soit croustillante et la chair bien chaude.', timer: '20-25 min à 200 °C' },
+            { titre: 'Dresser', texte: 'Dresser la cuisse de canard sur un lit de pommes sarladaises. Servir immédiatement.' },
+        ],
+        conseils: [
+            'Les pommes sarladaises ne se font qu\'à la graisse de canard, jamais à l\'huile. La graisse récupérée du confit est idéale.',
+        ],
+    },
+
+    'confiture-tomates-vertes': {
+        name:       'Confiture de tomates vertes',
+        region:     'France entière',
+        anecdote:   '\'Avant les premières gelées',
+        tags:       ["Automne", "Condiment", "Facile"],
+        prep:       '20 min',
+        cuisson:    '1 h',
+        personnes:  4,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '1 kg', name: 'tomates vertes', note: 'non mûres' },
+                { qty: '700 g', name: 'sucre cristallisé', note: '' },
+                { qty: '2', name: 'citrons non traités', note: 'jus et zeste' },
+                { qty: '1 c.c.', name: 'vanille en poudre', note: 'ou 1 gousse' },
+                { qty: '1 pincée', name: 'cannelle', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Macérer', texte: 'Couper les tomates vertes en dés. Les mélanger avec le sucre, le jus et zeste des citrons. Laisser macérer une nuit.', timer: '12 h de macération' },
+            { titre: 'Cuire', texte: 'Verser dans une bassine à confiture ou une grande casserole. Ajouter la vanille et la cannelle. Cuire à feu vif en remuant régulièrement, écumer soigneusement.', timer: '45-60 min' },
+            { titre: 'Vérifier et mettre en pots', texte: 'Vérifier la prise : une goutte sur assiette froide doit figer. Verser en pots stérilisés, fermer et retourner jusqu\'au refroidissement.' },
+        ],
+        conseils: [
+            'Cette confiture originale est idéale en fin de saison pour utiliser les tomates qui n\'ont pas eu le temps de mûrir. Un régal sur du fromage blanc ou du pain de campagne.',
+        ],
+    },
+
+    'coq-au-vin-jaune': {
+        name:       'Coq au vin jaune',
+        region:     'Franche-Comté / Jura',
+        anecdote:   '\'Le vin jaune du Jura',
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '30 min',
+        cuisson:    '1 h 30',
+        personnes:  6,
+        difficulte: 'Moyen',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '1 (1,8 kg)', name: 'poulet ou coq fermier', note: 'découpé en 8 morceaux' },
+                { qty: '1 bouteille', name: 'Vin Jaune du Jura', note: 'ou Savagnin' },
+                { qty: '300 g', name: 'morilles fraîches ou séchées', note: 'réhydratées' },
+                { qty: '20 cl', name: 'crème fraîche épaisse', note: '' },
+                { qty: '2', name: 'échalotes', note: 'ciselées' },
+                { qty: '2 gousses', name: 'ail', note: '' },
+                { qty: '30 g', name: 'beurre', note: '' },
+                { qty: '', name: 'sel, poivre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Saisir le poulet', texte: 'Faire dorer les morceaux de poulet dans le beurre sur toutes les faces. Réserver. Faire suer les échalotes et l\'ail.', timer: '10 min' },
+            { titre: 'Déglacer et cuire', texte: 'Remettre le poulet. Verser les 3/4 du vin jaune. Ajouter les morilles. Couvrir et mijoter à feu doux.', timer: '45-60 min' },
+            { titre: 'Finir la sauce', texte: 'Retirer le poulet. Ajouter la crème fraîche et le reste du vin jaune dans la cocotte. Réduire 10 min à feu vif jusqu\'à obtenir une sauce onctueuse. Rectifier. Remettre le poulet.', timer: '10 min' },
+        ],
+        conseils: [
+            'Le vin jaune (né sous voile dans les caves du Jura) apporte des notes de noix et d\'épices incomparables. Ne pas substituer par un autre vin.',
+        ],
+    },
+
+    'coquilles-saint-jacques': {
+        name:       'Coquilles Saint-Jacques au beurre blanc',
+        region:     'Bretagne / Normandie',
+        anecdote:   'Les coquilles Saint-Jacques de la baie de Saint-Brieuc sont à leur sommet en hiver et début de printemps.',
+        tags:       ["Hiver", "Entrée", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '20 min',
+        personnes:  4,
+        difficulte: 'Moyen',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '12', name: 'noix de Saint-Jacques avec corail', note: '' },
+                { qty: '2', name: 'échalotes', note: 'ciselées' },
+                { qty: '20 cl', name: 'vin blanc sec', note: '' },
+                { qty: '20 cl', name: 'crème fraîche épaisse', note: '' },
+                { qty: '50 g', name: 'beurre doux', note: '' },
+                { qty: '200 g', name: 'champignons de Paris', note: 'émincés' },
+                { qty: '', name: 'sel, poivre, muscade', note: '' },
+                { qty: '', name: 'chapelure', note: 'pour gratiner' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Duxelles de champignons', texte: 'Faire revenir les échalotes dans 20 g de beurre. Ajouter les champignons, cuire jusqu\'à évaporation complète du jus. Déglacer au vin blanc, réduire de moitié.', timer: '10 min' },
+            { titre: 'Lier à la crème', texte: 'Ajouter la crème fraîche. Laisser réduire jusqu\'à consistance nappante. Assaisonner.' },
+            { titre: 'Poêler les Saint-Jacques', texte: 'Saisir les noix dans 30 g de beurre très chaud, 1 min par face. Elles doivent rester nacrées à cœur. Saler, poivrer.', timer: '2 min' },
+            { titre: 'Gratiner', texte: 'Disposer les noix dans les coquilles. Napper de sauce aux champignons. Saupoudrer de chapelure. Passer sous le gril 3-4 min.', timer: '3-4 min sous le gril' },
+        ],
+        conseils: [
+            'Ne jamais trop cuire les Saint-Jacques : elles doivent rester légèrement nacrées à cœur. La surcuisson les rend caoutchouteuses et sèches.',
+        ],
+    },
+
+    'cote-boeuf-champignons': {
+        name:       'Côte de bœuf aux champignons poêlés',
+        region:     'Bourgogne / Charolais',
+        anecdote:   'Le bœuf charolais de septembre avec les champignons sauvages de la forêt : le duo gagnant de l\'automne.',
+        tags:       ["Toute l'année", "Plat principal", "Facile"],
+        prep:       '10 min',
+        cuisson:    '20 min',
+        personnes:  3,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: 'La côte de bœuf', items: [
+                { qty: '1 (1 kg)', name: 'côte de bœuf', note: 'maturée, 4 cm d\'épaisseur' },
+                { qty: '2 c.s.', name: 'huile neutre', note: '' },
+                { qty: '30 g', name: 'beurre', note: '' },
+                { qty: '2 branches', name: 'thym', note: '' },
+                { qty: '2 gousses', name: 'ail', note: 'en chemise écrasées' },
+            ]},
+            { groupe: 'Poêlée de champignons', items: [
+                { qty: '400 g', name: 'cèpes ou champignons forestiers', note: '' },
+                { qty: '2 gousses', name: 'ail', note: 'émincées' },
+                { qty: '1 bouquet', name: 'persil plat', note: '' },
+                { qty: '30 g', name: 'beurre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Sortir la viande', texte: 'Sortir la côte de bœuf 1 h avant. La sécher soigneusement. Saler généreusement.', timer: '1 h à température ambiante' },
+            { titre: 'Saisir', texte: 'Chauffer l\'huile dans une grande poêle en fonte à feu vif jusqu\'à légère fumée. Saisir la côte 3 min par face pour bien former la croûte. Ajouter beurre, ail et thym, arroser 2 min.', timer: '8-10 min' },
+            { titre: 'Finir au four', texte: 'Enfourner à 180 °C, cuire selon l\'épaisseur. Viser 52 °C à cœur pour saignant, 57 °C pour à point.', timer: '8-10 min à 180 °C' },
+            { titre: 'Reposer', texte: 'Couvrir de papier aluminium et reposer autant de temps que la cuisson.', timer: '10 min de repos' },
+            { titre: 'Champignons', texte: 'Poêler les champignons au beurre à feu vif. Ajouter l\'ail et le persil en fin de cuisson. Saler, poivrer.' },
+        ],
+        conseils: [
+            'Le repos est obligatoire : la viande se détend et les jus se redistribuent. Couper toujours perpendiculairement à la fibre.',
+        ],
+    },
+
+    'cote-boeuf-feu-de-bois': {
+        name:       'Côte de bœuf au feu de bois',
+        region:     'Bretagne / Bourgogne',
+        anecdote:   '\'En cette date de souvenir solennel',
+        tags:       ["Été", "Plat principal", "Facile"],
+        prep:       '10 min',
+        cuisson:    '20 min',
+        personnes:  3,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '1 (1 kg)', name: 'côte de bœuf', note: 'à température ambiante' },
+                { qty: '', name: 'fleur de sel, poivre du moulin', note: '' },
+                { qty: '2 branches', name: 'romarin', note: '' },
+                { qty: '3 gousses', name: 'ail', note: 'en chemise' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Préparer les braises', texte: 'Attendre que les braises soient bien incandescentes et recouvertes d\'une fine pellicule de cendre blanche. Pas de flamme vive.' },
+            { titre: 'Griller', texte: 'Déposer la côte sur la grille à bonne hauteur. Cuire 5-7 min par face selon l\'épaisseur en la retournant une seule fois. Déposer le romarin et l\'ail sur la grille à côté pour les effluves.', timer: '10-14 min' },
+            { titre: 'Reposer et servir', texte: 'Laisser reposer 10 min sur une planche de bois. Découper en tranches épaisses perpendiculaires à la fibre. Fleur de sel et poivre du moulin au moment de servir.', timer: '10 min de repos' },
+        ],
+        conseils: [
+            'Le feu de bois de chêne ou de hêtre donne le meilleur goût. Éviter le bois résineux (pin) qui communique un goût âcre.',
+        ],
+    },
+
+    'cotelettes-agneau-bretonne': {
+        name:       'Côtelettes d\'agneau à la bretonne',
+        region:     'Bretagne',
+        anecdote:   'Les haricots bretons cuits à la graisse d\'agneau accompagnent les côtelettes dans ce plat roboratif.',
+        tags:       ["Printemps", "Plat principal", "Facile"],
+        prep:       '10 min',
+        cuisson:    '10 min',
+        personnes:  4,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '8', name: 'côtelettes d\'agneau de pré-salé', note: '' },
+                { qty: '3 gousses', name: 'ail', note: 'écrasées' },
+                { qty: '1 bouquet', name: 'persil plat', note: 'ciselé' },
+                { qty: '1 c.c.', name: 'herbes de Provence', note: '' },
+                { qty: '3 c.s.', name: 'beurre demi-sel breton', note: '' },
+                { qty: '', name: 'sel, poivre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Préparer', texte: 'Frotter les côtelettes avec l\'ail écrasé. Assaisonner de sel, poivre et herbes de Provence.' },
+            { titre: 'Cuire', texte: 'Faire fondre le beurre dans une poêle bien chaude. Cuire les côtelettes 3-4 min par face selon l\'épaisseur. Elles doivent rester rosées à cœur.', timer: '6-8 min' },
+            { titre: 'Arroser et servir', texte: 'En fin de cuisson, ajouter le persil ciselé dans la poêle. Arroser les côtelettes du beurre parfumé. Servir aussitôt avec des haricots verts et des flageolets.' },
+        ],
+        conseils: [
+            'L\'agneau de pré-salé (Mont-Saint-Michel, baie de Somme) a une chair naturellement salée par les herbes marines. Ne pas trop saler.',
+        ],
+    },
+
+    'cotelettes-agneau-grillees': {
+        name:       'Côtelettes d\'agneau grillées aux herbes',
+        region:     'Provence',
+        anecdote:   '\'Les côtelettes d\'agneau de Sisteron',
+        tags:       ["Été", "Plat principal", "Facile"],
+        prep:       '10 min',
+        cuisson:    '10 min',
+        personnes:  4,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '8', name: 'côtelettes d\'agneau', note: '' },
+                { qty: '1', name: 'citron', note: 'jus' },
+                { qty: '4 branches', name: 'romarin frais', note: '' },
+                { qty: '3 gousses', name: 'ail', note: 'émincées' },
+                { qty: '4 c.s.', name: 'huile d\'olive', note: '' },
+                { qty: '', name: 'sel, poivre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Mariner', texte: 'Mélanger huile d\'olive, jus de citron, ail et romarin. Enrober les côtelettes. Mariner au moins 30 min.', timer: '30 min' },
+            { titre: 'Griller', texte: 'Cuire sur barbecue ou grille bien chaude 3-4 min par face. Elles doivent être bien marquées et rester rosées à cœur.', timer: '6-8 min' },
+            { titre: 'Reposer', texte: 'Laisser reposer 3 min avant de servir. Accompagner de tzatziki ou d\'une salade de tomates.', timer: '3 min de repos' },
+        ],
+        conseils: [
+            'Les côtelettes d\'agneau grillées sont l\'une des meilleures choses qui soit. La clé : une belle grille très chaude pour la marque et un cœur rosé.',
+        ],
+    },
+
+    'cotes-marcassin-airelles': {
+        name:       'Côtes de marcassin aux airelles',
+        region:     'Alsace / Champagne-Ardenne',
+        anecdote:   'Le jeune marcassin est tendre et délicat. Ses côtes grillées avec airelles et poivre de Sichuan.',
+        tags:       ["Automne", "Plat principal", "Élaboré"],
+        prep:       '20 min',
+        cuisson:    '30 min',
+        personnes:  4,
+        difficulte: 'Élaboré',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '4', name: 'côtes de marcassin', note: '' },
+                { qty: '200 g', name: 'airelles fraîches ou surgelées', note: '' },
+                { qty: '2 c.s.', name: 'sucre', note: '' },
+                { qty: '10 cl', name: 'vin rouge corsé', note: '' },
+                { qty: '15 cl', name: 'fond de gibier', note: 'ou fond de veau' },
+                { qty: '2', name: 'échalotes', note: 'ciselées' },
+                { qty: '30 g', name: 'beurre', note: '' },
+                { qty: '1 c.s.', name: 'gelée de groseilles', note: '' },
+                { qty: '', name: 'sel, poivre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Sauce aux airelles', texte: 'Faire revenir les échalotes dans le beurre. Ajouter les airelles et le sucre. Verser le vin et le fond. Laisser réduire et épaissir 15 min. Ajouter la gelée de groseilles. Réserver.', timer: '15 min' },
+            { titre: 'Cuire les côtes', texte: 'Assaisonner les côtes. Les saisir dans du beurre bien chaud 3-4 min par face. Laisser reposer 3 min.', timer: '8 min' },
+            { titre: 'Dresser', texte: 'Napper les côtes de sauce aux airelles. Accompagner de chou rouge braisé et de spätzle ou de purée de pommes de terre.' },
+        ],
+        conseils: [
+            'Le marcassin est le sanglier de moins d\'un an : sa chair est plus tendre et plus fine. Les airelles équilibrent la puissance du gibier avec leur acidité.',
+        ],
+    },
+
+    'cotes-porc-miel-thym': {
+        name:       'Côtes de porc grillées au miel et thym',
+        region:     'Provence',
+        anecdote:   'Le thym sauvage des collines provençales avec le miel de lavande parfument cette cuisson simple sur les braises.',
+        tags:       ["Toute l'année", "Plat principal", "Facile"],
+        prep:       '10 min',
+        cuisson:    '20 min',
+        personnes:  4,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '4', name: 'côtes de porc dans l\'échine', note: 'épaisses' },
+                { qty: '2 c.s.', name: 'miel liquide', note: 'de fleurs' },
+                { qty: '2 c.s.', name: 'moutarde de Dijon', note: '' },
+                { qty: '4 branches', name: 'thym frais', note: '' },
+                { qty: '2 gousses', name: 'ail', note: 'écrasées' },
+                { qty: '2 c.s.', name: 'huile d\'olive', note: '' },
+                { qty: '', name: 'sel, poivre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Marinade miel-thym', texte: 'Mélanger miel, moutarde, ail, thym effeuillé et huile d\'olive. Enrober généreusement les côtes de porc. Laisser mariner 30 min minimum.', timer: '30 min' },
+            { titre: 'Cuire', texte: 'Cuire à la poêle ou au barbecue à feu moyen 8-10 min par face. Le miel caramélise et forme une belle croûte dorée.', timer: '15-20 min' },
+            { titre: 'Reposer et servir', texte: 'Laisser reposer 3 min. Servir avec des pommes de terre sautées ou une salade verte.', timer: '3 min' },
+        ],
+        conseils: [
+            'Surveiller attentivement la cuisson : le miel peut brûler rapidement à trop haute température. Un feu moyen est préférable.',
+        ],
+    },
+
+    'cotes-porc-pommes-cidre': {
+        name:       'Côtes de porc braisées aux pommes',
+        region:     'Normandie / Bretagne',
+        anecdote:   'Le porc breton avec les pommes reinettes de Normandie dans une sauce au cidre : le mariage du terroir.',
+        tags:       ["Automne", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
+        personnes:  4,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '4', name: 'côtes de porc', note: '' },
+                { qty: '3', name: 'pommes Reinette', note: 'évidées et coupées en quartiers' },
+                { qty: '20 cl', name: 'cidre brut normand', note: '' },
+                { qty: '20 cl', name: 'crème fraîche', note: '' },
+                { qty: '1', name: 'oignon', note: 'émincé' },
+                { qty: '30 g', name: 'beurre demi-sel', note: '' },
+                { qty: '1 c.s.', name: 'calvados', note: 'facultatif' },
+                { qty: '', name: 'sel, poivre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Dorer la viande', texte: 'Faire dorer les côtes de porc dans le beurre, 3 min par face. Réserver. Faire fondre l\'oignon dans la même poêle.' },
+            { titre: 'Cuire les pommes', texte: 'Ajouter les quartiers de pommes. Les faire dorer légèrement. Flamber au calvados si souhaité.' },
+            { titre: 'Mijoter', texte: 'Remettre les côtes. Verser le cidre. Couvrir et mijoter 15 min à feu doux.', timer: '15 min' },
+            { titre: 'Finir la sauce', texte: 'Retirer les côtes. Ajouter la crème dans le jus de cuisson, réduire 3 min. Napper les côtes et les pommes. Servir avec des pommes de terre vapeur.', timer: '3 min' },
+        ],
+        conseils: [
+            'La Reinette ou la Golden tient bien à la cuisson. La Granny Smith apportera une note plus acidulée qui contraste agréablement avec le gras du porc.',
+        ],
+    },
+
+    'cotes-sanglier-airelles': {
+        name:       'Côtes de sanglier aux airelles',
+        region:     'Lorraine / Alsace',
+        anecdote:   'La saison de chasse ferme fin novembre. Les dernières pièces de sanglier se cuisinent aux airelles et genièvre.',
+        tags:       ["Automne", "Plat principal", "Élaboré"],
+        prep:       '20 min',
+        cuisson:    '30 min',
+        personnes:  4,
+        difficulte: 'Élaboré',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '4', name: 'côtes de sanglier', note: 'marinées la veille' },
+                { qty: '75 cl', name: 'vin rouge corsé', note: 'pour la marinade' },
+                { qty: '2', name: 'carottes', note: 'en dés' },
+                { qty: '2', name: 'oignons', note: 'en dés' },
+                { qty: 'bouquet garni', name: 'thym, laurier, genièvre', note: '' },
+                { qty: '200 g', name: 'airelles', note: '' },
+                { qty: '2 c.s.', name: 'confiture d\'airelles', note: 'ou gelée de groseilles' },
+                { qty: '15 cl', name: 'fond de gibier', note: '' },
+                { qty: '', name: 'sel, poivre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Mariner', texte: 'Placer les côtes dans le vin rouge avec carottes, oignons, bouquet garni et genièvre. Couvrir et réfrigérer 12 h.', timer: '12 h de marinade' },
+            { titre: 'Saisir et cuire', texte: 'Égoutter et sécher les côtes. Les saisir vivement dans du beurre sur les deux faces. Déglacer avec un peu de marinade filtrée. Cuire à couvert à feu moyen.', timer: '15-20 min' },
+            { titre: 'Sauce gibier-airelles', texte: 'Faire réduire 20 cl de marinade filtrée avec le fond de gibier. Ajouter les airelles et la confiture. Laisser épaissir. Rectifier l\'assaisonnement.', timer: '10 min' },
+            { titre: 'Dresser', texte: 'Napper les côtes de sauce. Accompagner de purée de céleri ou de marrons et de chou rouge braisé.' },
+        ],
+        conseils: [
+            'La marinade attendrit la chair du sanglier et atténue son goût sauvage. Ne pas jeter la marinade : elle sert de base à la sauce.',
+        ],
+    },
+
+    'cotes-veau-morilles': {
+        name:       'Côtes de veau aux morilles',
+        region:     'Franche-Comté',
+        anecdote:   'Les morilles printanières du Jura sont l\'un des trésors mycologiques les plus recherchés de France.',
+        tags:       ["Printemps", "Plat principal", "Élaboré"],
+        prep:       '15 min',
+        cuisson:    '20 min',
+        personnes:  4,
+        difficulte: 'Élaboré',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '4', name: 'côtes de veau première', note: 'épaisses' },
+                { qty: '30 g', name: 'morilles séchées', note: 'réhydratées 30 min dans l\'eau tiède' },
+                { qty: '2', name: 'échalotes', note: 'ciselées' },
+                { qty: '10 cl', name: 'vin jaune ou porto blanc', note: '' },
+                { qty: '25 cl', name: 'crème fraîche épaisse', note: '' },
+                { qty: '30 g', name: 'beurre', note: '' },
+                { qty: '', name: 'sel, poivre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Cuire les côtes', texte: 'Faire dorer les côtes dans le beurre 4-5 min par face. Elles doivent rester rosées. Réserver au chaud.', timer: '8-10 min' },
+            { titre: 'Sauce morilles', texte: 'Faire suer les échalotes dans la même poêle. Ajouter les morilles égouttées (conserver le liquide de trempage filtré). Déglacer au vin jaune.', timer: '5 min' },
+            { titre: 'Finir', texte: 'Ajouter la crème et 5 cl du liquide de trempage des morilles filtré. Laisser réduire jusqu\'à consistance onctueuse. Rectifier.', timer: '5 min' },
+            { titre: 'Dresser', texte: 'Napper les côtes de sauce aux morilles. Accompagner de tagliatelles fraîches ou de riz.' },
+        ],
+        conseils: [
+            'Le liquide de trempage des morilles est très parfumé mais souvent sableux. Le filtrer soigneusement à travers un linge fin.',
+        ],
+    },
+
+    'courgettes-farcies-chevre': {
+        name:       'Courgettes farcies au chèvre et basilic',
+        region:     'Provence',
+        anecdote:   '\'Les courgettes rondes de Nice farcies au chèvre',
+        tags:       ["Été", "Plat principal", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
+        personnes:  4,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '4', name: 'courgettes rondes', note: 'ou 4 longues coupées en deux' },
+                { qty: '200 g', name: 'fromage de chèvre frais', note: '' },
+                { qty: '2', name: 'œufs', note: '' },
+                { qty: '1 bouquet', name: 'basilic frais', note: '' },
+                { qty: '1 gousse', name: 'ail', note: '' },
+                { qty: '50 g', name: 'parmesan râpé', note: '' },
+                { qty: '', name: 'sel, poivre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Vider les courgettes', texte: 'Couper un chapeau aux courgettes rondes ou les couper en deux pour les longues. Évider délicatement avec une cuillère, conserver la pulpe.' },
+            { titre: 'Préparer la farce', texte: 'Hacher grossièrement la pulpe et la faire revenir 5 min à la poêle pour évaporer l\'eau. Mélanger avec le chèvre écrasé, les œufs battus, l\'ail haché, le basilic et la moitié du parmesan. Assaisonner.' },
+            { titre: 'Farcir et cuire', texte: 'Farcir les courgettes. Parsemer du reste de parmesan. Placer dans un plat huilé. Enfourner à 180 °C.', timer: '25-30 min à 180 °C' },
+        ],
+        conseils: [
+            'Bien faire revenir la pulpe de courgette pour éliminer l\'eau : sinon la farce serait trop liquide. Peut se servir tiède ou à température ambiante.',
+        ],
+    },
+
+    'creme-brulee-vanille': {
+        name:       'Crème brûlée à la vanille de Tahiti',
+        region:     'France entière',
+        anecdote:   'La crème brûlée dorée au chalumeau avec la vanille de Tahiti est le dessert d\'élégance de l\'automne français.',
+        tags:       ["Toute l'année", "Dessert", "Moyen"],
+        prep:       '15 min',
+        cuisson:    '40 min',
+        personnes:  6,
+        difficulte: 'Moyen',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '60 cl', name: 'crème liquide entière', note: '' },
+                { qty: '6', name: 'jaunes d\'œufs', note: '' },
+                { qty: '100 g', name: 'sucre semoule', note: '' },
+                { qty: '2', name: 'gousses de vanille', note: 'fendues et grattées' },
+                { qty: '6 c.s.', name: 'cassonade', note: 'pour brûler' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Infuser', texte: 'Chauffer la crème avec les gousses de vanille et leurs graines sans faire bouillir. Laisser infuser 15 min hors du feu.', timer: '15 min d\'infusion' },
+            { titre: 'Appareil', texte: 'Fouetter les jaunes avec le sucre jusqu\'au blanchiment. Verser la crème chaude (gousses retirées) en filet sur les jaunes en fouettant doucement. Écumer si nécessaire.' },
+            { titre: 'Cuire au bain-marie', texte: 'Verser dans des ramequins. Enfourner au bain-marie à 100 °C. La crème est cuite quand elle est prise sur les bords mais encore légèrement tremblotante au centre. Réfrigérer.', timer: '40-50 min à 100 °C' },
+            { titre: 'Brûler le caramel', texte: 'Au moment de servir, saupoudrer de cassonade. Brûler au chalumeau de cuisine en faisant des cercles réguliers jusqu\'à obtenir une croûte caramel dorée.' },
+        ],
+        conseils: [
+            'La basse température (100 °C) est le secret d\'une crème brûlée soyeuse. Trop chaude, elle serait granuleuse.',
+        ],
+    },
+
+    'creme-celeri-noix': {
+        name:       'Crème de céleri rave aux noix',
+        region:     'France entière',
+        anecdote:   '\'Le céleri rave',
+        tags:       ["Automne", "Entrée", "Facile"],
+        prep:       '15 min',
+        cuisson:    '25 min',
+        personnes:  4,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '1 (500 g)', name: 'céleri-rave', note: 'épluché et coupé en dés' },
+                { qty: '1', name: 'pomme Granny Smith', note: 'épluchée, en dés' },
+                { qty: '1', name: 'oignon', note: 'émincé' },
+                { qty: '1 litre', name: 'bouillon de volaille', note: '' },
+                { qty: '15 cl', name: 'crème fraîche', note: '' },
+                { qty: '50 g', name: 'cerneaux de noix', note: 'pour la garniture' },
+                { qty: '2 c.s.', name: 'huile de noix', note: '' },
+                { qty: '', name: 'sel, poivre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Cuire', texte: 'Faire revenir l\'oignon dans l\'huile de noix. Ajouter le céleri et la pomme. Couvrir de bouillon et cuire jusqu\'à tendreté.', timer: '20 min' },
+            { titre: 'Mixer', texte: 'Mixer finement. Ajouter la crème, rectifier la consistance avec le bouillon. Assaisonner.' },
+            { titre: 'Servir', texte: 'Verser dans les bols. Garnir de cerneaux de noix concassés et d\'un filet d\'huile de noix.' },
+        ],
+        conseils: [
+            'L\'huile de noix apporte une dimension aromatique précieuse. La pomme Granny Smith équilibre l\'amertume du céleri avec son acidité.',
+        ],
+    },
+
+    'creme-lentilles-corail': {
+        name:       'Crème de lentilles corail au curry',
+        region:     'Sud-Ouest / fusion',
+        anecdote:   'Les lentilles corail arrivent en France avec les épices du monde. Un plat de Carême riche en protéines végétales.',
+        tags:       ["Automne", "Entrée", "Facile"],
+        prep:       '10 min',
+        cuisson:    '25 min',
+        personnes:  4,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '200 g', name: 'lentilles corail', note: '' },
+                { qty: '1', name: 'oignon', note: 'émincé' },
+                { qty: '1', name: 'carotte', note: 'en dés' },
+                { qty: '2 gousses', name: 'ail', note: '' },
+                { qty: '1 c.c.', name: 'cumin', note: '' },
+                { qty: '1 c.c.', name: 'coriandre en poudre', note: '' },
+                { qty: '1 pincée', name: 'piment doux', note: '' },
+                { qty: '1 boîte', name: 'lait de coco', note: '40 cl' },
+                { qty: '1 litre', name: 'bouillon de légumes', note: '' },
+                { qty: '1', name: 'citron vert', note: 'jus' },
+                { qty: '', name: 'sel, huile d\'olive', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Faire revenir', texte: 'Faire revenir l\'oignon, l\'ail et la carotte dans l\'huile d\'olive. Ajouter les épices. Cuire 2 min.' },
+            { titre: 'Cuire les lentilles', texte: 'Ajouter les lentilles corail (pas besoin de trempage), le bouillon et le lait de coco. Cuire jusqu\'à ce que les lentilles soient fondantes.', timer: '20 min' },
+            { titre: 'Mixer et assaisonner', texte: 'Mixer finement. Ajouter le jus de citron vert. Rectifier la consistance et l\'assaisonnement. Servir avec une cuillerée de crème fraîche et de coriandre fraîche.' },
+        ],
+        conseils: [
+            'Les lentilles corail ne nécessitent aucun trempage et cuisent très rapidement. Cette crème est nourrissante et économique.',
+        ],
+    },
+
+    'creme-topinambour-truffe': {
+        name:       'Crème de topinambour à la truffe',
+        region:     'Île-de-France / Périgord',
+        anecdote:   'Le topinambour fin d\'automne avec quelques copeaux de truffe noire du Périgord : la paire inattendue.',
+        tags:       ["Hiver", "Entrée", "Élaboré"],
+        prep:       '20 min',
+        cuisson:    '30 min',
+        personnes:  4,
+        difficulte: 'Élaboré',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '600 g', name: 'topinambours', note: 'épluchés et coupés en dés' },
+                { qty: '1', name: 'oignon', note: '' },
+                { qty: '1 litre', name: 'bouillon de volaille', note: '' },
+                { qty: '20 cl', name: 'crème fraîche épaisse', note: '' },
+                { qty: '1 petite', name: 'truffe noire du Périgord (15-20 g)', note: 'ou huile de truffe' },
+                { qty: '30 g', name: 'beurre', note: '' },
+                { qty: '', name: 'sel, poivre blanc', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Cuire les topinambours', texte: 'Faire revenir l\'oignon dans le beurre. Ajouter les topinambours. Couvrir de bouillon. Cuire jusqu\'à tendreté complète.', timer: '25 min' },
+            { titre: 'Mixer et crémer', texte: 'Mixer très finement. Passer au chinois pour une texture soyeuse. Ajouter la crème, rectifier. La soupe doit être veloutée.' },
+            { titre: 'Incorporer la truffe', texte: 'Râper ou émincer finement la truffe. En réserver quelques lamelles pour la garniture. Incorporer le reste dans la soupe chaude. Laisser infuser 5 min hors du feu.', timer: '5 min d\'infusion' },
+            { titre: 'Servir', texte: 'Verser dans des assiettes chaudes. Garnir de lamelles de truffe et d\'un filet de crème.' },
+        ],
+        conseils: [
+            'Le topinambour est souvent sous-estimé. Sa saveur d\'artichaut se marie divinement avec la truffe. Utiliser une truffe fraîche en saison (décembre-mars).',
+        ],
+    },
+
+    'crepes-chandeleur': {
+        name:       'Crêpes à la Chandeleur',
+        region:     'Bretagne',
+        anecdote:   'La Chandeleur célèbre la lumière revenue. On tient une pièce d\'or en retournant la crêpe pour s\'assurer prospérité.',
+        tags:       ["Hiver", "Dessert", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
+        personnes:  4,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '250 g', name: 'farine de froment', note: '' },
+                { qty: '3', name: 'œufs', note: '' },
+                { qty: '50 cl', name: 'lait entier', note: '' },
+                { qty: '2 c.s.', name: 'beurre fondu', note: '+ pour la poêle' },
+                { qty: '1 c.s.', name: 'sucre', note: '' },
+                { qty: '1 pincée', name: 'sel', note: '' },
+                { qty: '1 c.s.', name: 'rhum brun ou fleur d\'oranger', note: 'facultatif' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Pâte', texte: 'Mélanger farine, sucre et sel. Creuser un puits, ajouter les œufs. Incorporer le lait progressivement en fouettant pour éviter les grumeaux. Ajouter beurre fondu et rhum. Laisser reposer.', timer: '1 h de repos' },
+            { titre: 'Cuire les crêpes', texte: 'Chauffer une poêle à crêpes beurrée à feu moyen-vif. Verser une petite louche de pâte, incliner pour étaler. Cuire 1 min 30 jusqu\'à ce que les bords se décollent, retourner et cuire encore 30 secondes.', timer: '2 min par crêpe' },
+            { titre: 'Servir', texte: 'Servir avec beurre et sucre, confiture, Nutella ou sucre-citron. La tradition : tenir une pièce d\'or dans la main gauche tout en faisant sauter la crêpe de la main droite.' },
+        ],
+        conseils: [
+            'Le repos de la pâte est essentiel : le gluten se détend et les crêpes sont plus moelleuses. La première crêpe est toujours ratée — c\'est la crêpe du cuisinier.',
+        ],
+    },
+
+    'crepes-suzette': {
+        name:       'Crêpes Suzette',
+        region:     'Bretagne / Paris',
+        anecdote:   '\'À l\'approche de la Chandeleur',
+        tags:       ["Hiver", "Dessert", "Élaboré"],
+        prep:       '30 min',
+        cuisson:    '30 min',
+        personnes:  4,
+        difficulte: 'Élaboré',
+        ingredients: [
+            { groupe: 'Crêpes (recette de base)', items: [
+                { qty: '250 g', name: 'farine', note: '' },
+                { qty: '3', name: 'œufs', note: '' },
+                { qty: '50 cl', name: 'lait', note: '' },
+                { qty: '30 g', name: 'beurre fondu', note: '' },
+            ]},
+            { groupe: 'Beurre Suzette', items: [
+                { qty: '100 g', name: 'beurre doux', note: 'ramolli' },
+                { qty: '80 g', name: 'sucre glace', note: '' },
+                { qty: '2', name: 'oranges non traitées', note: 'zeste et jus' },
+                { qty: '1', name: 'citron non traité', note: 'zeste' },
+                { qty: '5 cl', name: 'Grand Marnier ou Cointreau', note: '' },
+            ]},
+            { groupe: 'Flambée', items: [
+                { qty: '5 cl', name: 'Grand Marnier ou cognac', note: 'pour flamber' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Crêpes', texte: 'Préparer une pâte à crêpes classique. Laisser reposer 1 h. Cuire des crêpes fines. Réserver.', timer: '1 h de repos' },
+            { titre: 'Beurre Suzette', texte: 'Travailler le beurre ramolli avec le sucre glace, les zestes d\'orange et de citron, le jus d\'orange et le Grand Marnier. Réfrigérer.' },
+            { titre: 'Flamber et servir', texte: 'Dans une grande poêle, faire fondre le beurre Suzette. Plier les crêpes en quatre et les faire chauffer dans le beurre. Verser le Grand Marnier chauffé, flamber en penchant légèrement la poêle. Servir immédiatement flambé.', timer: '5 min' },
+        ],
+        conseils: [
+            'La légende veut que la crêpe Suzette fut inventée accidentellement en 1895 par Auguste Escoffier pour le Prince de Galles. Le flambage est spectaculaire mais surtout parfumé.',
+        ],
+    },
+
+    'crostinis-legumes-grilles': {
+        name:       'Crostinis aux légumes grillés',
+        region:     'Provence / Côte d\'Azur',
+        anecdote:   'Les légumes du soleil grillés sur pain croustillant frotté à l\'ail sont un en-cas parfait pour l\'apéritif.',
+        tags:       ["Été", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '15 min',
+        personnes:  4,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '1', name: 'baguette de campagne', note: 'en tranches épaisses biseautées' },
+                { qty: '1', name: 'courgette', note: 'en lanières' },
+                { qty: '1', name: 'poivron rouge', note: 'en lanières' },
+                { qty: '1', name: 'aubergine', note: 'en tranches' },
+                { qty: '100 g', name: 'ricotta', note: '' },
+                { qty: '1 bouquet', name: 'basilic frais', note: '' },
+                { qty: '4 c.s.', name: 'huile d\'olive', note: '' },
+                { qty: '', name: 'sel, poivre, ail', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Griller les légumes', texte: 'Badigeonner les légumes d\'huile d\'olive, sel et poivre. Griller à la plancha ou au gril du four jusqu\'à légère coloration.', timer: '10-12 min' },
+            { titre: 'Griller le pain', texte: 'Griller les tranches de baguette. Frotter avec de l\'ail cru.' },
+            { titre: 'Assembler', texte: 'Tartiner chaque crostini de ricotta. Déposer les légumes grillés. Garnir de feuilles de basilic et d\'un filet d\'huile d\'olive.' },
+        ],
+        conseils: [
+            'Les crostini sont parfaits à l\'apéritif. Varier les garnitures : tapenade + poivrons, ricotta + tomates séchées, pesto + courgettes.',
+        ],
+    },
+
+    'crumble-abricots-amandes': {
+        name:       'Crumble abricots amandes',
+        region:     'Provence / Roussillon',
+        anecdote:   '\'Les derniers abricots de la saison',
+        tags:       ["Été", "Dessert", "Facile"],
+        prep:       '15 min',
+        cuisson:    '35 min',
+        personnes:  6,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: 'Les fruits', items: [
+                { qty: '800 g', name: 'abricots mûrs', note: 'dénoyautés, coupés en deux' },
+                { qty: '3 c.s.', name: 'sucre', note: '' },
+                { qty: '1 c.s.', name: 'jus de citron', note: '' },
+            ]},
+            { groupe: 'Le crumble', items: [
+                { qty: '150 g', name: 'farine', note: '' },
+                { qty: '100 g', name: 'beurre froid', note: 'en dés' },
+                { qty: '80 g', name: 'cassonade', note: '' },
+                { qty: '80 g', name: 'amandes effilées', note: '' },
+                { qty: '1 pincée', name: 'sel', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Préparer les fruits', texte: 'Mélanger les abricots avec le sucre et le jus de citron. Verser dans un plat à gratin beurré.' },
+            { titre: 'Crumble', texte: 'Mélanger farine, cassonade, sel et beurre froid du bout des doigts jusqu\'à obtenir une texture sableuse grossière. Incorporer les amandes effilées.' },
+            { titre: 'Cuire', texte: 'Répartir le crumble sur les fruits. Enfourner à 180 °C jusqu\'à ce que la surface soit dorée et les fruits bouillonnants.', timer: '30-35 min à 180 °C' },
+            { titre: 'Servir', texte: 'Déguster tiède avec une boule de glace vanille ou de la crème fraîche.' },
+        ],
+        conseils: [
+            'Ne pas trop travailler le crumble : la texture doit rester irrégulière et sableuse. C\'est ce qui lui donne son croustillant.',
+        ],
+    },
+
+    'crumble-pommes-caramel': {
+        name:       'Crumble de pommes et caramel au beurre salé',
+        region:     'Bretagne / Normandie',
+        anecdote:   'Les premières pommes de l\'automne en crumble avec caramel au beurre salé breton : un dessert chaleureux.',
+        tags:       ["Automne", "Dessert", "Facile"],
+        prep:       '20 min',
+        cuisson:    '40 min',
+        personnes:  6,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: 'Les pommes caramelisées', items: [
+                { qty: '1 kg', name: 'pommes Reinette ou Boskoop', note: 'épluchées, en quartiers' },
+                { qty: '80 g', name: 'beurre demi-sel', note: '' },
+                { qty: '100 g', name: 'cassonade', note: '' },
+                { qty: '1 c.c.', name: 'cannelle', note: '' },
+            ]},
+            { groupe: 'Le crumble', items: [
+                { qty: '150 g', name: 'farine', note: '' },
+                { qty: '100 g', name: 'beurre froid en dés', note: '' },
+                { qty: '80 g', name: 'cassonade', note: '' },
+                { qty: '50 g', name: 'flocons d\'avoine', note: '' },
+                { qty: '1 pincée', name: 'sel', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Caraméliser les pommes', texte: 'Dans une grande poêle, faire fondre le beurre avec la cassonade. Ajouter les pommes et la cannelle. Cuire 10 min à feu moyen jusqu\'à légère caramélisation. Verser dans le plat à gratin.', timer: '10 min' },
+            { titre: 'Crumble avoiné', texte: 'Mélanger farine, cassonade, flocons d\'avoine, sel et beurre froid du bout des doigts jusqu\'à texture sableuse.' },
+            { titre: 'Cuire', texte: 'Répartir le crumble sur les pommes. Enfourner à 180 °C.', timer: '25-30 min à 180 °C' },
+            { titre: 'Servir', texte: 'Tiède avec une crème anglaise légère ou une boule de glace vanille.' },
+        ],
+        conseils: [
+            'Les flocons d\'avoine apportent un croustillant supplémentaire. Les pommes acides (Boskoop, Reinette) tiennent mieux à la cuisson que la Golden.',
+        ],
+    },
+
+    'cuisses-canard-confites': {
+        name:       'Cuisses de canard confites',
+        region:     'Périgord / Gascogne',
+        anecdote:   'Le confit de canard cuit dans sa propre graisse est la recette de conservation ancestrale du Sud-Ouest.',
+        tags:       ["Automne", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '2 h',
+        personnes:  4,
+        difficulte: 'Moyen',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '4', name: 'cuisses de canard', note: '' },
+                { qty: '1 kg', name: 'graisse de canard', note: 'ou d\'oie' },
+                { qty: '30 g', name: 'gros sel', note: '' },
+                { qty: '4 gousses', name: 'ail', note: 'en chemise' },
+                { qty: '2 branches', name: 'thym', note: '' },
+                { qty: '2 feuilles', name: 'laurier', note: '' },
+                { qty: '5', name: 'baies de genièvre', note: '' },
+                { qty: '1 c.c.', name: 'poivre concassé', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Saler les cuisses', texte: 'Frotter les cuisses avec le gros sel, le poivre, le thym effeuillé et le laurier. Couvrir et réfrigérer 12 h minimum.', timer: '12 h de salaison' },
+            { titre: 'Rincer et sécher', texte: 'Rincer soigneusement les cuisses sous l\'eau froide. Bien sécher avec du papier absorbant.' },
+            { titre: 'Confire', texte: 'Dans une cocotte, faire fondre la graisse à feu doux. Plonger les cuisses avec l\'ail et les baies de genièvre. La graisse doit recouvrir entièrement les cuisses. Cuire à très feu doux (la graisse ne doit pas bouillir, à peine frémir).', timer: '2 h à feu très doux' },
+            { titre: 'Conserver ou servir', texte: 'Pour servir : débarrasser les cuisses de leur graisse, les faire revenir côté peau dans une poêle chaude jusqu\'à obtenir une peau croustillante.', timer: '10 min pour dorer la peau' },
+        ],
+        conseils: [
+            'Le confit maison se conserve 3 semaines au réfrigérateur sous graisse. La salaison préalable est indispensable pour le goût et la conservation.',
+        ],
+    },
+
+    'daube-froide-gelee': {
+        name:       'Daube froide en gelée',
+        region:     'Provence',
+        anecdote:   '\'La daube provençale de la veille est encore meilleure froide',
+        tags:       ["Été", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '3 h',
+        personnes:  6,
+        difficulte: 'Moyen',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '1,2 kg', name: 'joue de bœuf', note: 'en gros morceaux' },
+                { qty: '75 cl', name: 'vin blanc sec', note: '' },
+                { qty: '1', name: 'pied de veau', note: 'pour la gelée naturelle' },
+                { qty: '2', name: 'carottes', note: 'en rondelles' },
+                { qty: '2', name: 'oignons', note: '' },
+                { qty: '4 gousses', name: 'ail', note: '' },
+                { qty: '1 bouquet garni', name: '', note: '' },
+                { qty: '1', name: 'bouquet de persil', note: '' },
+                { qty: '', name: 'sel, poivre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Cuire la daube', texte: 'Dans une cocotte, faire revenir les légumes. Ajouter la viande, le pied de veau, le bouquet garni. Couvrir de vin blanc. Saler, poivrer. Mijoter à couvert.', timer: '2 h 30 à 3 h' },
+            { titre: 'Effilocher et monter', texte: 'Retirer la viande et l\'effilocher à la fourchette. Filtrer le bouillon, le faire réduire de moitié s\'il est trop liquide. Disposer la viande dans un moule à cake avec les carottes et le persil haché. Couler le bouillon dessus.' },
+            { titre: 'Réfrigérer', texte: 'Laisser prendre en gelée au réfrigérateur au minimum 12 h.', timer: '12 h au réfrigérateur' },
+            { titre: 'Démouler et servir', texte: 'Démouler et servir tranché avec cornichons, tomates et vinaigrette. Plat idéal l\'été.' },
+        ],
+        conseils: [
+            'Le pied de veau apporte le collagène qui gélifie naturellement le bouillon. Sans lui, ajouter de la gélatine (6 feuilles pour 50 cl de bouillon).',
+        ],
+    },
+
+    'daube-languedocienne': {
+        name:       'Bœuf en daube à la languedocienne',
+        region:     'Languedoc',
+        anecdote:   'La daube languedocienne aux olives noires et au thym de garrigue mijote toute une journée pour fondre sur la langue.',
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '3 h',
+        personnes:  6,
+        difficulte: 'Moyen',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '1,2 kg', name: 'paleron de bœuf', note: 'en cubes' },
+                { qty: '75 cl', name: 'vin rouge du Languedoc', note: 'Faugères, Saint-Chinian' },
+                { qty: '100 g', name: 'olives noires', note: '' },
+                { qty: '2', name: 'tomates', note: 'concassées' },
+                { qty: '1 zeste', name: 'd\'orange', note: '' },
+                { qty: '2', name: 'oignons', note: '' },
+                { qty: '4 gousses', name: 'ail', note: '' },
+                { qty: '1 bouquet garni', name: 'thym, laurier, romarin', note: '' },
+                { qty: '2 c.s.', name: 'huile d\'olive', note: '' },
+                { qty: '', name: 'sel, poivre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Saisir', texte: 'Faire dorer les cubes de bœuf dans l\'huile d\'olive. Ajouter oignons et ail. Déglacer au vin rouge.' },
+            { titre: 'Mijoter', texte: 'Ajouter tomates, zeste d\'orange, bouquet garni. Couvrir et cuire à feu très doux.', timer: '2 h 30' },
+            { titre: 'Ajouter les olives', texte: '30 min avant la fin, incorporer les olives noires. Rectifier l\'assaisonnement.', timer: '30 min' },
+        ],
+        conseils: [
+            'Le zeste d\'orange et les olives noires sont la signature de la daube languedocienne, qui la distingue de la daube provençale. Réchauffée le lendemain, elle est encore meilleure.',
+        ],
+    },
+
+    'daube-provencale': {
+        name:       'Daube provençale',
+        region:     'Provence',
+        anecdote:   '\'La daube se prépare la veille et se déguste réchauffée — encore meilleure le lendemain',
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '3 h',
+        personnes:  6,
+        difficulte: 'Moyen',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '1,2 kg', name: 'joue ou paleron de bœuf', note: 'en cubes' },
+                { qty: '75 cl', name: 'Côtes du Rhône ou Bandol rouge', note: '' },
+                { qty: '100 g', name: 'olives vertes et noires', note: '' },
+                { qty: '3', name: 'tomates', note: 'concassées' },
+                { qty: '1 zeste', name: 'd\'orange', note: '' },
+                { qty: '2', name: 'carottes', note: '' },
+                { qty: '2', name: 'oignons', note: '' },
+                { qty: '4 gousses', name: 'ail', note: '' },
+                { qty: '2 branches', name: 'thym, 2 feuilles laurier', note: '' },
+                { qty: '5', name: 'baies de genièvre', note: '' },
+                { qty: '2 c.s.', name: 'huile d\'olive', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Mariner (optionnel)', texte: 'Mariner la viande dans le vin rouge avec les légumes et aromates 12 h au réfrigérateur pour plus de saveur.', timer: '12 h (optionnel)' },
+            { titre: 'Saisir', texte: 'Faire dorer les cubes dans l\'huile d\'olive. Ajouter les légumes, tomates, zeste d\'orange. Couvrir de vin et de la marinade. Ajouter olives et aromates.' },
+            { titre: 'Mijoter', texte: 'Couvrir hermétiquement et cuire à feu très doux ou au four à 150 °C. La daube ne doit jamais bouillir.', timer: '3 h à feu doux' },
+        ],
+        conseils: [
+            'En Provence, la daube se prépare traditionnellement dans une daubière en terre cuite. Le fond bombé concentre la chaleur sur les parois, évitant l\'ébullition.',
+        ],
+    },
+
+    'daube-sanglier': {
+        name:       'Daube de sanglier',
+        region:     'Corse / Languedoc',
+        anecdote:   '\'La saison de chasse bat son plein. Le sanglier mariné au vin rouge et aux aromates',
+        tags:       ["Automne", "Plat principal", "Élaboré"],
+        prep:       '30 min',
+        cuisson:    '3 h 30',
+        personnes:  6,
+        difficulte: 'Élaboré',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '1,5 kg', name: 'épaule de sanglier', note: 'en cubes' },
+                { qty: '1 bouteille', name: 'vin rouge tannique', note: 'Cahors, Madiran' },
+                { qty: '10 cl', name: 'cognac', note: '' },
+                { qty: '2', name: 'carottes', note: '' },
+                { qty: '2', name: 'oignons', note: '' },
+                { qty: '4 gousses', name: 'ail', note: '' },
+                { qty: '100 g', name: 'lardons fumés', note: '' },
+                { qty: '2 c.s.', name: 'farine', note: '' },
+                { qty: 'bouquet garni + genièvre', name: '', note: '' },
+                { qty: '', name: 'huile, sel, poivre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Mariner', texte: 'Placer le sanglier dans le vin rouge avec carottes, oignons, ail, bouquet garni et genièvre. Réfrigérer 24 h minimum.', timer: '24 h de marinade' },
+            { titre: 'Saisir', texte: 'Égoutter et sécher la viande. Faire revenir les lardons puis saisir la viande sur toutes les faces. Flamber au cognac.' },
+            { titre: 'Mijoter', texte: 'Saupoudrer de farine, ajouter les légumes de la marinade. Mouiller avec la marinade filtrée. Couvrir et cuire à feu très doux.', timer: '3 h' },
+        ],
+        conseils: [
+            'La longue marinade est obligatoire pour le sanglier : elle attendrit la chair et atténue le goût sauvage. Servir avec une purée de céleri et des airelles.',
+        ],
+    },
+
+    'daube-thon-rouge': {
+        name:       'Daube de thon rouge',
+        region:     'Provence / Languedoc',
+        anecdote:   '\'Le thon rouge de Méditerranée mijoté comme une daube de bœuf',
+        tags:       ["Été", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '45 min',
+        personnes:  4,
+        difficulte: 'Moyen',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '600 g', name: 'thon rouge frais', note: 'en cubes épais' },
+                { qty: '50 cl', name: 'vin blanc sec', note: '' },
+                { qty: '3', name: 'tomates mûres', note: 'concassées' },
+                { qty: '2', name: 'oignons', note: '' },
+                { qty: '4 gousses', name: 'ail', note: '' },
+                { qty: '1 zeste', name: 'd\'orange', note: '' },
+                { qty: '10', name: 'olives noires', note: '' },
+                { qty: '2 branches', name: 'thym, 1 feuille laurier', note: '' },
+                { qty: '4 c.s.', name: 'huile d\'olive', note: '' },
+                { qty: '', name: 'sel, poivre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Faire revenir', texte: 'Faire revenir oignons et ail dans l\'huile d\'olive. Ajouter les tomates, le zeste d\'orange et les aromates. Cuire 10 min.', timer: '10 min' },
+            { titre: 'Cuire le thon', texte: 'Ajouter les cubes de thon. Mouiller avec le vin blanc. Couvrir et cuire à feu très doux : le thon doit rester rosé à cœur.', timer: '15-20 min à feu très doux' },
+            { titre: 'Finir', texte: 'Ajouter les olives noires 5 min avant la fin. Rectifier l\'assaisonnement. Servir avec du riz ou des pâtes.', timer: '5 min' },
+        ],
+        conseils: [
+            'Ne pas trop cuire le thon : une daube de thon trop cuite devient sèche et sans intérêt. Il doit rester légèrement rosé à cœur.',
+        ],
+    },
+
+    'daurade-grille-herbes': {
+        name:       'Daurade royale grillée aux herbes',
+        region:     'Méditerranée / Provence',
+        anecdote:   '\'La daurade de Méditerranée grillée entière avec fenouil',
+        tags:       ["Été", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '20 min',
+        personnes:  4,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '2 (600 g chacune)', name: 'daurades royales', note: 'vidées et écaillées' },
+                { qty: '4 branches', name: 'thym frais', note: '' },
+                { qty: '2 branches', name: 'romarin', note: '' },
+                { qty: '1 bouquet', name: 'basilic', note: '' },
+                { qty: '1', name: 'citron', note: 'en rondelles' },
+                { qty: '4 gousses', name: 'ail', note: 'en chemise' },
+                { qty: '4 c.s.', name: 'huile d\'olive', note: '' },
+                { qty: '', name: 'fleur de sel, poivre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Préparer', texte: 'Inciser la chair des daurades en biais sur les deux faces. Farcir la cavité avec thym, romarin, basilic, citron et ail. Arroser d\'huile d\'olive, saler et poivrer.' },
+            { titre: 'Griller', texte: 'Cuire sur barbecue ou plancha bien chaude (ou gril du four) 8-10 min par face. La peau doit être croustillante et légèrement carbonisée.', timer: '16-20 min' },
+            { titre: 'Servir', texte: 'Servir immédiatement avec un filet d\'huile d\'olive et des quartiers de citron. Accompagner d\'une ratatouille ou d\'une salade méditerranéenne.' },
+        ],
+        conseils: [
+            'La daurade royale (dorada) est supérieure à la daurade de ferme. Demander au poissonnier de l\'écailler mais pas de fileter.',
+        ],
+    },
+
+    'dinde-noel-farcie-marrons': {
+        name:       'Dinde de Noël farcie aux marrons',
+        region:     'France entière',
+        anecdote:   'La dinde rôtie farcie aux marrons et aux herbes est le plat de Noël traditionnel de toutes les familles françaises.',
+        tags:       ["Hiver", "Plat principal", "Élaboré"],
+        prep:       '1 h',
+        cuisson:    '3 h 30',
+        personnes:  10,
+        difficulte: 'Élaboré',
+        ingredients: [
+            { groupe: 'La dinde', items: [
+                { qty: '1 (4-5 kg)', name: 'dinde fermière Label Rouge', note: '' },
+                { qty: '100 g', name: 'beurre doux', note: '' },
+                { qty: '', name: 'sel, poivre', note: '' },
+            ]},
+            { groupe: 'La farce aux marrons', items: [
+                { qty: '500 g', name: 'chair à saucisse', note: '' },
+                { qty: '400 g', name: 'marrons cuits', note: 'grossièrement émiettés' },
+                { qty: '200 g', name: 'foie de volaille', note: 'haché' },
+                { qty: '1', name: 'oignon', note: 'ciselé' },
+                { qty: '1 c.s.', name: 'cognac', note: '' },
+                { qty: '1 bouquet', name: 'persil et thym effeuillés', note: '' },
+                { qty: '1', name: 'œuf', note: '' },
+                { qty: '', name: 'sel, poivre, muscade', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Préparer la farce', texte: 'Faire revenir l\'oignon dans du beurre. Mélanger avec chair à saucisse, foie haché, marrons, cognac, herbes, œuf. Assaisonner généreusement.' },
+            { titre: 'Farcir la dinde', texte: 'Sortir la dinde 2 h avant. Glisser du beurre sous la peau de la poitrine. Farcir la cavité et le cou sans trop tasser. Brider.' },
+            { titre: 'Rôtir', texte: 'Badigeonner de beurre fondu. Saler, poivrer. Enfourner à 160 °C en arrosant toutes les 30 min. Compter environ 40 min par kg.', timer: '3 h 30 à 160 °C' },
+            { titre: 'Reposer', texte: 'Laisser reposer 30 min sous aluminium. Déglacer le plat avec un verre de fond de volaille.', timer: '30 min de repos' },
+        ],
+        conseils: [
+            'Pour vérifier la cuisson, piquer la cuisse : le jus doit ressortir clair. Une sonde indiquant 75 °C dans la cuisse est la méthode la plus fiable.',
+            'Préparer la farce la veille pour plus de saveur.',
+        ],
+    },
+
+    'dorade-citron-vert': {
+        name:       'Grillades de dorade au citron vert',
+        region:     'Méditerranée',
+        anecdote:   '\'La dorade de Méditerranée entière sur le gril avec citron vert',
+        tags:       ["Été", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '20 min',
+        personnes:  2,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '1 (500 g)', name: 'dorade royale', note: 'vidée, écaillée' },
+                { qty: '2', name: 'citrons verts', note: 'jus et rondelles' },
+                { qty: '2 gousses', name: 'ail', note: 'émincées' },
+                { qty: '2 branches', name: 'coriandre fraîche', note: '' },
+                { qty: '1 piment vert doux', name: '', note: 'épépiné, émincé' },
+                { qty: '3 c.s.', name: 'huile d\'olive', note: '' },
+                { qty: '', name: 'fleur de sel, poivre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Préparer', texte: 'Inciser la dorade sur les deux faces. Farcir la cavité avec coriandre, ail, rondelles de citron vert et piment. Arroser de jus de citron vert et d\'huile d\'olive.' },
+            { titre: 'Cuire en papillote ou gril', texte: 'Soit envelopper dans du papier aluminium et cuire au four à 200 °C 20 min. Soit griller 8-10 min par face. La peau doit être croustillante.', timer: '20 min au four ou 16-20 min au gril' },
+            { titre: 'Servir', texte: 'Dresser avec les jus de cuisson et des quartiers de citron vert. Accompagner de riz basmati et d\'une salade de mangue.' },
+        ],
+        conseils: [
+            'La dorade en papillote préserve les arômes du citron vert et de la coriandre. Pour une peau croustillante, finir 5 min sous le gril en ouvrant la papillote.',
+        ],
+    },
+
+    'emince-veau-printanier': {
+        name:       'Émincé de veau printanier',
+        region:     'Île-de-France',
+        anecdote:   '\'Les légumes nouveaux — petits pois',
+        tags:       ["Printemps", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '15 min',
+        personnes:  4,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '600 g', name: 'escalope de veau', note: 'en fines lanières' },
+                { qty: '200 g', name: 'asperges vertes', note: 'en tronçons' },
+                { qty: '150 g', name: 'petits pois frais', note: '' },
+                { qty: '8', name: 'petits oignons nouveaux', note: '' },
+                { qty: '20 cl', name: 'crème fraîche épaisse', note: '' },
+                { qty: '10 cl', name: 'vin blanc sec', note: '' },
+                { qty: '2', name: 'échalotes', note: 'ciselées' },
+                { qty: '30 g', name: 'beurre', note: '' },
+                { qty: '', name: 'sel, poivre, estragon frais', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Cuire les légumes', texte: 'Blanchir rapidement asperges et petits pois à l\'eau bouillante salée (3 min). Égoutter et rafraîchir.', timer: '3 min' },
+            { titre: 'Saisir le veau', texte: 'Dans une poêle bien chaude, saisir les lanières de veau dans le beurre 2-3 min à feu vif. Elles doivent rester rosées. Réserver.' },
+            { titre: 'Sauce et réunion', texte: 'Dans la même poêle, faire suer les échalotes et les oignons nouveaux. Déglacer au vin blanc, réduire. Ajouter la crème. Réunir veau et légumes. Chauffer 1 min. Ajouter l\'estragon ciselé.', timer: '5 min' },
+        ],
+        conseils: [
+            'L\'émincé de veau doit être saisi très rapidement à feu très vif pour rester tendre. Un veau trop cuit devient caoutchouteux.',
+        ],
+    },
+
+    'epaule-agneau-confite': {
+        name:       'Agneau en épaule confite à l\'ail',
+        region:     'Provence',
+        anecdote:   '\'Pour l\'Assomption',
+        tags:       ["Printemps", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '4 h',
+        personnes:  6,
+        difficulte: 'Moyen',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '1 (1,5 kg)', name: 'épaule d\'agneau', note: 'entière avec os' },
+                { qty: '1 tête entière', name: 'd\'ail', note: '+ 6 gousses supplémentaires' },
+                { qty: '3 branches', name: 'romarin', note: '' },
+                { qty: '3 branches', name: 'thym', note: '' },
+                { qty: '20 cl', name: 'vin blanc sec', note: '' },
+                { qty: '4 c.s.', name: 'huile d\'olive', note: '' },
+                { qty: '', name: 'sel, poivre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Préparer', texte: 'Piquer l\'épaule avec les 6 gousses d\'ail coupées en lamelles, le romarin et le thym. Frotter généreusement d\'huile d\'olive, sel et poivre.' },
+            { titre: 'Confiture', texte: 'Placer dans un plat à rôtir avec la tête d\'ail entière. Verser le vin blanc. Couvrir hermétiquement de papier aluminium (ou avec un couvercle). Enfourner à 150 °C.', timer: '3 h 30 à 4 h à 150 °C' },
+            { titre: 'Dorer et servir', texte: 'Retirer le papier aluminium, monter le four à 220 °C et faire dorer l\'épaule 15 min. La chair doit se détacher à la fourchette.', timer: '15 min à 220 °C' },
+        ],
+        conseils: [
+            'La cuisson lente et à couvert est le secret : l\'épaule doit être si confite que l\'os se détache seul. Servir avec des flageolets ou des légumes printaniers.',
+        ],
+    },
+
+    'epaule-porc-biere': {
+        name:       'Épaule de porc braisée à la bière',
+        region:     'Nord / Alsace',
+        anecdote:   'L\'épaule de porc braisée lentement à la bière brune et aux baies de genièvre : le plat du Nord en novembre.',
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '3 h',
+        personnes:  6,
+        difficulte: 'Facile',
+        ingredients: [
+            { groupe: '', items: [
+                { qty: '1,5 kg', name: 'épaule de porc', note: 'avec os, ficelée' },
+                { qty: '75 cl', name: 'bière blonde ou ambrée', note: '' },
+                { qty: '2', name: 'oignons', note: 'en quartiers' },
+                { qty: '4 gousses', name: 'ail', note: '' },
+                { qty: '2 c.s.', name: 'moutarde à l\'ancienne', note: '' },
+                { qty: '2 branches', name: 'thym', note: '' },
+                { qty: '2 feuilles', name: 'laurier', note: '' },
+                { qty: '1 c.c.', name: 'cumin', note: '' },
+                { qty: '', name: 'sel, poivre', note: '' },
+            ]},
+        ],
+        etapes: [
+            { titre: 'Préparer', texte: 'Frotter l\'épaule de porc avec la moutarde, le cumin, sel et poivre. Faire dorer sur toutes les faces dans une cocotte.', timer: '10 min' },
+            { titre: 'Mijoter à la bière', texte: 'Ajouter oignons, ail, thym, laurier. Verser la bière. Couvrir et cuire à feu très doux.', timer: '2 h 30 à 3 h' },
+            { titre: 'Réduire et servir', texte: 'Retirer l\'épaule. Faire réduire le jus de cuisson 10 min à feu vif pour le concentrer. Servir l\'épaule effilochée avec ce jus et de la choucroute ou des pommes de terre.', timer: '10 min' },
+        ],
+        conseils: [
+            'L\'épaule de porc est l\'un des morceaux les moins chers et les plus savoureux. La bière apporte amertume et rondeur à la sauce.',
+        ],
+    },
+
+    'far-breton': {
+        name:       'Far breton aux pruneaux',
+        region:     'Bretagne',
+        anecdote:   'Le far breton est un flan épais et moelleux dont la recette varie d\'une famille bretonne à l\'autre.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'feuillete-cepes': {
+        name:       'Feuilleté de cèpes en croûte',
+        region:     'Périgord / Gascogne',
+        anecdote:   'Les cèpes de Bordeaux enfermés dans une croûte feuilletée dorée : la luxueuse entrée de l\'automne gersois.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'feuillete-chevre-noix': {
+        name:       'Feuilleté au fromage de chèvre et noix',
+        region:     'Loire / Périgord',
+        anecdote:   'Le chèvre fondu en feuilleté doré avec les noix fraîches de saison est une entrée simple et savoureuse.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'feuillete-saint-nicolas': {
+        name:       'Feuilleté de Saint-Nicolas aux pralines',
+        region:     'Alsace / Lorraine',
+        anecdote:   'La veille de la Saint-Nicolas, on prépare des petits feuilletés sucrés en forme de Père Fouettard.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'figues-gratin': {
+        name:       'Figues fraîches en gratin',
+        region:     'Languedoc / Corse',
+        anecdote:   'Les figues violettes de fin août gratinées au four avec fromage blanc et miel sont un dessert simple et élégant.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'figues-jambon-sec': {
+        name:       'Figues fraîches au jambon sec',
+        region:     'Languedoc / Corse',
+        anecdote:   'Les premières figues violettes du Languedoc avec charcuterie sèche de Corse : le mariage sucré-salé de l\'été.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'filet-boeuf-en-croute': {
+        name:       'Filet de bœuf en croûte (Beef Wellington)',
+        region:     'Île-de-France / fusion',
+        anecdote:   'Le filet de bœuf en croûte feuilletée avec duxelles de champignons est le grand classique des repas de fête.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'flamiche-aux-bettes': {
+        name:       'Flamiche aux bettes',
+        region:     'Picardie',
+        anecdote:   'Les bettes printanières remplacent les poireaux dans cette flamiche de mars, plus tendre et légèrement amère.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'flamiche-aux-poireaux': {
+        name:       'Flamiche aux poireaux',
+        region:     'Picardie',
+        anecdote:   'Tarte fondante aux poireaux d\'hiver, la flamiche est la fierté de Picardie par les jours froids.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'fleurs-courgettes-farcies': {
+        name:       'Poêlée de courgettes fleurs farcies',
+        region:     'Nice / Côte d\'Azur',
+        anecdote:   'Les fleurs de courgettes, trésor des jardins de Nice, se farcissent à la ricotta et se poêlent à l\'huile d\'olive.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'foie-gras-figues-seches': {
+        name:       'Foie gras poêlé aux figues sèches',
+        region:     'Périgord / Gascogne',
+        anecdote:   'Le foie gras frais poêlé doré avec les figues sèches caramélisées est l\'entrée du réveillon par anticipation.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'foie-gras-mi-cuit-torchon': {
+        name:       'Foie gras mi-cuit au torchon',
+        region:     'Périgord / Gascogne',
+        anecdote:   'Le foie gras mi-cuit au torchon se prépare deux semaines avant Noël pour qu\'il soit à son apogée le 24.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'foie-gras-pain-epice': {
+        name:       'Foie gras poêlé au pain d\'épice',
+        region:     'Périgord / Alsace',
+        anecdote:   'Le foie gras frais poêlé sur un toast de pain d\'épice avec fleur de sel : le dernier luxe avant minuit.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'fondue-savoyarde': {
+        name:       'Fondue savoyarde',
+        region:     'Savoie',
+        anecdote:   'Beaufort, comté et emmental fondus au vin blanc : la fondue est le plat convivial des chalets savoyards.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'fraisier': {
+        name:       'Fraisier classique',
+        region:     'Île-de-France',
+        anecdote:   'Le fraisier, gâteau de fête aux fraises de France et crème mousseline, est le dessert emblématique du mois de mai.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'fricassee-lapin-cidre': {
+        name:       'Fricassée de lapin au cidre',
+        region:     'Normandie',
+        anecdote:   'Le lapin fermier mijoté au cidre normand et à la crème fraîche est un plat de campagne généreux.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'fricassee-lapin-pruneaux': {
+        name:       'Fricassée de lapin aux pruneaux',
+        region:     'Touraine / Bourgogne',
+        anecdote:   'Le lapin aux pruneaux de Tours est un plat de saison qui réunit les flaveurs du Val de Loire.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'fricassee-morilles': {
+        name:       'Fricassée de morilles à la crème',
+        region:     'Franche-Comté / Lorraine',
+        anecdote:   'Avril est le mois des morilles. Ces champignons coniques et bruns se poêlent simplement à la crème fraîche.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'fricassee-poulet-champignons': {
+        name:       'Fricassée de poulet aux champignons',
+        region:     'Bourgogne',
+        anecdote:   'Les champignons séchés de l\'hiver réhydratés donnent à cette fricassée bourguignonne toute leur profondeur.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'frittata-legumes': {
+        name:       'Frittata aux légumes d\'été',
+        region:     'Provence / Côte d\'Azur',
+        anecdote:   'La frittata italienne, omelette épaisse aux légumes de saison, est idéale chaude ou froide au pique-nique.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'galantine-volaille': {
+        name:       'Galantine de volaille',
+        region:     'Île-de-France / Lyonnais',
+        anecdote:   'Entre Noël et le Nouvel An, on prépare la galantine : volaille désossée et farcie en ballotine, servie froide.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'galette-briochee': {
+        name:       'Galette des Rois briochée',
+        region:     'Sud de la France',
+        anecdote:   'Dans le Midi, la galette est une brioche en couronne garnie de fruits confits, pour la fête des Rois.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'galette-des-rois': {
+        name:       'Galette des Rois frangipane',
+        region:     'Paris / Nord',
+        anecdote:   'La veille de l\'Épiphanie, la galette trône sur la table. Qui trouvera la fève ?',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'galettes-sarrasin': {
+        name:       'Galettes de sarrasin complètes',
+        region:     'Bretagne',
+        anecdote:   'La galette de blé noir est l\'âme bretonne. Garnie d\'œuf, de jambon et de fromage, elle nourrit corps et esprit.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'garbure-bearnaise': {
+        name:       'Garbure béarnaise',
+        region:     'Béarn',
+        anecdote:   'Soupe paysanne épaisse au confit de canard et aux légumes d\'hiver, cœur chaud des Pyrénées.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'garbure-haricots-tarbais': {
+        name:       'Garbure aux haricots tarbais',
+        region:     'Hautes-Pyrénées',
+        anecdote:   'Le haricot tarbais, tendre et délicat, donne à cette garbure pyrénéenne son velouté incomparable.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'gaspacho': {
+        name:       'Gaspacho andalou',
+        region:     'Espagne / Languedoc',
+        anecdote:   'La soupe froide de tomates espagnole est adoptée dès mai dans le Languedoc quand la chaleur revient.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'gaspacho-vert': {
+        name:       'Gaspacho vert au concombre',
+        region:     'Provence / Espagne',
+        anecdote:   'Le gaspacho vert au concombre, avocat, basilic et citron vert est la soupe froide la plus désaltérante.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'gateau-basque-creme': {
+        name:       'Gâteau basque à la crème',
+        region:     'Pays Basque',
+        anecdote:   'Le gâteau basque à la crème pâtissière vanillée enfermée dans une pâte sablée est la pâtisserie du Pays Basque.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'gazpacho-pasteque': {
+        name:       'Gazpacho de pastèque et feta',
+        region:     'Languedoc / Provence',
+        anecdote:   'La pastèque fraîche en gazpacho avec feta émiettée et menthe est la soupe froide la plus désaltérante de l\'été.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'gigot-chevreuil-airelles': {
+        name:       'Gigot de chevreuil aux airelles',
+        region:     'Alsace / Lorraine',
+        anecdote:   'La saison de chasse s\'ouvre en septembre. Le chevreuil aux airelles sauvages est le grand plat des chasseurs.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'gigot-herbes-printemps': {
+        name:       'Rôti de gigot aux herbes de printemps',
+        region:     'Provence',
+        anecdote:   'Le gigot d\'agneau parfumé au romarin, thym et ail est le plat pascale traditionnel du Sud.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'gigot-sept-heures': {
+        name:       'Gigot d\'agneau de 7 heures',
+        region:     'Provence',
+        anecdote:   'Confit si longtemps que la chair fond sans couteau, ce gigot est la récompense de la patience.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'girolles-a-la-creme': {
+        name:       'Poêlée de girolles à la crème',
+        region:     'Vosges / Alsace',
+        anecdote:   'Les girolles des Vosges en septembre sont d\'or. Simplement poêlées au beurre avec persil et crème fraîche.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'glace-fraise-maison': {
+        name:       'Glace maison à la fraise',
+        region:     'France entière',
+        anecdote:   'Les fraises de fin de saison font la meilleure glace maison : mixer, sucrer, turbiner. L\'été en pot.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'glace-lavande-miel': {
+        name:       'Glace maison à la lavande et miel',
+        region:     'Provence',
+        anecdote:   'La lavande de Haute-Provence infusée dans la crème avec le miel de fleurs : une glace unique et parfumée.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'gnocchis-pesto': {
+        name:       'Gnocchis de pommes de terre au pesto',
+        region:     'Provence / fusion',
+        anecdote:   'Les gnocchis maison, moelleux et légers, avec le pesto au basilic frais sont le plat de printemps le plus simple.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'gratin-asperges-vertes': {
+        name:       'Gratin d\'asperges vertes au parmesan',
+        region:     'Provence',
+        anecdote:   'Les asperges vertes plus rustiques que les blanches se gratinent rapidement avec parmesan et huile d\'olive.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'gratin-blettes': {
+        name:       'Gratin de blettes au fromage',
+        region:     'Provence / Nice',
+        anecdote:   'Les premières blettes de mars au fromage rappellent que le printemps refait surface dans les jardins niçois.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'gratin-blettes-riz': {
+        name:       'Gratin de blettes au riz et parmesan',
+        region:     'Provence / Nice',
+        anecdote:   'La blette, légume méditerranéen par excellence, en gratin de riz à la niçoise : le plat des jardins d\'automne.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'gratin-cardons': {
+        name:       'Gratin de cardons à la moelle',
+        region:     'Lyon',
+        anecdote:   'Le cardon, légume oublié, est une fierté lyonnaise servie au moment de Noël ou des banquets hivernaux.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'gratin-celeri-champignons': {
+        name:       'Gratin de céleri aux champignons',
+        region:     'Île-de-France / Bourgogne',
+        anecdote:   'Le céleri rave gratiné avec champignons et gruyère fondu est un plat d\'hiver oublié à redécouvrir.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'gratin-champignons-fromage': {
+        name:       'Gratin de champignons au fromage',
+        region:     'Auvergne / Franche-Comté',
+        anecdote:   'Les champignons de culture et sauvages mélangés, gratinés au comté ou au cantal : un plat simple et savoureux.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'gratin-choufleur-mornay': {
+        name:       'Gratin de chou-fleur sauce Mornay',
+        region:     'Normandie / Paris',
+        anecdote:   'Le chou-fleur de Bretagne nappé de sauce Mornay gratinée est un classique de la cuisine familiale.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'gratin-courge-parmesan': {
+        name:       'Gratin de courge au parmesan',
+        region:     'Île-de-France / Provence',
+        anecdote:   'La courge butternut ou potimarron coupée en tranches, gratinée avec parmesan et sauge fraîche.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'gratin-courgettes-chevre': {
+        name:       'Gratin de courgettes au chèvre',
+        region:     'Provence',
+        anecdote:   'Les courgettes explosent en juillet. Gratinées avec chèvre frais et thym, elles deviennent fondantes et parfumées.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'gratin-dauphinois': {
+        name:       'Gratin dauphinois',
+        region:     'Dauphiné',
+        anecdote:   'En plein hiver, les pommes de terre de montagne fondent sous la crème dans ce gratin réconfortant.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'gratin-endives-jambon': {
+        name:       'Gratin d\'endives au jambon',
+        region:     'Nord / Flandres',
+        anecdote:   'Le chicon braisé enroulé dans du jambon blanc, nappé de béchamel et gratinée : la recette du Nord.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'gratin-macaroni': {
+        name:       'Gratin de macaroni',
+        region:     'Savoie',
+        anecdote:   'Les macaronis gratinés au comté et à la crème de Savoie réchauffent les longues soirées de montagne.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'gratin-macaroni-comte-truffe': {
+        name:       'Gratin de macaroni au comté et truffe',
+        region:     'Franche-Comté',
+        anecdote:   'Les macaronis gratinés au comté affiné avec quelques lamelles de truffe noire sont un luxe accessible.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'gratin-munster': {
+        name:       'Gratin de pommes de terre au munster',
+        region:     'Alsace / Vosges',
+        anecdote:   'Le munster fermier des Vosges fond dans ce gratin rustique qui embaume toute la maison.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'gratin-poireaux-jambon': {
+        name:       'Gratin de poireaux au jambon',
+        region:     'Picardie / Nord',
+        anecdote:   'Les poireaux d\'hiver encore en place au jardin se gratinent avec jambon et béchamel dans un plat familial.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'gratin-potiron-gorgonzola': {
+        name:       'Gratin de potiron au gorgonzola',
+        region:     'Savoie / fusion',
+        anecdote:   'Le potiron doux d\'automne avec le piquant du gorgonzola : un gratin audacieux et réconfortant.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'gratin-romanesco-fromage': {
+        name:       'Gratin de chou romanesco au fromage',
+        region:     'Bretagne / Île-de-France',
+        anecdote:   'Le chou romanesco, sculptural et vert, gratiné au four avec béchamel et comté est un légume d\'automne remarquable.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'gratin-tomates-anciennes': {
+        name:       'Gratin de tomates anciennes',
+        region:     'Provence',
+        anecdote:   'Les tomates cœur-de-bœuf farcies à la chapelure, parmesan et herbes dorées au four sont la quintessence de l\'été.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'grillades-agneau-romarin': {
+        name:       'Grillades d\'agneau au romarin',
+        region:     'Provence / Languedoc',
+        anecdote:   'Le premier barbecue de l\'année avec l\'agneau du printemps, quelques brins de romarin jetés sur les braises.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'grillades-merguez': {
+        name:       'Grillades de merguez et agneau',
+        region:     'Maghreb / France entière',
+        anecdote:   'Les merguez épicées et l\'agneau au barbecue sont le repas de plein air de tout l\'été en France.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'hachis-boeuf-pommes-terre': {
+        name:       'Hachis de bœuf aux pommes de terre',
+        region:     'France entière',
+        anecdote:   'Le hachis maison avec pommes de terre écrasées au beurre est le plat d\'automne familial par excellence.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'hachis-parmentier': {
+        name:       'Hachis Parmentier',
+        region:     'Île-de-France',
+        anecdote:   'Antoine Parmentier popularisa la pomme de terre au XVIIIe siècle. Ce gratin porte son nom en hommage.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'hachis-restes-noel': {
+        name:       'Restes de Noël en hachis Parmentier',
+        region:     'France entière',
+        anecdote:   'Le 26 décembre, les restes de dinde ou de chapon se transforment en hachis Parmentier familial et généreux.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'homard-armoricaine': {
+        name:       'Homard à l\'armoricaine',
+        region:     'Bretagne',
+        anecdote:   'Pour la Saint-Valentin, le homard breton flambé au cognac et mijoté à la tomate incarne le luxe du bord de mer.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'homard-grille-champagne': {
+        name:       'Homard grillé au champagne',
+        region:     'Bretagne / Normandie',
+        anecdote:   'Pour le réveillon du 31, le homard breton beurré et flambé au champagne est le roi de la table de fête.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'huitres-gratinees-champagne': {
+        name:       'Huîtres gratinées au champagne',
+        region:     'Bretagne / Normandie',
+        anecdote:   'Les huîtres de décembre sont grasses et iodées. Légèrement gratinées au champagne, elles ouvrent les fêtes.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'joue-boeuf-braisee': {
+        name:       'Joue de bœuf braisée au vin rouge',
+        region:     'Bourgogne / Languedoc',
+        anecdote:   'La joue de bœuf, morceau gélatineux et savoureux, mijotée au vin rouge jusqu\'à fondre : la perfection de l\'automne.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'joue-porc-lentilles': {
+        name:       'Flamme de joue de porc aux lentilles',
+        region:     'Île-de-France / Auvergne',
+        anecdote:   'La joue de porc mijotée lentement avec les lentilles vertes du Puy est un plat de bistrot profond et réconfortant.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'kig-ha-farz': {
+        name:       'Bouillie de sarrasin',
+        region:     'Bretagne',
+        anecdote:   'Le kig ha farz breton, bouillie de blé noir cuite en baluchon dans le pot-au-feu, est un plat unique au monde.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'kig-ha-farz-automne': {
+        name:       'Kig ha farz',
+        region:     'Bretagne',
+        anecdote:   'Le pot-au-feu breton avec sa bouillie de blé noir cuite en baluchon dans le bouillon est un plat unique au monde.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'lapin-a-la-moutarde': {
+        name:       'Lapin à la moutarde',
+        region:     'Bourgogne / Dijon',
+        anecdote:   'La moutarde de Dijon, forte et parfumée, est l\'alliée naturelle du lapin en sauce crémeuse.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'lapin-aux-girolles': {
+        name:       'Lapin aux girolles',
+        region:     'Alsace / Périgord',
+        anecdote:   'Le lapin de garenne de l\'arrière-saison avec les girolles du sous-bois : le mariage automnal parfait.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'lentilles-au-lard': {
+        name:       'Lentilles au lard',
+        region:     'Auvergne',
+        anecdote:   'Tradition du Nouvel An : manger des lentilles porte bonheur et richesse pour l\'année.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'magret-canard-cerises': {
+        name:       'Magret de canard aux cerises',
+        region:     'Périgord / Gascogne',
+        anecdote:   'Les premières cerises de mai se cuisinent en sauce avec le magret de canard du Périgord dans un équilibre parfait.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'magret-canard-salade': {
+        name:       'Magret de canard froid en salade',
+        region:     'Périgord / Gascogne',
+        anecdote:   'Le magret grillé et refroidi, tranché en lamelles sur salade verte avec vinaigrette à la moutarde.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'marmite-poissons-automne': {
+        name:       'Marmite de poissons aux légumes d\'automne',
+        region:     'Bretagne / Normandie',
+        anecdote:   'Le cabillaud, la morue et le saint-pierre mijotés aux poireaux, navets et carottes : une marmite de saison.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'matelote-anguille': {
+        name:       'Matelote d\'anguille',
+        region:     'Val de Loire',
+        anecdote:   'L\'anguille du Val de Loire mijotée au vin blanc et aux petits oignons est un plat de rivière ancestral.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'melon-glace-porto': {
+        name:       'Melon glacé au porto rouge',
+        region:     'Charentes / Languedoc',
+        anecdote:   'Le melon charentais légèrement sucré se creuse et se remplit de porto rouge glacé. Simple et parfait.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'melon-porto-jambon': {
+        name:       'Melon au porto et jambon de Bayonne',
+        region:     'Pays Basque / Charentes',
+        anecdote:   'Le melon charentais des premières chaleurs avec jambon de Bayonne : l\'entrée d\'été qui ne se démode jamais.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'moules-marinieres': {
+        name:       'Moules marinières',
+        region:     'Bretagne / Normandie',
+        anecdote:   'Les moules de bouchot bretonnes cuisinées au vin blanc et aux échalotes sont le plat du bord de mer.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'mousse-foie-gras-blinis': {
+        name:       'Mousse de foie gras sur blinis',
+        region:     'Périgord / Gascogne',
+        anecdote:   'La mousse de foie gras maison sur blinis chauds ouvre les repas d\'automne dans le Sud-Ouest.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'navarin-agneau': {
+        name:       'Navarin d\'agneau printanier',
+        region:     'Île-de-France',
+        anecdote:   'Le navarin d\'agneau aux légumes de saison annonce le retour du printemps même en plein hiver.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'oeufs-cocotte-asperges': {
+        name:       'Œufs cocotte aux asperges',
+        region:     'Île-de-France',
+        anecdote:   'Les œufs cocotte à la crème avec pointes d\'asperges sont une entrée printanière rapide et élégante.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'oeufs-en-meurette': {
+        name:       'Œufs en meurette',
+        region:     'Bourgogne',
+        anecdote:   'Des œufs pochés dans une réduction de vin rouge de Bourgogne aux lardons et champignons : la grande entrée.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'oie-confite-pommes': {
+        name:       'Oie confite aux pommes et airelles',
+        region:     'Alsace / Bretagne',
+        anecdote:   'L\'oie confite dans sa graisse avec les airelles et les pommes reinettes est la recette des grandes tablées.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'oie-rotie-pommes': {
+        name:       'Oie rôtie aux pommes',
+        region:     'Alsace / Bretagne',
+        anecdote:   'L\'oie rôtie aux pommes est un plat d\'automne royal, souvenir des grandes tablées paysannes d\'Alsace.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'omelette-asperges': {
+        name:       'Omelette aux asperges et ciboulette',
+        region:     'France entière',
+        anecdote:   'L\'omelette baveuse aux premières asperges et à la ciboulette fraîche du jardin est le déjeuner printanier idéal.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'omelette-asperges-sauvages': {
+        name:       'Omelette aux asperges sauvages',
+        region:     'Provence / Languedoc',
+        anecdote:   'Les premières asperges sauvages percent en mars dans le Sud. On les cueille tôt le matin et on les mange le jour même.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'omelette-fines-herbes': {
+        name:       'Omelette aux fines herbes',
+        region:     'France entière',
+        anecdote:   'Persil, ciboulette, cerfeuil et estragon sont au jardin. L\'omelette baveuse aux fines herbes est un classique printanier.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'omelette-trompettes-mort': {
+        name:       'Omelette aux trompettes de la mort',
+        region:     'Périgord / Auvergne',
+        anecdote:   'Les trompettes de la mort — noires et délicates — poêlées dans l\'omelette à l\'ail et persil.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'pasta-pistou-printemps': {
+        name:       'Pasta au pistou de printemps',
+        region:     'Provence',
+        anecdote:   'Le pistou basilic-ail-huile d\'olive napperait les premières pâtes printanières dès que le basilic pointe.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'pate-en-croute-grand-luxe': {
+        name:       'Pâté en croûte grand luxe',
+        region:     'Alsace / Lorraine / Lyon',
+        anecdote:   'Le pâté en croûte aux ris de veau, foie gras et pistaches est la charcuterie de prestige des fêtes.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'pate-paques-berrichon': {
+        name:       'Pâté de Pâques berrichon',
+        region:     'Berry',
+        anecdote:   'Le pâté berrichon en croûte avec œuf dur caché à l\'intérieur est la tradition pascale du Berry.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'pates-fleurs-courgettes': {
+        name:       'Pâtes aux courgettes fleurs et ricotta',
+        region:     'Provence / Côte d\'Azur',
+        anecdote:   'Les fleurs de courgettes farcies à la ricotta ou les pâtes garnies de fleurs sont une recette niçoise délicate.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'paupiettes-de-veau': {
+        name:       'Paupiettes de veau',
+        region:     'Île-de-France',
+        anecdote:   'Les paupiettes mijotées aux carottes et aux champignons sont un classique des cuisines bourgeoises parisiennes.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'peches-roties-miel': {
+        name:       'Pêches rôties au miel et romarin',
+        region:     'Provence / Languedoc',
+        anecdote:   'Les pêches de vigne rôties au four avec miel de fleurs et brins de romarin : un dessert simple et parfumé.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'perdrix-aux-choux': {
+        name:       'Perdrix aux choux',
+        region:     'Alsace / Champagne',
+        anecdote:   'La perdrix de septembre aux choux braisés et aux lardons fumés est le plat de chasse alsacien par excellence.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'pied-cochon-pane': {
+        name:       'Pied de cochon pané',
+        region:     'Sainte-Menehould / Champagne',
+        anecdote:   'La spécialité de Sainte-Menehould : le pied de cochon cuit si longuement que l\'os se mange, pané et grillé.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'pieds-paquets': {
+        name:       'Pieds-paquets marseillais',
+        region:     'Marseille',
+        anecdote:   'Les pieds et paquets d\'agneau cuisinés à la tomate et au vin blanc sont un plat festif de Marseille.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'pintade-aux-choux': {
+        name:       'Pintade aux choux',
+        region:     'Champagne / Lorraine',
+        anecdote:   'La pintade fermière est un gibier doux qui se marie parfaitement avec le chou braisé de Lorraine.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'pintade-aux-marrons': {
+        name:       'Pintade aux marrons',
+        region:     'Périgord / Ardèche',
+        anecdote:   'Les marrons frais d\'octobre farcis dans la pintade rôtie au four : le plat de fête du début d\'automne.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'pintade-raisins-vigne': {
+        name:       'Pintade braisée aux raisins de vigne',
+        region:     'Bourgogne / Champagne',
+        anecdote:   'Pendant les vendanges, la pintade mijotée avec les raisins de vigne et leur jus est un plat de saison remarquable.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'piperade': {
+        name:       'Piperade basquaise',
+        region:     'Pays Basque',
+        anecdote:   'La piperade aux poivrons rouges, tomates et piment d\'Espelette se déguste avec œufs brouillés ou jambon.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'piperade-oeufs': {
+        name:       'Piperade aux œufs brouillés',
+        region:     'Pays Basque',
+        anecdote:   'La piperade de fin d\'été avec ses poivrons rouges confits et ses œufs brouillés est un plat festif du Pays Basque.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'pissaladiere': {
+        name:       'Pissaladière',
+        region:     'Nice / Provence',
+        anecdote:   'Tarte niçoise aux oignons confits, anchois et olives noires, née sur les quais du port de Nice.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'pissaladiere-tapenade': {
+        name:       'Pissaladière à la tapenade',
+        region:     'Nice',
+        anecdote:   'La pissaladière estivale enrichie de tapenade et d\'olives de Nice est un en-cas généreux qui voyage bien.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'pissaladiere-tomates': {
+        name:       'Pissaladière aux tomates confites',
+        region:     'Nice',
+        anecdote:   'Variante estivale avec tomates cerises confites en remplacement des oignons seuls : soleil de Nice dans l\'assiette.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'pistou-ete': {
+        name:       'Pistou soupe d\'été',
+        region:     'Provence / Nice',
+        anecdote:   'La soupe au pistou d\'été avec haricots frais, courgettes et vermicelles est le plat familial du dimanche nicois.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'pistou-haricots-frais': {
+        name:       'Pistou de haricots frais',
+        region:     'Provence / Nice',
+        anecdote:   'Les haricots demi-secs frais de la région niçoise écrasés au mortier avec basilic et huile d\'olive : un pistou pur.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'plateau-charcuterie-fromages': {
+        name:       'Plateau de charcuterie et fromages',
+        region:     'France entière',
+        anecdote:   'Pour le 14 juillet, on sort les grandes planches : saucisson, pâtés, fromages de toutes les régions, baguette.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'poisson-papillote': {
+        name:       'Poisson d\'avril en papillote',
+        region:     'Bretagne',
+        anecdote:   'Pour le 1er avril, les poissons du marché matin sont glissés en papillote avec herbes fraîches et citron.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'poivrons-farcis': {
+        name:       'Poivrons farcis à la méditerranéenne',
+        region:     'Provence / Languedoc',
+        anecdote:   'Les poivrons commencent à colorer en juin sous le soleil du Midi. Farcis de riz, herbes et tomates.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'pot-au-feu': {
+        name:       'Pot-au-feu',
+        region:     'Île-de-France',
+        anecdote:   'Plat de lendemain de fête, mijotant doucement sur le feu après les excès du réveillon.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'pot-au-feu-de-la-mer': {
+        name:       'Pot-au-feu de la mer',
+        region:     'Bretagne / Normandie',
+        anecdote:   'Poissons nobles et légumes du marché du matin mijotent dans ce bouillon iodé façon mer du Nord.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'pot-au-feu-joue-boeuf': {
+        name:       'Pot-au-feu à la joue de bœuf',
+        region:     'Île-de-France / Bourgogne',
+        anecdote:   'La joue de bœuf dans le pot-au-feu, avec ses légumes et ses cornichons, est une version raffinée du classique.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'potage-crecy': {
+        name:       'Potage Crécy aux carottes',
+        region:     'Île-de-France',
+        anecdote:   'Les carottes de Crécy-en-Ponthieu, fines et sucrées, donnent leur nom à ce velouté printanier.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'potage-cultivateur': {
+        name:       'Potage cultivateur aux légumes d\'automne',
+        region:     'France entière',
+        anecdote:   'Les légumes du potager de fin de saison — carottes, navets, poireaux, pommes de terre — dans un bouillon de campagne.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'potee-auvergnate': {
+        name:       'Potée auvergnate',
+        region:     'Auvergne',
+        anecdote:   'La potée d\'octobre réunit le chou nouveau, les légumes du jardin et la charcuterie fumée du cochon d\'automne.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'poule-au-pot': {
+        name:       'Poule au pot',
+        region:     'Béarn / Gascogne',
+        anecdote:   'Henri IV souhaitait que chaque Français ait une poule au pot le dimanche. Voici son vœu royal exaucé.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'poule-au-pot-hiver': {
+        name:       'Poule au pot aux légumes d\'hiver',
+        region:     'Béarn / Gascogne',
+        anecdote:   'Novembre touche à sa fin. La poule au pot réconcilie avec l\'hiver qui arrive, fidèle à la tradition gasconne.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'poulet-40-gousses-ail': {
+        name:       'Poulet aux 40 gousses d\'ail',
+        region:     'Provence',
+        anecdote:   'La recette provençale du poulet entier cuit lentement avec 40 gousses d\'ail entières rend l\'ail fondant et doux.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'poulet-a-lestragon': {
+        name:       'Poulet à l\'estragon',
+        region:     'Île-de-France',
+        anecdote:   'L\'estragon, herbe fine par excellence, parfume cette sauce crémeuse qui accompagne le poulet fermier.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'poulet-aux-cepes': {
+        name:       'Poulet aux cèpes',
+        region:     'Périgord / Gascogne',
+        anecdote:   'Le cèpe de Bordeaux dans toute sa splendeur : avec le poulet fermier en sauce crémeuse, c\'est un plat royal.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'poulet-basquaise': {
+        name:       'Poulet basquaise',
+        region:     'Pays Basque',
+        anecdote:   'Poivrons, tomates et piment d\'Espelette : le poulet à la basquaise célèbre les couleurs vives du Pays Basque.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'poulet-cepes-sarladaises': {
+        name:       'Poulet rôti aux cèpes et pommes sarladaises',
+        region:     'Périgord',
+        anecdote:   'Les pommes de terre sarladaises cuites à la graisse de canard avec les cèpes et le poulet : la Sainte-Trinité du Périgord.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'poulet-crapaudine': {
+        name:       'Poulet en crapaudine',
+        region:     'Normandie / Berry',
+        anecdote:   'Le poulet aplati en crapaudine et grillé au four ou au barbecue est la recette idéale pour les premières tablées en terrasse.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'poulet-froid-mayonnaise': {
+        name:       'Poulet froid mayonnaise',
+        region:     'France entière',
+        anecdote:   'Le poulet rôti la veille, servi froid avec mayonnaise maison et crudités, est le roi des pique-niques.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'poulet-grille-citron': {
+        name:       'Poulet grillé au citron et herbes',
+        region:     'Provence',
+        anecdote:   'Mariné toute une nuit dans le citron, l\'ail et les herbes, le poulet de ferme grillé sur la braise est incomparable.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'poulet-roti': {
+        name:       'Poulet rôti du dimanche',
+        region:     'France entière',
+        anecdote:   'Le poulet rôti est le plat du dimanche de toutes les familles françaises depuis des générations.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'poulet-roti-herbes-fraiches': {
+        name:       'Poulet rôti aux herbes fraîches',
+        region:     'France entière',
+        anecdote:   'Le thym, le romarin et l\'estragon du jardin en mai, glissés sous la peau d\'un poulet fermier dorent magnifiquement.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'poulet-salade-mediterraneenne': {
+        name:       'Poulet froid en salade méditerranéenne',
+        region:     'Provence',
+        anecdote:   'Le poulet rôti refroidi et effiloché en salade avec olives, poivrons, tomates et herbes est un festin estival.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'quiche-lorraine': {
+        name:       'Quiche lorraine',
+        region:     'Lorraine',
+        anecdote:   'Née dans les cuisines de Nancy au XVIe siècle, la quiche lorraine est l\'une des plus célébrées recettes de France.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'raclette': {
+        name:       'Raclette savoyarde',
+        region:     'Savoie / Haute-Savoie',
+        anecdote:   'La raclette vient du mot \'racler\' : on racle le fromage fondu sur des pommes de terre vapeur et charcuteries.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'ragout-marrons-saucisse': {
+        name:       'Ragout de marrons à la saucisse',
+        region:     'Ardèche / Corse',
+        anecdote:   'Pour la Toussaint, les châtaigniers sont à leur pic. Ce ragout simple et nourrissant réunit marrons et saucisses.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'ratatouille-nicoise': {
+        name:       'Ratatouille niçoise',
+        region:     'Nice / Provence',
+        anecdote:   'La ratatouille n\'est pas un plat de reste mais une symphonie de légumes d\'été cuisinés séparément puis réunis.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'ratatouille-pain-grille': {
+        name:       'Ratatouille froide sur pain grillé',
+        region:     'Provence',
+        anecdote:   'La ratatouille froide de la veille sur une tranche de pain grillé frotté à l\'ail est le brunch provençal.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'ravioles-dauphine': {
+        name:       'Ravioles du Dauphiné',
+        region:     'Drôme / Isère',
+        anecdote:   'Ces petites ravioles au comté et persil plongées dans un bouillon chaud sont une spécialité unique du Dauphiné.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'reveillon-huitres-foie-gras': {
+        name:       'Huîtres et foie gras au réveillon',
+        region:     'France entière',
+        anecdote:   'La nuit de Noël en France se commence invariablement avec les huîtres, le foie gras et le champagne.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'rillettes-du-mans': {
+        name:       'Rillettes du Mans',
+        region:     'Sarthe',
+        anecdote:   'Fondantes et savoureuses, les rillettes du Mans sont servies sur pain grillé dans toute la Sarthe.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'rillettes-sardines': {
+        name:       'Rillettes de sardines fraîches',
+        region:     'Bretagne / Pays de Loire',
+        anecdote:   'La sardine fraîche du mois de mai est la meilleure. En rillettes avec beurre demi-sel, elle se tartine sur du pain grillé.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'risotto-asperges': {
+        name:       'Risotto aux asperges et parmesan',
+        region:     'Provence / fusion italienne',
+        anecdote:   'Plat d\'influence transalpine adopté par les cuisines provençales, avec les asperges vertes de la plaine de Crau.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'risotto-cepes-truffe': {
+        name:       'Risotto aux cèpes et truffe noire',
+        region:     'Périgord / Provence',
+        anecdote:   'Les cèpes de début septembre et une lamelle de truffe noire transforment ce risotto en plat de grande occasion.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'roti-porc-pruneaux': {
+        name:       'Rôti de porc aux pruneaux',
+        region:     'Touraine',
+        anecdote:   'Les pruneaux de Tours accompagnent le porc dans ce plat sucré-salé traditionnel du Val de Loire.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'roti-veau-champignons': {
+        name:       'Rôti de veau aux champignons sauvages',
+        region:     'Île-de-France / Bourgogne',
+        anecdote:   'Le veau de lait rôti avec les derniers champignons de l\'automne dans une sauce crémée.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'rougets-provencaux': {
+        name:       'Filets de rouget à la provençale',
+        region:     'Provence / Marseille',
+        anecdote:   'Le rouget barbet de roche de Méditerranée, grillé à l\'huile d\'olive avec olives et tomates, est divin.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'saint-pierre-capres': {
+        name:       'Filet de saint-pierre aux câpres',
+        region:     'Bretagne / Normandie',
+        anecdote:   'Le saint-pierre est l\'un des plus beaux poissons de l\'Atlantique. Ses filets délicats se marient aux câpres.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-artichauts-violets': {
+        name:       'Salade composée aux artichauts violets',
+        region:     'Provence',
+        anecdote:   'L\'artichaut violet poivrade de Provence est à déguster cru en mai, tranché finement avec citron et huile d\'olive.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-betteraves-chevre': {
+        name:       'Salade de betteraves rôties au chèvre',
+        region:     'Loire / Bretagne',
+        anecdote:   'Les betteraves nouvelles rôties au four avec thym, servies tièdes avec chèvre frais et noix.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-cesar': {
+        name:       'Salade César maison',
+        region:     'Côte d\'Azur / fusion',
+        anecdote:   'La salade César en version française avec poulet grillé, croûtons maison et anchois de Collioure.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-endives-noix-roquefort': {
+        name:       'Salade d\'endives aux noix et roquefort',
+        region:     'Nord / Aveyron',
+        anecdote:   'L\'endive croquante avec le roquefort crémeux et les noix fraîches est la salade d\'hiver parfaite.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-feves-menthe': {
+        name:       'Salade de fèves fraîches à la menthe',
+        region:     'Provence',
+        anecdote:   'Les premières fèves fraîches de mai se dégustent crues avec huile d\'olive, sel et menthe fraîche.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-figues-roquefort': {
+        name:       'Salade de figues, noix et roquefort',
+        region:     'Languedoc / Aveyron',
+        anecdote:   'La figue violette de fin de saison avec roquefort et noix fraîches : la trilogie du terroir du Sud.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-figues-roquette': {
+        name:       'Salade de figues rôties et roquette',
+        region:     'Languedoc / Provence',
+        anecdote:   'Les figues violettes rôties au four avec miel de lavande, servies sur roquette avec noix et parmesan.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-fraises-basilic': {
+        name:       'Salade de fraises au basilic',
+        region:     'Provence / Languedoc',
+        anecdote:   'La fraise et le basilic frais sont un duo inattendu mais sublime, avec quelques gouttes de vinaigre balsamique.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-fraises-rhubarbe': {
+        name:       'Salade de fraises et rhubarbe',
+        region:     'Bretagne / Nord',
+        anecdote:   'La rhubarbe acidulée et les fraises sucrées se complètent dans ce dessert de début juin.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-grecque': {
+        name:       'Salade grecque classique',
+        region:     'Côte d\'Azur / Grèce',
+        anecdote:   'Tomates, concombre, oignons rouges, olives de Kalamata et feta : la salade grecque qui parle à toute la Méditerranée.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-haricots-noisettes': {
+        name:       'Salade de haricots verts tièdes aux noisettes',
+        region:     'Provence / Périgord',
+        anecdote:   'Les haricots verts fins et croquants de plein champ, encore tièdes, avec noisettes grillées et vinaigrette.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-haricots-verts-amandes': {
+        name:       'Salade de haricots verts aux amandes',
+        region:     'Provence',
+        anecdote:   'Les haricots verts fins de plein champ commencent en juin. Avec amandes grillées et vinaigrette à l\'estragon.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-landaise': {
+        name:       'Salade landaise',
+        region:     'Landes / Gascogne',
+        anecdote:   'Gésiers confits, magret séché, foie gras poêlé sur salade verte : la salade landaise est un repas à elle seule.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-lentilles-saumon': {
+        name:       'Salade de lentilles tièdes au saumon fumé',
+        region:     'Auvergne / Bretagne',
+        anecdote:   'Les lentilles vertes du Puy avec saumon fumé et vinaigrette à l\'estragon : une salade complète et équilibrée.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-mache-betteraves': {
+        name:       'Salade de mâche et betteraves',
+        region:     'Nantes / Bretagne',
+        anecdote:   'La mâche nantaise en pleine saison avec betteraves rôties et vinaigrette à la noisette.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-mache-lardons-noix': {
+        name:       'Salade de mâche aux lardons et noix',
+        region:     'Bretagne / Nantais',
+        anecdote:   'La mâche de Nantes commence à pousser en septembre dans les jardins. Avec lardons chauds et noix fraîches.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-mais-avocat': {
+        name:       'Salade de maïs grillé et avocat',
+        region:     'Languedoc / fusion',
+        anecdote:   'Le maïs doux grillé sur les braises avec avocat, coriandre et citron vert : l\'été dans un bol.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-mais-coriandre': {
+        name:       'Salade de maïs, avocat et coriandre',
+        region:     'Languedoc / fusion',
+        anecdote:   'Le maïs doux de plein champ, l\'avocat et la coriandre fraîche : une salade colorée pour les tables en terrasse.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-nicoise': {
+        name:       'Salade niçoise',
+        region:     'Nice / Côte d\'Azur',
+        anecdote:   'La vraie salade niçoise, sans cuisson, avec thon cru, anchois, olives, tomates et œufs durs, est un plat de printemps.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-pasteque-menthe': {
+        name:       'Salade de pastèque et menthe',
+        region:     'Provence / Languedoc',
+        anecdote:   'La pastèque, la feta, la menthe et l\'huile d\'olive font l\'une des salades les plus rafraîchissantes de l\'été.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-pates-froides': {
+        name:       'Salade de pâtes froides aux légumes d\'été',
+        region:     'France entière',
+        anecdote:   'Les pâtes froides aux légumes grillés, olives et herbes sont le plat de vacances par excellence.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-peches-basilic': {
+        name:       'Salade de pêches au basilic',
+        region:     'Languedoc / Provence',
+        anecdote:   'Les pêches de vigne et les pêches plates commencent en juillet. Avec basilic et vinaigre balsamique, c\'est un dessert fin.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-pissenlit-lard': {
+        name:       'Salade de pissenlit au lard chaud',
+        region:     'Lyonnais / Bourgogne',
+        anecdote:   'Les premiers pissenlits sauvages de printemps, récoltés à l\'aube, se marient avec les lardons fumés chauds.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-pissenlits-noix': {
+        name:       'Salade de pissenlits aux noix',
+        region:     'Lyonnais / Bourgogne',
+        anecdote:   'Les pissenlits blanchis sous les tuiles ou récoltés à l\'ombre sont plus tendres. Avec noix et vinaigrette chaude.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-pois-gourmands': {
+        name:       'Salade de pois gourmands aux copeaux de parmesan',
+        region:     'Provence',
+        anecdote:   'Les premiers pois gourmands tendres croquent sous la dent avec l\'huile d\'olive et le citron.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-poivrons-rotis': {
+        name:       'Salade de poivrons rôtis',
+        region:     'Languedoc / Espagne',
+        anecdote:   'Les poivrons rouges et jaunes rôtis et pelés, marinés à l\'ail et à l\'huile d\'olive, se dégustent froids.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-poulpe-fenouil': {
+        name:       'Salade de poulpe au fenouil',
+        region:     'Provence / Marseille',
+        anecdote:   'Le poulpe bouilli puis refroidi, avec fenouil émincé, citron et herbes, est un plat marin frais et léger.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-poulpe-grille': {
+        name:       'Salade de poulpe grillé',
+        region:     'Provence / Côte d\'Azur',
+        anecdote:   'Le poulpe de roche méditerranéen, battu et grillé sur les braises, se déguste avec citron, persil et ail.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-quinoa-petits-pois': {
+        name:       'Salade de quinoa aux petits pois et feta',
+        region:     'Île-de-France / fusion',
+        anecdote:   'Le quinoa, légume du XXIe siècle, se marie aux légumes de mai pour une salade complète et fraîche.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-quinoa-tomates-feta': {
+        name:       'Salade de quinoa, tomates et feta',
+        region:     'Méditerranée',
+        anecdote:   'Le quinoa frais avec tomates anciennes, feta, olives et herbes fraîches est léger et complet pour l\'été.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-radis-beurre': {
+        name:       'Salade aux radis et beurre',
+        region:     'Île-de-France',
+        anecdote:   'Le muguet et les radis annoncent le 1er mai. Croquants, les radis se croquent au sel ou en salade.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-riz-legumes-grilles': {
+        name:       'Salade de riz aux légumes grillés',
+        region:     'Méditerranée',
+        anecdote:   'Le riz froid aux courgettes, poivrons et tomates grillées est le plat de pique-nique du bord de mer.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-roquette-saint-jacques': {
+        name:       'Salade de roquette aux St-Jacques poêlées',
+        region:     'Provence / Bretagne',
+        anecdote:   'La roquette jeune de printemps et les Saint-Jacques poêlées forment un mariage iodé et poivré exquis.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-saint-jacques-agrumes': {
+        name:       'Salade de Saint-Jacques aux agrumes',
+        region:     'Bretagne',
+        anecdote:   'Pour la Saint-Pierre (patron des pêcheurs), les Saint-Jacques de l\'été se cuisinent en salade fraîche aux agrumes.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-tiede-foie-veau': {
+        name:       'Salade tiède de foie de veau',
+        region:     'Lyon / Île-de-France',
+        anecdote:   'Le foie de veau rosé et fondant sur salade tiède avec lardons croustillants est un plat de bouchon lyonnais.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-tomates-ancienne': {
+        name:       'Salade de tomates à l\'ancienne',
+        region:     'Provence',
+        anecdote:   'En juillet, les tomates cœur-de-bœuf sont au sommet. Sel, huile d\'olive, basilic — rien d\'autre.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-tomates-burrata': {
+        name:       'Salade de tomates cerise et burrata',
+        region:     'Provence / Côte d\'Azur',
+        anecdote:   'La burrata crémeuse avec tomates cerises colorées, basilic et huile d\'olive fruité est le plat le plus photogénique de l\'été.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-tomates-thon': {
+        name:       'Salade de tomates au thon et anchois',
+        region:     'Languedoc / Côte d\'Azur',
+        anecdote:   'Tomates anciennes, thon de Méditerranée et anchois de Collioure : la salade du littoral languedocien.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'salade-waldorf': {
+        name:       'Salade de pommes, céleri et noix',
+        region:     'Normandie / France entière',
+        anecdote:   'La salade Waldorf au céleri branche, pommes, noix et mayonnaise légère est parfaite en entrée d\'automne.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'sandwich-poulet-froid': {
+        name:       'Poulet rôti froid en sandwich',
+        region:     'France entière',
+        anecdote:   'Le reste de poulet du dimanche se glisse dans une baguette avec tomates, moutarde et cornichons pour le lundi midi.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'sardines-grillees': {
+        name:       'Sardines grillées au feu de bois',
+        region:     'Bretagne / Languedoc',
+        anecdote:   'La veille du 14 juillet, les sardines grillées dans la rue ou sur la plage sont la tradition des fêtes estivales.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'saucisses-lentilles': {
+        name:       'Saucisses aux lentilles du Puy',
+        region:     'Auvergne',
+        anecdote:   'Les lentilles vertes du Puy AOP avec saucisses fumées de montagne : le plat de bistrot qui réchauffe l\'âme.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'saumon-beurre-blanc': {
+        name:       'Saumon de Loire au beurre blanc',
+        region:     'Val de Loire',
+        anecdote:   'Bien que le saumon sauvage soit rare, la tradition du saumon au beurre blanc nantais reste vivace en Anjou.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'saumon-gravlax': {
+        name:       'Saumon gravlax maison',
+        region:     'Scandinavie / Alsace',
+        anecdote:   'La mode du saumon mariné à l\'aneth et au sel venu du Nord est adoptée par les tables alsaciennes depuis les années 80.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'saumon-gravlax-fetes': {
+        name:       'Saumon fumé maison en gravlax',
+        region:     'Bretagne / Normandie',
+        anecdote:   'Le saumon de l\'Atlantique mariné 48h au sel, sucre et aneth fait un gravlax maison exceptionnel pour les fêtes.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'sole-meuniere': {
+        name:       'Sole meunière',
+        region:     'Normandie / Paris',
+        anecdote:   'La sole meunière, beurrée et citronnée, est le plat emblématique des grandes tables parisiennes depuis le XIXe siècle.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'sorbet-peche': {
+        name:       'Sorbet maison à la pêche',
+        region:     'Languedoc / Provence',
+        anecdote:   'Les pêches de vigne rouges à chair fondante font le meilleur sorbet de l\'été, sans artifice.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'souffle-au-fromage': {
+        name:       'Soufflé au fromage',
+        region:     'Île-de-France',
+        anecdote:   'Inventé par les grands cuisiniers parisiens du XIXe siècle, le soufflé impressionne toujours ses convives.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'souffle-grand-marnier': {
+        name:       'Soufflé au Grand Marnier',
+        region:     'Île-de-France',
+        anecdote:   'Le soufflé sucré, aérien et parfumé à la liqueur d\'orange, est le dessert des grandes tables parisiennes.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'souffle-grand-marnier-2': {
+        name:       'Soufflé au Grand Marnier',
+        region:     'Île-de-France',
+        anecdote:   'La nuit tombe tôt en novembre. Un soufflé chaud et parfumé à la sortie du four réchauffe les cœurs.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'souffle-grand-marnier-noel': {
+        name:       'Soufflé chaud au Grand Marnier',
+        region:     'Île-de-France',
+        anecdote:   'Le solstice d\'hiver, la nuit la plus longue. On réchauffe la table avec un grand soufflé flambé.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'souffle-roquefort': {
+        name:       'Soufflé au roquefort',
+        region:     'Aveyron / Île-de-France',
+        anecdote:   'Le roquefort au lait de brebis des caves de Combalou dans un soufflé chaud et aérien : fromage au sommet de l\'art.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'soupe-a-loignon': {
+        name:       'Soupe à l\'oignon gratinée',
+        region:     'Lyon / Paris',
+        anecdote:   'Née dans les bouchons lyonnais, puis adoptée par les Halles de Paris comme remède contre le froid et la fatigue.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'soupe-au-chou': {
+        name:       'Soupe au chou',
+        region:     'Auvergne',
+        anecdote:   'Le chou d\'hiver au lard fumé et aux pommes de terre est la soupe paysanne par excellence de l\'Auvergne.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'soupe-au-cresson': {
+        name:       'Soupe au cresson',
+        region:     'Île-de-France / Normandie',
+        anecdote:   'Le cresson de Méréville, cultivé dans des sources claires d\'Île-de-France, donne une soupe verte et légèrement poivrée.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'soupe-au-pistou': {
+        name:       'Soupe au pistou',
+        region:     'Provence',
+        anecdote:   'Réchauffée en hiver, la soupe au pistou rappelle l\'été provençal et ses herbes gorgées de soleil.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'soupe-aux-orties': {
+        name:       'Soupe aux orties',
+        region:     'Alsace / Champagne',
+        anecdote:   'Les premières pousses d\'orties de mars font une soupe étonnante, douce et minérale, gratuite au bord des chemins.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'soupe-butternut-coco': {
+        name:       'Soupe de butternut au lait de coco',
+        region:     'France entière / fusion',
+        anecdote:   'La butternut et le lait de coco : un mariage doux et exotique pour réchauffer les soirées d\'avant novembre.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'soupe-chataignes-lard': {
+        name:       'Soupe de châtaignes au lard',
+        region:     'Ardèche / Corse',
+        anecdote:   'La châtaigne d\'Ardèche ou de Corse — farine des pauvres autrefois — fait une soupe veloutée et nourrissante.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'soupe-courge-ciboulette': {
+        name:       'Soupe de courge à la crème de ciboulette',
+        region:     'France entière',
+        anecdote:   'Octobre annonce les courges. Le velouté orange et crémeux avec sa touche verte de ciboulette est réconfortant.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'soupe-froide-concombre': {
+        name:       'Soupe froide de concombre au yaourt',
+        region:     'Languedoc / fusion',
+        anecdote:   'D\'inspiration grecque, cette soupe froide au concombre, yaourt et menthe est parfaite pour les journées chaudes.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'soupe-froide-poivrons': {
+        name:       'Soupe froide aux poivrons rouges',
+        region:     'Languedoc / Pays Basque',
+        anecdote:   'Les poivrons rouges rôtis mixés avec tomate, huile d\'olive et cumin font une soupe froide veloutée et colorée.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'soupe-halloween-potiron': {
+        name:       'Soupe d\'Halloween au potiron',
+        region:     'France entière',
+        anecdote:   'Le jour de la citrouille ! On vide la courge et on en fait une soupe à la crème dans son écorce sculptée.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'soupe-haricots-blancs-jambon': {
+        name:       'Soupe de haricots blancs au jambon',
+        region:     'Languedoc / Provence',
+        anecdote:   'Les haricots blancs de conservation avec le jambon cru et les herbes de saison : le plat du froid retour.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'soupe-lentilles-cumin': {
+        name:       'Soupe de lentilles blondes au cumin',
+        region:     'Languedoc / Provence',
+        anecdote:   'Les lentilles blondes, plus douces que les vertes, en soupe épicée au cumin et au citron réchauffent les soirées.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'soupe-mineurs': {
+        name:       'Sainte-Barbe : soupe des mineurs',
+        region:     'Nord / Lorraine',
+        anecdote:   'Pour la Sainte-Barbe, patronne des mineurs, la tradition est une soupe épaisse de légumes et charcuterie.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'soupe-potimarron': {
+        name:       'Soupe de potimarron',
+        region:     'Bretagne / Normandie',
+        anecdote:   'Le potimarron de conservation réchauffe les hivers bretons dans cette veloutée douce et parfumée.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'soupe-potiron-chataignes': {
+        name:       'Soupe de potiron aux châtaignes',
+        region:     'Bretagne / Ardèche',
+        anecdote:   'Les châtaignes fraîches tombent en même temps que les potirons grossissent. Ensemble dans une soupe veloutée.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'soupe-potiron-lard': {
+        name:       'Soupe au potiron et au lard',
+        region:     'Auvergne / France entière',
+        anecdote:   'Décembre s\'ouvre. Les courges de conservation sortent du cellier pour les soupes qui réchauffent.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'soupe-restes-reveillon': {
+        name:       'Soupe aux restes du réveillon',
+        region:     'France entière',
+        anecdote:   'Les carcasses de volaille, les légumes de la farce et les restes font la plus riche soupe de l\'année.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'soupe-saint-nicolas-epices': {
+        name:       'Soupe de Saint-Nicolas aux épices',
+        region:     'Alsace / Lorraine',
+        anecdote:   'Pour la Sainte-Catherine, on prépare les premières douceurs épicées de Noël : soupe chaleureuse aux épices.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'soupe-victoire': {
+        name:       'Soupe de la Victoire aux légumes du terroir',
+        region:     'France entière',
+        anecdote:   'Pour l\'armistice, une soupe de légumes racines de saison — carottes, navets, poireaux, choux — en souvenir.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'steak-bordelaise': {
+        name:       'Steak à la bordelaise',
+        region:     'Bordeaux',
+        anecdote:   'La sauce bordelaise au vin rouge et à la moelle est la grande sauce de Bordeaux, ville du vin.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'steak-tartare': {
+        name:       'Steak tartare',
+        region:     'Paris / Lyon',
+        anecdote:   'Le tartare cru à la moutarde, cornichons et câpres est un classique des brasseries françaises depuis la Belle Époque.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'supremes-pintade-marrons': {
+        name:       'Suprêmes de pintade aux lardons et marrons',
+        region:     'Périgord / Ardèche',
+        anecdote:   'La pintade aux marrons est le plat de novembre avant les fêtes, un avant-goût de la dinde de Noël.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'taboule-libanais': {
+        name:       'Taboulé libanais',
+        region:     'Liban / Provence',
+        anecdote:   'Le vrai taboulé est vert : beaucoup de persil, peu de boulgour, citron, menthe et tomate. Frais et léger.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'taboule-maison': {
+        name:       'Taboule maison',
+        region:     'Languedoc / Provence',
+        anecdote:   'Avec le retour de la chaleur, le taboulé frais au citron, menthe et légumes croquants prend le dessus.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tartare-saumon-mangue': {
+        name:       'Tartare de saumon à la mangue',
+        region:     'Bretagne / fusion',
+        anecdote:   'Le saumon cru de l\'Atlantique avec la mangue et la coriandre est un tartare frais et exotique pour l\'été.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tartare-tomates': {
+        name:       'Tartare de tomates aux herbes',
+        region:     'Provence',
+        anecdote:   'À la veille de l\'été, les premières tomates anciennes se dégustent en tartare cru avec basilic, câpres et huile d\'olive.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tarte-abricots': {
+        name:       'Tarte aux abricots',
+        region:     'Provence / Roussillon',
+        anecdote:   'Les abricots du Roussillon, les plus précoces de France, font une tarte rustique parfumée et légèrement acidulée.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tarte-abricots-romarin': {
+        name:       'Tarte aux abricots et romarin',
+        region:     'Provence',
+        anecdote:   'L\'abricot du Luberon avec une branche de romarin dans la tarte : la magie aromatique de la Provence.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tarte-citron-meringuee': {
+        name:       'Tarte au citron meringuée',
+        region:     'Languedoc / Nice',
+        anecdote:   'Le citron de Menton, dernier citron d\'hiver, finit sa saison dans cette tarte acidulée surmontée de meringue.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tarte-coings-cannelle': {
+        name:       'Tarte fine aux coings et cannelle',
+        region:     'Normandie / Île-de-France',
+        anecdote:   'Le coing jaune d\'automne, dur mais parfumé, se transforme en tarte fine avec une touche de cannelle.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tarte-epinards-chevre': {
+        name:       'Tarte aux épinards et chèvre frais',
+        region:     'Berry / Poitou',
+        anecdote:   'Le chèvre frais du Poitou sur les épinards du jardin : les deux premières récoltes du potager printanier réunies.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tarte-epinards-ricotta': {
+        name:       'Tarte aux épinards et ricotta',
+        region:     'Provence / Nice',
+        anecdote:   'Les épinards printaniers cueillis avant la montée en graines font une tarte légère aux herbes niçoises.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tarte-fine-caprese': {
+        name:       'Tarte fine aux tomates cerise et mozzarella',
+        region:     'Provence',
+        anecdote:   'La caprese en tarte fine : tomates cerises, mozzarella, basilic frais sur pâte feuilletée croustillante.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tarte-fine-tomates': {
+        name:       'Tarte fine aux tomates et basilic',
+        region:     'Provence',
+        anecdote:   'Les premières tomates de serre en mai sur une pâte feuilletée dorée avec basilic frais : le goût de l\'été promis.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tarte-flambee': {
+        name:       'Tarte flambée (Flammekueche)',
+        region:     'Alsace',
+        anecdote:   'Fine tarte à la crème fraîche, aux lardons et aux oignons, cuite sur pierre brûlante dans le four du boulanger.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tarte-fraise-frangipane': {
+        name:       'Tarte à la fraise sur crème d\'amande',
+        region:     'France entière',
+        anecdote:   'La fraise gariguette de juin sur frangipane légère est une tarte de saison qui marie douceur et acidité.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tarte-fraises-creme': {
+        name:       'Tarte aux fraises et crème pâtissière',
+        region:     'Île-de-France / Bretagne',
+        anecdote:   'Les fraises de France en mai sont à leur pic de saveur. Dans une tarte crème pâtissière, elles sont royales.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tarte-fraises-plougastel': {
+        name:       'Tarte aux fraises de Plougastel',
+        region:     'Bretagne',
+        anecdote:   'Les premières fraises de Plougastel, douces et parfumées, arrivent en serre sous les pluies d\'avril breton.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tarte-mirabelles': {
+        name:       'Tarte aux mirabelles',
+        region:     'Lorraine',
+        anecdote:   'La mirabelle de Lorraine, or et sucrée, est à son apogée fin août-début septembre. En tarte, elle est divine.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tarte-noix-caramel': {
+        name:       'Tarte au noix et caramel',
+        region:     'Dauphiné / Périgord',
+        anecdote:   'Les noix de Grenoble ou du Périgord dans un caramel au beurre salé : la tarte de l\'automne par excellence.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tarte-noix-grenoble': {
+        name:       'Tarte aux noix de Grenoble',
+        region:     'Dauphiné / Isère',
+        anecdote:   'Les noix de Grenoble AOP tombent en septembre. Dans une tarte au caramel et aux noix, elles sont sublimes.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tarte-oignon-alsacienne': {
+        name:       'Tarte à l\'oignon alsacienne',
+        region:     'Alsace',
+        anecdote:   'La Zwiebelkuche alsacienne aux oignons dorés, crème et lardons est le plat de la saison des vendanges tardives.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tarte-poireaux-saumon': {
+        name:       'Tarte aux poireaux et saumon fumé',
+        region:     'Bretagne / Normandie',
+        anecdote:   'Les derniers poireaux d\'hiver accompagnent le saumon fumé dans une tarte salée qui sent bon le bord de mer.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tarte-poires-belle-helene': {
+        name:       'Tarte aux poires Belle Hélène',
+        region:     'Île-de-France',
+        anecdote:   'Les poires pochées au sirop sur fond de crème d\'amande avec coulis de chocolat : la Belle Hélène en tarte.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tarte-pommes-normande': {
+        name:       'Tarte aux pommes normande',
+        region:     'Normandie',
+        anecdote:   'La tarte normande aux pommes, crème fraîche et calvados est l\'emblème de l\'automne en pays de cidre.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tarte-potiron': {
+        name:       'Tarte au potiron',
+        region:     'France entière',
+        anecdote:   'Le potiron d\'octobre en tarte sucrée ou salée est le pendant français du pumpkin pie américain.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tarte-quetsches': {
+        name:       'Tarte aux prunes de Damas',
+        region:     'Lorraine / Alsace',
+        anecdote:   'La quetsche de Lorraine, prune violette et acidulée, fait la meilleure tarte de septembre.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tarte-raisins-muscats': {
+        name:       'Tarte aux raisins muscats',
+        region:     'Languedoc / Alsace',
+        anecdote:   'Les premiers raisins muscats de la vendange précoce dans une tarte à la crème pâtissière légère.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tarte-tatin': {
+        name:       'Tarte Tatin',
+        region:     'Sologne / Loir-et-Cher',
+        anecdote:   'Les sœurs Tatin auraient inventé cette tarte renversée par accident dans leur auberge de Lamotte-Beuvron.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tarte-tatin-nectarines': {
+        name:       'Tarte tatin aux nectarines',
+        region:     'Languedoc / Provence',
+        anecdote:   'Les nectarines de fin août caramélisées à la tarte tatin inversée : le dessert estival par excellence.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tarte-tomate-chevre': {
+        name:       'Tarte à la tomate et au chèvre',
+        region:     'Provence',
+        anecdote:   'Août est le mois des tomates. Sur une tarte feuilletée moutardée avec chèvre frais, elles sont royales.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tartiflette': {
+        name:       'Tartiflette',
+        region:     'Savoie',
+        anecdote:   'Inventée pour valoriser le reblochon savoyard, la tartiflette s\'est imposée comme star des tables d\'hiver.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'terrine-chevreuil': {
+        name:       'Terrine de chevreuil aux baies',
+        region:     'Ardennes / Bourgogne',
+        anecdote:   'La terrine de chevreuil aux baies sauvages de la forêt est l\'entrée du chasseur en novembre.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'terrine-courgettes-chevre': {
+        name:       'Terrine de courgettes au chèvre',
+        region:     'Provence',
+        anecdote:   'Les premières courgettes allongées de mai avec du chèvre frais du Luberon font une terrine estivale légère.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'terrine-de-campagne': {
+        name:       'Terrine de campagne',
+        region:     'Périgord / Berry',
+        anecdote:   'La terrine de campagne maison, aux herbes et aux épices, est la charcuterie de Carême avant les fêtes de printemps.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'terrine-foie-gras-bocal': {
+        name:       'Terrine de foie gras en bocal',
+        region:     'Périgord / Gascogne',
+        anecdote:   'La terrine de foie gras stérilisée en bocal se prépare début décembre. Elle sera parfaite à Noël.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'terrine-foie-volaille': {
+        name:       'Terrine de foie de volaille',
+        region:     'Périgord / Lyon',
+        anecdote:   'Le foie de volaille en terrine aux herbes fraîches et aux baies est une entrée printanière de choix.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'terrine-legumes-gelee': {
+        name:       'Terrine de légumes en gelée',
+        region:     'Provence / Île-de-France',
+        anecdote:   'Les légumes de l\'été — tomates, poivrons, courgettes — pris en terrine de gelée au basilic pour les buffets froids.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'terrine-saint-jacques-poireaux': {
+        name:       'Terrine de saint-jacques aux poireaux',
+        region:     'Bretagne / Normandie',
+        anecdote:   'Les Saint-Jacques d\'hiver en terrine avec le vert des poireaux : une entrée raffinée pour le réveillon du 31.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tete-de-veau': {
+        name:       'Tête de veau ravigote',
+        region:     'Lyon / Paris',
+        anecdote:   'Plat canaille par excellence, la tête de veau sauce ravigote est un hommage à la cuisine populaire française.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tian-aubergines': {
+        name:       'Tian d\'aubergines au parmesan',
+        region:     'Provence',
+        anecdote:   'L\'aubergine d\'août, au four à l\'huile d\'olive et au parmesan, fond et caramélise en un tian savoureux.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tian-provencal': {
+        name:       'Tian provençal',
+        region:     'Provence',
+        anecdote:   'Le tian de légumes d\'été superposés en spirale et cuits au four à l\'huile d\'olive est un plat aussi beau que bon.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tomates-farcies': {
+        name:       'Tomates farcies à la provençale',
+        region:     'Provence',
+        anecdote:   'Les tomates farcies au veau haché, ail, persil et riz cuisent lentement au four : le plat de l\'été par excellence.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tourte-perdrix-cepes': {
+        name:       'Tourte de perdrix aux cèpes',
+        region:     'Languedoc / Ariège',
+        anecdote:   'La perdrix rouge de montagne en tourte avec les cèpes de l\'automne pyrénéen : un plat de chasse raffiné.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tourte-trois-viandes': {
+        name:       'Tourte aux trois viandes',
+        region:     'Lorraine',
+        anecdote:   'Ce jour ne vient qu\'une fois tous les 4 ans. L\'occasion d\'une tourte festive aux viandes de Lorraine.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tourte-viande-champignons': {
+        name:       'Tourte à la viande et aux champignons',
+        region:     'Lorraine / Alsace',
+        anecdote:   'La tourte lorraine à la viande de porc marinée dans le vin blanc, aux champignons et aux herbes.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tripes-mode-caen': {
+        name:       'Tripes à la mode de Caen',
+        region:     'Normandie',
+        anecdote:   'Pour la Saint-Antoine, patron des charcutiers, les tripes normandes mijotent avec cidre et calvados.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tripous-aveyron': {
+        name:       'Haggis écossais (influence)',
+        region:     'Ecosse / Aveyron',
+        anecdote:   'Pour la Saint-Burns, on cuisine en France les abats façon tripous de l\'Aveyron, cousins du haggis.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'truite-aux-amandes': {
+        name:       'Filet de truite aux amandes',
+        region:     'Savoie / Auvergne',
+        anecdote:   'La truite de rivière meunière et ses amandes dorées est un plat classique des auberges de montagne au printemps.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'tzatziki': {
+        name:       'Tzatziki et crudités',
+        region:     'Provence / Méditerranée',
+        anecdote:   'Le concombre mariné au yaourt grec et à l\'ail, servi avec des crudités du jardin : l\'apéritif de l\'été.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'veau-marengo': {
+        name:       'Sauté de veau Marengo',
+        region:     'Provence / Empire',
+        anecdote:   'Selon la légende, ce ragoût fut improvisé par le cuisinier de Napoléon après la bataille de Marengo en 1800.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'veloute-cepes-seches-vin-jaune': {
+        name:       'Velouté de cèpes séchés au vin jaune',
+        region:     'Franche-Comté',
+        anecdote:   'Les cèpes séchés de l\'automne réhydratés, liés au vin jaune du Jura, font un velouté intense et parfumé.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'veloute-champignons-sauvages': {
+        name:       'Velouté de champignons sauvages',
+        region:     'Périgord / Auvergne',
+        anecdote:   'Les premières pluies de septembre font sortir les cèpes et les girolles. Un velouté crémeux en capture l\'essence.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'veloute-chataignes-foie-gras': {
+        name:       'Velouté de châtaignes au foie gras',
+        region:     'Périgord / Ardèche',
+        anecdote:   'Les châtaignes de l\'automne en velouté avec quelques dés de foie gras mi-cuit : le luxe simple du Sud-Ouest.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'veloute-lentilles-noires': {
+        name:       'Velouté de lentilles noires (beluga) au foie gras',
+        region:     'Périgord / Berry',
+        anecdote:   'Les lentilles noires beluga en velouté soyeux avec quelques tranches de foie gras mi-cuit : l\'entrée de l\'Avent.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'veloute-oseille': {
+        name:       'Velouté d\'oseille',
+        region:     'Île-de-France / Berry',
+        anecdote:   'L\'oseille pousse généreusement en avril. Ce velouté acide et crémeux est l\'une des grandes soupes françaises.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'veloute-panais-epices': {
+        name:       'Velouté de panais aux épices',
+        region:     'Nord / Bretagne',
+        anecdote:   'Le panais, légume oublié reparu dans les potagers, fait un velouté doux et sucré aux épices douces.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'veloute-petits-pois': {
+        name:       'Velouté de petits pois à la menthe',
+        region:     'France entière',
+        anecdote:   'Le 8 mai est férié : les petits pois du jardin arrivent ! Ce velouté vert vif est le symbole du printemps en force.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'veloute-petits-pois-lard': {
+        name:       'Velouté de petits pois au lard',
+        region:     'Île-de-France',
+        anecdote:   'Les petits pois d\'été dans leur écosses, fraîchement écossés, font la meilleure soupe verte qui soit.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'veloute-potimarron-epices': {
+        name:       'Velouté de potimarron aux épices douces',
+        region:     'France entière',
+        anecdote:   'Le potimarron, doux et noisette, se récolte en septembre. Ce velouté épicé au cumin réchauffe les soirées fraîches.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'veloute-topinambour': {
+        name:       'Velouté de topinambour',
+        region:     'Île-de-France / Nord',
+        anecdote:   'Le topinambour retrouve grâce en cuisine moderne. Ce légume oublié fait un velouté délicat au goût d\'artichaut.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+    'vichyssoise': {
+        name:       'Vichyssoise tiède',
+        region:     'Île-de-France / Val de Loire',
+        anecdote:   'La vichyssoise, soupe de poireaux et pommes de terre, se sert tiède à l\'équinoxe de printemps.',
+        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
+        prep:       '',  // ex: '20 min'
+        cuisson:    '',  // ex: '1 h 30'
+        personnes:  4,
+        difficulte: '',  // Facile / Moyen / Élaboré
+        ingredients: [
+            // { groupe: 'Le plat', items: [
+            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
+            // ]},
+        ],
+        etapes: [
+            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
+        ],
+        conseils: [
+            // 'Astuce ou variante...',
+        ],
+    },
+
+};
+
+// Accès global
+if (typeof module !== 'undefined') module.exports = RECETTES;
