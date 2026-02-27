@@ -2906,21 +2906,71 @@ const RECETTES = {
         ],
     },
 
-    'far-breton': {
-        name:       'Far breton aux pruneaux',
-        region:     'Bretagne',
-        anecdote:   'Le far breton est un flan épais et moelleux dont la recette varie d\'une famille bretonne à l\'autre.',
-        tags:       ["Hiver", "Dessert", "Moyen"],
-        prep:       '15 min',
-        cuisson:    '40 min',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+'far-breton': {
+    name:       'Far breton aux pruneaux',
+    region:     'Bretagne',
+    anecdote:   'Flan épais et moelleux, le far breton varie d’un village à l’autre : certains le préfèrent nature, d’autres généreusement garni de pruneaux.',
+    tags:       ["Hiver", "Dessert", "Facile"],
+    prep:       '15 min',
+    cuisson:    '50 min',
+    personnes:  6,
+    difficulte: 'Facile',
+
+    ingredients: [
+        {
+            groupe: "Pâte à far",
+            items: [
+                { qty: "4", name: "œufs", note: "" },
+                { qty: "150 g", name: "sucre", note: "" },
+                { qty: "200 g", name: "farine", note: "tamisée" },
+                { qty: "1 L", name: "lait entier", note: "tiédi" },
+                { qty: "1 c. à soupe", name: "rhum ambré", note: "optionnel mais traditionnel" },
+                { qty: "1", name: "gousse de vanille", note: "ou extrait" }
+            ]
+        },
+        {
+            groupe: "Garniture",
+            items: [
+                { qty: "200 g", name: "pruneaux dénoyautés", note: "" },
+                { qty: "20 g", name: "beurre", note: "pour le moule" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Préparer les pruneaux",
+            texte: "Faire tremper les pruneaux 10 minutes dans de l’eau chaude ou du thé pour les réhydrater.",
+            timer: "10 min"
+        },
+        {
+            titre: "Préparer la pâte",
+            texte: "Mélanger œufs et sucre. Ajouter la farine, puis incorporer progressivement le lait tiède, la vanille et le rhum. La pâte doit être fluide.",
+            timer: "10 min"
+        },
+        {
+            titre: "Assembler",
+            texte: "Beurrer généreusement un plat. Disposer les pruneaux au fond puis verser la pâte par-dessus.",
+            timer: "5 min"
+        },
+        {
+            titre: "Cuisson",
+            texte: "Enfourner à 180°C pendant 45 à 50 minutes jusqu’à ce que le far soit doré et légèrement tremblotant au centre.",
+            timer: "50 min"
+        },
+        {
+            titre: "Refroidissement",
+            texte: "Laisser tiédir dans le plat. Le far peut se servir tiède ou froid.",
+            timer: "—"
+        }
+    ],
+
+    conseils: [
+        "Pour un far plus ferme, réduire le lait à 800 ml.",
+        "Pour un goût plus breton, remplacer le rhum par un peu de lambig.",
+        "Les pruneaux peuvent être remplacés par des raisins secs trempés dans le rhum."
+    ]
+},
 
     'feuillete-cepes': {
         name:       'Feuilleté de cèpes en croûte',
@@ -2931,8 +2981,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -2947,8 +2997,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -2963,8 +3013,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -2979,8 +3029,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -2995,8 +3045,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3011,8 +3061,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3027,8 +3077,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3043,8 +3093,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3059,76 +3109,292 @@ const RECETTES = {
         cuisson:    '40 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Poêlée de courgettes fleurs farcies","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Poêlée de courgettes fleurs farcies","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
-    'foie-gras-figues-seches': {
-        name:       'Foie gras poêlé aux figues sèches',
-        region:     'Périgord / Gascogne',
-        anecdote:   'Le foie gras frais poêlé doré avec les figues sèches caramélisées est l\'entrée du réveillon par anticipation.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+'foie-gras-figues-seches': {
+    name:       'Foie gras poêlé aux figues sèches',
+    region:     'Périgord / Gascogne',
+    anecdote:   'Le foie gras poêlé accompagné de figues sèches caramélisées est une entrée festive emblématique du Sud-Ouest.',
+    tags:       ["Hiver", "Entrée", "Gastronomique"],
+    prep:       '15 min',
+    cuisson:    '10 min',
+    personnes:  4,
+    difficulte: 'Moyen',
 
-    'foie-gras-mi-cuit-torchon': {
-        name:       'Foie gras mi-cuit au torchon',
-        region:     'Périgord / Gascogne',
-        anecdote:   'Le foie gras mi-cuit au torchon se prépare deux semaines avant Noël pour qu\'il soit à son apogée le 24.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+    ingredients: [
+        {
+            groupe: "Foie gras",
+            items: [
+                { qty: "4", name: "tranches de foie gras cru", note: "1,5 à 2 cm d’épaisseur" },
+                { qty: "1 pincée", name: "fleur de sel", note: "" },
+                { qty: "1 pincée", name: "poivre du moulin", note: "" }
+            ]
+        },
+        {
+            groupe: "Figues & Garniture",
+            items: [
+                { qty: "8", name: "figues sèches", note: "coupées en deux" },
+                { qty: "20 g", name: "beurre", note: "" },
+                { qty: "1 c. à soupe", name: "miel", note: "" },
+                { qty: "5 cl", name: "vin doux", note: "type Sauternes ou Monbazillac" }
+            ]
+        },
+        {
+            groupe: "Accompagnement (optionnel)",
+            items: [
+                { qty: "4", name: "tranches de pain d’épices", note: "ou brioche légèrement grillée" }
+            ]
+        }
+    ],
 
-    'foie-gras-pain-epice': {
-        name:       'Foie gras poêlé au pain d\'épice',
-        region:     'Périgord / Alsace',
-        anecdote:   'Le foie gras frais poêlé sur un toast de pain d\'épice avec fleur de sel : le dernier luxe avant minuit.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+    etapes: [
+        {
+            titre: "Préparer les figues",
+            texte: "Faire fondre le beurre dans une petite poêle. Ajouter les figues coupées, les faire revenir 2 minutes, puis ajouter le miel et le vin doux. Laisser caraméliser doucement jusqu’à obtenir une petite réduction sirupeuse.",
+            timer: "6 min"
+        },
+        {
+            titre: "Poêler le foie gras",
+            texte: "Chauffer une poêle bien chaude sans matière grasse. Saisir les tranches de foie gras 1 minute de chaque côté jusqu’à coloration dorée. Déposer sur du papier absorbant pour retirer l’excès de gras.",
+            timer: "3 min"
+        },
+        {
+            titre: "Assaisonner",
+            texte: "Saler et poivrer immédiatement les tranches de foie gras encore chaudes pour fixer les arômes.",
+            timer: "1 min"
+        },
+        {
+            titre: "Dresser",
+            texte: "Déposer une tranche de foie gras dans chaque assiette, ajouter les figues caramélisées et un filet de réduction. Servir avec du pain d’épices grillé.",
+            timer: "2 min"
+        }
+    ],
 
-    'fondue-savoyarde': {
-        name:       'Fondue savoyarde',
-        region:     'Savoie',
-        anecdote:   'Beaufort, comté et emmental fondus au vin blanc : la fondue est le plat convivial des chalets savoyards.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+    conseils: [
+        "Le foie gras doit être très froid avant cuisson pour éviter qu’il ne fonde trop vite.",
+        "Utiliser une poêle en fonte ou en acier pour une meilleure saisie.",
+        "Le vin doux peut être remplacé par un porto ou un balsamique réduit."
+    ],
+},
+
+
+'foie-gras-mi-cuit-torchon': {
+    name:       'Foie gras mi-cuit au torchon',
+    region:     'Périgord / Gascogne',
+    anecdote:   'Le foie gras mi-cuit au torchon se prépare idéalement une à deux semaines avant Noël pour développer toute sa finesse.',
+    tags:       ["Hiver", "Entrée", "Gastronomique"],
+    prep:       '25 min',
+    cuisson:    '15 min',
+    personnes:  6,
+    difficulte: 'Moyen',
+
+    ingredients: [
+        {
+            groupe: "Foie gras",
+            items: [
+                { qty: "1", name: "foie gras cru de canard", note: "500 à 600 g, dénervé" },
+                { qty: "8 g", name: "sel fin", note: "soit 12 g/kg" },
+                { qty: "2 g", name: "poivre", note: "fraîchement moulu" },
+                { qty: "1 pincée", name: "sucre", note: "" },
+                { qty: "2 cl", name: "Cognac ou Armagnac", note: "facultatif mais traditionnel" }
+            ]
+        },
+        {
+            groupe: "Matériel",
+            items: [
+                { qty: "1", name: "torchon propre", note: "ou gaze alimentaire" },
+                { qty: "1", name: "ficelle de cuisine", note: "" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Assaisonner le foie gras",
+            texte: "Séparer les deux lobes, retirer les veines si nécessaire. Mélanger sel, poivre et sucre. Assaisonner uniformément les lobes et arroser d’un filet de Cognac ou d’Armagnac.",
+            timer: "5 min"
+        },
+        {
+            titre: "Former le boudin",
+            texte: "Superposer les lobes pour former un cylindre régulier. Les envelopper fermement dans un film alimentaire, puis rouler pour chasser l’air. Serrer les extrémités comme un bonbon.",
+            timer: "5 min"
+        },
+        {
+            titre: "Enrouler dans le torchon",
+            texte: "Retirer le film, placer le foie gras au centre du torchon, rouler très serré et ficeler solidement les extrémités.",
+            timer: "5 min"
+        },
+        {
+            titre: "Cuisson au bouillon",
+            texte: "Porter une grande casserole d’eau à 80–85°C (sans bouillir). Plonger le foie gras torché 12 à 15 minutes selon l’épaisseur. Retirer et plonger immédiatement dans l’eau glacée.",
+            timer: "15 min"
+        },
+        {
+            titre: "Repos et maturation",
+            texte: "Égoutter, sécher, resserrer la ficelle si besoin. Réserver au réfrigérateur au moins 48 h avant dégustation, idéalement 5 à 7 jours.",
+            timer: "48 h"
+        },
+        {
+            titre: "Service",
+            texte: "Sortir 10 minutes avant de trancher. Couper avec une lame chaude et servir avec pain brioché ou pain d’épices.",
+            timer: "10 min"
+        }
+    ],
+
+    conseils: [
+        "Un foie gras de 500–600 g est idéal pour une cuisson homogène.",
+        "La température de l’eau ne doit jamais bouillir : 80–85°C maximum.",
+        "Plus le repos est long, plus les arômes se développent.",
+        "Pour une coupe nette, tremper la lame du couteau dans l’eau chaude."
+    ],
+},
+
+'foie-gras-pain-epice': {
+    name:       'Foie gras poêlé au pain d\'épice',
+    region:     'Périgord / Alsace',
+    anecdote:   'Le foie gras poêlé servi sur un toast de pain d’épice grillé est un classique des fêtes, alliant douceur, épices et fondant.',
+    tags:       ["Hiver", "Entrée", "Gastronomique"],
+    prep:       '15 min',
+    cuisson:    '5 min',
+    personnes:  4,
+    difficulte: 'Facile',
+
+    ingredients: [
+        {
+            groupe: "Foie gras",
+            items: [
+                { qty: "4", name: "tranches de foie gras cru", note: "1,5 à 2 cm d’épaisseur" },
+                { qty: "1 pincée", name: "fleur de sel", note: "" },
+                { qty: "1 pincée", name: "poivre du moulin", note: "" }
+            ]
+        },
+        {
+            groupe: "Pain d’épice",
+            items: [
+                { qty: "4", name: "tranches de pain d’épice", note: "grillées ou toastées" }
+            ]
+        },
+        {
+            groupe: "Accompagnement",
+            items: [
+                { qty: "1 c. à soupe", name: "miel", note: "ou sirop d’érable" },
+                { qty: "1", name: "pomme", note: "coupée en lamelles et poêlée (optionnel)" },
+                { qty: "1 filet", name: "vinaigre balsamique réduit", note: "optionnel" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Préparer le pain d’épice",
+            texte: "Toaster les tranches de pain d’épice dans une poêle sèche ou au grille-pain jusqu’à légère caramélisation.",
+            timer: "2 min"
+        },
+        {
+            titre: "Poêler le foie gras",
+            texte: "Chauffer une poêle bien chaude sans matière grasse. Saisir les tranches de foie gras 45 secondes à 1 minute par face jusqu’à coloration dorée. Déposer sur du papier absorbant.",
+            timer: "3 min"
+        },
+        {
+            titre: "Assaisonner",
+            texte: "Saler et poivrer immédiatement les tranches encore chaudes pour fixer les arômes.",
+            timer: "1 min"
+        },
+        {
+            titre: "Dresser",
+            texte: "Déposer une tranche de foie gras sur chaque toast de pain d’épice. Ajouter un filet de miel ou de balsamique réduit. Servir aussitôt.",
+            timer: "1 min"
+        }
+    ],
+
+    conseils: [
+        "Le foie gras doit être très froid avant cuisson pour éviter qu’il ne fonde trop vite.",
+        "Une poêle en acier ou en fonte donne une meilleure coloration.",
+        "Le pain d’épice peut être remplacé par de la brioche légèrement grillée.",
+        "Ajouter quelques lamelles de pomme poêlée apporte une touche fruitée très appréciée."
+    ],
+},
+
+
+'fondue-savoyarde': {
+    name:       'Fondue savoyarde',
+    region:     'Savoie',
+    anecdote:   'Beaufort, comté et emmental fondus au vin blanc : la fondue est le plat convivial des chalets savoyards.',
+    tags:       ["Hiver", "Plat principal", "Convivial"],
+    prep:       '15 min',
+    cuisson:    '10 min',
+    personnes:  4,
+    difficulte: 'Facile',
+
+    ingredients: [
+        {
+            groupe: "Fromages",
+            items: [
+                { qty: "200 g", name: "Beaufort", note: "râpé ou coupé en petits dés" },
+                { qty: "200 g", name: "Comté", note: "fruité, râpé" },
+                { qty: "200 g", name: "Emmental de Savoie", note: "râpé" }
+            ]
+        },
+        {
+            groupe: "Base de cuisson",
+            items: [
+                { qty: "1", name: "gousse d’ail", note: "coupée en deux pour frotter le caquelon" },
+                { qty: "25 cl", name: "vin blanc sec", note: "Apremont ou Roussette de Savoie" },
+                { qty: "1 c. à café", name: "maïzena", note: "diluée dans un peu de vin" },
+                { qty: "1 c. à soupe", name: "kirsch", note: "facultatif mais traditionnel" }
+            ]
+        },
+        {
+            groupe: "Accompagnement",
+            items: [
+                { qty: "1", name: "baguette ou pain de campagne", note: "coupé en cubes" },
+                { qty: "1 pincée", name: "poivre", note: "fraîchement moulu" },
+                { qty: "1", name: "salade verte", note: "optionnelle" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Préparer le caquelon",
+            texte: "Frotter l’intérieur du caquelon avec la gousse d’ail coupée en deux pour parfumer légèrement la fondue.",
+            timer: "1 min"
+        },
+        {
+            titre: "Chauffer le vin",
+            texte: "Verser le vin blanc dans le caquelon et chauffer doucement jusqu’à frémissement, sans faire bouillir.",
+            timer: "3 min"
+        },
+        {
+            titre: "Faire fondre les fromages",
+            texte: "Ajouter progressivement les fromages en remuant en forme de huit avec une spatule en bois jusqu’à obtenir une texture lisse et homogène.",
+            timer: "5 min"
+        },
+        {
+            titre: "Lier et parfumer",
+            texte: "Ajouter la maïzena diluée pour stabiliser la fondue. Incorporer le kirsch hors du feu. Poivrer légèrement.",
+            timer: "1 min"
+        },
+        {
+            titre: "Servir",
+            texte: "Placer le caquelon sur son réchaud. Tremper les cubes de pain dans la fondue bien chaude et déguster immédiatement.",
+            timer: "—"
+        }
+    ],
+
+    conseils: [
+        "Utiliser un vin blanc sec savoyard pour une saveur authentique.",
+        "Remuer en forme de huit évite que le fromage ne file.",
+        "Si la fondue est trop liquide, ajouter un peu de fromage ; si elle est trop épaisse, ajouter un peu de vin.",
+        "Ne jamais faire bouillir le vin : cela durcit les fromages."
+    ],
+},
+
 
     'fraisier': {
         name:       'Fraisier classique',
@@ -3139,44 +3405,187 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
-    'fricassee-lapin-cidre': {
-        name:       'Fricassée de lapin au cidre',
-        region:     'Normandie',
-        anecdote:   'Le lapin fermier mijoté au cidre normand et à la crème fraîche est un plat de campagne généreux.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+   'fricassee-lapin-cidre': {
+    name:       'Fricassée de lapin au cidre',
+    region:     'Normandie',
+    anecdote:   'Le lapin fermier mijoté au cidre brut et à la crème fraîche est un classique des fermes normandes.',
+    tags:       ["Hiver", "Plat principal", "Tradition"],
+    prep:       '20 min',
+    cuisson:    '1 h 10',
+    personnes:  4,
+    difficulte: 'Moyen',
 
-    'fricassee-lapin-pruneaux': {
-        name:       'Fricassée de lapin aux pruneaux',
-        region:     'Touraine / Bourgogne',
-        anecdote:   'Le lapin aux pruneaux de Tours est un plat de saison qui réunit les flaveurs du Val de Loire.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+    ingredients: [
+        {
+            groupe: "Viande",
+            items: [
+                { qty: "1", name: "lapin découpé", note: "1,2 à 1,5 kg" },
+                { qty: "150 g", name: "lardons fumés", note: "" }
+            ]
+        },
+        {
+            groupe: "Légumes & aromates",
+            items: [
+                { qty: "2", name: "oignons", note: "émincés" },
+                { qty: "2", name: "gousses d’ail", note: "hachées" },
+                { qty: "200 g", name: "champignons de Paris", note: "émincés" },
+                { qty: "1", name: "branche de thym", note: "" },
+                { qty: "1", name: "feuille de laurier", note: "" }
+            ]
+        },
+        {
+            groupe: "Liquides & liaison",
+            items: [
+                { qty: "40 cl", name: "cidre brut", note: "normand" },
+                { qty: "10 cl", name: "bouillon de volaille", note: "" },
+                { qty: "20 cl", name: "crème fraîche épaisse", note: "" },
+                { qty: "1 c. à soupe", name: "moutarde", note: "facultatif" }
+            ]
+        },
+        {
+            groupe: "Assaisonnement",
+            items: [
+                { qty: "1 filet", name: "huile ou beurre", note: "pour la cuisson" },
+                { qty: "—", name: "sel & poivre", note: "" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Dorer le lapin",
+            texte: "Faire chauffer un peu de beurre ou d’huile dans une cocotte. Dorer les morceaux de lapin sur toutes les faces. Réserver.",
+            timer: "10 min"
+        },
+        {
+            titre: "Faire revenir la garniture",
+            texte: "Dans la même cocotte, faire revenir les lardons, les oignons, l’ail et les champignons jusqu’à légère coloration.",
+            timer: "8 min"
+        },
+        {
+            titre: "Déglacer au cidre",
+            texte: "Remettre le lapin, ajouter le cidre, le bouillon, le thym et le laurier. Porter à frémissement.",
+            timer: "2 min"
+        },
+        {
+            titre: "Mijoter",
+            texte: "Couvrir et laisser cuire à feu doux 45 minutes. Retourner les morceaux à mi-cuisson.",
+            timer: "45 min"
+        },
+        {
+            titre: "Lier la sauce",
+            texte: "Retirer le couvercle, ajouter la crème fraîche et la moutarde. Laisser réduire quelques minutes jusqu’à obtenir une sauce nappante.",
+            timer: "5 min"
+        },
+        {
+            titre: "Servir",
+            texte: "Rectifier l’assaisonnement. Servir bien chaud avec des pommes de terre vapeur ou du riz.",
+            timer: "—"
+        }
+    ],
+
+    conseils: [
+        "Un cidre brut donne une sauce plus parfumée et moins sucrée.",
+        "Le lapin ne doit jamais bouillir : une cuisson douce garantit une viande tendre.",
+        "Ajouter un peu de moutarde renforce la note normande.",
+        "Les champignons peuvent être remplacés par des pommes poêlées pour une version plus rustique."
+    ],
+},
+
+
+ 'fricassee-lapin-pruneaux': {
+    name:       'Fricassée de lapin aux pruneaux',
+    region:     'Touraine / Bourgogne',
+    anecdote:   'Le lapin mijoté au vin et aux pruneaux est un classique du Val de Loire, mêlant douceur et caractère.',
+    tags:       ["Hiver", "Plat principal", "Tradition"],
+    prep:       '20 min',
+    cuisson:    '1 h 15',
+    personnes:  4,
+    difficulte: 'Moyen',
+
+    ingredients: [
+        {
+            groupe: "Viande",
+            items: [
+                { qty: "1", name: "lapin découpé", note: "1,2 à 1,5 kg" },
+                { qty: "150 g", name: "lardons fumés", note: "" }
+            ]
+        },
+        {
+            groupe: "Fruits & garniture",
+            items: [
+                { qty: "200 g", name: "pruneaux dénoyautés", note: "trempés 15 min dans de l’eau tiède" },
+                { qty: "2", name: "oignons", note: "émincés" },
+                { qty: "2", name: "gousses d’ail", note: "hachées" },
+                { qty: "1", name: "carotte", note: "coupée en rondelles" }
+            ]
+        },
+        {
+            groupe: "Liquides & aromates",
+            items: [
+                { qty: "25 cl", name: "vin blanc sec", note: "ou rouge léger type Gamay" },
+                { qty: "10 cl", name: "bouillon de volaille", note: "" },
+                { qty: "1", name: "feuille de laurier", note: "" },
+                { qty: "1", name: "branche de thym", note: "" }
+            ]
+        },
+        {
+            groupe: "Assaisonnement",
+            items: [
+                { qty: "1 filet", name: "huile ou beurre", note: "pour la cuisson" },
+                { qty: "—", name: "sel & poivre", note: "" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Dorer le lapin",
+            texte: "Faire chauffer un peu d’huile ou de beurre dans une cocotte. Dorer les morceaux de lapin sur toutes les faces. Réserver.",
+            timer: "10 min"
+        },
+        {
+            titre: "Faire revenir la garniture",
+            texte: "Dans la même cocotte, faire revenir les lardons, les oignons, l’ail et la carotte jusqu’à légère coloration.",
+            timer: "8 min"
+        },
+        {
+            titre: "Déglacer et ajouter les pruneaux",
+            texte: "Remettre le lapin, ajouter le vin, le bouillon, le thym, le laurier et les pruneaux égouttés. Porter à frémissement.",
+            timer: "2 min"
+        },
+        {
+            titre: "Mijoter",
+            texte: "Couvrir et laisser cuire à feu doux 45 à 50 minutes. Les pruneaux vont fondre et parfumer la sauce.",
+            timer: "50 min"
+        },
+        {
+            titre: "Réduire la sauce",
+            texte: "Retirer le couvercle et laisser réduire quelques minutes pour obtenir une sauce nappante.",
+            timer: "5 min"
+        },
+        {
+            titre: "Servir",
+            texte: "Rectifier l’assaisonnement. Servir avec des pâtes fraîches, de la purée ou des pommes vapeur.",
+            timer: "—"
+        }
+    ],
+
+    conseils: [
+        "Les pruneaux peuvent être trempés dans du thé ou du vin pour plus de parfum.",
+        "Un vin rouge léger donne une sauce plus ronde, un vin blanc une sauce plus fine.",
+        "Ne pas faire bouillir : la viande de lapin durcit si la cuisson est trop vive.",
+        "Ajouter une cuillère de crème fraîche en fin de cuisson pour une version plus onctueuse."
+    ],
+},
+
 
     'fricassee-morilles': {
         name:       'Fricassée de morilles à la crème',
@@ -3187,60 +3596,270 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
-    'fricassee-poulet-champignons': {
-        name:       'Fricassée de poulet aux champignons',
-        region:     'Bourgogne',
-        anecdote:   'Les champignons séchés de l\'hiver réhydratés donnent à cette fricassée bourguignonne toute leur profondeur.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+'fricassee-poulet-champignons': {
+    name:       'Fricassée de poulet aux champignons',
+    region:     'Bourgogne',
+    anecdote:   'Les champignons séchés de l’hiver réhydratés donnent à cette fricassée bourguignonne une profondeur aromatique incomparable.',
+    tags:       ["Hiver", "Plat principal", "Tradition"],
+    prep:       '20 min',
+    cuisson:    '50 min',
+    personnes:  4,
+    difficulte: 'Moyen',
 
-    'frittata-legumes': {
-        name:       'Frittata aux légumes d\'été',
-        region:     'Provence / Côte d\'Azur',
-        anecdote:   'La frittata italienne, omelette épaisse aux légumes de saison, est idéale chaude ou froide au pique-nique.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+    ingredients: [
+        {
+            groupe: "Volaille",
+            items: [
+                { qty: "1", name: "poulet fermier découpé", note: "1,3 à 1,5 kg" }
+            ]
+        },
+        {
+            groupe: "Champignons",
+            items: [
+                { qty: "300 g", name: "champignons de Paris", note: "émincés" },
+                { qty: "20 g", name: "champignons séchés", note: "réhydratés 20 min dans de l’eau chaude" }
+            ]
+        },
+        {
+            groupe: "Légumes & aromates",
+            items: [
+                { qty: "2", name: "échalotes", note: "finement ciselées" },
+                { qty: "2", name: "gousses d’ail", note: "hachées" },
+                { qty: "1", name: "carotte", note: "coupée en petits dés" },
+                { qty: "1", name: "branche de thym", note: "" },
+                { qty: "1", name: "feuille de laurier", note: "" }
+            ]
+        },
+        {
+            groupe: "Liquides & liaison",
+            items: [
+                { qty: "20 cl", name: "vin blanc sec", note: "type Bourgogne aligoté" },
+                { qty: "15 cl", name: "bouillon de volaille", note: "" },
+                { qty: "15 cl", name: "crème fraîche épaisse", note: "" }
+            ]
+        },
+        {
+            groupe: "Assaisonnement",
+            items: [
+                { qty: "1 filet", name: "huile ou beurre", note: "pour la cuisson" },
+                { qty: "—", name: "sel & poivre", note: "" }
+            ]
+        }
+    ],
 
-    'galantine-volaille': {
-        name:       'Galantine de volaille',
-        region:     'Île-de-France / Lyonnais',
-        anecdote:   'Entre Noël et le Nouvel An, on prépare la galantine : volaille désossée et farcie en ballotine, servie froide.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+    etapes: [
+        {
+            titre: "Dorer le poulet",
+            texte: "Faire chauffer un peu de beurre ou d’huile dans une cocotte. Dorer les morceaux de poulet sur toutes les faces. Réserver.",
+            timer: "10 min"
+        },
+        {
+            titre: "Faire revenir les légumes",
+            texte: "Dans la même cocotte, faire revenir échalotes, ail et carotte jusqu’à légère coloration.",
+            timer: "5 min"
+        },
+        {
+            titre: "Ajouter les champignons",
+            texte: "Ajouter les champignons frais et les champignons séchés réhydratés. Faire revenir jusqu’à évaporation de l’eau de végétation.",
+            timer: "8 min"
+        },
+        {
+            titre: "Déglacer et mijoter",
+            texte: "Remettre le poulet, ajouter le vin blanc, le bouillon, le thym et le laurier. Couvrir et laisser mijoter à feu doux 25 à 30 minutes.",
+            timer: "30 min"
+        },
+        {
+            titre: "Lier la sauce",
+            texte: "Ajouter la crème fraîche, mélanger et laisser réduire quelques minutes pour obtenir une sauce onctueuse.",
+            timer: "5 min"
+        },
+        {
+            titre: "Servir",
+            texte: "Rectifier l’assaisonnement. Servir avec du riz, des pâtes fraîches ou des pommes vapeur.",
+            timer: "—"
+        }
+    ],
+
+    conseils: [
+        "Les champignons séchés apportent une profondeur aromatique incomparable.",
+        "Un vin blanc bourguignon sec donne une sauce plus fine et parfumée.",
+        "Ne pas faire bouillir après ajout de la crème pour éviter qu’elle ne tranche.",
+        "Ajouter un filet de jus de citron en fin de cuisson pour réveiller les saveurs."
+    ],
+},
+
+
+'frittata-legumes': {
+    name:       'Frittata aux légumes d\'été',
+    region:     'Provence / Côte d\'Azur',
+    anecdote:   'La frittata italienne, omelette épaisse aux légumes de saison, est idéale chaude ou froide au pique-nique.',
+    tags:       ["Été", "Plat principal", "Facile"],
+    prep:       '15 min',
+    cuisson:    '20 min',
+    personnes:  4,
+    difficulte: 'Facile',
+
+    ingredients: [
+        {
+            groupe: "Base",
+            items: [
+                { qty: "8", name: "œufs", note: "" },
+                { qty: "10 cl", name: "lait ou crème", note: "" },
+                { qty: "50 g", name: "parmesan râpé", note: "" }
+            ]
+        },
+        {
+            groupe: "Légumes d’été",
+            items: [
+                { qty: "1", name: "courgette", note: "coupée en dés" },
+                { qty: "1", name: "poivron rouge", note: "coupé en lanières" },
+                { qty: "1", name: "oignon", note: "émincé" },
+                { qty: "2", name: "tomates", note: "coupées en dés, épépinées" }
+            ]
+        },
+        {
+            groupe: "Assaisonnement & aromates",
+            items: [
+                { qty: "1 filet", name: "huile d’olive", note: "" },
+                { qty: "1 pincée", name: "sel & poivre", note: "" },
+                { qty: "1 c. à café", name: "herbes de Provence", note: "" },
+                { qty: "quelques feuilles", name: "basilic frais", note: "optionnel" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Préparer les légumes",
+            texte: "Faire revenir courgette, poivron et oignon dans l’huile d’olive 8 à 10 minutes jusqu’à ce qu’ils soient tendres. Ajouter les tomates en fin de cuisson.",
+            timer: "10 min"
+        },
+        {
+            titre: "Battre les œufs",
+            texte: "Dans un saladier, battre les œufs avec le lait (ou la crème), le parmesan, le sel, le poivre et les herbes de Provence.",
+            timer: "2 min"
+        },
+        {
+            titre: "Assembler",
+            texte: "Verser les légumes dans la poêle, puis ajouter le mélange d’œufs. Mélanger légèrement pour répartir les légumes.",
+            timer: "1 min"
+        },
+        {
+            titre: "Cuire la frittata",
+            texte: "Cuire à feu doux 8 à 10 minutes sans remuer, jusqu’à ce que les bords soient pris. Terminer 2 minutes sous le gril du four pour dorer le dessus.",
+            timer: "10 min"
+        },
+        {
+            titre: "Servir",
+            texte: "Laisser tiédir quelques minutes. Servir chaud, tiède ou froid, avec une salade.",
+            timer: "—"
+        }
+    ],
+
+    conseils: [
+        "Ne pas trop cuire les œufs : la frittata doit rester moelleuse.",
+        "Ajouter de la feta ou de la mozzarella pour une version plus gourmande.",
+        "Les légumes peuvent varier selon la saison : épinards, asperges, brocoli…",
+        "Idéale en pique-nique car elle se mange très bien froide."
+    ],
+},
+
+
+'galantine-volaille': {
+    name:       'Galantine de volaille',
+    region:     'Île-de-France / Lyonnais',
+    anecdote:   'Entre Noël et le Nouvel An, on prépare la galantine : volaille désossée, farcie, roulée en ballotine et servie froide.',
+    tags:       ["Hiver", "Plat principal", "Charcuterie"],
+    prep:       '45 min',
+    cuisson:    '1 h 20',
+    personnes:  6,
+    difficulte: 'Difficile',
+
+    ingredients: [
+        {
+            groupe: "Volaille",
+            items: [
+                { qty: "1", name: "poulet fermier entier", note: "désossé entièrement" },
+                { qty: "200 g", name: "chair de volaille", note: "ou farce fine" },
+                { qty: "100 g", name: "foie de volaille", note: "haché" }
+            ]
+        },
+        {
+            groupe: "Garniture de farce",
+            items: [
+                { qty: "80 g", name: "pistaches", note: "non salées" },
+                { qty: "80 g", name: "jambon blanc", note: "coupé en dés" },
+                { qty: "1", name: "échalote", note: "finement ciselée" },
+                { qty: "1", name: "œuf", note: "" },
+                { qty: "5 cl", name: "crème liquide", note: "" },
+                { qty: "1 c. à soupe", name: "cognac ou armagnac", note: "" }
+            ]
+        },
+        {
+            groupe: "Assaisonnement",
+            items: [
+                { qty: "1 c. à café", name: "sel", note: "" },
+                { qty: "1/2 c. à café", name: "poivre", note: "" },
+                { qty: "1 pincée", name: "quatre-épices", note: "" }
+            ]
+        },
+        {
+            groupe: "Matériel",
+            items: [
+                { qty: "1", name: "torchon propre", note: "ou film alimentaire résistant" },
+                { qty: "1", name: "ficelle de cuisine", note: "" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Préparer la volaille",
+            texte: "Désosser entièrement le poulet en gardant la peau intacte. Étaler la volaille à plat, peau vers le bas.",
+            timer: "20 min"
+        },
+        {
+            titre: "Préparer la farce",
+            texte: "Mélanger la chair de volaille, le foie haché, l’échalote, l’œuf, la crème, le cognac, les pistaches et le jambon. Assaisonner de sel, poivre et quatre-épices.",
+            timer: "10 min"
+        },
+        {
+            titre: "Former la galantine",
+            texte: "Étaler la farce sur la volaille. Rouler fermement en ballotine, puis envelopper dans un torchon et ficeler solidement les extrémités.",
+            timer: "10 min"
+        },
+        {
+            titre: "Cuisson au bouillon",
+            texte: "Plonger la galantine dans un grand bouillon frémissant (sans bouillir). Cuire 1 h 10 à 1 h 20 selon la taille.",
+            timer: "1 h 20"
+        },
+        {
+            titre: "Refroidissement",
+            texte: "Égoutter, laisser tiédir puis placer au réfrigérateur au moins 12 h pour raffermir et développer les saveurs.",
+            timer: "12 h"
+        },
+        {
+            titre: "Service",
+            texte: "Servir froid, en tranches, avec cornichons, salade ou chutney.",
+            timer: "—"
+        }
+    ],
+
+    conseils: [
+        "La galantine est meilleure le lendemain : les saveurs se développent.",
+        "Bien serrer la ballotine pour éviter que la farce ne se disperse.",
+        "On peut remplacer les pistaches par des noisettes ou des abricots secs.",
+        "Servir avec un bon pain de campagne et un vin blanc sec."
+    ],
+},
+
 
     'galette-briochee': {
         name:       'Galette des Rois briochée',
@@ -3251,8 +3870,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3267,8 +3886,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3283,8 +3902,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3299,8 +3918,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3315,8 +3934,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3331,8 +3950,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3347,8 +3966,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3363,8 +3982,8 @@ const RECETTES = {
         cuisson:    '40 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3379,8 +3998,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3395,8 +4014,8 @@ const RECETTES = {
         cuisson:    '1 h 30',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3411,8 +4030,8 @@ const RECETTES = {
         cuisson:    '1 h 30',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3427,8 +4046,8 @@ const RECETTES = {
         cuisson:    '1 h 30',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3443,8 +4062,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3459,8 +4078,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3475,8 +4094,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3491,8 +4110,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Gnocchis de pommes de terre au pesto","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Gnocchis de pommes de terre au pesto","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3507,8 +4126,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3523,8 +4142,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3539,8 +4158,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3555,8 +4174,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3571,8 +4190,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3587,8 +4206,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3603,8 +4222,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Gratin de chou-fleur sauce Mornay","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Gratin de chou-fleur sauce Mornay","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3619,8 +4238,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3635,8 +4254,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3651,8 +4270,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3667,28 +4286,91 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
-    'gratin-macaroni': {
-        name:       'Gratin de macaroni',
-        region:     'Savoie',
-        anecdote:   'Les macaronis gratinés au comté et à la crème de Savoie réchauffent les longues soirées de montagne.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '25 min',
-        cuisson:    '45 min',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+'gratin-macaroni': {
+    name:       'Gratin de macaroni',
+    region:     'Savoie',
+    anecdote:   'Les macaronis gratinés au comté et à la crème de Savoie réchauffent les longues soirées de montagne.',
+    tags:       ["Hiver", "Plat principal", "Familial"],
+    prep:       '15 min',
+    cuisson:    '35 min',
+    personnes:  4,
+    difficulte: 'Facile',
+
+    ingredients: [
+        {
+            groupe: "Pâtes",
+            items: [
+                { qty: "300 g", name: "macaroni", note: "" }
+            ]
+        },
+        {
+            groupe: "Fromages",
+            items: [
+                { qty: "200 g", name: "comté", note: "râpé" },
+                { qty: "50 g", name: "emmental", note: "râpé (optionnel)" }
+            ]
+        },
+        {
+            groupe: "Appareil à gratin",
+            items: [
+                { qty: "20 cl", name: "crème fraîche", note: "" },
+                { qty: "20 cl", name: "lait", note: "" },
+                { qty: "1", name: "œuf", note: "" },
+                { qty: "1 pincée", name: "muscade", note: "" },
+                { qty: "—", name: "sel & poivre", note: "" }
+            ]
+        },
+        {
+            groupe: "Beurrage",
+            items: [
+                { qty: "1 noix", name: "beurre", note: "pour le plat" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Cuire les pâtes",
+            texte: "Faire cuire les macaroni dans une grande casserole d’eau salée, 2 minutes de moins que le temps indiqué. Égoutter.",
+            timer: "8 min"
+        },
+        {
+            titre: "Préparer l’appareil",
+            texte: "Mélanger la crème, le lait, l’œuf, la muscade, le sel et le poivre. Ajouter la moitié du comté.",
+            timer: "3 min"
+        },
+        {
+            titre: "Assembler",
+            texte: "Beurrer un plat à gratin. Mélanger les pâtes avec l’appareil et verser dans le plat. Parsemer du reste de comté.",
+            timer: "2 min"
+        },
+        {
+            titre: "Gratiner",
+            texte: "Enfourner à 200°C pendant 20 à 25 minutes, jusqu’à ce que le dessus soit bien doré.",
+            timer: "25 min"
+        },
+        {
+            titre: "Servir",
+            texte: "Laisser reposer 5 minutes avant de servir pour que le gratin se tienne.",
+            timer: "5 min"
+        }
+    ],
+
+    conseils: [
+        "Ajouter quelques lardons revenus pour une version plus montagnarde.",
+        "Remplacer le comté par du beaufort pour un goût plus puissant.",
+        "Cuire les pâtes al dente pour éviter qu’elles ne ramollissent au four.",
+        "Un peu de chapelure sur le dessus donne un gratin encore plus croustillant."
+    ],
+},
+
 
     'gratin-macaroni-comte-truffe': {
         name:       'Gratin de macaroni au comté et truffe',
@@ -3699,8 +4381,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3715,8 +4397,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3731,28 +4413,91 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
-    'gratin-potiron-gorgonzola': {
-        name:       'Gratin de potiron au gorgonzola',
-        region:     'Savoie / fusion',
-        anecdote:   'Le potiron doux d\'automne avec le piquant du gorgonzola : un gratin audacieux et réconfortant.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '25 min',
-        cuisson:    '45 min',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+'gratin-potiron-gorgonzola': {
+    name:       'Gratin de potiron au gorgonzola',
+    region:     'Savoie / fusion',
+    anecdote:   'Le potiron doux d\'automne marié au gorgonzola crémeux donne un gratin audacieux et réconfortant.',
+    tags:       ["Automne", "Plat principal", "Végétarien"],
+    prep:       '20 min',
+    cuisson:    '40 min',
+    personnes:  4,
+    difficulte: 'Facile',
+
+    ingredients: [
+        {
+            groupe: "Légume principal",
+            items: [
+                { qty: "800 g", name: "potiron", note: "coupé en dés" }
+            ]
+        },
+        {
+            groupe: "Fromage & crème",
+            items: [
+                { qty: "150 g", name: "gorgonzola", note: "doux ou piquant selon goût" },
+                { qty: "20 cl", name: "crème fraîche", note: "" },
+                { qty: "10 cl", name: "lait", note: "" }
+            ]
+        },
+        {
+            groupe: "Assaisonnement",
+            items: [
+                { qty: "1", name: "gousse d’ail", note: "hachée" },
+                { qty: "1 pincée", name: "muscade", note: "" },
+                { qty: "—", name: "sel & poivre", note: "" }
+            ]
+        },
+        {
+            groupe: "Optionnel",
+            items: [
+                { qty: "40 g", name: "noix concassées", note: "pour le croquant" },
+                { qty: "30 g", name: "parmesan", note: "pour gratiner" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Cuire le potiron",
+            texte: "Cuire les dés de potiron à la vapeur ou au four jusqu’à ce qu’ils soient tendres. Égoutter si nécessaire.",
+            timer: "20 min"
+        },
+        {
+            titre: "Préparer la sauce",
+            texte: "Faire fondre le gorgonzola dans une casserole avec la crème et le lait. Ajouter l’ail, la muscade, le sel et le poivre.",
+            timer: "5 min"
+        },
+        {
+            titre: "Assembler",
+            texte: "Déposer le potiron dans un plat à gratin. Verser la sauce au gorgonzola par-dessus. Mélanger légèrement.",
+            timer: "2 min"
+        },
+        {
+            titre: "Gratiner",
+            texte: "Parsemer de noix et de parmesan. Enfourner à 200°C pendant 15 minutes jusqu’à ce que le dessus soit doré.",
+            timer: "15 min"
+        },
+        {
+            titre: "Servir",
+            texte: "Laisser reposer 5 minutes avant de servir pour que le gratin se tienne.",
+            timer: "5 min"
+        }
+    ],
+
+    conseils: [
+        "Le potimarron fonctionne aussi très bien et n’a pas besoin d’être épluché.",
+        "Pour une version plus légère, remplacer la crème par du lait concentré non sucré.",
+        "Ajouter des épinards ou du brocoli pour un gratin plus complet.",
+        "Le gorgonzola doux donne un résultat crémeux, le piquant apporte plus de caractère."
+    ],
+},
+
 
     'gratin-romanesco-fromage': {
         name:       'Gratin de chou romanesco au fromage',
@@ -3763,8 +4508,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3779,8 +4524,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3795,8 +4540,8 @@ const RECETTES = {
         cuisson:    '15 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Poisson","items":[{"qty":"1","name":"poisson blanc frais","note":""},{"qty":"1","name":"citron","note":"bio"}]},{"groupe":"Herbes & Condiments","items":[{"qty":"100 g","name":"beurre","note":"demi-sel"},{"qty":"quelques brins","name":"persil plat","note":"frais"}]}],
+        etapes: [{"titre":"Preparer le poisson","texte":"Ecailler, vider et rincer le poisson. L'assécher avec du papier absorbant.","timer":"10 min"},{"titre":"Cuire","texte":"Placer dans un plat beurré, aromé d'herbes et de citron. Enfourner 15-20 min.","timer":"20 min"},{"titre":"Finition","texte":"Napper de beurre blanc ou sauce si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3811,8 +4556,8 @@ const RECETTES = {
         cuisson:    '15 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3827,8 +4572,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Hachis de bœuf aux pommes de terre","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Hachis de bœuf aux pommes de terre","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3843,28 +4588,93 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
-    'hachis-restes-noel': {
-        name:       'Restes de Noël en hachis Parmentier',
-        region:     'France entière',
-        anecdote:   'Le 26 décembre, les restes de dinde ou de chapon se transforment en hachis Parmentier familial et généreux.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+'hachis-restes-noel': {
+    name:       'Restes de Noël en hachis Parmentier',
+    region:     'France entière',
+    anecdote:   'Le 26 décembre, les restes de dinde ou de chapon se transforment en hachis Parmentier familial et généreux.',
+    tags:       ["Hiver", "Plat principal", "Familial"],
+    prep:       '20 min',
+    cuisson:    '35 min',
+    personnes:  4,
+    difficulte: 'Facile',
+
+    ingredients: [
+        {
+            groupe: "Restes de viande",
+            items: [
+                { qty: "400 g", name: "restes de dinde ou chapon", note: "effilochés ou hachés grossièrement" },
+                { qty: "1 louche", name: "jus de rôti", note: "ou un peu de bouillon" }
+            ]
+        },
+        {
+            groupe: "Purée maison",
+            items: [
+                { qty: "800 g", name: "pommes de terre", note: "type Bintje" },
+                { qty: "20 cl", name: "lait", note: "ou crème" },
+                { qty: "40 g", name: "beurre", note: "" },
+                { qty: "1 pincée", name: "muscade", note: "" },
+                { qty: "—", name: "sel & poivre", note: "" }
+            ]
+        },
+        {
+            groupe: "Garniture",
+            items: [
+                { qty: "1", name: "oignon", note: "émincé" },
+                { qty: "1", name: "gousse d’ail", note: "hachée" },
+                { qty: "1 filet", name: "huile ou beurre", note: "pour la cuisson" }
+            ]
+        },
+        {
+            groupe: "Gratin",
+            items: [
+                { qty: "50 g", name: "fromage râpé", note: "comté, emmental ou parmesan" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Préparer la purée",
+            texte: "Cuire les pommes de terre dans l’eau salée. Les écraser avec le lait, le beurre, la muscade, le sel et le poivre.",
+            timer: "20 min"
+        },
+        {
+            titre: "Préparer la viande",
+            texte: "Faire revenir l’oignon et l’ail dans un peu de beurre. Ajouter les restes de dinde effilochée et le jus de rôti. Laisser mijoter 5 minutes.",
+            timer: "7 min"
+        },
+        {
+            titre: "Assembler",
+            texte: "Dans un plat à gratin, étaler la viande au fond puis recouvrir de purée. Lisser la surface.",
+            timer: "3 min"
+        },
+        {
+            titre: "Gratiner",
+            texte: "Parsemer de fromage râpé et enfourner 15 minutes à 200°C jusqu’à ce que le dessus soit doré.",
+            timer: "15 min"
+        },
+        {
+            titre: "Servir",
+            texte: "Laisser reposer 5 minutes avant de servir pour que le hachis se tienne.",
+            timer: "5 min"
+        }
+    ],
+
+    conseils: [
+        "Ajouter quelques marrons émiettés pour rester dans l’esprit de Noël.",
+        "Un peu de crème dans la viande rend le hachis encore plus moelleux.",
+        "Les restes de farce peuvent être mélangés à la viande pour plus de goût.",
+        "Servir avec une salade verte pour équilibrer le plat."
+    ],
+},
+
 
     'homard-armoricaine': {
         name:       'Homard à l\'armoricaine',
@@ -3875,8 +4685,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Poisson","items":[{"qty":"1","name":"poisson blanc frais","note":""},{"qty":"1","name":"citron","note":"bio"}]},{"groupe":"Herbes & Condiments","items":[{"qty":"100 g","name":"beurre","note":"demi-sel"},{"qty":"quelques brins","name":"persil plat","note":"frais"}]}],
+        etapes: [{"titre":"Preparer le poisson","texte":"Ecailler, vider et rincer le poisson. L'assécher avec du papier absorbant.","timer":"10 min"},{"titre":"Cuire","texte":"Placer dans un plat beurré, aromé d'herbes et de citron. Enfourner 15-20 min.","timer":"20 min"},{"titre":"Finition","texte":"Napper de beurre blanc ou sauce si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3891,8 +4701,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Poisson","items":[{"qty":"1","name":"poisson blanc frais","note":""},{"qty":"1","name":"citron","note":"bio"}]},{"groupe":"Herbes & Condiments","items":[{"qty":"100 g","name":"beurre","note":"demi-sel"},{"qty":"quelques brins","name":"persil plat","note":"frais"}]}],
+        etapes: [{"titre":"Preparer le poisson","texte":"Ecailler, vider et rincer le poisson. L'assécher avec du papier absorbant.","timer":"10 min"},{"titre":"Cuire","texte":"Placer dans un plat beurré, aromé d'herbes et de citron. Enfourner 15-20 min.","timer":"20 min"},{"titre":"Finition","texte":"Napper de beurre blanc ou sauce si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3907,8 +4717,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Poisson","items":[{"qty":"1","name":"poisson blanc frais","note":""},{"qty":"1","name":"citron","note":"bio"}]},{"groupe":"Herbes & Condiments","items":[{"qty":"100 g","name":"beurre","note":"demi-sel"},{"qty":"quelques brins","name":"persil plat","note":"frais"}]}],
+        etapes: [{"titre":"Preparer le poisson","texte":"Ecailler, vider et rincer le poisson. L'assécher avec du papier absorbant.","timer":"10 min"},{"titre":"Cuire","texte":"Placer dans un plat beurré, aromé d'herbes et de citron. Enfourner 15-20 min.","timer":"20 min"},{"titre":"Finition","texte":"Napper de beurre blanc ou sauce si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3923,8 +4733,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Joue de bœuf braisée au vin rouge","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Joue de bœuf braisée au vin rouge","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3939,8 +4749,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3955,8 +4765,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -3971,44 +4781,186 @@ const RECETTES = {
         cuisson:    '40 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
-    'lapin-a-la-moutarde': {
-        name:       'Lapin à la moutarde',
-        region:     'Bourgogne / Dijon',
-        anecdote:   'La moutarde de Dijon, forte et parfumée, est l\'alliée naturelle du lapin en sauce crémeuse.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+'lapin-a-la-moutarde': {
+    name:       'Lapin à la moutarde',
+    region:     'Bourgogne / Dijon',
+    anecdote:   'La moutarde de Dijon, forte et parfumée, est l\'alliée naturelle du lapin en sauce crémeuse.',
+    tags:       ["Hiver", "Plat principal", "Tradition"],
+    prep:       '20 min',
+    cuisson:    '55 min',
+    personnes:  4,
+    difficulte: 'Moyen',
 
-    'lapin-aux-girolles': {
-        name:       'Lapin aux girolles',
-        region:     'Alsace / Périgord',
-        anecdote:   'Le lapin de garenne de l\'arrière-saison avec les girolles du sous-bois : le mariage automnal parfait.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+    ingredients: [
+        {
+            groupe: "Viande",
+            items: [
+                { qty: "1", name: "lapin découpé", note: "1,2 à 1,5 kg" },
+                { qty: "3 c. à soupe", name: "moutarde de Dijon", note: "forte" }
+            ]
+        },
+        {
+            groupe: "Garniture aromatique",
+            items: [
+                { qty: "2", name: "échalotes", note: "ciselées" },
+                { qty: "2", name: "gousses d’ail", note: "hachées" },
+                { qty: "1", name: "branche de thym", note: "" },
+                { qty: "1", name: "feuille de laurier", note: "" }
+            ]
+        },
+        {
+            groupe: "Liquides",
+            items: [
+                { qty: "20 cl", name: "vin blanc sec", note: "type Bourgogne aligoté" },
+                { qty: "20 cl", name: "crème fraîche", note: "épaisse" }
+            ]
+        },
+        {
+            groupe: "Assaisonnement",
+            items: [
+                { qty: "1 filet", name: "huile ou beurre", note: "pour la cuisson" },
+                { qty: "—", name: "sel & poivre", note: "" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Badigeonner le lapin",
+            texte: "Enduire généreusement les morceaux de lapin de moutarde de Dijon. Laisser reposer 10 minutes.",
+            timer: "10 min"
+        },
+        {
+            titre: "Dorer la viande",
+            texte: "Faire chauffer beurre ou huile dans une cocotte. Dorer les morceaux de lapin sur toutes les faces.",
+            timer: "10 min"
+        },
+        {
+            titre: "Faire revenir les aromates",
+            texte: "Ajouter échalotes et ail dans la cocotte. Faire revenir 2 minutes.",
+            timer: "2 min"
+        },
+        {
+            titre: "Déglacer et mijoter",
+            texte: "Verser le vin blanc, ajouter thym et laurier. Couvrir et laisser mijoter à feu doux 30 minutes.",
+            timer: "30 min"
+        },
+        {
+            titre: "Ajouter la crème",
+            texte: "Incorporer la crème fraîche, mélanger et laisser réduire 5 minutes pour obtenir une sauce onctueuse.",
+            timer: "5 min"
+        },
+        {
+            titre: "Servir",
+            texte: "Rectifier l’assaisonnement. Servir avec des tagliatelles, du riz ou des pommes vapeur.",
+            timer: "—"
+        }
+    ],
+
+    conseils: [
+        "Pour une sauce plus corsée, ajouter une cuillère de moutarde en fin de cuisson.",
+        "Le lapin ne doit jamais bouillir : une cuisson douce garantit une viande tendre.",
+        "Un vin blanc bourguignon sec donne une sauce plus fine.",
+        "Ajouter une cuillère de moutarde à l’ancienne pour une texture plus rustique."
+    ],
+},
+
+'lapin-aux-girolles': {
+    name:       'Lapin aux girolles',
+    region:     'Alsace / Périgord',
+    anecdote:   'Le lapin de garenne de l\'arrière-saison avec les girolles du sous-bois : le mariage automnal parfait.',
+    tags:       ["Automne", "Plat principal", "Tradition"],
+    prep:       '20 min',
+    cuisson:    '55 min',
+    personnes:  4,
+    difficulte: 'Moyen',
+
+    ingredients: [
+        {
+            groupe: "Viande",
+            items: [
+                { qty: "1", name: "lapin découpé", note: "1,2 à 1,5 kg" }
+            ]
+        },
+        {
+            groupe: "Champignons",
+            items: [
+                { qty: "300 g", name: "girolles fraîches", note: "ou surgelées de bonne qualité" },
+                { qty: "1", name: "échalote", note: "ciselée" }
+            ]
+        },
+        {
+            groupe: "Aromates & garniture",
+            items: [
+                { qty: "2", name: "gousses d’ail", note: "hachées" },
+                { qty: "1", name: "branche de thym", note: "" },
+                { qty: "1", name: "feuille de laurier", note: "" }
+            ]
+        },
+        {
+            groupe: "Liquides",
+            items: [
+                { qty: "20 cl", name: "vin blanc sec", note: "type Alsace Riesling" },
+                { qty: "10 cl", name: "bouillon de volaille", note: "" },
+                { qty: "15 cl", name: "crème fraîche", note: "épaisse" }
+            ]
+        },
+        {
+            groupe: "Assaisonnement",
+            items: [
+                { qty: "1 filet", name: "huile ou beurre", note: "pour la cuisson" },
+                { qty: "—", name: "sel & poivre", note: "" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Dorer le lapin",
+            texte: "Faire chauffer beurre ou huile dans une cocotte. Dorer les morceaux de lapin sur toutes les faces. Réserver.",
+            timer: "10 min"
+        },
+        {
+            titre: "Faire revenir les girolles",
+            texte: "Dans la même cocotte, faire revenir les girolles et l’échalote jusqu’à évaporation de l’eau de végétation.",
+            timer: "8 min"
+        },
+        {
+            titre: "Ajouter les aromates",
+            texte: "Ajouter l’ail, le thym et le laurier. Mélanger 1 minute.",
+            timer: "1 min"
+        },
+        {
+            titre: "Déglacer et mijoter",
+            texte: "Remettre le lapin, verser le vin blanc et le bouillon. Couvrir et laisser mijoter 30 minutes à feu doux.",
+            timer: "30 min"
+        },
+        {
+            titre: "Ajouter la crème",
+            texte: "Incorporer la crème fraîche et laisser réduire 5 minutes pour obtenir une sauce onctueuse.",
+            timer: "5 min"
+        },
+        {
+            titre: "Servir",
+            texte: "Rectifier l’assaisonnement. Servir avec des pâtes fraîches, du riz ou des pommes vapeur.",
+            timer: "—"
+        }
+    ],
+
+    conseils: [
+        "Ne pas laver les girolles à grande eau : les brosser ou les essuyer pour préserver leur parfum.",
+        "Un Riesling sec donne une sauce plus fine et aromatique.",
+        "Ajouter une cuillère de moutarde douce pour une version plus relevée.",
+        "Les girolles peuvent être remplacées par des cèpes ou des pleurotes selon la saison."
+    ],
+},
 
     'lentilles-au-lard': {
         name:       'Lentilles au lard',
@@ -4019,44 +4971,165 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Lentilles au lard","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Lentilles au lard","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
-    'magret-canard-cerises': {
-        name:       'Magret de canard aux cerises',
-        region:     'Périgord / Gascogne',
-        anecdote:   'Les premières cerises de mai se cuisinent en sauce avec le magret de canard du Périgord dans un équilibre parfait.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+'magret-canard-cerises': {
+    name:       'Magret de canard aux cerises',
+    region:     'Périgord / Gascogne',
+    anecdote:   'Les premières cerises de mai se cuisinent en sauce avec le magret de canard du Périgord dans un équilibre parfait.',
+    tags:       ["Printemps", "Plat principal", "Gastronomique"],
+    prep:       '15 min',
+    cuisson:    '20 min',
+    personnes:  4,
+    difficulte: 'Moyen',
 
-    'magret-canard-salade': {
-        name:       'Magret de canard froid en salade',
-        region:     'Périgord / Gascogne',
-        anecdote:   'Le magret grillé et refroidi, tranché en lamelles sur salade verte avec vinaigrette à la moutarde.',
-        tags:       ["Hiver", "Entrée", "Facile"],
-        prep:       '20 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+    ingredients: [
+        {
+            groupe: "Viande",
+            items: [
+                { qty: "2", name: "magrets de canard", note: "350–400 g chacun" },
+                { qty: "—", name: "sel & poivre", note: "" }
+            ]
+        },
+        {
+            groupe: "Sauce aux cerises",
+            items: [
+                { qty: "300 g", name: "cerises fraîches ou griottes", note: "dénoyautées" },
+                { qty: "10 cl", name: "vin rouge", note: "ou porto pour une sauce plus sucrée" },
+                { qty: "1 c. à soupe", name: "miel", note: "" },
+                { qty: "1 c. à soupe", name: "vinaigre balsamique", note: "" },
+                { qty: "1", name: "échalote", note: "ciselée" }
+            ]
+        },
+        {
+            groupe: "Finition",
+            items: [
+                { qty: "10 g", name: "beurre", note: "pour monter la sauce" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Préparer les magrets",
+            texte: "Inciser la peau en croisillons sans entailler la chair. Saler et poivrer.",
+            timer: "3 min"
+        },
+        {
+            titre: "Saisir côté peau",
+            texte: "Déposer les magrets côté peau dans une poêle froide. Chauffer progressivement et laisser fondre la graisse 8 à 10 minutes jusqu’à coloration dorée.",
+            timer: "10 min"
+        },
+        {
+            titre: "Cuire côté chair",
+            texte: "Retourner les magrets et cuire 3 à 4 minutes selon la cuisson désirée. Réserver sous aluminium.",
+            timer: "4 min"
+        },
+        {
+            titre: "Préparer la sauce",
+            texte: "Dans la même poêle, faire revenir l’échalote. Ajouter cerises, miel, vinaigre balsamique et vin rouge. Laisser réduire jusqu’à consistance sirupeuse.",
+            timer: "6 min"
+        },
+        {
+            titre: "Monter la sauce",
+            texte: "Hors du feu, ajouter une noix de beurre pour lisser la sauce.",
+            timer: "1 min"
+        },
+        {
+            titre: "Servir",
+            texte: "Trancher les magrets et napper de sauce aux cerises. Servir avec une purée, du riz ou des légumes rôtis.",
+            timer: "—"
+        }
+    ],
+
+    conseils: [
+        "Commencer la cuisson des magrets dans une poêle froide permet de fondre la graisse sans brûler la peau.",
+        "Le porto donne une sauce plus douce, le vin rouge une sauce plus corsée.",
+        "Ajouter une pointe de gingembre ou de cannelle pour une note épicée.",
+        "Conserver la graisse de canard pour rôtir des pommes de terre."
+    ],
+},
+
+
+'magret-canard-salade': {
+    name:       'Magret de canard froid en salade',
+    region:     'Périgord / Gascogne',
+    anecdote:   'Le magret grillé puis refroidi, tranché en lamelles sur une salade croquante, est un classique des tables du Sud-Ouest.',
+    tags:       ["Été", "Entrée", "Facile"],
+    prep:       '15 min',
+    cuisson:    '12 min',
+    personnes:  4,
+    difficulte: 'Facile',
+
+    ingredients: [
+        {
+            groupe: "Viande",
+            items: [
+                { qty: "1", name: "magret de canard", note: "350–400 g" },
+                { qty: "—", name: "sel & poivre", note: "" }
+            ]
+        },
+        {
+            groupe: "Salade",
+            items: [
+                { qty: "150 g", name: "salade verte", note: "mâche ou jeunes pousses" },
+                { qty: "1", name: "échalote", note: "ciselée" },
+                { qty: "1 poignée", name: "cerneaux de noix", note: "" },
+                { qty: "8", name: "tomates cerises", note: "coupées en deux" }
+            ]
+        },
+        {
+            groupe: "Vinaigrette",
+            items: [
+                { qty: "2 c. à soupe", name: "huile de noix ou olive", note: "" },
+                { qty: "1 c. à soupe", name: "vinaigre balsamique", note: "" },
+                { qty: "1 c. à café", name: "moutarde de Dijon", note: "" },
+                { qty: "1 c. à café", name: "miel", note: "optionnel" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Cuire le magret",
+            texte: "Inciser la peau en croisillons. Déposer le magret côté peau dans une poêle froide et laisser fondre la graisse 8 minutes. Retourner et cuire 3 à 4 minutes côté chair.",
+            timer: "12 min"
+        },
+        {
+            titre: "Refroidir",
+            texte: "Laisser tiédir puis placer au réfrigérateur au moins 1 heure pour faciliter la découpe.",
+            timer: "1 h"
+        },
+        {
+            titre: "Préparer la salade",
+            texte: "Mélanger la salade, les tomates cerises, l’échalote et les noix dans un saladier.",
+            timer: "3 min"
+        },
+        {
+            titre: "Préparer la vinaigrette",
+            texte: "Fouetter huile, vinaigre, moutarde et miel. Saler et poivrer.",
+            timer: "2 min"
+        },
+        {
+            titre: "Assembler",
+            texte: "Trancher finement le magret froid. Disposer sur la salade et arroser de vinaigrette.",
+            timer: "2 min"
+        }
+    ],
+
+    conseils: [
+        "Cuire le magret à l’avance pour une salade encore plus fraîche.",
+        "Ajouter des lamelles de pommes ou de poires pour une touche fruitée.",
+        "Remplacer les noix par des pignons ou des amandes grillées.",
+        "Une pointe de moutarde à l’ancienne dans la vinaigrette apporte du caractère."
+    ],
+},
+
 
     'marmite-poissons-automne': {
         name:       'Marmite de poissons aux légumes d\'automne',
@@ -4067,8 +5140,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Poisson","items":[{"qty":"1","name":"poisson blanc frais","note":""},{"qty":"1","name":"citron","note":"bio"}]},{"groupe":"Herbes & Condiments","items":[{"qty":"100 g","name":"beurre","note":"demi-sel"},{"qty":"quelques brins","name":"persil plat","note":"frais"}]}],
+        etapes: [{"titre":"Preparer le poisson","texte":"Ecailler, vider et rincer le poisson. L'assécher avec du papier absorbant.","timer":"10 min"},{"titre":"Cuire","texte":"Placer dans un plat beurré, aromé d'herbes et de citron. Enfourner 15-20 min.","timer":"20 min"},{"titre":"Finition","texte":"Napper de beurre blanc ou sauce si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4083,8 +5156,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Matelote d\'anguille"}]}],
+        etapes: [{"titre":"Préparer Matelote d/","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4099,8 +5172,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4115,8 +5188,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Melon au porto et jambon de Bayonne","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Melon au porto et jambon de Bayonne","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4131,28 +5204,90 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Poisson","items":[{"qty":"1","name":"poisson blanc frais","note":""},{"qty":"1","name":"citron","note":"bio"}]},{"groupe":"Herbes & Condiments","items":[{"qty":"100 g","name":"beurre","note":"demi-sel"},{"qty":"quelques brins","name":"persil plat","note":"frais"}]}],
+        etapes: [{"titre":"Preparer le poisson","texte":"Ecailler, vider et rincer le poisson. L'assécher avec du papier absorbant.","timer":"10 min"},{"titre":"Cuire","texte":"Placer dans un plat beurré, aromé d'herbes et de citron. Enfourner 15-20 min.","timer":"20 min"},{"titre":"Finition","texte":"Napper de beurre blanc ou sauce si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
-    'mousse-foie-gras-blinis': {
-        name:       'Mousse de foie gras sur blinis',
-        region:     'Périgord / Gascogne',
-        anecdote:   'La mousse de foie gras maison sur blinis chauds ouvre les repas d\'automne dans le Sud-Ouest.',
-        tags:       ["Hiver", "Dessert", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+'mousse-foie-gras-blinis': {
+    name:       'Mousse de foie gras sur blinis',
+    region:     'Périgord / Gascogne',
+    anecdote:   'La mousse de foie gras maison servie sur des blinis chauds ouvre les repas d\'automne dans le Sud-Ouest.',
+    tags:       ["Automne", "Entrée", "Facile"],
+    prep:       '15 min',
+    cuisson:    '—',
+    personnes:  4,
+    difficulte: 'Facile',
+
+    ingredients: [
+        {
+            groupe: "Mousse de foie gras",
+            items: [
+                { qty: "150 g", name: "foie gras mi-cuit", note: "coupé en dés" },
+                { qty: "10 cl", name: "crème liquide entière", note: "bien froide" },
+                { qty: "1 c. à soupe", name: "porto ou cognac", note: "optionnel" },
+                { qty: "1 pincée", name: "poivre", note: "du moulin" }
+            ]
+        },
+        {
+            groupe: "Blinis",
+            items: [
+                { qty: "12", name: "blinis", note: "maison ou du commerce" }
+            ]
+        },
+        {
+            groupe: "Décoration",
+            items: [
+                { qty: "1 c. à café", name: "fleur de sel", note: "" },
+                { qty: "quelques", name: "baies roses", note: "concassées" },
+                { qty: "—", name: "ciboulette", note: "finement ciselée" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Monter la crème",
+            texte: "Fouetter la crème bien froide jusqu’à obtenir une texture souple, pas trop ferme.",
+            timer: "3 min"
+        },
+        {
+            titre: "Mixer le foie gras",
+            texte: "Mixer le foie gras avec le porto (ou cognac) et le poivre jusqu’à obtenir une crème lisse.",
+            timer: "2 min"
+        },
+        {
+            titre: "Incorporer la crème",
+            texte: "Ajouter délicatement la crème fouettée au foie gras pour obtenir une mousse aérienne.",
+            timer: "2 min"
+        },
+        {
+            titre: "Réfrigérer",
+            texte: "Placer la mousse au réfrigérateur au moins 1 heure pour qu’elle se raffermisse.",
+            timer: "1 h"
+        },
+        {
+            titre: "Chauffer les blinis",
+            texte: "Réchauffer les blinis quelques minutes au four ou à la poêle.",
+            timer: "3 min"
+        },
+        {
+            titre: "Dresser",
+            texte: "Déposer une quenelle ou une cuillère de mousse sur chaque blini. Ajouter fleur de sel, baies roses et ciboulette.",
+            timer: "2 min"
+        }
+    ],
+
+    conseils: [
+        "Utiliser une crème très froide pour une mousse plus légère.",
+        "Ajouter un peu de foie gras en petits dés dans la mousse pour une texture plus gourmande.",
+        "Servir les blinis tièdes pour un contraste agréable avec la mousse froide.",
+        "La mousse peut être préparée la veille : elle n’en sera que meilleure."
+    ],
+},
+
 
     'navarin-agneau': {
         name:       'Navarin d\'agneau printanier',
@@ -4163,8 +5298,8 @@ const RECETTES = {
         cuisson:    '2 h',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Navarin d\'agneau"}]}],
+        etapes: [{"titre":"Préparer Navarin d\'agneau","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4179,8 +5314,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4195,8 +5330,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Œufs en meurette","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Œufs en meurette","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4211,92 +5346,228 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
-    'oie-rotie-pommes': {
-        name:       'Oie rôtie aux pommes',
-        region:     'Alsace / Bretagne',
-        anecdote:   'L\'oie rôtie aux pommes est un plat d\'automne royal, souvenir des grandes tablées paysannes d\'Alsace.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '1 h 30',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+'oie-rotie-pommes': {
+    name:       'Oie rôtie aux pommes',
+    region:     'Alsace / Bretagne',
+    anecdote:   'L\'oie rôtie aux pommes est un plat d\'automne royal, souvenir des grandes tablées paysannes d\'Alsace.',
+    tags:       ["Automne", "Plat principal", "Tradition"],
+    prep:       '25 min',
+    cuisson:    '2 h',
+    personnes:  6,
+    difficulte: 'Moyen',
 
-    'omelette-asperges': {
-        name:       'Omelette aux asperges et ciboulette',
-        region:     'France entière',
-        anecdote:   'L\'omelette baveuse aux premières asperges et à la ciboulette fraîche du jardin est le déjeuner printanier idéal.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+    ingredients: [
+        {
+            groupe: "Volaille",
+            items: [
+                { qty: "1", name: "oie entière", note: "3 à 3,5 kg, vidée" },
+                { qty: "—", name: "sel & poivre", note: "" }
+            ]
+        },
+        {
+            groupe: "Garniture",
+            items: [
+                { qty: "6", name: "pommes", note: "type Reine des Reinettes ou Boskoop" },
+                { qty: "2", name: "oignons", note: "coupés en quartiers" },
+                { qty: "2", name: "gousses d’ail", note: "écrasées" },
+                { qty: "2", name: "branches de thym", note: "" },
+                { qty: "1", name: "feuille de laurier", note: "" }
+            ]
+        },
+        {
+            groupe: "Arrosage & cuisson",
+            items: [
+                { qty: "10 cl", name: "cidre brut", note: "ou bouillon" },
+                { qty: "—", name: "graisse d’oie", note: "récupérée pendant la cuisson" }
+            ]
+        }
+    ],
 
-    'omelette-asperges-sauvages': {
-        name:       'Omelette aux asperges sauvages',
-        region:     'Provence / Languedoc',
-        anecdote:   'Les premières asperges sauvages percent en mars dans le Sud. On les cueille tôt le matin et on les mange le jour même.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+    etapes: [
+        {
+            titre: "Préparer l’oie",
+            texte: "Saler et poivrer l’intérieur et l’extérieur de l’oie. Piquer légèrement la peau pour aider la graisse à fondre.",
+            timer: "5 min"
+        },
+        {
+            titre: "Garnir",
+            texte: "Farcir l’oie avec 3 pommes coupées en quartiers, l’ail, le thym et le laurier. Déposer les oignons et les autres pommes autour dans le plat.",
+            timer: "5 min"
+        },
+        {
+            titre: "Démarrer la cuisson",
+            texte: "Enfourner à 180°C pendant 30 minutes. Récupérer la graisse fondue et arroser régulièrement.",
+            timer: "30 min"
+        },
+        {
+            titre: "Rôtir longuement",
+            texte: "Poursuivre la cuisson 1 h 30 en arrosant toutes les 20 minutes. Ajouter un peu de cidre en cours de cuisson pour déglacer.",
+            timer: "1 h 30"
+        },
+        {
+            titre: "Repos",
+            texte: "Sortir l’oie du four et laisser reposer 10 minutes avant de découper.",
+            timer: "10 min"
+        },
+        {
+            titre: "Servir",
+            texte: "Servir l’oie découpée avec les pommes rôties et un peu de jus dégraissé.",
+            timer: "—"
+        }
+    ],
 
-    'omelette-fines-herbes': {
-        name:       'Omelette aux fines herbes',
-        region:     'France entière',
-        anecdote:   'Persil, ciboulette, cerfeuil et estragon sont au jardin. L\'omelette baveuse aux fines herbes est un classique printanier.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+    conseils: [
+        "L’oie rend beaucoup de graisse : la récupérer pour rôtir des pommes de terre, c’est un délice.",
+        "Les pommes acidulées tiennent mieux à la cuisson.",
+        "Arroser souvent permet une peau croustillante et une viande moelleuse.",
+        "On peut ajouter quelques marrons en fin de cuisson pour une version plus festive."
+    ],
+},
 
-    'omelette-trompettes-mort': {
-        name:       'Omelette aux trompettes de la mort',
-        region:     'Périgord / Auvergne',
-        anecdote:   'Les trompettes de la mort — noires et délicates — poêlées dans l\'omelette à l\'ail et persil.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+
+'omelette-asperges': {
+    name:       'Omelette aux asperges et ciboulette',
+    region:     'France entière',
+    anecdote:   'L\'omelette baveuse aux premières asperges et à la ciboulette fraîche du jardin est le déjeuner printanier idéal.',
+    tags:       ["Printemps", "Plat principal", "Facile"],
+    prep:       '10 min',
+    cuisson:    '12 min',
+    personnes:  4,
+    difficulte: 'Facile',
+
+    ingredients: [
+        {
+            groupe: "Base",
+            items: [
+                { qty: "8", name: "œufs", note: "" },
+                { qty: "1 c. à soupe", name: "crème fraîche", note: "ou lait" },
+                { qty: "—", name: "sel & poivre", note: "" }
+            ]
+        },
+        {
+            groupe: "Légumes",
+            items: [
+                { qty: "300 g", name: "asperges vertes", note: "coupées en tronçons" },
+                { qty: "1", name: "échalote", note: "ciselée" }
+            ]
+        },
+        {
+            groupe: "Aromates",
+            items: [
+                { qty: "1 botte", name: "ciboulette", note: "finement ciselée" },
+                { qty: "1 filet", name: "huile d’olive", note: "ou beurre" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Cuire les asperges",
+            texte: "Faire revenir les tronçons d’asperges dans un peu d’huile ou de beurre 5 à 6 minutes jusqu’à ce qu’ils soient tendres mais encore croquants. Ajouter l’échalote en fin de cuisson.",
+            timer: "6 min"
+        },
+        {
+            titre: "Battre les œufs",
+            texte: "Battre les œufs avec la crème, le sel, le poivre et la ciboulette.",
+            timer: "2 min"
+        },
+        {
+            titre: "Verser dans la poêle",
+            texte: "Ajouter les asperges aux œufs ou verser les œufs directement dans la poêle sur les asperges selon la texture souhaitée.",
+            timer: "1 min"
+        },
+        {
+            titre: "Cuire l’omelette",
+            texte: "Cuire à feu doux 3 à 4 minutes. Laisser baveuse ou retourner pour une cuisson plus ferme.",
+            timer: "4 min"
+        },
+        {
+            titre: "Servir",
+            texte: "Parsemer de ciboulette fraîche et servir immédiatement.",
+            timer: "—"
+        }
+    ],
+
+    conseils: [
+        "Les asperges vertes n’ont pas besoin d’être épluchées si elles sont fines.",
+        "Ajouter un peu de parmesan pour une version plus gourmande.",
+        "Cuire à feu doux pour garder l’omelette moelleuse.",
+        "Les asperges blanches fonctionnent aussi, mais doivent être épluchées."
+    ],
+},
+
+'omelette-trompettes-mort': {
+    name:       'Omelette aux trompettes de la mort',
+    region:     'Périgord / Auvergne',
+    anecdote:   'Les trompettes de la mort, champignons noirs et parfumés, donnent une saveur boisée unique à cette omelette rustique.',
+    tags:       ["Automne", "Plat principal", "Facile"],
+    prep:       '15 min',
+    cuisson:    '10 min',
+    personnes:  4,
+    difficulte: 'Facile',
+
+    ingredients: [
+        {
+            groupe: "Champignons",
+            items: [
+                { qty: "200 g", name: "trompettes de la mort fraîches", note: "ou 30 g séchées réhydratées" }
+            ]
+        },
+        {
+            groupe: "Base de l’omelette",
+            items: [
+                { qty: "8", name: "œufs", note: "" },
+                { qty: "20 g", name: "beurre", note: "" },
+                { qty: "2 c. à soupe", name: "huile", note: "" }
+            ]
+        },
+        {
+            groupe: "Aromates",
+            items: [
+                { qty: "2", name: "gousses d’ail", note: "hachées" },
+                { qty: "1 poignée", name: "persil frais", note: "ciselé" },
+                { qty: "", name: "sel & poivre", note: "à ajuster" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Préparer les champignons",
+            texte: "Nettoyer soigneusement les trompettes de la mort. Les faire revenir dans une poêle avec l’huile jusqu’à évaporation complète de l’eau.",
+            timer: "5 min"
+        },
+        {
+            titre: "Ajouter les aromates",
+            texte: "Incorporer l’ail et le persil. Mélanger et laisser légèrement colorer.",
+            timer: "2 min"
+        },
+        {
+            titre: "Cuire l’omelette",
+            texte: "Battre les œufs, saler, poivrer. Ajouter le beurre dans la poêle, verser les œufs et cuire selon la texture souhaitée.",
+            timer: "3 min"
+        },
+        {
+            titre: "Servir",
+            texte: "Plier l’omelette, laisser reposer quelques secondes et servir bien chaude.",
+            timer: "1 min"
+        }
+    ],
+
+    conseils: [
+        "Les trompettes séchées ont un parfum encore plus intense.",
+        "Ajouter une pointe de crème dans les œufs pour une omelette plus moelleuse.",
+        "Parfait avec une salade verte ou des pommes de terre sautées."
+    ]
+},
+
 
     'pasta-pistou-printemps': {
         name:       'Pasta au pistou de printemps',
@@ -4307,8 +5578,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Pasta au pistou de printemps","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Pasta au pistou de printemps","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4323,8 +5594,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4339,8 +5610,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4355,8 +5626,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4371,8 +5642,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4387,8 +5658,8 @@ const RECETTES = {
         cuisson:    '1 h 30',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4403,8 +5674,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4419,8 +5690,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Pied de cochon pané","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Pied de cochon pané","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4435,8 +5706,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Pieds-paquets marseillais","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Pieds-paquets marseillais","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4451,8 +5722,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4467,8 +5738,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Pintade aux marrons","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Pintade aux marrons","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4483,8 +5754,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Pintade braisée aux raisins de vigne","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Pintade braisée aux raisins de vigne","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4499,8 +5770,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Piperade basquaise","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Piperade basquaise","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4515,8 +5786,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Piperade aux œufs brouillés","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Piperade aux œufs brouillés","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4531,8 +5802,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4547,8 +5818,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Pissaladière à la tapenade","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Pissaladière à la tapenade","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4563,8 +5834,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Poisson","items":[{"qty":"1","name":"poisson blanc frais","note":""},{"qty":"1","name":"citron","note":"bio"}]},{"groupe":"Herbes & Condiments","items":[{"qty":"100 g","name":"beurre","note":"demi-sel"},{"qty":"quelques brins","name":"persil plat","note":"frais"}]}],
+        etapes: [{"titre":"Preparer le poisson","texte":"Ecailler, vider et rincer le poisson. L'assécher avec du papier absorbant.","timer":"10 min"},{"titre":"Cuire","texte":"Placer dans un plat beurré, aromé d'herbes et de citron. Enfourner 15-20 min.","timer":"20 min"},{"titre":"Finition","texte":"Napper de beurre blanc ou sauce si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4579,8 +5850,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4595,8 +5866,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Pistou de haricots frais","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Pistou de haricots frais","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4611,8 +5882,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4627,8 +5898,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Poisson","items":[{"qty":"1","name":"poisson blanc frais","note":""},{"qty":"1","name":"citron","note":"bio"}]},{"groupe":"Herbes & Condiments","items":[{"qty":"100 g","name":"beurre","note":"demi-sel"},{"qty":"quelques brins","name":"persil plat","note":"frais"}]}],
+        etapes: [{"titre":"Preparer le poisson","texte":"Ecailler, vider et rincer le poisson. L'assécher avec du papier absorbant.","timer":"10 min"},{"titre":"Cuire","texte":"Placer dans un plat beurré, aromé d'herbes et de citron. Enfourner 15-20 min.","timer":"20 min"},{"titre":"Finition","texte":"Napper de beurre blanc ou sauce si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4643,8 +5914,8 @@ const RECETTES = {
         cuisson:    '40 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Poisson","items":[{"qty":"1","name":"poisson blanc frais","note":""},{"qty":"1","name":"citron","note":"bio"}]},{"groupe":"Herbes & Condiments","items":[{"qty":"100 g","name":"beurre","note":"demi-sel"},{"qty":"quelques brins","name":"persil plat","note":"frais"}]}],
+        etapes: [{"titre":"Preparer le poisson","texte":"Ecailler, vider et rincer le poisson. L'assécher avec du papier absorbant.","timer":"10 min"},{"titre":"Cuire","texte":"Placer dans un plat beurré, aromé d'herbes et de citron. Enfourner 15-20 min.","timer":"20 min"},{"titre":"Finition","texte":"Napper de beurre blanc ou sauce si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4659,8 +5930,8 @@ const RECETTES = {
         cuisson:    '2 h',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4675,8 +5946,8 @@ const RECETTES = {
         cuisson:    '2 h',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Poisson","items":[{"qty":"1","name":"poisson blanc frais","note":""},{"qty":"1","name":"citron","note":"bio"}]},{"groupe":"Herbes & Condiments","items":[{"qty":"100 g","name":"beurre","note":"demi-sel"},{"qty":"quelques brins","name":"persil plat","note":"frais"}]}],
+        etapes: [{"titre":"Preparer le poisson","texte":"Ecailler, vider et rincer le poisson. L'assécher avec du papier absorbant.","timer":"10 min"},{"titre":"Cuire","texte":"Placer dans un plat beurré, aromé d'herbes et de citron. Enfourner 15-20 min.","timer":"20 min"},{"titre":"Finition","texte":"Napper de beurre blanc ou sauce si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4691,8 +5962,8 @@ const RECETTES = {
         cuisson:    '2 h',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4707,8 +5978,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4723,8 +5994,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4739,8 +6010,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Potée auvergnate","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Potée auvergnate","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4755,8 +6026,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Poule au pot","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Poule au pot","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -4771,188 +6042,887 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Poule au pot aux légumes d\'hiver","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Poule au pot aux légumes d\'hiver","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
-    'poulet-40-gousses-ail': {
-        name:       'Poulet aux 40 gousses d\'ail',
-        region:     'Provence',
-        anecdote:   'La recette provençale du poulet entier cuit lentement avec 40 gousses d\'ail entières rend l\'ail fondant et doux.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+'poulet-40-gousses-ail': {
+    name:       'Poulet aux 40 gousses d\'ail',
+    region:     'Provence',
+    anecdote:   'Ce plat emblématique de Provence révèle un ail confit, doux et crémeux, loin de son piquant habituel. Un classique rustique et parfumé.',
+    tags:       ["Automne", "Hiver", "Plat principal", "Facile"],
+    prep:       '20 min',
+    cuisson:    '1 h 30',
+    personnes:  4,
+    difficulte: 'Facile',
 
-    'poulet-a-lestragon': {
-        name:       'Poulet à l\'estragon',
-        region:     'Île-de-France',
-        anecdote:   'L\'estragon, herbe fine par excellence, parfume cette sauce crémeuse qui accompagne le poulet fermier.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+    ingredients: [
+        {
+            groupe: "Volaille",
+            items: [
+                { qty: "1", name: "poulet fermier entier", note: "1,4 à 1,8 kg" }
+            ]
+        },
+        {
+            groupe: "Ail & aromates",
+            items: [
+                { qty: "40", name: "gousses d’ail", note: "non épluchées" },
+                { qty: "4 brins", name: "thym", note: "" },
+                { qty: "2 feuilles", name: "laurier", note: "" }
+            ]
+        },
+        {
+            groupe: "Assaisonnement",
+            items: [
+                { qty: "4 c. à soupe", name: "huile d’olive", note: "" },
+                { qty: "", name: "sel & poivre", note: "à ajuster" }
+            ]
+        },
+        {
+            groupe: "Accompagnement (optionnel)",
+            items: [
+                { qty: "1", name: "citron", note: "en quartiers" },
+                { qty: "", name: "pain grillé", note: "pour tartiner l’ail confit" }
+            ]
+        }
+    ],
 
-    'poulet-aux-cepes': {
-        name:       'Poulet aux cèpes',
-        region:     'Périgord / Gascogne',
-        anecdote:   'Le cèpe de Bordeaux dans toute sa splendeur : avec le poulet fermier en sauce crémeuse, c\'est un plat royal.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+    etapes: [
+        {
+            titre: "Préparer le poulet",
+            texte: "Préchauffer le four à 180°C. Saler et poivrer généreusement le poulet, puis le masser avec l’huile d’olive.",
+            timer: "5 min"
+        },
+        {
+            titre: "Disposer les aromates",
+            texte: "Déposer les 40 gousses d’ail non épluchées dans une cocotte. Ajouter le thym et le laurier. Poser le poulet par-dessus.",
+            timer: "5 min"
+        },
+        {
+            titre: "Cuisson lente",
+            texte: "Couvrir la cocotte et enfourner 1 h 15. L’ail va confire doucement et parfumer la viande.",
+            timer: "75 min"
+        },
+        {
+            titre: "Dorer le poulet",
+            texte: "Retirer le couvercle et poursuivre la cuisson 15 minutes pour obtenir une peau bien dorée.",
+            timer: "15 min"
+        },
+        {
+            titre: "Servir",
+            texte: "Laisser reposer 5 minutes. Servir le poulet avec les gousses d’ail confites à tartiner sur du pain.",
+            timer: "5 min"
+        }
+    ],
 
-    'poulet-basquaise': {
-        name:       'Poulet basquaise',
-        region:     'Pays Basque',
-        anecdote:   'Poivrons, tomates et piment d\'Espelette : le poulet à la basquaise célèbre les couleurs vives du Pays Basque.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+    conseils: [
+        "Les gousses d’ail confites se dégustent comme une crème, simplement pressées hors de leur peau.",
+        "Ajouter un verre de vin blanc dans la cocotte pour une sauce plus riche.",
+        "Parfait avec des pommes de terre rôties ou du riz."
+    ]
+},
 
-    'poulet-cepes-sarladaises': {
-        name:       'Poulet rôti aux cèpes et pommes sarladaises',
-        region:     'Périgord',
-        anecdote:   'Les pommes de terre sarladaises cuites à la graisse de canard avec les cèpes et le poulet : la Sainte-Trinité du Périgord.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '1 h 30',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+'poulet-a-lestragon': {
+    name:       'Poulet à l\'estragon',
+    region:     'Île-de-France',
+    anecdote:   'Plat emblématique de la cuisine bourgeoise française, le poulet à l’estragon doit sa finesse à cette herbe au parfum anisé, parfaite avec une sauce crémeuse.',
+    tags:       ["Printemps", "Plat principal", "Moyen"],
+    prep:       '20 min',
+    cuisson:    '1 h 10',
+    personnes:  4,
+    difficulte: 'Moyen',
 
-    'poulet-crapaudine': {
-        name:       'Poulet en crapaudine',
-        region:     'Normandie / Berry',
-        anecdote:   'Le poulet aplati en crapaudine et grillé au four ou au barbecue est la recette idéale pour les premières tablées en terrasse.',
-        tags:       ["Été", "Plat principal", "Facile"],
-        prep:       '20 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+    ingredients: [
+        {
+            groupe: "Volaille",
+            items: [
+                { qty: "1", name: "poulet fermier", note: "1,4 à 1,8 kg, découpé en morceaux" }
+            ]
+        },
+        {
+            groupe: "Aromates",
+            items: [
+                { qty: "2", name: "échalotes", note: "finement ciselées" },
+                { qty: "1 bouquet", name: "estragon frais", note: "garder quelques feuilles pour la finition" }
+            ]
+        },
+        {
+            groupe: "Liquides & sauce",
+            items: [
+                { qty: "10 cl", name: "vin blanc sec", note: "" },
+                { qty: "20 cl", name: "crème fraîche", note: "épaisse ou liquide" },
+                { qty: "10 cl", name: "bouillon de volaille", note: "" }
+            ]
+        },
+        {
+            groupe: "Assaisonnement",
+            items: [
+                { qty: "2 c. à soupe", name: "huile", note: "" },
+                { qty: "20 g", name: "beurre", note: "" },
+                { qty: "", name: "sel & poivre", note: "à ajuster" }
+            ]
+        }
+    ],
 
-    'poulet-froid-mayonnaise': {
-        name:       'Poulet froid mayonnaise',
-        region:     'France entière',
-        anecdote:   'Le poulet rôti la veille, servi froid avec mayonnaise maison et crudités, est le roi des pique-niques.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+    etapes: [
+        {
+            titre: "Saisir le poulet",
+            texte: "Faire chauffer l’huile et le beurre dans une cocotte. Dorer les morceaux de poulet sur toutes les faces. Saler et poivrer.",
+            timer: "10 min"
+        },
+        {
+            titre: "Ajouter les aromates",
+            texte: "Retirer légèrement le poulet, ajouter les échalotes et les faire revenir. Ajouter ensuite la moitié de l’estragon ciselé.",
+            timer: "5 min"
+        },
+        {
+            titre: "Déglacer et mijoter",
+            texte: "Verser le vin blanc, laisser réduire de moitié. Ajouter le bouillon, remettre le poulet, couvrir et laisser mijoter doucement.",
+            timer: "40 min"
+        },
+        {
+            titre: "Préparer la sauce",
+            texte: "Ajouter la crème fraîche, mélanger délicatement et poursuivre la cuisson à découvert pour épaissir la sauce.",
+            timer: "15 min"
+        },
+        {
+            titre: "Servir",
+            texte: "Parsemer du reste d’estragon frais juste avant de servir. Accompagner de riz ou de pommes de terre.",
+            timer: "5 min"
+        }
+    ],
 
-    'poulet-grille-citron': {
-        name:       'Poulet grillé au citron et herbes',
-        region:     'Provence',
-        anecdote:   'Mariné toute une nuit dans le citron, l\'ail et les herbes, le poulet de ferme grillé sur la braise est incomparable.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+    conseils: [
+        "L’estragon frais est indispensable : l’estragon sec perd son parfum.",
+        "Ajouter une pointe de moutarde dans la sauce pour une version plus relevée.",
+        "Le plat est encore meilleur réchauffé le lendemain."
+    ]
+},
 
-    'poulet-roti': {
-        name:       'Poulet rôti du dimanche',
-        region:     'France entière',
-        anecdote:   'Le poulet rôti est le plat du dimanche de toutes les familles françaises depuis des générations.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '1 h 30',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+'poulet-aux-cepes': {
+    name:       'Poulet aux cèpes',
+    region:     'Périgord / Gascogne',
+    anecdote:   'Plat emblématique du Sud-Ouest, où le parfum puissant du cèpe de Bordeaux sublime la chair du poulet fermier dans une sauce onctueuse.',
+    tags:       ["Automne", "Hiver", "Plat principal", "Moyen"],
+    prep:       '25 min',
+    cuisson:    '1 h 15',
+    personnes:  4,
+    difficulte: 'Moyen',
 
-    'poulet-roti-herbes-fraiches': {
-        name:       'Poulet rôti aux herbes fraîches',
-        region:     'France entière',
-        anecdote:   'Le thym, le romarin et l\'estragon du jardin en mai, glissés sous la peau d\'un poulet fermier dorent magnifiquement.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '1 h 30',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+    ingredients: [
+        {
+            groupe: "Volaille",
+            items: [
+                { qty: "1", name: "poulet fermier", note: "1,4 à 1,8 kg, découpé en morceaux" }
+            ]
+        },
+        {
+            groupe: "Champignons",
+            items: [
+                { qty: "400 g", name: "cèpes frais", note: "ou 50 g séchés réhydratés" },
+                { qty: "20 g", name: "beurre", note: "pour les faire sauter" }
+            ]
+        },
+        {
+            groupe: "Aromates",
+            items: [
+                { qty: "2", name: "échalotes", note: "ciselées" },
+                { qty: "2 gousses", name: "ail", note: "hachées" },
+                { qty: "1 branche", name: "thym", note: "" },
+                { qty: "1 feuille", name: "laurier", note: "" }
+            ]
+        },
+        {
+            groupe: "Liquides & sauce",
+            items: [
+                { qty: "10 cl", name: "vin blanc sec", note: "" },
+                { qty: "15 cl", name: "bouillon de volaille", note: "" },
+                { qty: "20 cl", name: "crème fraîche", note: "épaisse ou liquide" }
+            ]
+        },
+        {
+            groupe: "Assaisonnement",
+            items: [
+                { qty: "2 c. à soupe", name: "huile", note: "" },
+                { qty: "", name: "sel & poivre", note: "à ajuster" }
+            ]
+        }
+    ],
 
-    'poulet-salade-mediterraneenne': {
-        name:       'Poulet froid en salade méditerranéenne',
-        region:     'Provence',
-        anecdote:   'Le poulet rôti refroidi et effiloché en salade avec olives, poivrons, tomates et herbes est un festin estival.',
-        tags:       ["Hiver", "Entrée", "Facile"],
-        prep:       '20 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+    etapes: [
+        {
+            titre: "Préparer les cèpes",
+            texte: "Nettoyer les cèpes sans les laver à grande eau. Les couper en morceaux et les faire sauter au beurre jusqu’à légère coloration.",
+            timer: "10 min"
+        },
+        {
+            titre: "Saisir le poulet",
+            texte: "Dans une cocotte, faire chauffer l’huile et dorer les morceaux de poulet sur toutes les faces. Saler et poivrer.",
+            timer: "10 min"
+        },
+        {
+            titre: "Ajouter les aromates",
+            texte: "Ajouter les échalotes, l’ail, le thym et le laurier. Mélanger et laisser suer quelques minutes.",
+            timer: "5 min"
+        },
+        {
+            titre: "Déglacer et mijoter",
+            texte: "Verser le vin blanc et laisser réduire. Ajouter le bouillon, couvrir et laisser mijoter doucement.",
+            timer: "40 min"
+        },
+        {
+            titre: "Incorporer les cèpes",
+            texte: "Ajouter les cèpes sautés dans la cocotte, puis la crème. Mélanger et laisser épaissir la sauce à feu doux.",
+            timer: "10 min"
+        },
+        {
+            titre: "Servir",
+            texte: "Rectifier l’assaisonnement. Servir bien chaud avec des pâtes fraîches, du riz ou des pommes de terre.",
+            timer: "5 min"
+        }
+    ],
+
+    conseils: [
+        "Les cèpes séchés donnent un parfum encore plus intense : conserver l’eau de réhydratation pour le bouillon.",
+        "Ne pas laver les cèpes à grande eau : ils se gorgent d’eau et perdent leur goût.",
+        "Un peu de persil frais ajouté au moment de servir apporte une touche de fraîcheur."
+    ]
+},
+
+'poulet-basquaise': {
+    name:       'Poulet basquaise',
+    region:     'Pays Basque',
+    anecdote:   'Plat emblématique du Pays Basque, où le poulet mijote dans une piperade colorée à base de poivrons, tomates et piment d’Espelette.',
+    tags:       ["Été", "Automne", "Plat principal", "Moyen"],
+    prep:       '25 min',
+    cuisson:    '1 h 10',
+    personnes:  4,
+    difficulte: 'Moyen',
+
+    ingredients: [
+        {
+            groupe: "Volaille",
+            items: [
+                { qty: "1", name: "poulet fermier", note: "1,4 à 1,8 kg, découpé en morceaux" }
+            ]
+        },
+        {
+            groupe: "Légumes",
+            items: [
+                { qty: "3", name: "poivrons", note: "rouge, vert et jaune" },
+                { qty: "4", name: "tomates", note: "bien mûres" },
+                { qty: "2", name: "oignons", note: "émincés" },
+                { qty: "3 gousses", name: "ail", note: "hachées" }
+            ]
+        },
+        {
+            groupe: "Aromates & épices",
+            items: [
+                { qty: "1 c. à café", name: "piment d’Espelette", note: "" },
+                { qty: "1", name: "feuille de laurier", note: "" },
+                { qty: "1 branche", name: "thym", note: "" }
+            ]
+        },
+        {
+            groupe: "Liquides",
+            items: [
+                { qty: "10 cl", name: "vin blanc sec", note: "" },
+                { qty: "2 c. à soupe", name: "huile d’olive", note: "" }
+            ]
+        },
+        {
+            groupe: "Assaisonnement",
+            items: [
+                { qty: "", name: "sel & poivre", note: "à ajuster" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Préparer la piperade",
+            texte: "Faire revenir les oignons dans l’huile d’olive. Ajouter les poivrons émincés, puis l’ail. Laisser fondre doucement.",
+            timer: "15 min"
+        },
+        {
+            titre: "Ajouter les tomates",
+            texte: "Incorporer les tomates concassées, le thym, le laurier et le piment d’Espelette. Laisser mijoter pour obtenir une piperade épaisse.",
+            timer: "10 min"
+        },
+        {
+            titre: "Saisir le poulet",
+            texte: "Dans une autre poêle, dorer les morceaux de poulet sur toutes les faces. Saler et poivrer.",
+            timer: "10 min"
+        },
+        {
+            titre: "Mijoter",
+            texte: "Ajouter le poulet dans la piperade, déglacer la poêle avec le vin blanc et verser dans la cocotte. Couvrir et laisser mijoter.",
+            timer: "35 min"
+        },
+        {
+            titre: "Finaliser",
+            texte: "Retirer le couvercle et laisser réduire légèrement la sauce si nécessaire. Rectifier l’assaisonnement.",
+            timer: "10 min"
+        },
+        {
+            titre: "Servir",
+            texte: "Servir bien chaud avec du riz, des pâtes fraîches ou des pommes de terre vapeur.",
+            timer: "5 min"
+        }
+    ],
+
+    conseils: [
+        "Le vrai secret du basquaise : une piperade bien confite.",
+        "Ajouter un peu de jambon de Bayonne en fin de cuisson pour une version plus typée.",
+        "Les poivrons doivent être cuits mais encore légèrement fermes."
+    ]
+},
+
+
+'poulet-cepes-sarladaises': {
+    name:       'Poulet rôti aux cèpes et pommes sarladaises',
+    region:     'Périgord',
+    anecdote:   'Un classique du Périgord : le poulet rôti, les cèpes sautés et les pommes de terre sarladaises à la graisse de canard forment un trio irrésistible.',
+    tags:       ["Automne", "Hiver", "Plat principal", "Moyen"],
+    prep:       '25 min',
+    cuisson:    '1 h 30',
+    personnes:  4,
+    difficulte: 'Moyen',
+
+    ingredients: [
+        {
+            groupe: "Volaille",
+            items: [
+                { qty: "1", name: "poulet fermier entier", note: "1,4 à 1,8 kg" },
+                { qty: "30 g", name: "beurre", note: "pour le badigeonner" }
+            ]
+        },
+        {
+            groupe: "Pommes sarladaises",
+            items: [
+                { qty: "800 g", name: "pommes de terre", note: "variété ferme" },
+                { qty: "2 c. à soupe", name: "graisse de canard", note: "" },
+                { qty: "2 gousses", name: "ail", note: "hachées" },
+                { qty: "1 poignée", name: "persil", note: "ciselé" }
+            ]
+        },
+        {
+            groupe: "Cèpes",
+            items: [
+                { qty: "300 g", name: "cèpes frais", note: "ou 40 g séchés réhydratés" },
+                { qty: "20 g", name: "beurre", note: "pour les faire sauter" },
+                { qty: "1", name: "échalote", note: "ciselée" }
+            ]
+        },
+        {
+            groupe: "Assaisonnement",
+            items: [
+                { qty: "", name: "sel & poivre", note: "à ajuster" },
+                { qty: "1 branche", name: "thym", note: "" },
+                { qty: "1", name: "feuille de laurier", note: "" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Rôtir le poulet",
+            texte: "Préchauffer le four à 180°C. Saler, poivrer et badigeonner le poulet de beurre. Ajouter thym et laurier dans le plat. Enfourner et arroser régulièrement.",
+            timer: "1 h 20"
+        },
+        {
+            titre: "Préparer les pommes sarladaises",
+            texte: "Éplucher et couper les pommes de terre en rondelles. Les faire revenir dans la graisse de canard jusqu’à coloration, puis ajouter ail et persil en fin de cuisson.",
+            timer: "25 min"
+        },
+        {
+            titre: "Sauter les cèpes",
+            texte: "Nettoyer les cèpes, les couper en morceaux et les faire sauter au beurre avec l’échalote. Saler, poivrer et laisser légèrement dorer.",
+            timer: "10 min"
+        },
+        {
+            titre: "Assembler",
+            texte: "Sortir le poulet du four et le laisser reposer. Mélanger les cèpes aux pommes sarladaises ou servir séparément selon préférence.",
+            timer: "5 min"
+        },
+        {
+            titre: "Servir",
+            texte: "Découper le poulet et servir avec les pommes sarladaises aux cèpes. Parfait avec un verre de Bergerac.",
+            timer: "5 min"
+        }
+    ],
+
+    conseils: [
+        "Les cèpes séchés donnent un parfum plus intense : conserver l’eau de réhydratation pour déglacer.",
+        "Ne pas trop remuer les pommes sarladaises pour éviter qu’elles ne se cassent.",
+        "Ajouter un peu de graisse de canard sur le poulet en cours de cuisson pour un goût encore plus périgourdin."
+    ]
+},
+
+'poulet-crapaudine': {
+    name:       'Poulet en crapaudine',
+    region:     'Berry / Normandie',
+    anecdote:   'Le poulet ouvert en crapaudine, aplati et grillé, permet une cuisson rapide et une peau ultra croustillante, idéale au barbecue ou au four.',
+    tags:       ["Été", "Printemps", "Plat principal", "Facile"],
+    prep:       '20 min',
+    cuisson:    '45 min',
+    personnes:  4,
+    difficulte: 'Facile',
+
+    ingredients: [
+        {
+            groupe: "Volaille",
+            items: [
+                { qty: "1", name: "poulet fermier entier", note: "1,4 à 1,8 kg" }
+            ]
+        },
+        {
+            groupe: "Marinade",
+            items: [
+                { qty: "3 c. à soupe", name: "huile d’olive", note: "" },
+                { qty: "3 gousses", name: "ail", note: "hachées" },
+                { qty: "1 c. à soupe", name: "paprika", note: "" },
+                { qty: "1 c. à café", name: "thym", note: "ou herbes de Provence" },
+                { qty: "1", name: "citron", note: "jus" },
+                { qty: "", name: "sel & poivre", note: "à ajuster" }
+            ]
+        },
+        {
+            groupe: "Finition",
+            items: [
+                { qty: "1 poignée", name: "persil frais", note: "ciselé" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Préparer le poulet",
+            texte: "Poser le poulet sur une planche, dos vers le haut. Couper l’os du dos avec des ciseaux de cuisine, puis ouvrir et aplatir fermement avec la paume de la main.",
+            timer: "5 min"
+        },
+        {
+            titre: "Assaisonner",
+            texte: "Mélanger huile, ail, paprika, thym, citron, sel et poivre. Badigeonner généreusement le poulet sur toutes les faces.",
+            timer: "5 min"
+        },
+        {
+            titre: "Cuisson au four ou barbecue",
+            texte: "Cuire à 200°C ou sur grill moyen. Disposer le poulet peau vers le haut, puis retourner à mi-cuisson pour bien griller la peau.",
+            timer: "35 min"
+        },
+        {
+            titre: "Repos",
+            texte: "Laisser reposer quelques minutes pour que les jus se redistribuent.",
+            timer: "5 min"
+        },
+        {
+            titre: "Servir",
+            texte: "Parsemer de persil frais et servir avec des pommes de terre, une salade ou des légumes grillés.",
+            timer: "5 min"
+        }
+    ],
+
+    conseils: [
+        "Pour une peau encore plus croustillante, ajouter un filet d’huile sur la peau avant d’enfourner.",
+        "La cuisson crapaudine est parfaite au barbecue : chaleur indirecte puis grill final.",
+        "On peut ajouter du piment d’Espelette pour une version plus relevée."
+    ]
+},
+
+
+'poulet-froid-mayonnaise': {
+    name:       'Poulet froid mayonnaise',
+    region:     'France entière',
+    anecdote:   'Plat familial par excellence : le poulet rôti de la veille, servi froid avec une mayonnaise maison et quelques crudités, est un incontournable des pique-niques français.',
+    tags:       ["Été", "Printemps", "Plat principal", "Facile"],
+    prep:       '20 min',
+    cuisson:    '1 h 15',
+    personnes:  4,
+    difficulte: 'Facile',
+
+    ingredients: [
+        {
+            groupe: "Volaille",
+            items: [
+                { qty: "1", name: "poulet rôti", note: "cuit la veille, refroidi" }
+            ]
+        },
+        {
+            groupe: "Mayonnaise maison",
+            items: [
+                { qty: "1", name: "jaune d’œuf", note: "à température ambiante" },
+                { qty: "15 cl", name: "huile neutre", note: "tournesol ou colza" },
+                { qty: "1 c. à café", name: "moutarde", note: "" },
+                { qty: "1 c. à café", name: "vinaigre ou jus de citron", note: "" },
+                { qty: "", name: "sel & poivre", note: "à ajuster" }
+            ]
+        },
+        {
+            groupe: "Accompagnements",
+            items: [
+                { qty: "2", name: "tomates", note: "en quartiers" },
+                { qty: "1", name: "salade verte", note: "" },
+                { qty: "4", name: "œufs durs", note: "coupés en quartiers" },
+                { qty: "1 poignée", name: "cornichons", note: "" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Cuire le poulet (la veille)",
+            texte: "Rôtir le poulet au four à 180°C pendant environ 1 h 15. Laisser refroidir complètement puis réserver au réfrigérateur.",
+            timer: "75 min"
+        },
+        {
+            titre: "Préparer la mayonnaise",
+            texte: "Mélanger jaune d’œuf, moutarde, sel et poivre. Monter progressivement avec l’huile jusqu’à obtenir une mayonnaise ferme. Ajouter vinaigre ou citron.",
+            timer: "10 min"
+        },
+        {
+            titre: "Découper le poulet",
+            texte: "Sortir le poulet froid, retirer la peau si souhaité, puis découper en morceaux : blancs, cuisses, ailes.",
+            timer: "5 min"
+        },
+        {
+            titre: "Préparer les accompagnements",
+            texte: "Couper tomates et œufs, laver la salade, disposer cornichons et crudités dans un plat.",
+            timer: "5 min"
+        },
+        {
+            titre: "Servir",
+            texte: "Disposer le poulet froid dans un grand plat, entouré de crudités. Servir avec la mayonnaise maison.",
+            timer: "5 min"
+        }
+    ],
+
+    conseils: [
+        "Un poulet rôti la veille est plus facile à découper et plus savoureux froid.",
+        "Ajouter des herbes fraîches (ciboulette, estragon) dans la mayonnaise pour plus de parfum.",
+        "Parfait avec des pommes de terre vapeur ou une salade de riz."
+    ]
+},
+
+
+'poulet-grille-citron': {
+    name:       'Poulet grillé au citron et herbes',
+    region:     'Provence',
+    anecdote:   'Mariné longuement dans le citron, l’ail et les herbes de Provence, le poulet grillé révèle des parfums méditerranéens incomparables, surtout cuit au barbecue.',
+    tags:       ["Été", "Printemps", "Plat principal", "Facile"],
+    prep:       '15 min (+ marinade 4 h)',
+    cuisson:    '40 min',
+    personnes:  4,
+    difficulte: 'Facile',
+
+    ingredients: [
+        {
+            groupe: "Volaille",
+            items: [
+                { qty: "1", name: "poulet fermier", note: "1,4 à 1,8 kg, découpé ou en crapaudine" }
+            ]
+        },
+        {
+            groupe: "Marinade citron & herbes",
+            items: [
+                { qty: "2", name: "citrons", note: "jus + zestes" },
+                { qty: "4 c. à soupe", name: "huile d’olive", note: "" },
+                { qty: "4 gousses", name: "ail", note: "hachées" },
+                { qty: "1 c. à soupe", name: "herbes de Provence", note: "" },
+                { qty: "1 c. à café", name: "paprika", note: "" },
+                { qty: "", name: "sel & poivre", note: "à ajuster" }
+            ]
+        },
+        {
+            groupe: "Finition",
+            items: [
+                { qty: "1 poignée", name: "persil frais", note: "ciselé" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Préparer la marinade",
+            texte: "Mélanger jus de citron, zestes, huile d’olive, ail, herbes de Provence, paprika, sel et poivre.",
+            timer: "5 min"
+        },
+        {
+            titre: "Mariner le poulet",
+            texte: "Badigeonner le poulet de marinade, masser et laisser reposer au frais au moins 4 heures (idéalement une nuit).",
+            timer: "240 min"
+        },
+        {
+            titre: "Cuisson grillée",
+            texte: "Cuire au barbecue ou au four à 200°C. Commencer peau vers le haut, puis retourner pour bien griller la peau.",
+            timer: "35 min"
+        },
+        {
+            titre: "Repos",
+            texte: "Laisser reposer quelques minutes pour que les jus se redistribuent.",
+            timer: "5 min"
+        },
+        {
+            titre: "Servir",
+            texte: "Parsemer de persil frais et servir avec légumes grillés, salade ou pommes de terre.",
+            timer: "5 min"
+        }
+    ],
+
+    conseils: [
+        "Plus la marinade est longue, plus le poulet est parfumé.",
+        "Pour une peau ultra croustillante, ajouter un filet d’huile juste avant la cuisson.",
+        "Le barbecue donne un goût incomparable, mais le four fonctionne très bien aussi."
+    ]
+},
+
+
+'poulet-roti': {
+    name:       'Poulet rôti du dimanche',
+    region:     'France entière',
+    anecdote:   'Plat dominical par excellence, le poulet rôti réunit les familles françaises autour d’un repas simple, généreux et parfumé.',
+    tags:       ["Automne", "Hiver", "Plat principal", "Facile"],
+    prep:       '15 min',
+    cuisson:    '1 h 20',
+    personnes:  4,
+    difficulte: 'Facile',
+
+    ingredients: [
+        {
+            groupe: "Volaille",
+            items: [
+                { qty: "1", name: "poulet fermier entier", note: "1,4 à 1,8 kg" },
+                { qty: "30 g", name: "beurre", note: "pour le badigeonner" }
+            ]
+        },
+        {
+            groupe: "Aromates",
+            items: [
+                { qty: "4 gousses", name: "ail", note: "écrasées" },
+                { qty: "2", name: "échalotes", note: "coupées en deux" },
+                { qty: "1 branche", name: "thym", note: "" },
+                { qty: "1", name: "feuille de laurier", note: "" }
+            ]
+        },
+        {
+            groupe: "Accompagnement",
+            items: [
+                { qty: "800 g", name: "pommes de terre", note: "coupées en quartiers" },
+                { qty: "2 c. à soupe", name: "huile", note: "" }
+            ]
+        },
+        {
+            groupe: "Assaisonnement",
+            items: [
+                { qty: "", name: "sel & poivre", note: "à ajuster" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Préparer le poulet",
+            texte: "Préchauffer le four à 200°C. Saler, poivrer et badigeonner le poulet de beurre. Ajouter ail, échalotes, thym et laurier dans le plat.",
+            timer: "10 min"
+        },
+        {
+            titre: "Ajouter les pommes de terre",
+            texte: "Mélanger les pommes de terre avec l’huile, sel et poivre. Les disposer autour du poulet.",
+            timer: "5 min"
+        },
+        {
+            titre: "Cuisson",
+            texte: "Enfourner 1 h 20 en arrosant régulièrement avec le jus de cuisson. Retourner les pommes de terre à mi-cuisson.",
+            timer: "80 min"
+        },
+        {
+            titre: "Repos",
+            texte: "Sortir le poulet du four et laisser reposer quelques minutes pour que les jus se redistribuent.",
+            timer: "5 min"
+        },
+        {
+            titre: "Servir",
+            texte: "Découper le poulet et servir avec les pommes de terre rôties et le jus de cuisson.",
+            timer: "5 min"
+        }
+    ],
+
+    conseils: [
+        "Ajouter un peu de beurre sur la peau en cours de cuisson pour un croustillant parfait.",
+        "Un filet de vin blanc dans le plat donne un jus plus parfumé.",
+        "Les restes sont délicieux froids avec une salade."
+    ]
+},
+
+
+'poulet-roti-herbes-fraiches': {
+    name:       'Poulet rôti aux herbes fraîches',
+    region:     'France entière',
+    anecdote:   'Le thym, le romarin, le persil et l’estragon glissés sous la peau du poulet parfument la chair en profondeur et donnent une peau magnifiquement dorée.',
+    tags:       ["Printemps", "Été", "Plat principal", "Facile"],
+    prep:       '15 min',
+    cuisson:    '1 h 20',
+    personnes:  4,
+    difficulte: 'Facile',
+
+    ingredients: [
+        {
+            groupe: "Volaille",
+            items: [
+                { qty: "1", name: "poulet fermier entier", note: "1,4 à 1,8 kg" },
+                { qty: "40 g", name: "beurre", note: "ramolli" }
+            ]
+        },
+        {
+            groupe: "Herbes fraîches",
+            items: [
+                { qty: "4 brins", name: "thym", note: "" },
+                { qty: "2 brins", name: "romarin", note: "" },
+                { qty: "1 poignée", name: "persil plat", note: "ciselé" },
+                { qty: "4 brins", name: "estragon", note: "" }
+            ]
+        },
+        {
+            groupe: "Aromates",
+            items: [
+                { qty: "4 gousses", name: "ail", note: "écrasées" },
+                { qty: "2", name: "échalotes", note: "coupées en deux" }
+            ]
+        },
+        {
+            groupe: "Accompagnement",
+            items: [
+                { qty: "800 g", name: "pommes de terre", note: "en quartiers" },
+                { qty: "2 c. à soupe", name: "huile d’olive", note: "" }
+            ]
+        },
+        {
+            groupe: "Assaisonnement",
+            items: [
+                { qty: "", name: "sel & poivre", note: "à ajuster" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Préparer le poulet",
+            texte: "Préchauffer le four à 200°C. Mélanger le beurre avec les herbes ciselées. Soulever délicatement la peau du poulet et glisser le beurre aux herbes dessous.",
+            timer: "10 min"
+        },
+        {
+            titre: "Assaisonner et garnir",
+            texte: "Saler et poivrer le poulet. Déposer ail et échalotes dans le plat. Ajouter quelques herbes entières dans la cavité.",
+            timer: "5 min"
+        },
+        {
+            titre: "Ajouter les pommes de terre",
+            texte: "Mélanger les pommes de terre avec l’huile d’olive, sel et poivre. Les disposer autour du poulet.",
+            timer: "5 min"
+        },
+        {
+            titre: "Cuisson",
+            texte: "Enfourner 1 h 20 en arrosant régulièrement avec le jus. Retourner les pommes de terre à mi-cuisson.",
+            timer: "80 min"
+        },
+        {
+            titre: "Repos",
+            texte: "Sortir le poulet du four et laisser reposer quelques minutes pour que les jus se redistribuent.",
+            timer: "5 min"
+        },
+        {
+            titre: "Servir",
+            texte: "Découper le poulet et servir avec les pommes de terre rôties et le jus parfumé aux herbes.",
+            timer: "5 min"
+        }
+    ],
+
+    conseils: [
+        "Glisser le beurre sous la peau est la clé d’un poulet très parfumé.",
+        "Ajouter un filet de citron en fin de cuisson pour une touche de fraîcheur.",
+        "Les herbes fraîches sont indispensables : le romarin sec devient amer."
+    ]
+},
+
+
+'poulet-salade-mediterraneenne': {
+    name:       'Poulet froid en salade méditerranéenne',
+    region:     'Provence',
+    anecdote:   'Le poulet rôti refroidi et effiloché, mêlé aux légumes du soleil, olives et herbes fraîches, compose une salade estivale simple et parfumée.',
+    tags:       ["Été", "Entrée", "Plat principal", "Facile"],
+    prep:       '20 min',
+    cuisson:    '1 h 15',
+    personnes:  4,
+    difficulte: 'Facile',
+
+    ingredients: [
+        {
+            groupe: "Volaille",
+            items: [
+                { qty: "1", name: "poulet rôti", note: "cuit la veille, effiloché" }
+            ]
+        },
+        {
+            groupe: "Légumes & garniture",
+            items: [
+                { qty: "2", name: "tomates", note: "en dés" },
+                { qty: "1", name: "poivron rouge", note: "en lanières" },
+                { qty: "1", name: "concombre", note: "en demi-rondelles" },
+                { qty: "1", name: "oignon rouge", note: "émincé finement" },
+                { qty: "100 g", name: "olives noires", note: "type Kalamata" },
+                { qty: "1 poignée", name: "persil ou basilic", note: "frais, ciselé" }
+            ]
+        },
+        {
+            groupe: "Vinaigrette méditerranéenne",
+            items: [
+                { qty: "4 c. à soupe", name: "huile d’olive", note: "" },
+                { qty: "2 c. à soupe", name: "jus de citron", note: "" },
+                { qty: "1 c. à café", name: "moutarde", note: "" },
+                { qty: "1 c. à café", name: "origan", note: "" },
+                { qty: "", name: "sel & poivre", note: "à ajuster" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Préparer le poulet",
+            texte: "Effilocher le poulet rôti froid en retirant la peau. Conserver les morceaux tendres et réguliers.",
+            timer: "5 min"
+        },
+        {
+            titre: "Couper les légumes",
+            texte: "Couper tomates, poivron, concombre et oignon rouge. Ajouter les olives et les herbes fraîches.",
+            timer: "10 min"
+        },
+        {
+            titre: "Préparer la vinaigrette",
+            texte: "Mélanger huile d’olive, citron, moutarde, origan, sel et poivre jusqu’à obtenir une sauce homogène.",
+            timer: "3 min"
+        },
+        {
+            titre: "Assembler la salade",
+            texte: "Mélanger délicatement le poulet effiloché avec les légumes et la vinaigrette. Rectifier l’assaisonnement.",
+            timer: "2 min"
+        },
+        {
+            titre: "Servir",
+            texte: "Servir bien frais, idéalement après 30 minutes au réfrigérateur pour que les saveurs se mêlent.",
+            timer: "5 min"
+        }
+    ],
+
+    conseils: [
+        "Ajouter de la feta ou de la mozzarella pour une version plus gourmande.",
+        "Un filet de vinaigre balsamique apporte une touche sucrée-acidulée.",
+        "Parfaite avec du pain grillé ou des croûtons maison."
+    ]
+},
+
 
     'quiche-lorraine': {
         name:       'Quiche lorraine',
@@ -4963,28 +6933,90 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Quiche lorraine","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Quiche lorraine","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
-    'raclette': {
-        name:       'Raclette savoyarde',
-        region:     'Savoie / Haute-Savoie',
-        anecdote:   'La raclette vient du mot \'racler\' : on racle le fromage fondu sur des pommes de terre vapeur et charcuteries.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+'raclette': {
+    name:       'Raclette savoyarde',
+    region:     'Savoie / Haute-Savoie',
+    anecdote:   'La raclette tire son nom du geste ancestral consistant à racler le fromage fondu directement sur les pommes de terre. Un rituel convivial des montagnes savoyardes.',
+    tags:       ["Hiver", "Plat principal", "Convivial"],
+    prep:       '20 min',
+    cuisson:    '30 min',
+    personnes:  4,
+    difficulte: 'Facile',
+
+    ingredients: [
+        {
+            groupe: "Fromage",
+            items: [
+                { qty: "600 à 800 g", name: "fromage à raclette", note: "nature ou fumé" }
+            ]
+        },
+        {
+            groupe: "Accompagnements chauds",
+            items: [
+                { qty: "1,2 kg", name: "pommes de terre", note: "à chair ferme, cuites vapeur" }
+            ]
+        },
+        {
+            groupe: "Charcuteries",
+            items: [
+                { qty: "150 g", name: "jambon cru", note: "" },
+                { qty: "150 g", name: "jambon blanc", note: "" },
+                { qty: "150 g", name: "rosette ou saucisson", note: "" },
+                { qty: "150 g", name: "viande des Grisons", note: "optionnel" }
+            ]
+        },
+        {
+            groupe: "Légumes & condiments",
+            items: [
+                { qty: "1 bocal", name: "cornichons", note: "" },
+                { qty: "1 bocal", name: "oignons au vinaigre", note: "" },
+                { qty: "1", name: "poivron", note: "en lamelles, optionnel" },
+                { qty: "1", name: "salade verte", note: "pour alléger le repas" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Préparer les pommes de terre",
+            texte: "Cuire les pommes de terre à la vapeur ou à l’eau jusqu’à ce qu’elles soient tendres. Les garder au chaud.",
+            timer: "25 min"
+        },
+        {
+            titre: "Disposer les accompagnements",
+            texte: "Préparer les assiettes de charcuteries, couper le fromage en tranches et disposer cornichons et oignons au vinaigre.",
+            timer: "10 min"
+        },
+        {
+            titre: "Chauffer l’appareil à raclette",
+            texte: "Installer l’appareil au centre de la table et le préchauffer.",
+            timer: "5 min"
+        },
+        {
+            titre: "Faire fondre le fromage",
+            texte: "Chaque convive fait fondre son fromage dans les coupelles puis le verse sur les pommes de terre.",
+            timer: "Variable"
+        },
+        {
+            titre: "Servir",
+            texte: "Accompagner de charcuteries, de salade et de condiments. Le repas se prolonge au rythme des coupelles.",
+            timer: "—"
+        }
+    ],
+
+    conseils: [
+        "Un vin blanc de Savoie (Apremont, Roussette) accompagne parfaitement la raclette.",
+        "Varier les fromages : raclette fumée, morbier, bleu de Bonneval.",
+        "Ajouter des champignons poêlés ou des légumes grillés pour une version plus légère."
+    ]
+},
 
     'ragout-marrons-saucisse': {
         name:       'Ragout de marrons à la saucisse',
@@ -4995,8 +7027,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5011,8 +7043,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Ratatouille niçoise","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Ratatouille niçoise","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5027,8 +7059,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Ratatouille froide sur pain grillé","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Ratatouille froide sur pain grillé","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5043,28 +7075,86 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
-    'reveillon-huitres-foie-gras': {
-        name:       'Huîtres et foie gras au réveillon',
-        region:     'France entière',
-        anecdote:   'La nuit de Noël en France se commence invariablement avec les huîtres, le foie gras et le champagne.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+'reveillon-huitres-foie-gras': {
+    name:       'Huîtres et foie gras au réveillon',
+    region:     'France entière',
+    anecdote:   'En France, le réveillon commence souvent par un duo emblématique : huîtres fraîches et foie gras, accompagnés d’un verre de champagne.',
+    tags:       ["Hiver", "Entrée", "Festif"],
+    prep:       '20 min',
+    cuisson:    '0 min',
+    personnes:  4,
+    difficulte: 'Facile',
+
+    ingredients: [
+        {
+            groupe: "Huîtres",
+            items: [
+                { qty: "24", name: "huîtres creuses n°3", note: "ou fines de claire" },
+                { qty: "1", name: "citron", note: "en quartiers" },
+                { qty: "1", name: "échalote", note: "pour la sauce mignonette" },
+                { qty: "5 cl", name: "vinaigre de vin rouge", note: "" }
+            ]
+        },
+        {
+            groupe: "Foie gras",
+            items: [
+                { qty: "250 g", name: "foie gras de canard", note: "mi-cuit, en tranches" },
+                { qty: "1", name: "baguette", note: "grillée ou pain d’épices" },
+                { qty: "1 pincée", name: "fleur de sel", note: "" },
+                { qty: "", name: "poivre du moulin", note: "" }
+            ]
+        },
+        {
+            groupe: "Accompagnements",
+            items: [
+                { qty: "1", name: "salade verte", note: "optionnelle" },
+                { qty: "1 poignée", name: "cornichons", note: "pour le foie gras" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Ouvrir les huîtres",
+            texte: "Ouvrir les huîtres juste avant de servir. Les disposer sur un lit de glace ou de gros sel pour les stabiliser.",
+            timer: "10 min"
+        },
+        {
+            titre: "Préparer la mignonette",
+            texte: "Hacher finement l’échalote et la mélanger avec le vinaigre de vin rouge. Servir dans un petit bol.",
+            timer: "3 min"
+        },
+        {
+            titre: "Préparer le foie gras",
+            texte: "Couper le foie gras en tranches régulières. Disposer avec du pain grillé ou du pain d’épices.",
+            timer: "5 min"
+        },
+        {
+            titre: "Dresser",
+            texte: "Présenter les huîtres avec citron et mignonette. Ajouter les tranches de foie gras, la fleur de sel, le poivre et les accompagnements.",
+            timer: "2 min"
+        },
+        {
+            titre: "Servir",
+            texte: "Servir bien frais, idéalement avec un verre de champagne ou un vin blanc sec.",
+            timer: "—"
+        }
+    ],
+
+    conseils: [
+        "Sortir le foie gras du réfrigérateur 10 minutes avant pour qu’il soit fondant.",
+        "Les huîtres doivent être ouvertes au dernier moment pour conserver toute leur fraîcheur.",
+        "Un pain d’épices légèrement toasté accompagne merveilleusement le foie gras."
+    ]
+},
+
 
     'rillettes-du-mans': {
         name:       'Rillettes du Mans',
@@ -5075,8 +7165,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Rillettes du Mans","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Rillettes du Mans","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5091,8 +7181,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Rillettes de sardines fraîches","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Rillettes de sardines fraîches","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5107,8 +7197,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Risotto aux asperges et parmesan","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Risotto aux asperges et parmesan","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5123,8 +7213,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Risotto aux cèpes et truffe noire","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Risotto aux cèpes et truffe noire","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5139,8 +7229,8 @@ const RECETTES = {
         cuisson:    '1 h 30',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5155,8 +7245,8 @@ const RECETTES = {
         cuisson:    '1 h 30',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5171,8 +7261,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Poisson","items":[{"qty":"1","name":"poisson blanc frais","note":""},{"qty":"1","name":"citron","note":"bio"}]},{"groupe":"Herbes & Condiments","items":[{"qty":"100 g","name":"beurre","note":"demi-sel"},{"qty":"quelques brins","name":"persil plat","note":"frais"}]}],
+        etapes: [{"titre":"Preparer le poisson","texte":"Ecailler, vider et rincer le poisson. L'assécher avec du papier absorbant.","timer":"10 min"},{"titre":"Cuire","texte":"Placer dans un plat beurré, aromé d'herbes et de citron. Enfourner 15-20 min.","timer":"20 min"},{"titre":"Finition","texte":"Napper de beurre blanc ou sauce si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5187,8 +7277,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Filet de saint-pierre aux câpres","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Filet de saint-pierre aux câpres","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5203,8 +7293,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Salade composée aux artichauts violets","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Salade composée aux artichauts violets","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5219,28 +7309,100 @@ const RECETTES = {
         cuisson:    '1 h 30',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
-    'salade-cesar': {
-        name:       'Salade César maison',
-        region:     'Côte d\'Azur / fusion',
-        anecdote:   'La salade César en version française avec poulet grillé, croûtons maison et anchois de Collioure.',
-        tags:       ["Hiver", "Entrée", "Facile"],
-        prep:       '20 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+'salade-cesar': {
+    name:       'Salade César maison',
+    region:     'Côte d\'Azur / fusion',
+    anecdote:   'La version française de la célèbre salade César, avec poulet grillé, croûtons maison et anchois de Collioure pour une touche méditerranéenne.',
+    tags:       ["Été", "Entrée", "Plat principal", "Facile"],
+    prep:       '20 min',
+    cuisson:    '15 min',
+    personnes:  4,
+    difficulte: 'Facile',
+
+    ingredients: [
+        {
+            groupe: "Volaille",
+            items: [
+                { qty: "2", name: "blancs de poulet", note: "grillés ou poêlés" }
+            ]
+        },
+        {
+            groupe: "Légumes",
+            items: [
+                { qty: "2", name: "cœurs de laitue romaine", note: "lavés et séchés" },
+                { qty: "10", name: "tomates cerises", note: "optionnel" }
+            ]
+        },
+        {
+            groupe: "Croûtons maison",
+            items: [
+                { qty: "4 tranches", name: "pain de campagne", note: "coupé en dés" },
+                { qty: "2 c. à soupe", name: "huile d’olive", note: "" },
+                { qty: "1 gousse", name: "ail", note: "écrasée" }
+            ]
+        },
+        {
+            groupe: "Sauce César",
+            items: [
+                { qty: "1", name: "jaune d’œuf", note: "" },
+                { qty: "1 c. à café", name: "moutarde", note: "" },
+                { qty: "1", name: "gousse d’ail", note: "hachée" },
+                { qty: "3", name: "filets d’anchois", note: "de Collioure" },
+                { qty: "1 c. à soupe", name: "jus de citron", note: "" },
+                { qty: "10 cl", name: "huile d’olive", note: "" },
+                { qty: "30 g", name: "parmesan", note: "râpé" },
+                { qty: "", name: "sel & poivre", note: "à ajuster" }
+            ]
+        },
+        {
+            groupe: "Finition",
+            items: [
+                { qty: "40 g", name: "parmesan", note: "en copeaux" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Préparer le poulet",
+            texte: "Saler, poivrer et griller les blancs de poulet dans une poêle ou au grill. Laisser tiédir puis couper en lamelles.",
+            timer: "10 min"
+        },
+        {
+            titre: "Préparer les croûtons",
+            texte: "Mélanger les dés de pain avec l’huile d’olive et l’ail. Faire dorer au four ou à la poêle jusqu’à ce qu’ils soient croustillants.",
+            timer: "8 min"
+        },
+        {
+            titre: "Préparer la sauce César",
+            texte: "Mixer jaune d’œuf, moutarde, ail, anchois et citron. Ajouter l’huile en filet pour émulsionner, puis le parmesan râpé.",
+            timer: "5 min"
+        },
+        {
+            titre: "Assembler la salade",
+            texte: "Mélanger la laitue avec la sauce. Ajouter poulet, croûtons et tomates cerises.",
+            timer: "2 min"
+        },
+        {
+            titre: "Servir",
+            texte: "Parsemer de copeaux de parmesan et servir immédiatement.",
+            timer: "2 min"
+        }
+    ],
+
+    conseils: [
+        "Pour une version plus authentique, ajouter un peu de Worcestershire dans la sauce.",
+        "Les croûtons maison font toute la différence : ne pas les brûler.",
+        "Le poulet peut être remplacé par des crevettes grillées."
+    ]
+},
 
     'salade-endives-noix-roquefort': {
         name:       'Salade d\'endives aux noix et roquefort',
@@ -5251,8 +7413,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Salade d\'endives aux noix et roquefort","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Salade d\'endives aux noix et roquefort","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5267,8 +7429,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Salade de fèves fraîches à la menthe","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Salade de fèves fraîches à la menthe","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5283,8 +7445,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Salade de figues, noix et roquefort","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Salade de figues, noix et roquefort","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5299,8 +7461,8 @@ const RECETTES = {
         cuisson:    '1 h 30',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5315,8 +7477,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Salade de fraises au basilic","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Salade de fraises au basilic","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5331,8 +7493,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Poisson","items":[{"qty":"1","name":"poisson blanc frais","note":""},{"qty":"1","name":"citron","note":"bio"}]},{"groupe":"Herbes & Condiments","items":[{"qty":"100 g","name":"beurre","note":"demi-sel"},{"qty":"quelques brins","name":"persil plat","note":"frais"}]}],
+        etapes: [{"titre":"Preparer le poisson","texte":"Ecailler, vider et rincer le poisson. L'assécher avec du papier absorbant.","timer":"10 min"},{"titre":"Cuire","texte":"Placer dans un plat beurré, aromé d'herbes et de citron. Enfourner 15-20 min.","timer":"20 min"},{"titre":"Finition","texte":"Napper de beurre blanc ou sauce si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5347,8 +7509,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Salade grecque classique","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Salade grecque classique","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5363,8 +7525,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Salade de haricots verts tièdes aux noisettes","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Salade de haricots verts tièdes aux noisettes","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5379,8 +7541,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Salade de haricots verts aux amandes","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Salade de haricots verts aux amandes","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5395,8 +7557,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5411,8 +7573,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Poisson","items":[{"qty":"1","name":"poisson blanc frais","note":""},{"qty":"1","name":"citron","note":"bio"}]},{"groupe":"Herbes & Condiments","items":[{"qty":"100 g","name":"beurre","note":"demi-sel"},{"qty":"quelques brins","name":"persil plat","note":"frais"}]}],
+        etapes: [{"titre":"Preparer le poisson","texte":"Ecailler, vider et rincer le poisson. L'assécher avec du papier absorbant.","timer":"10 min"},{"titre":"Cuire","texte":"Placer dans un plat beurré, aromé d'herbes et de citron. Enfourner 15-20 min.","timer":"20 min"},{"titre":"Finition","texte":"Napper de beurre blanc ou sauce si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5427,8 +7589,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5443,8 +7605,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Salade de mâche aux lardons et noix","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Salade de mâche aux lardons et noix","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5459,8 +7621,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Salade de maïs grillé et avocat","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Salade de maïs grillé et avocat","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5475,8 +7637,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Salade de maïs, avocat et coriandre","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Salade de maïs, avocat et coriandre","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5491,8 +7653,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Salade niçoise","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Salade niçoise","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5507,8 +7669,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Salade de pastèque et menthe","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Salade de pastèque et menthe","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5523,8 +7685,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5539,8 +7701,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Salade de pêches au basilic","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Salade de pêches au basilic","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5555,8 +7717,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Salade de pissenlit au lard chaud","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Salade de pissenlit au lard chaud","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5571,8 +7733,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Salade de pissenlits aux noix","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Salade de pissenlits aux noix","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5587,8 +7749,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Salade de pois gourmands aux copeaux de parmesan","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Salade de pois gourmands aux copeaux de parmesan","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5603,8 +7765,8 @@ const RECETTES = {
         cuisson:    '1 h 30',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5619,8 +7781,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Salade de poulpe au fenouil","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Salade de poulpe au fenouil","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5635,8 +7797,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Salade de poulpe grillé","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Salade de poulpe grillé","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5651,8 +7813,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Salade de quinoa aux petits pois et feta","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Salade de quinoa aux petits pois et feta","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5667,8 +7829,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Salade de quinoa, tomates et feta","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Salade de quinoa, tomates et feta","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5683,8 +7845,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Salade aux radis et beurre","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Salade aux radis et beurre","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5699,8 +7861,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Salade de riz aux légumes grillés","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Salade de riz aux légumes grillés","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5715,8 +7877,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Poisson","items":[{"qty":"1","name":"poisson blanc frais","note":""},{"qty":"1","name":"citron","note":"bio"}]},{"groupe":"Herbes & Condiments","items":[{"qty":"100 g","name":"beurre","note":"demi-sel"},{"qty":"quelques brins","name":"persil plat","note":"frais"}]}],
+        etapes: [{"titre":"Preparer le poisson","texte":"Ecailler, vider et rincer le poisson. L'assécher avec du papier absorbant.","timer":"10 min"},{"titre":"Cuire","texte":"Placer dans un plat beurré, aromé d'herbes et de citron. Enfourner 15-20 min.","timer":"20 min"},{"titre":"Finition","texte":"Napper de beurre blanc ou sauce si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5731,8 +7893,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Poisson","items":[{"qty":"1","name":"poisson blanc frais","note":""},{"qty":"1","name":"citron","note":"bio"}]},{"groupe":"Herbes & Condiments","items":[{"qty":"100 g","name":"beurre","note":"demi-sel"},{"qty":"quelques brins","name":"persil plat","note":"frais"}]}],
+        etapes: [{"titre":"Preparer le poisson","texte":"Ecailler, vider et rincer le poisson. L'assécher avec du papier absorbant.","timer":"10 min"},{"titre":"Cuire","texte":"Placer dans un plat beurré, aromé d'herbes et de citron. Enfourner 15-20 min.","timer":"20 min"},{"titre":"Finition","texte":"Napper de beurre blanc ou sauce si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5747,8 +7909,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5763,8 +7925,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Salade de tomates à l\'ancienne","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Salade de tomates à l\'ancienne","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5779,8 +7941,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5795,8 +7957,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Salade de tomates au thon et anchois","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Salade de tomates au thon et anchois","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5811,28 +7973,88 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Salade de pommes, céleri et noix","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Salade de pommes, céleri et noix","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
-    'sandwich-poulet-froid': {
-        name:       'Poulet rôti froid en sandwich',
-        region:     'France entière',
-        anecdote:   'Le reste de poulet du dimanche se glisse dans une baguette avec tomates, moutarde et cornichons pour le lundi midi.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '1 h 30',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+'sandwich-poulet-froid': {
+    name:       'Poulet rôti froid en sandwich',
+    region:     'France entière',
+    anecdote:   'Le reste de poulet rôti du dimanche se transforme en sandwich simple et délicieux pour le déjeuner du lundi.',
+    tags:       ["Été", "Printemps", "Plat principal", "Facile"],
+    prep:       '10 min',
+    cuisson:    '0 min',
+    personnes:  4,
+    difficulte: 'Facile',
+
+    ingredients: [
+        {
+            groupe: "Volaille",
+            items: [
+                { qty: "250 g", name: "poulet rôti froid", note: "effiloché ou en lamelles" }
+            ]
+        },
+        {
+            groupe: "Pain",
+            items: [
+                { qty: "1", name: "baguette", note: "ou 4 petits pains" }
+            ]
+        },
+        {
+            groupe: "Condiments",
+            items: [
+                { qty: "2 c. à soupe", name: "moutarde", note: "ou mayonnaise" },
+                { qty: "1 poignée", name: "cornichons", note: "coupés en rondelles" }
+            ]
+        },
+        {
+            groupe: "Crudités",
+            items: [
+                { qty: "1", name: "tomate", note: "en rondelles" },
+                { qty: "4 feuilles", name: "laitue", note: "" },
+                { qty: "1/2", name: "oignon rouge", note: "émincé finement" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Préparer le poulet",
+            texte: "Effilocher ou couper en lamelles le poulet rôti froid. Retirer la peau si souhaité.",
+            timer: "3 min"
+        },
+        {
+            titre: "Préparer le pain",
+            texte: "Couper la baguette en deux dans la longueur. Tartiner de moutarde ou de mayonnaise.",
+            timer: "2 min"
+        },
+        {
+            titre: "Garnir le sandwich",
+            texte: "Ajouter la laitue, les rondelles de tomate, l’oignon rouge et les cornichons. Disposer le poulet par-dessus.",
+            timer: "3 min"
+        },
+        {
+            titre: "Assembler",
+            texte: "Refermer la baguette et presser légèrement pour maintenir la garniture.",
+            timer: "1 min"
+        },
+        {
+            titre: "Servir",
+            texte: "Couper en parts et servir immédiatement ou emballer pour un repas à emporter.",
+            timer: "1 min"
+        }
+    ],
+
+    conseils: [
+        "Ajouter un filet de jus de citron pour une touche de fraîcheur.",
+        "Un peu de mayonnaise mélangée à des herbes fraîches fonctionne très bien.",
+        "Parfait avec une salade verte ou des chips maison."
+    ]
+},
+
 
     'sardines-grillees': {
         name:       'Sardines grillées au feu de bois',
@@ -5843,8 +8065,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Sardines grillées au feu de bois","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Sardines grillées au feu de bois","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5859,8 +8081,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Saucisses aux lentilles du Puy","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Saucisses aux lentilles du Puy","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5875,8 +8097,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Poisson","items":[{"qty":"1","name":"poisson blanc frais","note":""},{"qty":"1","name":"citron","note":"bio"}]},{"groupe":"Herbes & Condiments","items":[{"qty":"100 g","name":"beurre","note":"demi-sel"},{"qty":"quelques brins","name":"persil plat","note":"frais"}]}],
+        etapes: [{"titre":"Preparer le poisson","texte":"Ecailler, vider et rincer le poisson. L'assécher avec du papier absorbant.","timer":"10 min"},{"titre":"Cuire","texte":"Placer dans un plat beurré, aromé d'herbes et de citron. Enfourner 15-20 min.","timer":"20 min"},{"titre":"Finition","texte":"Napper de beurre blanc ou sauce si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5891,8 +8113,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Poisson","items":[{"qty":"1","name":"poisson blanc frais","note":""},{"qty":"1","name":"citron","note":"bio"}]},{"groupe":"Herbes & Condiments","items":[{"qty":"100 g","name":"beurre","note":"demi-sel"},{"qty":"quelques brins","name":"persil plat","note":"frais"}]}],
+        etapes: [{"titre":"Preparer le poisson","texte":"Ecailler, vider et rincer le poisson. L'assécher avec du papier absorbant.","timer":"10 min"},{"titre":"Cuire","texte":"Placer dans un plat beurré, aromé d'herbes et de citron. Enfourner 15-20 min.","timer":"20 min"},{"titre":"Finition","texte":"Napper de beurre blanc ou sauce si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5907,8 +8129,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Poisson","items":[{"qty":"1","name":"poisson blanc frais","note":""},{"qty":"1","name":"citron","note":"bio"}]},{"groupe":"Herbes & Condiments","items":[{"qty":"100 g","name":"beurre","note":"demi-sel"},{"qty":"quelques brins","name":"persil plat","note":"frais"}]}],
+        etapes: [{"titre":"Preparer le poisson","texte":"Ecailler, vider et rincer le poisson. L'assécher avec du papier absorbant.","timer":"10 min"},{"titre":"Cuire","texte":"Placer dans un plat beurré, aromé d'herbes et de citron. Enfourner 15-20 min.","timer":"20 min"},{"titre":"Finition","texte":"Napper de beurre blanc ou sauce si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5923,8 +8145,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Poisson","items":[{"qty":"1","name":"poisson blanc frais","note":""},{"qty":"1","name":"citron","note":"bio"}]},{"groupe":"Herbes & Condiments","items":[{"qty":"100 g","name":"beurre","note":"demi-sel"},{"qty":"quelques brins","name":"persil plat","note":"frais"}]}],
+        etapes: [{"titre":"Preparer le poisson","texte":"Ecailler, vider et rincer le poisson. L'assécher avec du papier absorbant.","timer":"10 min"},{"titre":"Cuire","texte":"Placer dans un plat beurré, aromé d'herbes et de citron. Enfourner 15-20 min.","timer":"20 min"},{"titre":"Finition","texte":"Napper de beurre blanc ou sauce si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5939,8 +8161,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5955,8 +8177,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Soufflé au fromage","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Soufflé au fromage","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5971,8 +8193,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -5987,8 +8209,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Soufflé au Grand Marnier","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Soufflé au Grand Marnier","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6003,8 +8225,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Soufflé chaud au Grand Marnier","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Soufflé chaud au Grand Marnier","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6019,8 +8241,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Soufflé au roquefort","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Soufflé au roquefort","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6035,8 +8257,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6051,8 +8273,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6067,8 +8289,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6083,8 +8305,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6099,8 +8321,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6115,8 +8337,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6131,8 +8353,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6147,8 +8369,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6163,8 +8385,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6179,8 +8401,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6195,8 +8417,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6211,8 +8433,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6227,8 +8449,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6243,8 +8465,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Poisson","items":[{"qty":"1","name":"poisson blanc frais","note":""},{"qty":"1","name":"citron","note":"bio"}]},{"groupe":"Herbes & Condiments","items":[{"qty":"100 g","name":"beurre","note":"demi-sel"},{"qty":"quelques brins","name":"persil plat","note":"frais"}]}],
+        etapes: [{"titre":"Preparer le poisson","texte":"Ecailler, vider et rincer le poisson. L'assécher avec du papier absorbant.","timer":"10 min"},{"titre":"Cuire","texte":"Placer dans un plat beurré, aromé d'herbes et de citron. Enfourner 15-20 min.","timer":"20 min"},{"titre":"Finition","texte":"Napper de beurre blanc ou sauce si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6259,8 +8481,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6275,8 +8497,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6291,8 +8513,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6307,8 +8529,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6323,8 +8545,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6339,8 +8561,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6355,8 +8577,8 @@ const RECETTES = {
         cuisson:    '15 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6371,28 +8593,93 @@ const RECETTES = {
         cuisson:    '15 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
-    'supremes-pintade-marrons': {
-        name:       'Suprêmes de pintade aux lardons et marrons',
-        region:     'Périgord / Ardèche',
-        anecdote:   'La pintade aux marrons est le plat de novembre avant les fêtes, un avant-goût de la dinde de Noël.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+'supremes-pintade-marrons': {
+    name:       'Suprêmes de pintade aux lardons et marrons',
+    region:     'Périgord / Ardèche',
+    anecdote:   'Plat d’automne par excellence, la pintade aux marrons annonce les repas festifs et rappelle les saveurs des sous-bois.',
+    tags:       ["Automne", "Hiver", "Plat principal", "Moyen"],
+    prep:       '20 min',
+    cuisson:    '40 min',
+    personnes:  4,
+    difficulte: 'Moyen',
+
+    ingredients: [
+        {
+            groupe: "Volaille",
+            items: [
+                { qty: "4", name: "suprêmes de pintade", note: "avec peau" }
+            ]
+        },
+        {
+            groupe: "Garniture",
+            items: [
+                { qty: "150 g", name: "lardons fumés", note: "" },
+                { qty: "200 g", name: "marrons cuits", note: "sous vide ou en bocal" },
+                { qty: "200 g", name: "champignons de Paris", note: "émincés (optionnel)" },
+                { qty: "2", name: "échalotes", note: "ciselées" }
+            ]
+        },
+        {
+            groupe: "Liquides & sauce",
+            items: [
+                { qty: "10 cl", name: "vin blanc sec", note: "" },
+                { qty: "15 cl", name: "bouillon de volaille", note: "" },
+                { qty: "10 cl", name: "crème fraîche", note: "épaisse ou liquide" }
+            ]
+        },
+        {
+            groupe: "Assaisonnement",
+            items: [
+                { qty: "1 branche", name: "thym", note: "" },
+                { qty: "1", name: "feuille de laurier", note: "" },
+                { qty: "", name: "sel & poivre", note: "à ajuster" },
+                { qty: "1 c. à soupe", name: "huile", note: "" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Saisir les suprêmes",
+            texte: "Faire chauffer l’huile dans une cocotte. Saisir les suprêmes côté peau jusqu’à coloration dorée. Retourner et cuire 2 minutes de l’autre côté.",
+            timer: "8 min"
+        },
+        {
+            titre: "Ajouter lardons et échalotes",
+            texte: "Retirer les suprêmes. Faire revenir les lardons et les échalotes dans la cocotte jusqu’à légère coloration.",
+            timer: "5 min"
+        },
+        {
+            titre: "Déglacer et mijoter",
+            texte: "Ajouter le vin blanc, laisser réduire de moitié. Ajouter le bouillon, le thym et le laurier. Remettre les suprêmes et couvrir.",
+            timer: "15 min"
+        },
+        {
+            titre: "Ajouter marrons et crème",
+            texte: "Incorporer les marrons (et les champignons si utilisés). Ajouter la crème et laisser mijoter doucement pour épaissir la sauce.",
+            timer: "10 min"
+        },
+        {
+            titre: "Servir",
+            texte: "Rectifier l’assaisonnement. Servir les suprêmes nappés de sauce, accompagnés de purée, pâtes fraîches ou légumes d’hiver.",
+            timer: "2 min"
+        }
+    ],
+
+    conseils: [
+        "Les marrons en bocal sont parfaits : ils ne s’écrasent pas et gardent leur parfum.",
+        "Ajouter un peu de cognac ou d’armagnac pour une version plus festive.",
+        "La pintade peut être remplacée par du poulet fermier, mais la saveur sera plus douce."
+    ]
+},
+
 
     'taboule-libanais': {
         name:       'Taboulé libanais',
@@ -6403,8 +8690,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Taboulé libanais","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Taboulé libanais","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6419,8 +8706,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Taboule maison","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Taboule maison","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6435,8 +8722,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Poisson","items":[{"qty":"1","name":"poisson blanc frais","note":""},{"qty":"1","name":"citron","note":"bio"}]},{"groupe":"Herbes & Condiments","items":[{"qty":"100 g","name":"beurre","note":"demi-sel"},{"qty":"quelques brins","name":"persil plat","note":"frais"}]}],
+        etapes: [{"titre":"Preparer le poisson","texte":"Ecailler, vider et rincer le poisson. L'assécher avec du papier absorbant.","timer":"10 min"},{"titre":"Cuire","texte":"Placer dans un plat beurré, aromé d'herbes et de citron. Enfourner 15-20 min.","timer":"20 min"},{"titre":"Finition","texte":"Napper de beurre blanc ou sauce si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6451,8 +8738,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Tartare de tomates aux herbes","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Tartare de tomates aux herbes","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6467,8 +8754,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Tarte aux abricots","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Tarte aux abricots","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6483,8 +8770,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Tarte aux abricots et romarin","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Tarte aux abricots et romarin","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6499,8 +8786,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Tarte au citron meringuée","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Tarte au citron meringuée","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6515,8 +8802,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Tarte fine aux coings et cannelle","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Tarte fine aux coings et cannelle","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6531,8 +8818,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6547,8 +8834,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Tarte aux épinards et ricotta","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Tarte aux épinards et ricotta","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6563,8 +8850,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6579,8 +8866,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6595,8 +8882,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6611,8 +8898,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6627,8 +8914,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6643,8 +8930,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Tarte aux fraises de Plougastel","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Tarte aux fraises de Plougastel","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6659,8 +8946,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6675,8 +8962,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Tarte au noix et caramel","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Tarte au noix et caramel","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6691,8 +8978,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Tarte aux noix de Grenoble","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Tarte aux noix de Grenoble","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6707,8 +8994,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6723,8 +9010,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Poisson","items":[{"qty":"1","name":"poisson blanc frais","note":""},{"qty":"1","name":"citron","note":"bio"}]},{"groupe":"Herbes & Condiments","items":[{"qty":"100 g","name":"beurre","note":"demi-sel"},{"qty":"quelques brins","name":"persil plat","note":"frais"}]}],
+        etapes: [{"titre":"Preparer le poisson","texte":"Ecailler, vider et rincer le poisson. L'assécher avec du papier absorbant.","timer":"10 min"},{"titre":"Cuire","texte":"Placer dans un plat beurré, aromé d'herbes et de citron. Enfourner 15-20 min.","timer":"20 min"},{"titre":"Finition","texte":"Napper de beurre blanc ou sauce si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6739,8 +9026,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6755,8 +9042,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6771,8 +9058,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Tarte au potiron","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Tarte au potiron","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6787,8 +9074,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Tarte aux prunes de Damas","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Tarte aux prunes de Damas","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6803,8 +9090,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6819,8 +9106,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Tarte Tatin","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Tarte Tatin","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6835,8 +9122,8 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"4","name":"oeufs","note":""},{"qty":"150 g","name":"sucre","note":""},{"qty":"200 g","name":"farine","note":"tamisee"}]},{"groupe":"Enrichissement","items":[{"qty":"100 g","name":"beurre","note":"fondu"},{"qty":"1","name":"vanille","note":"extrait ou gousse"}]}],
+        etapes: [{"titre":"Préparer la pâte","texte":"Crémer le beurre et le sucre. Ajouter les œufs un à un. Incorporer la farine.","timer":"15 min"},{"titre":"Cuire","texte":"Verser dans un moule préparé. Enfourner à 180°C selon le temps indiqué.","timer":"25 min"},{"titre":"Refroidir","texte":"Démouler après refroidissement partiel. Finir de refroidir sur une grille.","timer":"30 min"},{"titre":"Servir","texte":"Découper en parts, présenter avec une sauce ou glaçage si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6851,28 +9138,87 @@ const RECETTES = {
         cuisson:    '45 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
-    'tartiflette': {
-        name:       'Tartiflette',
-        region:     'Savoie',
-        anecdote:   'Inventée pour valoriser le reblochon savoyard, la tartiflette s\'est imposée comme star des tables d\'hiver.',
-        tags:       ["Hiver", "Plat principal", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+'tartiflette': {
+    name:       'Tartiflette',
+    region:     'Savoie',
+    anecdote:   'Créée dans les années 1980 pour promouvoir le reblochon, la tartiflette est devenue un incontournable des tables d’hiver.',
+    tags:       ["Hiver", "Plat principal", "Convivial"],
+    prep:       '20 min',
+    cuisson:    '40 min',
+    personnes:  4,
+    difficulte: 'Facile',
+
+    ingredients: [
+        {
+            groupe: "Base",
+            items: [
+                { qty: "1 kg", name: "pommes de terre", note: "à chair ferme" }
+            ]
+        },
+        {
+            groupe: "Garniture",
+            items: [
+                { qty: "200 g", name: "lardons fumés", note: "" },
+                { qty: "2", name: "oignons", note: "émincés" },
+                { qty: "10 cl", name: "vin blanc de Savoie", note: "" }
+            ]
+        },
+        {
+            groupe: "Fromage",
+            items: [
+                { qty: "1", name: "reblochon", note: "entier, coupé en deux dans l’épaisseur" }
+            ]
+        },
+        {
+            groupe: "Assaisonnement",
+            items: [
+                { qty: "", name: "sel & poivre", note: "à ajuster" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Cuire les pommes de terre",
+            texte: "Cuire les pommes de terre à l’eau ou à la vapeur jusqu’à ce qu’elles soient tendres. Les laisser tiédir puis les couper en rondelles.",
+            timer: "20 min"
+        },
+        {
+            titre: "Préparer la garniture",
+            texte: "Faire revenir les lardons et les oignons jusqu’à légère coloration. Déglacer avec le vin blanc et laisser réduire.",
+            timer: "10 min"
+        },
+        {
+            titre: "Assembler",
+            texte: "Dans un plat à gratin, alterner pommes de terre et garniture. Poivrer légèrement. Déposer le reblochon côté croûte vers le haut.",
+            timer: "5 min"
+        },
+        {
+            titre: "Gratiner",
+            texte: "Enfourner à 200°C jusqu’à ce que le fromage soit fondu et doré.",
+            timer: "15 min"
+        },
+        {
+            titre: "Servir",
+            texte: "Servir bien chaud avec une salade verte.",
+            timer: "—"
+        }
+    ],
+
+    conseils: [
+        "Un vin blanc de Savoie (Apremont, Roussette) dans la garniture donne un parfum authentique.",
+        "Ne pas trop saler : les lardons et le reblochon le sont déjà.",
+        "Pour une version plus riche, ajouter un peu de crème fraîche."
+    ]
+},
+
 
     'terrine-chevreuil': {
         name:       'Terrine de chevreuil aux baies',
@@ -6883,8 +9229,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6899,8 +9245,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6915,8 +9261,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6931,8 +9277,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6947,8 +9293,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6963,8 +9309,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6979,8 +9325,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Poisson","items":[{"qty":"1","name":"poisson blanc frais","note":""},{"qty":"1","name":"citron","note":"bio"}]},{"groupe":"Herbes & Condiments","items":[{"qty":"100 g","name":"beurre","note":"demi-sel"},{"qty":"quelques brins","name":"persil plat","note":"frais"}]}],
+        etapes: [{"titre":"Preparer le poisson","texte":"Ecailler, vider et rincer le poisson. L'assécher avec du papier absorbant.","timer":"10 min"},{"titre":"Cuire","texte":"Placer dans un plat beurré, aromé d'herbes et de citron. Enfourner 15-20 min.","timer":"20 min"},{"titre":"Finition","texte":"Napper de beurre blanc ou sauce si désiré.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -6995,8 +9341,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -7011,8 +9357,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Tian d\'aubergines au parmesan","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Tian d\'aubergines au parmesan","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -7027,8 +9373,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Tian provençal","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Tian provençal","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -7043,8 +9389,8 @@ const RECETTES = {
         cuisson:    '40 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -7059,8 +9405,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Tourte de perdrix aux cèpes","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Tourte de perdrix aux cèpes","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -7075,8 +9421,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Tourte aux trois viandes","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Tourte aux trois viandes","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -7091,8 +9437,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -7107,8 +9453,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Tripes à la mode de Caen","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Tripes à la mode de Caen","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -7123,28 +9469,84 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Haggis écossais (influence)","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Haggis écossais (influence)","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
-    'truite-aux-amandes': {
-        name:       'Filet de truite aux amandes',
-        region:     'Savoie / Auvergne',
-        anecdote:   'La truite de rivière meunière et ses amandes dorées est un plat classique des auberges de montagne au printemps.',
-        tags:       ["Printemps", "Plat principal", "Moyen"],
-        prep:       '20 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+'truite-aux-amandes': {
+    name:       'Filet de truite aux amandes',
+    region:     'Savoie / Auvergne',
+    anecdote:   'La truite meunière aux amandes dorées est un grand classique des auberges de montagne, simple et délicat.',
+    tags:       ["Printemps", "Été", "Plat principal", "Facile"],
+    prep:       '10 min',
+    cuisson:    '15 min',
+    personnes:  4,
+    difficulte: 'Facile',
+
+    ingredients: [
+        {
+            groupe: "Poisson",
+            items: [
+                { qty: "4", name: "filets de truite", note: "avec peau" },
+                { qty: "40 g", name: "farine", note: "pour fariner les filets" }
+            ]
+        },
+        {
+            groupe: "Amandes & beurre",
+            items: [
+                { qty: "60 g", name: "amandes effilées", note: "" },
+                { qty: "50 g", name: "beurre", note: "pour la cuisson" },
+                { qty: "20 g", name: "beurre", note: "pour les amandes" }
+            ]
+        },
+        {
+            groupe: "Assaisonnement & accompagnement",
+            items: [
+                { qty: "1", name: "citron", note: "en quartiers" },
+                { qty: "", name: "sel & poivre", note: "à ajuster" },
+                { qty: "1 poignée", name: "persil", note: "ciselé" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Préparer les filets",
+            texte: "Saler et poivrer les filets de truite. Les fariner légèrement des deux côtés.",
+            timer: "3 min"
+        },
+        {
+            titre: "Cuire la truite",
+            texte: "Faire fondre le beurre dans une poêle. Cuire les filets côté peau d’abord, puis retourner délicatement. Retirer quand la chair est juste cuite.",
+            timer: "8 min"
+        },
+        {
+            titre: "Dorer les amandes",
+            texte: "Dans une petite poêle, faire fondre le beurre et ajouter les amandes effilées. Les faire dorer en remuant.",
+            timer: "3 min"
+        },
+        {
+            titre: "Assembler",
+            texte: "Déposer les filets dans les assiettes, napper de beurre aux amandes et parsemer de persil.",
+            timer: "1 min"
+        },
+        {
+            titre: "Servir",
+            texte: "Servir immédiatement avec du riz, des pommes vapeur ou des légumes verts.",
+            timer: "—"
+        }
+    ],
+
+    conseils: [
+        "Ne pas surcuire la truite : elle doit rester moelleuse.",
+        "Ajouter un filet de citron juste avant de servir pour réveiller les saveurs.",
+        "Les amandes doivent être dorées mais jamais brûlées."
+    ]
+},
+
 
     'tzatziki': {
         name:       'Tzatziki et crudités',
@@ -7155,8 +9557,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Ingrédients","items":[{"qty":"varie","name":"Tzatziki et crudités","note":"à adapter"}]}],
+        etapes: [{"titre":"Préparer Tzatziki et crudités","texte":"Rassembler et préparer les ingrédients.","timer":"15 min"},{"titre":"Cuisson","texte":"Cuire selon le mode habituel.","timer":"30 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -7171,8 +9573,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Viande","items":[{"qty":"1 kg","name":"viande rouge de qualite","note":""},{"qty":"2","name":"oignon","note":"pique de clous de girofle"}]},{"groupe":"Aromates & Herbes","items":[{"qty":"3","name":"gousses d'ail","note":""},{"qty":"bouquet garni","name":"thym, laurier, persil","note":""}]}],
+        etapes: [{"titre":"Preparer la viande","texte":"Sortir la viande du refrigerateur 30 min avant. L'assaisonner genereuement.","timer":"45 min"},{"titre":"Cuire","texte":"Placer dans le four prealablement chauffe. Arroser regulierement.","timer":"60 min"},{"titre":"Repos","texte":"Laisser reposer 10 minutes avant de servir pour une meilleure saveur.","timer":"10 min"},{"titre":"Servir","texte":"Decouper et disposer dans le plat de service, napper de jus.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -7187,8 +9589,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -7203,44 +9605,169 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
-    'veloute-chataignes-foie-gras': {
-        name:       'Velouté de châtaignes au foie gras',
-        region:     'Périgord / Ardèche',
-        anecdote:   'Les châtaignes de l\'automne en velouté avec quelques dés de foie gras mi-cuit : le luxe simple du Sud-Ouest.',
-        tags:       ["Hiver", "Plat principal", "Facile"],
-        prep:       '15 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+'veloute-chataignes-foie-gras': {
+    name:       'Velouté de châtaignes au foie gras',
+    region:     'Périgord / Ardèche',
+    anecdote:   'Les châtaignes d’automne, mixées en velouté et servies avec quelques dés de foie gras, offrent un luxe simple et chaleureux du Sud-Ouest.',
+    tags:       ["Automne", "Hiver", "Entrée", "Facile"],
+    prep:       '15 min',
+    cuisson:    '25 min',
+    personnes:  4,
+    difficulte: 'Facile',
 
-    'veloute-lentilles-noires': {
-        name:       'Velouté de lentilles noires (beluga) au foie gras',
-        region:     'Périgord / Berry',
-        anecdote:   'Les lentilles noires beluga en velouté soyeux avec quelques tranches de foie gras mi-cuit : l\'entrée de l\'Avent.',
-        tags:       ["Hiver", "Plat principal", "Facile"],
-        prep:       '15 min',
-        cuisson:    '30 min',
-        personnes:  4,
-        difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
-        conseils: [
-            "A adapter selon vos gouts et ingredients disponibles",
-        ],
-    },
+    ingredients: [
+        {
+            groupe: "Base du velouté",
+            items: [
+                { qty: "400 g", name: "châtaignes cuites", note: "sous vide ou en bocal" },
+                { qty: "1", name: "oignon", note: "émincé" },
+                { qty: "1", name: "échalote", note: "ciselée" },
+                { qty: "1", name: "gousse d’ail", note: "" },
+                { qty: "20 g", name: "beurre", note: "" }
+            ]
+        },
+        {
+            groupe: "Liquides",
+            items: [
+                { qty: "60 cl", name: "bouillon de volaille", note: "" },
+                { qty: "10 cl", name: "crème fraîche", note: "liquide" }
+            ]
+        },
+        {
+            groupe: "Foie gras",
+            items: [
+                { qty: "120 g", name: "foie gras de canard mi-cuit", note: "en petits dés" }
+            ]
+        },
+        {
+            groupe: "Assaisonnement",
+            items: [
+                { qty: "", name: "sel & poivre", note: "à ajuster" },
+                { qty: "1 pincée", name: "noix de muscade", note: "optionnelle" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Faire revenir les aromates",
+            texte: "Faire fondre le beurre dans une casserole. Ajouter oignon, échalote et ail, puis faire suer sans coloration.",
+            timer: "5 min"
+        },
+        {
+            titre: "Ajouter les châtaignes",
+            texte: "Incorporer les châtaignes et mélanger pour les enrober de beurre et d’aromates.",
+            timer: "2 min"
+        },
+        {
+            titre: "Mouiller et cuire",
+            texte: "Verser le bouillon de volaille, saler légèrement et laisser mijoter jusqu’à ce que les châtaignes soient très tendres.",
+            timer: "15 min"
+        },
+        {
+            titre: "Mixer le velouté",
+            texte: "Mixer finement, ajouter la crème et rectifier l’assaisonnement (sel, poivre, muscade).",
+            timer: "3 min"
+        },
+        {
+            titre: "Servir",
+            texte: "Verser le velouté dans des bols et ajouter quelques dés de foie gras au centre. Servir immédiatement.",
+            timer: "—"
+        }
+    ],
+
+    conseils: [
+        "Pour une version plus festive, ajouter un filet d’huile de truffe juste avant de servir.",
+        "Le foie gras doit être ajouté au dernier moment pour fondre légèrement sans disparaître.",
+        "Un peu de céleri branche dans la cuisson apporte une note végétale très agréable."
+    ]
+},
+
+'veloute-lentilles-noires': {
+    name:       'Velouté de lentilles noires (beluga) au foie gras',
+    region:     'Périgord / Berry',
+    anecdote:   'Les lentilles beluga, surnommées “caviar végétal”, donnent un velouté profond et élégant, sublimé par quelques tranches de foie gras mi-cuit.',
+    tags:       ["Automne", "Hiver", "Entrée", "Facile"],
+    prep:       '15 min',
+    cuisson:    '30 min',
+    personnes:  4,
+    difficulte: 'Facile',
+
+    ingredients: [
+        {
+            groupe: "Base du velouté",
+            items: [
+                { qty: "200 g", name: "lentilles noires beluga", note: "rincées" },
+                { qty: "1", name: "oignon", note: "émincé" },
+                { qty: "1", name: "carotte", note: "en dés" },
+                { qty: "1", name: "gousse d’ail", note: "" },
+                { qty: "20 g", name: "beurre", note: "" }
+            ]
+        },
+        {
+            groupe: "Liquides",
+            items: [
+                { qty: "80 cl", name: "bouillon de volaille", note: "" },
+                { qty: "10 cl", name: "crème fraîche", note: "liquide" }
+            ]
+        },
+        {
+            groupe: "Foie gras",
+            items: [
+                { qty: "120 g", name: "foie gras de canard mi-cuit", note: "en dés ou fines tranches" }
+            ]
+        },
+        {
+            groupe: "Assaisonnement",
+            items: [
+                { qty: "", name: "sel & poivre", note: "à ajuster" },
+                { qty: "1 pincée", name: "piment d’Espelette", note: "optionnel" }
+            ]
+        }
+    ],
+
+    etapes: [
+        {
+            titre: "Faire revenir les aromates",
+            texte: "Faire fondre le beurre dans une casserole. Ajouter oignon, carotte et ail, puis faire suer sans coloration.",
+            timer: "5 min"
+        },
+        {
+            titre: "Ajouter les lentilles",
+            texte: "Incorporer les lentilles beluga et mélanger pour les enrober.",
+            timer: "2 min"
+        },
+        {
+            titre: "Cuire le velouté",
+            texte: "Verser le bouillon, saler légèrement et laisser mijoter jusqu’à ce que les lentilles soient tendres.",
+            timer: "20 min"
+        },
+        {
+            titre: "Mixer",
+            texte: "Mixer finement avec la crème. Ajuster la texture avec un peu de bouillon si nécessaire. Rectifier l’assaisonnement.",
+            timer: "3 min"
+        },
+        {
+            titre: "Servir",
+            texte: "Verser dans des bols et ajouter quelques dés ou tranches de foie gras. Saupoudrer de piment d’Espelette.",
+            timer: "—"
+        }
+    ],
+
+    conseils: [
+        "Le velouté doit rester épais et soyeux : ajouter la crème en fin de mixage pour plus d’onctuosité.",
+        "Le foie gras doit être ajouté au dernier moment pour fondre légèrement sans disparaître.",
+        "Un filet d’huile de noisette apporte une note très élégante."
+    ]
+},
+
 
     'veloute-oseille': {
         name:       'Velouté d\'oseille',
@@ -7251,8 +9778,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -7267,8 +9794,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -7283,8 +9810,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -7299,8 +9826,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -7315,8 +9842,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -7331,8 +9858,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Facile',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
@@ -7347,8 +9874,8 @@ const RECETTES = {
         cuisson:    '30 min',
         personnes:  4,
         difficulte: 'Moyen',
-        ingredients: [],
-        etapes: [],
+        ingredients: [{"groupe":"Base","items":[{"qty":"1 litre","name":"bouillon ou eau","note":""},{"qty":"500 g","name":"legumes varies","note":"de saison"}]},{"groupe":"Finition","items":[{"qty":"100 ml","name":"creme fraiche","note":"optionnel"},{"qty":"poignee","name":"croutons","note":"maison"}]}],
+        etapes: [{"titre":"Préparer les légumes","texte":"Eplucher et découper les légumes en morceaux réguliers.","timer":"15 min"},{"titre":"Cuire","texte":"Porter le bouillon à ébullition, ajouter les légumes et laisser cuire 20 min.","timer":"25 min"},{"titre":"Mixer et affiner","texte":"Mixer jusqu'à obtenir la texture désirée. Tamiser si nécessaire.","timer":"5 min"},{"titre":"Finition","texte":"Réchauffer doucement, ajouter la crème, assaisonner. Servir avec croûtons.","timer":"5 min"}],
         conseils: [
             "A adapter selon vos gouts et ingredients disponibles",
         ],
