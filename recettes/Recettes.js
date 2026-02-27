@@ -2910,21 +2910,15 @@ const RECETTES = {
         name:       'Far breton aux pruneaux',
         region:     'Bretagne',
         anecdote:   'Le far breton est un flan épais et moelleux dont la recette varie d\'une famille bretonne à l\'autre.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Dessert", "Moyen"],
+        prep:       '15 min',
+        cuisson:    '40 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -2932,21 +2926,15 @@ const RECETTES = {
         name:       'Feuilleté de cèpes en croûte',
         region:     'Périgord / Gascogne',
         anecdote:   'Les cèpes de Bordeaux enfermés dans une croûte feuilletée dorée : la luxueuse entrée de l\'automne gersois.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -2954,21 +2942,15 @@ const RECETTES = {
         name:       'Feuilleté au fromage de chèvre et noix',
         region:     'Loire / Périgord',
         anecdote:   'Le chèvre fondu en feuilleté doré avec les noix fraîches de saison est une entrée simple et savoureuse.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -2976,21 +2958,15 @@ const RECETTES = {
         name:       'Feuilleté de Saint-Nicolas aux pralines',
         region:     'Alsace / Lorraine',
         anecdote:   'La veille de la Saint-Nicolas, on prépare des petits feuilletés sucrés en forme de Père Fouettard.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -2998,21 +2974,15 @@ const RECETTES = {
         name:       'Figues fraîches en gratin',
         region:     'Languedoc / Corse',
         anecdote:   'Les figues violettes de fin août gratinées au four avec fromage blanc et miel sont un dessert simple et élégant.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3020,21 +2990,15 @@ const RECETTES = {
         name:       'Figues fraîches au jambon sec',
         region:     'Languedoc / Corse',
         anecdote:   'Les premières figues violettes du Languedoc avec charcuterie sèche de Corse : le mariage sucré-salé de l\'été.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3042,21 +3006,15 @@ const RECETTES = {
         name:       'Filet de bœuf en croûte (Beef Wellington)',
         region:     'Île-de-France / fusion',
         anecdote:   'Le filet de bœuf en croûte feuilletée avec duxelles de champignons est le grand classique des repas de fête.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3064,21 +3022,15 @@ const RECETTES = {
         name:       'Flamiche aux bettes',
         region:     'Picardie',
         anecdote:   'Les bettes printanières remplacent les poireaux dans cette flamiche de mars, plus tendre et légèrement amère.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3086,21 +3038,15 @@ const RECETTES = {
         name:       'Flamiche aux poireaux',
         region:     'Picardie',
         anecdote:   'Tarte fondante aux poireaux d\'hiver, la flamiche est la fierté de Picardie par les jours froids.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3108,21 +3054,15 @@ const RECETTES = {
         name:       'Poêlée de courgettes fleurs farcies',
         region:     'Nice / Côte d\'Azur',
         anecdote:   'Les fleurs de courgettes, trésor des jardins de Nice, se farcissent à la ricotta et se poêlent à l\'huile d\'olive.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Dessert", "Moyen"],
+        prep:       '15 min',
+        cuisson:    '40 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3130,21 +3070,15 @@ const RECETTES = {
         name:       'Foie gras poêlé aux figues sèches',
         region:     'Périgord / Gascogne',
         anecdote:   'Le foie gras frais poêlé doré avec les figues sèches caramélisées est l\'entrée du réveillon par anticipation.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3152,21 +3086,15 @@ const RECETTES = {
         name:       'Foie gras mi-cuit au torchon',
         region:     'Périgord / Gascogne',
         anecdote:   'Le foie gras mi-cuit au torchon se prépare deux semaines avant Noël pour qu\'il soit à son apogée le 24.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3174,21 +3102,15 @@ const RECETTES = {
         name:       'Foie gras poêlé au pain d\'épice',
         region:     'Périgord / Alsace',
         anecdote:   'Le foie gras frais poêlé sur un toast de pain d\'épice avec fleur de sel : le dernier luxe avant minuit.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3196,21 +3118,15 @@ const RECETTES = {
         name:       'Fondue savoyarde',
         region:     'Savoie',
         anecdote:   'Beaufort, comté et emmental fondus au vin blanc : la fondue est le plat convivial des chalets savoyards.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3218,21 +3134,15 @@ const RECETTES = {
         name:       'Fraisier classique',
         region:     'Île-de-France',
         anecdote:   'Le fraisier, gâteau de fête aux fraises de France et crème mousseline, est le dessert emblématique du mois de mai.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3240,21 +3150,15 @@ const RECETTES = {
         name:       'Fricassée de lapin au cidre',
         region:     'Normandie',
         anecdote:   'Le lapin fermier mijoté au cidre normand et à la crème fraîche est un plat de campagne généreux.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3262,21 +3166,15 @@ const RECETTES = {
         name:       'Fricassée de lapin aux pruneaux',
         region:     'Touraine / Bourgogne',
         anecdote:   'Le lapin aux pruneaux de Tours est un plat de saison qui réunit les flaveurs du Val de Loire.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3284,21 +3182,15 @@ const RECETTES = {
         name:       'Fricassée de morilles à la crème',
         region:     'Franche-Comté / Lorraine',
         anecdote:   'Avril est le mois des morilles. Ces champignons coniques et bruns se poêlent simplement à la crème fraîche.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Dessert", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3306,21 +3198,15 @@ const RECETTES = {
         name:       'Fricassée de poulet aux champignons',
         region:     'Bourgogne',
         anecdote:   'Les champignons séchés de l\'hiver réhydratés donnent à cette fricassée bourguignonne toute leur profondeur.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3328,21 +3214,15 @@ const RECETTES = {
         name:       'Frittata aux légumes d\'été',
         region:     'Provence / Côte d\'Azur',
         anecdote:   'La frittata italienne, omelette épaisse aux légumes de saison, est idéale chaude ou froide au pique-nique.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3350,21 +3230,15 @@ const RECETTES = {
         name:       'Galantine de volaille',
         region:     'Île-de-France / Lyonnais',
         anecdote:   'Entre Noël et le Nouvel An, on prépare la galantine : volaille désossée et farcie en ballotine, servie froide.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3372,21 +3246,15 @@ const RECETTES = {
         name:       'Galette des Rois briochée',
         region:     'Sud de la France',
         anecdote:   'Dans le Midi, la galette est une brioche en couronne garnie de fruits confits, pour la fête des Rois.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3394,21 +3262,15 @@ const RECETTES = {
         name:       'Galette des Rois frangipane',
         region:     'Paris / Nord',
         anecdote:   'La veille de l\'Épiphanie, la galette trône sur la table. Qui trouvera la fève ?',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3416,21 +3278,15 @@ const RECETTES = {
         name:       'Galettes de sarrasin complètes',
         region:     'Bretagne',
         anecdote:   'La galette de blé noir est l\'âme bretonne. Garnie d\'œuf, de jambon et de fromage, elle nourrit corps et esprit.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3438,21 +3294,15 @@ const RECETTES = {
         name:       'Garbure béarnaise',
         region:     'Béarn',
         anecdote:   'Soupe paysanne épaisse au confit de canard et aux légumes d\'hiver, cœur chaud des Pyrénées.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Sauce", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3460,21 +3310,15 @@ const RECETTES = {
         name:       'Garbure aux haricots tarbais',
         region:     'Hautes-Pyrénées',
         anecdote:   'Le haricot tarbais, tendre et délicat, donne à cette garbure pyrénéenne son velouté incomparable.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3482,21 +3326,15 @@ const RECETTES = {
         name:       'Gaspacho andalou',
         region:     'Espagne / Languedoc',
         anecdote:   'La soupe froide de tomates espagnole est adoptée dès mai dans le Languedoc quand la chaleur revient.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3504,21 +3342,15 @@ const RECETTES = {
         name:       'Gaspacho vert au concombre',
         region:     'Provence / Espagne',
         anecdote:   'Le gaspacho vert au concombre, avocat, basilic et citron vert est la soupe froide la plus désaltérante.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3526,21 +3358,15 @@ const RECETTES = {
         name:       'Gâteau basque à la crème',
         region:     'Pays Basque',
         anecdote:   'Le gâteau basque à la crème pâtissière vanillée enfermée dans une pâte sablée est la pâtisserie du Pays Basque.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Dessert", "Moyen"],
+        prep:       '15 min',
+        cuisson:    '40 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3548,21 +3374,15 @@ const RECETTES = {
         name:       'Gazpacho de pastèque et feta',
         region:     'Languedoc / Provence',
         anecdote:   'La pastèque fraîche en gazpacho avec feta émiettée et menthe est la soupe froide la plus désaltérante de l\'été.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3570,21 +3390,15 @@ const RECETTES = {
         name:       'Gigot de chevreuil aux airelles',
         region:     'Alsace / Lorraine',
         anecdote:   'La saison de chasse s\'ouvre en septembre. Le chevreuil aux airelles sauvages est le grand plat des chasseurs.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '1 h 30',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3592,21 +3406,15 @@ const RECETTES = {
         name:       'Rôti de gigot aux herbes de printemps',
         region:     'Provence',
         anecdote:   'Le gigot d\'agneau parfumé au romarin, thym et ail est le plat pascale traditionnel du Sud.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Printemps", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '1 h 30',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3614,21 +3422,15 @@ const RECETTES = {
         name:       'Gigot d\'agneau de 7 heures',
         region:     'Provence',
         anecdote:   'Confit si longtemps que la chair fond sans couteau, ce gigot est la récompense de la patience.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '1 h 30',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3636,21 +3438,15 @@ const RECETTES = {
         name:       'Poêlée de girolles à la crème',
         region:     'Vosges / Alsace',
         anecdote:   'Les girolles des Vosges en septembre sont d\'or. Simplement poêlées au beurre avec persil et crème fraîche.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Dessert", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3658,21 +3454,15 @@ const RECETTES = {
         name:       'Glace maison à la fraise',
         region:     'France entière',
         anecdote:   'Les fraises de fin de saison font la meilleure glace maison : mixer, sucrer, turbiner. L\'été en pot.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3680,21 +3470,15 @@ const RECETTES = {
         name:       'Glace maison à la lavande et miel',
         region:     'Provence',
         anecdote:   'La lavande de Haute-Provence infusée dans la crème avec le miel de fleurs : une glace unique et parfumée.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3702,21 +3486,15 @@ const RECETTES = {
         name:       'Gnocchis de pommes de terre au pesto',
         region:     'Provence / fusion',
         anecdote:   'Les gnocchis maison, moelleux et légers, avec le pesto au basilic frais sont le plat de printemps le plus simple.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Printemps", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3724,21 +3502,15 @@ const RECETTES = {
         name:       'Gratin d\'asperges vertes au parmesan',
         region:     'Provence',
         anecdote:   'Les asperges vertes plus rustiques que les blanches se gratinent rapidement avec parmesan et huile d\'olive.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3746,21 +3518,15 @@ const RECETTES = {
         name:       'Gratin de blettes au fromage',
         region:     'Provence / Nice',
         anecdote:   'Les premières blettes de mars au fromage rappellent que le printemps refait surface dans les jardins niçois.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Printemps", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3768,21 +3534,15 @@ const RECETTES = {
         name:       'Gratin de blettes au riz et parmesan',
         region:     'Provence / Nice',
         anecdote:   'La blette, légume méditerranéen par excellence, en gratin de riz à la niçoise : le plat des jardins d\'automne.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3790,21 +3550,15 @@ const RECETTES = {
         name:       'Gratin de cardons à la moelle',
         region:     'Lyon',
         anecdote:   'Le cardon, légume oublié, est une fierté lyonnaise servie au moment de Noël ou des banquets hivernaux.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3812,21 +3566,15 @@ const RECETTES = {
         name:       'Gratin de céleri aux champignons',
         region:     'Île-de-France / Bourgogne',
         anecdote:   'Le céleri rave gratiné avec champignons et gruyère fondu est un plat d\'hiver oublié à redécouvrir.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3834,21 +3582,15 @@ const RECETTES = {
         name:       'Gratin de champignons au fromage',
         region:     'Auvergne / Franche-Comté',
         anecdote:   'Les champignons de culture et sauvages mélangés, gratinés au comté ou au cantal : un plat simple et savoureux.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3856,21 +3598,15 @@ const RECETTES = {
         name:       'Gratin de chou-fleur sauce Mornay',
         region:     'Normandie / Paris',
         anecdote:   'Le chou-fleur de Bretagne nappé de sauce Mornay gratinée est un classique de la cuisine familiale.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3878,21 +3614,15 @@ const RECETTES = {
         name:       'Gratin de courge au parmesan',
         region:     'Île-de-France / Provence',
         anecdote:   'La courge butternut ou potimarron coupée en tranches, gratinée avec parmesan et sauge fraîche.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3900,21 +3630,15 @@ const RECETTES = {
         name:       'Gratin de courgettes au chèvre',
         region:     'Provence',
         anecdote:   'Les courgettes explosent en juillet. Gratinées avec chèvre frais et thym, elles deviennent fondantes et parfumées.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3922,21 +3646,15 @@ const RECETTES = {
         name:       'Gratin dauphinois',
         region:     'Dauphiné',
         anecdote:   'En plein hiver, les pommes de terre de montagne fondent sous la crème dans ce gratin réconfortant.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3944,21 +3662,15 @@ const RECETTES = {
         name:       'Gratin d\'endives au jambon',
         region:     'Nord / Flandres',
         anecdote:   'Le chicon braisé enroulé dans du jambon blanc, nappé de béchamel et gratinée : la recette du Nord.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3966,21 +3678,15 @@ const RECETTES = {
         name:       'Gratin de macaroni',
         region:     'Savoie',
         anecdote:   'Les macaronis gratinés au comté et à la crème de Savoie réchauffent les longues soirées de montagne.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -3988,21 +3694,15 @@ const RECETTES = {
         name:       'Gratin de macaroni au comté et truffe',
         region:     'Franche-Comté',
         anecdote:   'Les macaronis gratinés au comté affiné avec quelques lamelles de truffe noire sont un luxe accessible.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4010,21 +3710,15 @@ const RECETTES = {
         name:       'Gratin de pommes de terre au munster',
         region:     'Alsace / Vosges',
         anecdote:   'Le munster fermier des Vosges fond dans ce gratin rustique qui embaume toute la maison.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4032,21 +3726,15 @@ const RECETTES = {
         name:       'Gratin de poireaux au jambon',
         region:     'Picardie / Nord',
         anecdote:   'Les poireaux d\'hiver encore en place au jardin se gratinent avec jambon et béchamel dans un plat familial.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4054,21 +3742,15 @@ const RECETTES = {
         name:       'Gratin de potiron au gorgonzola',
         region:     'Savoie / fusion',
         anecdote:   'Le potiron doux d\'automne avec le piquant du gorgonzola : un gratin audacieux et réconfortant.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4076,21 +3758,15 @@ const RECETTES = {
         name:       'Gratin de chou romanesco au fromage',
         region:     'Bretagne / Île-de-France',
         anecdote:   'Le chou romanesco, sculptural et vert, gratiné au four avec béchamel et comté est un légume d\'automne remarquable.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4098,21 +3774,15 @@ const RECETTES = {
         name:       'Gratin de tomates anciennes',
         region:     'Provence',
         anecdote:   'Les tomates cœur-de-bœuf farcies à la chapelure, parmesan et herbes dorées au four sont la quintessence de l\'été.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4120,21 +3790,15 @@ const RECETTES = {
         name:       'Grillades d\'agneau au romarin',
         region:     'Provence / Languedoc',
         anecdote:   'Le premier barbecue de l\'année avec l\'agneau du printemps, quelques brins de romarin jetés sur les braises.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Été", "Plat principal", "Moyen"],
+        prep:       '10 min',
+        cuisson:    '15 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4142,21 +3806,15 @@ const RECETTES = {
         name:       'Grillades de merguez et agneau',
         region:     'Maghreb / France entière',
         anecdote:   'Les merguez épicées et l\'agneau au barbecue sont le repas de plein air de tout l\'été en France.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Printemps", "Plat principal", "Moyen"],
+        prep:       '10 min',
+        cuisson:    '15 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4164,21 +3822,15 @@ const RECETTES = {
         name:       'Hachis de bœuf aux pommes de terre',
         region:     'France entière',
         anecdote:   'Le hachis maison avec pommes de terre écrasées au beurre est le plat d\'automne familial par excellence.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4186,21 +3838,15 @@ const RECETTES = {
         name:       'Hachis Parmentier',
         region:     'Île-de-France',
         anecdote:   'Antoine Parmentier popularisa la pomme de terre au XVIIIe siècle. Ce gratin porte son nom en hommage.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4208,21 +3854,15 @@ const RECETTES = {
         name:       'Restes de Noël en hachis Parmentier',
         region:     'France entière',
         anecdote:   'Le 26 décembre, les restes de dinde ou de chapon se transforment en hachis Parmentier familial et généreux.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4230,21 +3870,15 @@ const RECETTES = {
         name:       'Homard à l\'armoricaine',
         region:     'Bretagne',
         anecdote:   'Pour la Saint-Valentin, le homard breton flambé au cognac et mijoté à la tomate incarne le luxe du bord de mer.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4252,21 +3886,15 @@ const RECETTES = {
         name:       'Homard grillé au champagne',
         region:     'Bretagne / Normandie',
         anecdote:   'Pour le réveillon du 31, le homard breton beurré et flambé au champagne est le roi de la table de fête.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4274,21 +3902,15 @@ const RECETTES = {
         name:       'Huîtres gratinées au champagne',
         region:     'Bretagne / Normandie',
         anecdote:   'Les huîtres de décembre sont grasses et iodées. Légèrement gratinées au champagne, elles ouvrent les fêtes.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4296,21 +3918,15 @@ const RECETTES = {
         name:       'Joue de bœuf braisée au vin rouge',
         region:     'Bourgogne / Languedoc',
         anecdote:   'La joue de bœuf, morceau gélatineux et savoureux, mijotée au vin rouge jusqu\'à fondre : la perfection de l\'automne.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4318,21 +3934,15 @@ const RECETTES = {
         name:       'Flamme de joue de porc aux lentilles',
         region:     'Île-de-France / Auvergne',
         anecdote:   'La joue de porc mijotée lentement avec les lentilles vertes du Puy est un plat de bistrot profond et réconfortant.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4340,21 +3950,15 @@ const RECETTES = {
         name:       'Bouillie de sarrasin',
         region:     'Bretagne',
         anecdote:   'Le kig ha farz breton, bouillie de blé noir cuite en baluchon dans le pot-au-feu, est un plat unique au monde.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4362,21 +3966,15 @@ const RECETTES = {
         name:       'Kig ha farz',
         region:     'Bretagne',
         anecdote:   'Le pot-au-feu breton avec sa bouillie de blé noir cuite en baluchon dans le bouillon est un plat unique au monde.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Dessert", "Moyen"],
+        prep:       '15 min',
+        cuisson:    '40 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4384,21 +3982,15 @@ const RECETTES = {
         name:       'Lapin à la moutarde',
         region:     'Bourgogne / Dijon',
         anecdote:   'La moutarde de Dijon, forte et parfumée, est l\'alliée naturelle du lapin en sauce crémeuse.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4406,21 +3998,15 @@ const RECETTES = {
         name:       'Lapin aux girolles',
         region:     'Alsace / Périgord',
         anecdote:   'Le lapin de garenne de l\'arrière-saison avec les girolles du sous-bois : le mariage automnal parfait.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4428,21 +4014,15 @@ const RECETTES = {
         name:       'Lentilles au lard',
         region:     'Auvergne',
         anecdote:   'Tradition du Nouvel An : manger des lentilles porte bonheur et richesse pour l\'année.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4450,21 +4030,15 @@ const RECETTES = {
         name:       'Magret de canard aux cerises',
         region:     'Périgord / Gascogne',
         anecdote:   'Les premières cerises de mai se cuisinent en sauce avec le magret de canard du Périgord dans un équilibre parfait.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4472,21 +4046,15 @@ const RECETTES = {
         name:       'Magret de canard froid en salade',
         region:     'Périgord / Gascogne',
         anecdote:   'Le magret grillé et refroidi, tranché en lamelles sur salade verte avec vinaigrette à la moutarde.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4494,21 +4062,15 @@ const RECETTES = {
         name:       'Marmite de poissons aux légumes d\'automne',
         region:     'Bretagne / Normandie',
         anecdote:   'Le cabillaud, la morue et le saint-pierre mijotés aux poireaux, navets et carottes : une marmite de saison.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4516,21 +4078,15 @@ const RECETTES = {
         name:       'Matelote d\'anguille',
         region:     'Val de Loire',
         anecdote:   'L\'anguille du Val de Loire mijotée au vin blanc et aux petits oignons est un plat de rivière ancestral.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4538,21 +4094,15 @@ const RECETTES = {
         name:       'Melon glacé au porto rouge',
         region:     'Charentes / Languedoc',
         anecdote:   'Le melon charentais légèrement sucré se creuse et se remplit de porto rouge glacé. Simple et parfait.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4560,21 +4110,15 @@ const RECETTES = {
         name:       'Melon au porto et jambon de Bayonne',
         region:     'Pays Basque / Charentes',
         anecdote:   'Le melon charentais des premières chaleurs avec jambon de Bayonne : l\'entrée d\'été qui ne se démode jamais.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4582,21 +4126,15 @@ const RECETTES = {
         name:       'Moules marinières',
         region:     'Bretagne / Normandie',
         anecdote:   'Les moules de bouchot bretonnes cuisinées au vin blanc et aux échalotes sont le plat du bord de mer.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4604,21 +4142,15 @@ const RECETTES = {
         name:       'Mousse de foie gras sur blinis',
         region:     'Périgord / Gascogne',
         anecdote:   'La mousse de foie gras maison sur blinis chauds ouvre les repas d\'automne dans le Sud-Ouest.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Dessert", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4626,21 +4158,15 @@ const RECETTES = {
         name:       'Navarin d\'agneau printanier',
         region:     'Île-de-France',
         anecdote:   'Le navarin d\'agneau aux légumes de saison annonce le retour du printemps même en plein hiver.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '30 min',
+        cuisson:    '2 h',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4648,21 +4174,15 @@ const RECETTES = {
         name:       'Œufs cocotte aux asperges',
         region:     'Île-de-France',
         anecdote:   'Les œufs cocotte à la crème avec pointes d\'asperges sont une entrée printanière rapide et élégante.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4670,21 +4190,15 @@ const RECETTES = {
         name:       'Œufs en meurette',
         region:     'Bourgogne',
         anecdote:   'Des œufs pochés dans une réduction de vin rouge de Bourgogne aux lardons et champignons : la grande entrée.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4692,21 +4206,15 @@ const RECETTES = {
         name:       'Oie confite aux pommes et airelles',
         region:     'Alsace / Bretagne',
         anecdote:   'L\'oie confite dans sa graisse avec les airelles et les pommes reinettes est la recette des grandes tablées.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4714,21 +4222,15 @@ const RECETTES = {
         name:       'Oie rôtie aux pommes',
         region:     'Alsace / Bretagne',
         anecdote:   'L\'oie rôtie aux pommes est un plat d\'automne royal, souvenir des grandes tablées paysannes d\'Alsace.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '1 h 30',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4736,21 +4238,15 @@ const RECETTES = {
         name:       'Omelette aux asperges et ciboulette',
         region:     'France entière',
         anecdote:   'L\'omelette baveuse aux premières asperges et à la ciboulette fraîche du jardin est le déjeuner printanier idéal.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4758,21 +4254,15 @@ const RECETTES = {
         name:       'Omelette aux asperges sauvages',
         region:     'Provence / Languedoc',
         anecdote:   'Les premières asperges sauvages percent en mars dans le Sud. On les cueille tôt le matin et on les mange le jour même.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4780,21 +4270,15 @@ const RECETTES = {
         name:       'Omelette aux fines herbes',
         region:     'France entière',
         anecdote:   'Persil, ciboulette, cerfeuil et estragon sont au jardin. L\'omelette baveuse aux fines herbes est un classique printanier.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4802,21 +4286,15 @@ const RECETTES = {
         name:       'Omelette aux trompettes de la mort',
         region:     'Périgord / Auvergne',
         anecdote:   'Les trompettes de la mort — noires et délicates — poêlées dans l\'omelette à l\'ail et persil.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4824,21 +4302,15 @@ const RECETTES = {
         name:       'Pasta au pistou de printemps',
         region:     'Provence',
         anecdote:   'Le pistou basilic-ail-huile d\'olive napperait les premières pâtes printanières dès que le basilic pointe.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Printemps", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4846,21 +4318,15 @@ const RECETTES = {
         name:       'Pâté en croûte grand luxe',
         region:     'Alsace / Lorraine / Lyon',
         anecdote:   'Le pâté en croûte aux ris de veau, foie gras et pistaches est la charcuterie de prestige des fêtes.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4868,21 +4334,15 @@ const RECETTES = {
         name:       'Pâté de Pâques berrichon',
         region:     'Berry',
         anecdote:   'Le pâté berrichon en croûte avec œuf dur caché à l\'intérieur est la tradition pascale du Berry.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Printemps", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4890,21 +4350,15 @@ const RECETTES = {
         name:       'Pâtes aux courgettes fleurs et ricotta',
         region:     'Provence / Côte d\'Azur',
         anecdote:   'Les fleurs de courgettes farcies à la ricotta ou les pâtes garnies de fleurs sont une recette niçoise délicate.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4912,21 +4366,15 @@ const RECETTES = {
         name:       'Paupiettes de veau',
         region:     'Île-de-France',
         anecdote:   'Les paupiettes mijotées aux carottes et aux champignons sont un classique des cuisines bourgeoises parisiennes.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4934,21 +4382,15 @@ const RECETTES = {
         name:       'Pêches rôties au miel et romarin',
         region:     'Provence / Languedoc',
         anecdote:   'Les pêches de vigne rôties au four avec miel de fleurs et brins de romarin : un dessert simple et parfumé.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '1 h 30',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4956,21 +4398,15 @@ const RECETTES = {
         name:       'Perdrix aux choux',
         region:     'Alsace / Champagne',
         anecdote:   'La perdrix de septembre aux choux braisés et aux lardons fumés est le plat de chasse alsacien par excellence.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -4978,21 +4414,15 @@ const RECETTES = {
         name:       'Pied de cochon pané',
         region:     'Sainte-Menehould / Champagne',
         anecdote:   'La spécialité de Sainte-Menehould : le pied de cochon cuit si longuement que l\'os se mange, pané et grillé.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5000,21 +4430,15 @@ const RECETTES = {
         name:       'Pieds-paquets marseillais',
         region:     'Marseille',
         anecdote:   'Les pieds et paquets d\'agneau cuisinés à la tomate et au vin blanc sont un plat festif de Marseille.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5022,21 +4446,15 @@ const RECETTES = {
         name:       'Pintade aux choux',
         region:     'Champagne / Lorraine',
         anecdote:   'La pintade fermière est un gibier doux qui se marie parfaitement avec le chou braisé de Lorraine.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5044,21 +4462,15 @@ const RECETTES = {
         name:       'Pintade aux marrons',
         region:     'Périgord / Ardèche',
         anecdote:   'Les marrons frais d\'octobre farcis dans la pintade rôtie au four : le plat de fête du début d\'automne.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5066,21 +4478,15 @@ const RECETTES = {
         name:       'Pintade braisée aux raisins de vigne',
         region:     'Bourgogne / Champagne',
         anecdote:   'Pendant les vendanges, la pintade mijotée avec les raisins de vigne et leur jus est un plat de saison remarquable.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Automne", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5088,21 +4494,15 @@ const RECETTES = {
         name:       'Piperade basquaise',
         region:     'Pays Basque',
         anecdote:   'La piperade aux poivrons rouges, tomates et piment d\'Espelette se déguste avec œufs brouillés ou jambon.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5110,21 +4510,15 @@ const RECETTES = {
         name:       'Piperade aux œufs brouillés',
         region:     'Pays Basque',
         anecdote:   'La piperade de fin d\'été avec ses poivrons rouges confits et ses œufs brouillés est un plat festif du Pays Basque.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5132,21 +4526,15 @@ const RECETTES = {
         name:       'Pissaladière',
         region:     'Nice / Provence',
         anecdote:   'Tarte niçoise aux oignons confits, anchois et olives noires, née sur les quais du port de Nice.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5154,21 +4542,15 @@ const RECETTES = {
         name:       'Pissaladière à la tapenade',
         region:     'Nice',
         anecdote:   'La pissaladière estivale enrichie de tapenade et d\'olives de Nice est un en-cas généreux qui voyage bien.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5176,21 +4558,15 @@ const RECETTES = {
         name:       'Pissaladière aux tomates confites',
         region:     'Nice',
         anecdote:   'Variante estivale avec tomates cerises confites en remplacement des oignons seuls : soleil de Nice dans l\'assiette.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5198,21 +4574,15 @@ const RECETTES = {
         name:       'Pistou soupe d\'été',
         region:     'Provence / Nice',
         anecdote:   'La soupe au pistou d\'été avec haricots frais, courgettes et vermicelles est le plat familial du dimanche nicois.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5220,21 +4590,15 @@ const RECETTES = {
         name:       'Pistou de haricots frais',
         region:     'Provence / Nice',
         anecdote:   'Les haricots demi-secs frais de la région niçoise écrasés au mortier avec basilic et huile d\'olive : un pistou pur.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5242,21 +4606,15 @@ const RECETTES = {
         name:       'Plateau de charcuterie et fromages',
         region:     'France entière',
         anecdote:   'Pour le 14 juillet, on sort les grandes planches : saucisson, pâtés, fromages de toutes les régions, baguette.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5264,21 +4622,15 @@ const RECETTES = {
         name:       'Poisson d\'avril en papillote',
         region:     'Bretagne',
         anecdote:   'Pour le 1er avril, les poissons du marché matin sont glissés en papillote avec herbes fraîches et citron.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5286,21 +4638,15 @@ const RECETTES = {
         name:       'Poivrons farcis à la méditerranéenne',
         region:     'Provence / Languedoc',
         anecdote:   'Les poivrons commencent à colorer en juin sous le soleil du Midi. Farcis de riz, herbes et tomates.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Dessert", "Moyen"],
+        prep:       '15 min',
+        cuisson:    '40 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5308,21 +4654,15 @@ const RECETTES = {
         name:       'Pot-au-feu',
         region:     'Île-de-France',
         anecdote:   'Plat de lendemain de fête, mijotant doucement sur le feu après les excès du réveillon.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '30 min',
+        cuisson:    '2 h',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5330,21 +4670,15 @@ const RECETTES = {
         name:       'Pot-au-feu de la mer',
         region:     'Bretagne / Normandie',
         anecdote:   'Poissons nobles et légumes du marché du matin mijotent dans ce bouillon iodé façon mer du Nord.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '30 min',
+        cuisson:    '2 h',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5352,21 +4686,15 @@ const RECETTES = {
         name:       'Pot-au-feu à la joue de bœuf',
         region:     'Île-de-France / Bourgogne',
         anecdote:   'La joue de bœuf dans le pot-au-feu, avec ses légumes et ses cornichons, est une version raffinée du classique.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '30 min',
+        cuisson:    '2 h',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5374,21 +4702,15 @@ const RECETTES = {
         name:       'Potage Crécy aux carottes',
         region:     'Île-de-France',
         anecdote:   'Les carottes de Crécy-en-Ponthieu, fines et sucrées, donnent leur nom à ce velouté printanier.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5396,21 +4718,15 @@ const RECETTES = {
         name:       'Potage cultivateur aux légumes d\'automne',
         region:     'France entière',
         anecdote:   'Les légumes du potager de fin de saison — carottes, navets, poireaux, pommes de terre — dans un bouillon de campagne.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5418,21 +4734,15 @@ const RECETTES = {
         name:       'Potée auvergnate',
         region:     'Auvergne',
         anecdote:   'La potée d\'octobre réunit le chou nouveau, les légumes du jardin et la charcuterie fumée du cochon d\'automne.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5440,21 +4750,15 @@ const RECETTES = {
         name:       'Poule au pot',
         region:     'Béarn / Gascogne',
         anecdote:   'Henri IV souhaitait que chaque Français ait une poule au pot le dimanche. Voici son vœu royal exaucé.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5462,21 +4766,15 @@ const RECETTES = {
         name:       'Poule au pot aux légumes d\'hiver',
         region:     'Béarn / Gascogne',
         anecdote:   'Novembre touche à sa fin. La poule au pot réconcilie avec l\'hiver qui arrive, fidèle à la tradition gasconne.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5484,21 +4782,15 @@ const RECETTES = {
         name:       'Poulet aux 40 gousses d\'ail',
         region:     'Provence',
         anecdote:   'La recette provençale du poulet entier cuit lentement avec 40 gousses d\'ail entières rend l\'ail fondant et doux.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5506,21 +4798,15 @@ const RECETTES = {
         name:       'Poulet à l\'estragon',
         region:     'Île-de-France',
         anecdote:   'L\'estragon, herbe fine par excellence, parfume cette sauce crémeuse qui accompagne le poulet fermier.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5528,21 +4814,15 @@ const RECETTES = {
         name:       'Poulet aux cèpes',
         region:     'Périgord / Gascogne',
         anecdote:   'Le cèpe de Bordeaux dans toute sa splendeur : avec le poulet fermier en sauce crémeuse, c\'est un plat royal.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5550,21 +4830,15 @@ const RECETTES = {
         name:       'Poulet basquaise',
         region:     'Pays Basque',
         anecdote:   'Poivrons, tomates et piment d\'Espelette : le poulet à la basquaise célèbre les couleurs vives du Pays Basque.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5572,21 +4846,15 @@ const RECETTES = {
         name:       'Poulet rôti aux cèpes et pommes sarladaises',
         region:     'Périgord',
         anecdote:   'Les pommes de terre sarladaises cuites à la graisse de canard avec les cèpes et le poulet : la Sainte-Trinité du Périgord.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '1 h 30',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5594,21 +4862,15 @@ const RECETTES = {
         name:       'Poulet en crapaudine',
         region:     'Normandie / Berry',
         anecdote:   'Le poulet aplati en crapaudine et grillé au four ou au barbecue est la recette idéale pour les premières tablées en terrasse.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Été", "Plat principal", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5616,21 +4878,15 @@ const RECETTES = {
         name:       'Poulet froid mayonnaise',
         region:     'France entière',
         anecdote:   'Le poulet rôti la veille, servi froid avec mayonnaise maison et crudités, est le roi des pique-niques.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5638,21 +4894,15 @@ const RECETTES = {
         name:       'Poulet grillé au citron et herbes',
         region:     'Provence',
         anecdote:   'Mariné toute une nuit dans le citron, l\'ail et les herbes, le poulet de ferme grillé sur la braise est incomparable.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5660,21 +4910,15 @@ const RECETTES = {
         name:       'Poulet rôti du dimanche',
         region:     'France entière',
         anecdote:   'Le poulet rôti est le plat du dimanche de toutes les familles françaises depuis des générations.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '1 h 30',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5682,21 +4926,15 @@ const RECETTES = {
         name:       'Poulet rôti aux herbes fraîches',
         region:     'France entière',
         anecdote:   'Le thym, le romarin et l\'estragon du jardin en mai, glissés sous la peau d\'un poulet fermier dorent magnifiquement.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '1 h 30',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5704,21 +4942,15 @@ const RECETTES = {
         name:       'Poulet froid en salade méditerranéenne',
         region:     'Provence',
         anecdote:   'Le poulet rôti refroidi et effiloché en salade avec olives, poivrons, tomates et herbes est un festin estival.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5726,21 +4958,15 @@ const RECETTES = {
         name:       'Quiche lorraine',
         region:     'Lorraine',
         anecdote:   'Née dans les cuisines de Nancy au XVIe siècle, la quiche lorraine est l\'une des plus célébrées recettes de France.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5748,21 +4974,15 @@ const RECETTES = {
         name:       'Raclette savoyarde',
         region:     'Savoie / Haute-Savoie',
         anecdote:   'La raclette vient du mot \'racler\' : on racle le fromage fondu sur des pommes de terre vapeur et charcuteries.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5770,21 +4990,15 @@ const RECETTES = {
         name:       'Ragout de marrons à la saucisse',
         region:     'Ardèche / Corse',
         anecdote:   'Pour la Toussaint, les châtaigniers sont à leur pic. Ce ragout simple et nourrissant réunit marrons et saucisses.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5792,21 +5006,15 @@ const RECETTES = {
         name:       'Ratatouille niçoise',
         region:     'Nice / Provence',
         anecdote:   'La ratatouille n\'est pas un plat de reste mais une symphonie de légumes d\'été cuisinés séparément puis réunis.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5814,21 +5022,15 @@ const RECETTES = {
         name:       'Ratatouille froide sur pain grillé',
         region:     'Provence',
         anecdote:   'La ratatouille froide de la veille sur une tranche de pain grillé frotté à l\'ail est le brunch provençal.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5836,21 +5038,15 @@ const RECETTES = {
         name:       'Ravioles du Dauphiné',
         region:     'Drôme / Isère',
         anecdote:   'Ces petites ravioles au comté et persil plongées dans un bouillon chaud sont une spécialité unique du Dauphiné.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5858,21 +5054,15 @@ const RECETTES = {
         name:       'Huîtres et foie gras au réveillon',
         region:     'France entière',
         anecdote:   'La nuit de Noël en France se commence invariablement avec les huîtres, le foie gras et le champagne.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5880,21 +5070,15 @@ const RECETTES = {
         name:       'Rillettes du Mans',
         region:     'Sarthe',
         anecdote:   'Fondantes et savoureuses, les rillettes du Mans sont servies sur pain grillé dans toute la Sarthe.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5902,21 +5086,15 @@ const RECETTES = {
         name:       'Rillettes de sardines fraîches',
         region:     'Bretagne / Pays de Loire',
         anecdote:   'La sardine fraîche du mois de mai est la meilleure. En rillettes avec beurre demi-sel, elle se tartine sur du pain grillé.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5924,21 +5102,15 @@ const RECETTES = {
         name:       'Risotto aux asperges et parmesan',
         region:     'Provence / fusion italienne',
         anecdote:   'Plat d\'influence transalpine adopté par les cuisines provençales, avec les asperges vertes de la plaine de Crau.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5946,21 +5118,15 @@ const RECETTES = {
         name:       'Risotto aux cèpes et truffe noire',
         region:     'Périgord / Provence',
         anecdote:   'Les cèpes de début septembre et une lamelle de truffe noire transforment ce risotto en plat de grande occasion.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5968,21 +5134,15 @@ const RECETTES = {
         name:       'Rôti de porc aux pruneaux',
         region:     'Touraine',
         anecdote:   'Les pruneaux de Tours accompagnent le porc dans ce plat sucré-salé traditionnel du Val de Loire.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '1 h 30',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -5990,21 +5150,15 @@ const RECETTES = {
         name:       'Rôti de veau aux champignons sauvages',
         region:     'Île-de-France / Bourgogne',
         anecdote:   'Le veau de lait rôti avec les derniers champignons de l\'automne dans une sauce crémée.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '1 h 30',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6012,21 +5166,15 @@ const RECETTES = {
         name:       'Filets de rouget à la provençale',
         region:     'Provence / Marseille',
         anecdote:   'Le rouget barbet de roche de Méditerranée, grillé à l\'huile d\'olive avec olives et tomates, est divin.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6034,21 +5182,15 @@ const RECETTES = {
         name:       'Filet de saint-pierre aux câpres',
         region:     'Bretagne / Normandie',
         anecdote:   'Le saint-pierre est l\'un des plus beaux poissons de l\'Atlantique. Ses filets délicats se marient aux câpres.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6056,21 +5198,15 @@ const RECETTES = {
         name:       'Salade composée aux artichauts violets',
         region:     'Provence',
         anecdote:   'L\'artichaut violet poivrade de Provence est à déguster cru en mai, tranché finement avec citron et huile d\'olive.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6078,21 +5214,15 @@ const RECETTES = {
         name:       'Salade de betteraves rôties au chèvre',
         region:     'Loire / Bretagne',
         anecdote:   'Les betteraves nouvelles rôties au four avec thym, servies tièdes avec chèvre frais et noix.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '1 h 30',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6100,21 +5230,15 @@ const RECETTES = {
         name:       'Salade César maison',
         region:     'Côte d\'Azur / fusion',
         anecdote:   'La salade César en version française avec poulet grillé, croûtons maison et anchois de Collioure.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6122,21 +5246,15 @@ const RECETTES = {
         name:       'Salade d\'endives aux noix et roquefort',
         region:     'Nord / Aveyron',
         anecdote:   'L\'endive croquante avec le roquefort crémeux et les noix fraîches est la salade d\'hiver parfaite.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6144,21 +5262,15 @@ const RECETTES = {
         name:       'Salade de fèves fraîches à la menthe',
         region:     'Provence',
         anecdote:   'Les premières fèves fraîches de mai se dégustent crues avec huile d\'olive, sel et menthe fraîche.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6166,21 +5278,15 @@ const RECETTES = {
         name:       'Salade de figues, noix et roquefort',
         region:     'Languedoc / Aveyron',
         anecdote:   'La figue violette de fin de saison avec roquefort et noix fraîches : la trilogie du terroir du Sud.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6188,21 +5294,15 @@ const RECETTES = {
         name:       'Salade de figues rôties et roquette',
         region:     'Languedoc / Provence',
         anecdote:   'Les figues violettes rôties au four avec miel de lavande, servies sur roquette avec noix et parmesan.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '1 h 30',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6210,21 +5310,15 @@ const RECETTES = {
         name:       'Salade de fraises au basilic',
         region:     'Provence / Languedoc',
         anecdote:   'La fraise et le basilic frais sont un duo inattendu mais sublime, avec quelques gouttes de vinaigre balsamique.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6232,21 +5326,15 @@ const RECETTES = {
         name:       'Salade de fraises et rhubarbe',
         region:     'Bretagne / Nord',
         anecdote:   'La rhubarbe acidulée et les fraises sucrées se complètent dans ce dessert de début juin.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6254,21 +5342,15 @@ const RECETTES = {
         name:       'Salade grecque classique',
         region:     'Côte d\'Azur / Grèce',
         anecdote:   'Tomates, concombre, oignons rouges, olives de Kalamata et feta : la salade grecque qui parle à toute la Méditerranée.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6276,21 +5358,15 @@ const RECETTES = {
         name:       'Salade de haricots verts tièdes aux noisettes',
         region:     'Provence / Périgord',
         anecdote:   'Les haricots verts fins et croquants de plein champ, encore tièdes, avec noisettes grillées et vinaigrette.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6298,21 +5374,15 @@ const RECETTES = {
         name:       'Salade de haricots verts aux amandes',
         region:     'Provence',
         anecdote:   'Les haricots verts fins de plein champ commencent en juin. Avec amandes grillées et vinaigrette à l\'estragon.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6320,21 +5390,15 @@ const RECETTES = {
         name:       'Salade landaise',
         region:     'Landes / Gascogne',
         anecdote:   'Gésiers confits, magret séché, foie gras poêlé sur salade verte : la salade landaise est un repas à elle seule.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6342,21 +5406,15 @@ const RECETTES = {
         name:       'Salade de lentilles tièdes au saumon fumé',
         region:     'Auvergne / Bretagne',
         anecdote:   'Les lentilles vertes du Puy avec saumon fumé et vinaigrette à l\'estragon : une salade complète et équilibrée.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6364,21 +5422,15 @@ const RECETTES = {
         name:       'Salade de mâche et betteraves',
         region:     'Nantes / Bretagne',
         anecdote:   'La mâche nantaise en pleine saison avec betteraves rôties et vinaigrette à la noisette.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6386,21 +5438,15 @@ const RECETTES = {
         name:       'Salade de mâche aux lardons et noix',
         region:     'Bretagne / Nantais',
         anecdote:   'La mâche de Nantes commence à pousser en septembre dans les jardins. Avec lardons chauds et noix fraîches.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6408,21 +5454,15 @@ const RECETTES = {
         name:       'Salade de maïs grillé et avocat',
         region:     'Languedoc / fusion',
         anecdote:   'Le maïs doux grillé sur les braises avec avocat, coriandre et citron vert : l\'été dans un bol.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6430,21 +5470,15 @@ const RECETTES = {
         name:       'Salade de maïs, avocat et coriandre',
         region:     'Languedoc / fusion',
         anecdote:   'Le maïs doux de plein champ, l\'avocat et la coriandre fraîche : une salade colorée pour les tables en terrasse.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6452,21 +5486,15 @@ const RECETTES = {
         name:       'Salade niçoise',
         region:     'Nice / Côte d\'Azur',
         anecdote:   'La vraie salade niçoise, sans cuisson, avec thon cru, anchois, olives, tomates et œufs durs, est un plat de printemps.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Printemps", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6474,21 +5502,15 @@ const RECETTES = {
         name:       'Salade de pastèque et menthe',
         region:     'Provence / Languedoc',
         anecdote:   'La pastèque, la feta, la menthe et l\'huile d\'olive font l\'une des salades les plus rafraîchissantes de l\'été.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6496,21 +5518,15 @@ const RECETTES = {
         name:       'Salade de pâtes froides aux légumes d\'été',
         region:     'France entière',
         anecdote:   'Les pâtes froides aux légumes grillés, olives et herbes sont le plat de vacances par excellence.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6518,21 +5534,15 @@ const RECETTES = {
         name:       'Salade de pêches au basilic',
         region:     'Languedoc / Provence',
         anecdote:   'Les pêches de vigne et les pêches plates commencent en juillet. Avec basilic et vinaigre balsamique, c\'est un dessert fin.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6540,21 +5550,15 @@ const RECETTES = {
         name:       'Salade de pissenlit au lard chaud',
         region:     'Lyonnais / Bourgogne',
         anecdote:   'Les premiers pissenlits sauvages de printemps, récoltés à l\'aube, se marient avec les lardons fumés chauds.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Printemps", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6562,21 +5566,15 @@ const RECETTES = {
         name:       'Salade de pissenlits aux noix',
         region:     'Lyonnais / Bourgogne',
         anecdote:   'Les pissenlits blanchis sous les tuiles ou récoltés à l\'ombre sont plus tendres. Avec noix et vinaigrette chaude.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6584,21 +5582,15 @@ const RECETTES = {
         name:       'Salade de pois gourmands aux copeaux de parmesan',
         region:     'Provence',
         anecdote:   'Les premiers pois gourmands tendres croquent sous la dent avec l\'huile d\'olive et le citron.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6606,21 +5598,15 @@ const RECETTES = {
         name:       'Salade de poivrons rôtis',
         region:     'Languedoc / Espagne',
         anecdote:   'Les poivrons rouges et jaunes rôtis et pelés, marinés à l\'ail et à l\'huile d\'olive, se dégustent froids.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '1 h 30',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6628,21 +5614,15 @@ const RECETTES = {
         name:       'Salade de poulpe au fenouil',
         region:     'Provence / Marseille',
         anecdote:   'Le poulpe bouilli puis refroidi, avec fenouil émincé, citron et herbes, est un plat marin frais et léger.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6650,21 +5630,15 @@ const RECETTES = {
         name:       'Salade de poulpe grillé',
         region:     'Provence / Côte d\'Azur',
         anecdote:   'Le poulpe de roche méditerranéen, battu et grillé sur les braises, se déguste avec citron, persil et ail.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6672,21 +5646,15 @@ const RECETTES = {
         name:       'Salade de quinoa aux petits pois et feta',
         region:     'Île-de-France / fusion',
         anecdote:   'Le quinoa, légume du XXIe siècle, se marie aux légumes de mai pour une salade complète et fraîche.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6694,21 +5662,15 @@ const RECETTES = {
         name:       'Salade de quinoa, tomates et feta',
         region:     'Méditerranée',
         anecdote:   'Le quinoa frais avec tomates anciennes, feta, olives et herbes fraîches est léger et complet pour l\'été.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6716,21 +5678,15 @@ const RECETTES = {
         name:       'Salade aux radis et beurre',
         region:     'Île-de-France',
         anecdote:   'Le muguet et les radis annoncent le 1er mai. Croquants, les radis se croquent au sel ou en salade.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6738,21 +5694,15 @@ const RECETTES = {
         name:       'Salade de riz aux légumes grillés',
         region:     'Méditerranée',
         anecdote:   'Le riz froid aux courgettes, poivrons et tomates grillées est le plat de pique-nique du bord de mer.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6760,21 +5710,15 @@ const RECETTES = {
         name:       'Salade de roquette aux St-Jacques poêlées',
         region:     'Provence / Bretagne',
         anecdote:   'La roquette jeune de printemps et les Saint-Jacques poêlées forment un mariage iodé et poivré exquis.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Printemps", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6782,21 +5726,15 @@ const RECETTES = {
         name:       'Salade de Saint-Jacques aux agrumes',
         region:     'Bretagne',
         anecdote:   'Pour la Saint-Pierre (patron des pêcheurs), les Saint-Jacques de l\'été se cuisinent en salade fraîche aux agrumes.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6804,21 +5742,15 @@ const RECETTES = {
         name:       'Salade tiède de foie de veau',
         region:     'Lyon / Île-de-France',
         anecdote:   'Le foie de veau rosé et fondant sur salade tiède avec lardons croustillants est un plat de bouchon lyonnais.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6826,21 +5758,15 @@ const RECETTES = {
         name:       'Salade de tomates à l\'ancienne',
         region:     'Provence',
         anecdote:   'En juillet, les tomates cœur-de-bœuf sont au sommet. Sel, huile d\'olive, basilic — rien d\'autre.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6848,21 +5774,15 @@ const RECETTES = {
         name:       'Salade de tomates cerise et burrata',
         region:     'Provence / Côte d\'Azur',
         anecdote:   'La burrata crémeuse avec tomates cerises colorées, basilic et huile d\'olive fruité est le plat le plus photogénique de l\'été.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6870,21 +5790,15 @@ const RECETTES = {
         name:       'Salade de tomates au thon et anchois',
         region:     'Languedoc / Côte d\'Azur',
         anecdote:   'Tomates anciennes, thon de Méditerranée et anchois de Collioure : la salade du littoral languedocien.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6892,21 +5806,15 @@ const RECETTES = {
         name:       'Salade de pommes, céleri et noix',
         region:     'Normandie / France entière',
         anecdote:   'La salade Waldorf au céleri branche, pommes, noix et mayonnaise légère est parfaite en entrée d\'automne.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6914,21 +5822,15 @@ const RECETTES = {
         name:       'Poulet rôti froid en sandwich',
         region:     'France entière',
         anecdote:   'Le reste de poulet du dimanche se glisse dans une baguette avec tomates, moutarde et cornichons pour le lundi midi.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '1 h 30',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6936,21 +5838,15 @@ const RECETTES = {
         name:       'Sardines grillées au feu de bois',
         region:     'Bretagne / Languedoc',
         anecdote:   'La veille du 14 juillet, les sardines grillées dans la rue ou sur la plage sont la tradition des fêtes estivales.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6958,21 +5854,15 @@ const RECETTES = {
         name:       'Saucisses aux lentilles du Puy',
         region:     'Auvergne',
         anecdote:   'Les lentilles vertes du Puy AOP avec saucisses fumées de montagne : le plat de bistrot qui réchauffe l\'âme.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -6980,21 +5870,15 @@ const RECETTES = {
         name:       'Saumon de Loire au beurre blanc',
         region:     'Val de Loire',
         anecdote:   'Bien que le saumon sauvage soit rare, la tradition du saumon au beurre blanc nantais reste vivace en Anjou.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Sauce", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7002,21 +5886,15 @@ const RECETTES = {
         name:       'Saumon gravlax maison',
         region:     'Scandinavie / Alsace',
         anecdote:   'La mode du saumon mariné à l\'aneth et au sel venu du Nord est adoptée par les tables alsaciennes depuis les années 80.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7024,21 +5902,15 @@ const RECETTES = {
         name:       'Saumon fumé maison en gravlax',
         region:     'Bretagne / Normandie',
         anecdote:   'Le saumon de l\'Atlantique mariné 48h au sel, sucre et aneth fait un gravlax maison exceptionnel pour les fêtes.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7046,21 +5918,15 @@ const RECETTES = {
         name:       'Sole meunière',
         region:     'Normandie / Paris',
         anecdote:   'La sole meunière, beurrée et citronnée, est le plat emblématique des grandes tables parisiennes depuis le XIXe siècle.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7068,21 +5934,15 @@ const RECETTES = {
         name:       'Sorbet maison à la pêche',
         region:     'Languedoc / Provence',
         anecdote:   'Les pêches de vigne rouges à chair fondante font le meilleur sorbet de l\'été, sans artifice.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7090,21 +5950,15 @@ const RECETTES = {
         name:       'Soufflé au fromage',
         region:     'Île-de-France',
         anecdote:   'Inventé par les grands cuisiniers parisiens du XIXe siècle, le soufflé impressionne toujours ses convives.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7112,21 +5966,15 @@ const RECETTES = {
         name:       'Soufflé au Grand Marnier',
         region:     'Île-de-France',
         anecdote:   'Le soufflé sucré, aérien et parfumé à la liqueur d\'orange, est le dessert des grandes tables parisiennes.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7134,21 +5982,15 @@ const RECETTES = {
         name:       'Soufflé au Grand Marnier',
         region:     'Île-de-France',
         anecdote:   'La nuit tombe tôt en novembre. Un soufflé chaud et parfumé à la sortie du four réchauffe les cœurs.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7156,21 +5998,15 @@ const RECETTES = {
         name:       'Soufflé chaud au Grand Marnier',
         region:     'Île-de-France',
         anecdote:   'Le solstice d\'hiver, la nuit la plus longue. On réchauffe la table avec un grand soufflé flambé.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7178,21 +6014,15 @@ const RECETTES = {
         name:       'Soufflé au roquefort',
         region:     'Aveyron / Île-de-France',
         anecdote:   'Le roquefort au lait de brebis des caves de Combalou dans un soufflé chaud et aérien : fromage au sommet de l\'art.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7200,21 +6030,15 @@ const RECETTES = {
         name:       'Soupe à l\'oignon gratinée',
         region:     'Lyon / Paris',
         anecdote:   'Née dans les bouchons lyonnais, puis adoptée par les Halles de Paris comme remède contre le froid et la fatigue.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7222,21 +6046,15 @@ const RECETTES = {
         name:       'Soupe au chou',
         region:     'Auvergne',
         anecdote:   'Le chou d\'hiver au lard fumé et aux pommes de terre est la soupe paysanne par excellence de l\'Auvergne.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7244,21 +6062,15 @@ const RECETTES = {
         name:       'Soupe au cresson',
         region:     'Île-de-France / Normandie',
         anecdote:   'Le cresson de Méréville, cultivé dans des sources claires d\'Île-de-France, donne une soupe verte et légèrement poivrée.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7266,21 +6078,15 @@ const RECETTES = {
         name:       'Soupe au pistou',
         region:     'Provence',
         anecdote:   'Réchauffée en hiver, la soupe au pistou rappelle l\'été provençal et ses herbes gorgées de soleil.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7288,21 +6094,15 @@ const RECETTES = {
         name:       'Soupe aux orties',
         region:     'Alsace / Champagne',
         anecdote:   'Les premières pousses d\'orties de mars font une soupe étonnante, douce et minérale, gratuite au bord des chemins.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7310,21 +6110,15 @@ const RECETTES = {
         name:       'Soupe de butternut au lait de coco',
         region:     'France entière / fusion',
         anecdote:   'La butternut et le lait de coco : un mariage doux et exotique pour réchauffer les soirées d\'avant novembre.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7332,21 +6126,15 @@ const RECETTES = {
         name:       'Soupe de châtaignes au lard',
         region:     'Ardèche / Corse',
         anecdote:   'La châtaigne d\'Ardèche ou de Corse — farine des pauvres autrefois — fait une soupe veloutée et nourrissante.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7354,21 +6142,15 @@ const RECETTES = {
         name:       'Soupe de courge à la crème de ciboulette',
         region:     'France entière',
         anecdote:   'Octobre annonce les courges. Le velouté orange et crémeux avec sa touche verte de ciboulette est réconfortant.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7376,21 +6158,15 @@ const RECETTES = {
         name:       'Soupe froide de concombre au yaourt',
         region:     'Languedoc / fusion',
         anecdote:   'D\'inspiration grecque, cette soupe froide au concombre, yaourt et menthe est parfaite pour les journées chaudes.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7398,21 +6174,15 @@ const RECETTES = {
         name:       'Soupe froide aux poivrons rouges',
         region:     'Languedoc / Pays Basque',
         anecdote:   'Les poivrons rouges rôtis mixés avec tomate, huile d\'olive et cumin font une soupe froide veloutée et colorée.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7420,21 +6190,15 @@ const RECETTES = {
         name:       'Soupe d\'Halloween au potiron',
         region:     'France entière',
         anecdote:   'Le jour de la citrouille ! On vide la courge et on en fait une soupe à la crème dans son écorce sculptée.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7442,21 +6206,15 @@ const RECETTES = {
         name:       'Soupe de haricots blancs au jambon',
         region:     'Languedoc / Provence',
         anecdote:   'Les haricots blancs de conservation avec le jambon cru et les herbes de saison : le plat du froid retour.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7464,21 +6222,15 @@ const RECETTES = {
         name:       'Soupe de lentilles blondes au cumin',
         region:     'Languedoc / Provence',
         anecdote:   'Les lentilles blondes, plus douces que les vertes, en soupe épicée au cumin et au citron réchauffent les soirées.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7486,21 +6238,15 @@ const RECETTES = {
         name:       'Sainte-Barbe : soupe des mineurs',
         region:     'Nord / Lorraine',
         anecdote:   'Pour la Sainte-Barbe, patronne des mineurs, la tradition est une soupe épaisse de légumes et charcuterie.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7508,21 +6254,15 @@ const RECETTES = {
         name:       'Soupe de potimarron',
         region:     'Bretagne / Normandie',
         anecdote:   'Le potimarron de conservation réchauffe les hivers bretons dans cette veloutée douce et parfumée.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7530,21 +6270,15 @@ const RECETTES = {
         name:       'Soupe de potiron aux châtaignes',
         region:     'Bretagne / Ardèche',
         anecdote:   'Les châtaignes fraîches tombent en même temps que les potirons grossissent. Ensemble dans une soupe veloutée.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7552,21 +6286,15 @@ const RECETTES = {
         name:       'Soupe au potiron et au lard',
         region:     'Auvergne / France entière',
         anecdote:   'Décembre s\'ouvre. Les courges de conservation sortent du cellier pour les soupes qui réchauffent.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7574,21 +6302,15 @@ const RECETTES = {
         name:       'Soupe aux restes du réveillon',
         region:     'France entière',
         anecdote:   'Les carcasses de volaille, les légumes de la farce et les restes font la plus riche soupe de l\'année.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7596,21 +6318,15 @@ const RECETTES = {
         name:       'Soupe de Saint-Nicolas aux épices',
         region:     'Alsace / Lorraine',
         anecdote:   'Pour la Sainte-Catherine, on prépare les premières douceurs épicées de Noël : soupe chaleureuse aux épices.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7618,21 +6334,15 @@ const RECETTES = {
         name:       'Soupe de la Victoire aux légumes du terroir',
         region:     'France entière',
         anecdote:   'Pour l\'armistice, une soupe de légumes racines de saison — carottes, navets, poireaux, choux — en souvenir.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7640,21 +6350,15 @@ const RECETTES = {
         name:       'Steak à la bordelaise',
         region:     'Bordeaux',
         anecdote:   'La sauce bordelaise au vin rouge et à la moelle est la grande sauce de Bordeaux, ville du vin.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '10 min',
+        cuisson:    '15 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7662,21 +6366,15 @@ const RECETTES = {
         name:       'Steak tartare',
         region:     'Paris / Lyon',
         anecdote:   'Le tartare cru à la moutarde, cornichons et câpres est un classique des brasseries françaises depuis la Belle Époque.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '10 min',
+        cuisson:    '15 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7684,21 +6382,15 @@ const RECETTES = {
         name:       'Suprêmes de pintade aux lardons et marrons',
         region:     'Périgord / Ardèche',
         anecdote:   'La pintade aux marrons est le plat de novembre avant les fêtes, un avant-goût de la dinde de Noël.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7706,21 +6398,15 @@ const RECETTES = {
         name:       'Taboulé libanais',
         region:     'Liban / Provence',
         anecdote:   'Le vrai taboulé est vert : beaucoup de persil, peu de boulgour, citron, menthe et tomate. Frais et léger.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7728,21 +6414,15 @@ const RECETTES = {
         name:       'Taboule maison',
         region:     'Languedoc / Provence',
         anecdote:   'Avec le retour de la chaleur, le taboulé frais au citron, menthe et légumes croquants prend le dessus.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7750,21 +6430,15 @@ const RECETTES = {
         name:       'Tartare de saumon à la mangue',
         region:     'Bretagne / fusion',
         anecdote:   'Le saumon cru de l\'Atlantique avec la mangue et la coriandre est un tartare frais et exotique pour l\'été.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7772,21 +6446,15 @@ const RECETTES = {
         name:       'Tartare de tomates aux herbes',
         region:     'Provence',
         anecdote:   'À la veille de l\'été, les premières tomates anciennes se dégustent en tartare cru avec basilic, câpres et huile d\'olive.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7794,21 +6462,15 @@ const RECETTES = {
         name:       'Tarte aux abricots',
         region:     'Provence / Roussillon',
         anecdote:   'Les abricots du Roussillon, les plus précoces de France, font une tarte rustique parfumée et légèrement acidulée.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7816,21 +6478,15 @@ const RECETTES = {
         name:       'Tarte aux abricots et romarin',
         region:     'Provence',
         anecdote:   'L\'abricot du Luberon avec une branche de romarin dans la tarte : la magie aromatique de la Provence.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7838,21 +6494,15 @@ const RECETTES = {
         name:       'Tarte au citron meringuée',
         region:     'Languedoc / Nice',
         anecdote:   'Le citron de Menton, dernier citron d\'hiver, finit sa saison dans cette tarte acidulée surmontée de meringue.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7860,21 +6510,15 @@ const RECETTES = {
         name:       'Tarte fine aux coings et cannelle',
         region:     'Normandie / Île-de-France',
         anecdote:   'Le coing jaune d\'automne, dur mais parfumé, se transforme en tarte fine avec une touche de cannelle.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7882,21 +6526,15 @@ const RECETTES = {
         name:       'Tarte aux épinards et chèvre frais',
         region:     'Berry / Poitou',
         anecdote:   'Le chèvre frais du Poitou sur les épinards du jardin : les deux premières récoltes du potager printanier réunies.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7904,21 +6542,15 @@ const RECETTES = {
         name:       'Tarte aux épinards et ricotta',
         region:     'Provence / Nice',
         anecdote:   'Les épinards printaniers cueillis avant la montée en graines font une tarte légère aux herbes niçoises.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7926,21 +6558,15 @@ const RECETTES = {
         name:       'Tarte fine aux tomates cerise et mozzarella',
         region:     'Provence',
         anecdote:   'La caprese en tarte fine : tomates cerises, mozzarella, basilic frais sur pâte feuilletée croustillante.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7948,21 +6574,15 @@ const RECETTES = {
         name:       'Tarte fine aux tomates et basilic',
         region:     'Provence',
         anecdote:   'Les premières tomates de serre en mai sur une pâte feuilletée dorée avec basilic frais : le goût de l\'été promis.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7970,21 +6590,15 @@ const RECETTES = {
         name:       'Tarte flambée (Flammekueche)',
         region:     'Alsace',
         anecdote:   'Fine tarte à la crème fraîche, aux lardons et aux oignons, cuite sur pierre brûlante dans le four du boulanger.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -7992,21 +6606,15 @@ const RECETTES = {
         name:       'Tarte à la fraise sur crème d\'amande',
         region:     'France entière',
         anecdote:   'La fraise gariguette de juin sur frangipane légère est une tarte de saison qui marie douceur et acidité.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Dessert", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8014,21 +6622,15 @@ const RECETTES = {
         name:       'Tarte aux fraises et crème pâtissière',
         region:     'Île-de-France / Bretagne',
         anecdote:   'Les fraises de France en mai sont à leur pic de saveur. Dans une tarte crème pâtissière, elles sont royales.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Dessert", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8036,21 +6638,15 @@ const RECETTES = {
         name:       'Tarte aux fraises de Plougastel',
         region:     'Bretagne',
         anecdote:   'Les premières fraises de Plougastel, douces et parfumées, arrivent en serre sous les pluies d\'avril breton.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8058,21 +6654,15 @@ const RECETTES = {
         name:       'Tarte aux mirabelles',
         region:     'Lorraine',
         anecdote:   'La mirabelle de Lorraine, or et sucrée, est à son apogée fin août-début septembre. En tarte, elle est divine.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8080,21 +6670,15 @@ const RECETTES = {
         name:       'Tarte au noix et caramel',
         region:     'Dauphiné / Périgord',
         anecdote:   'Les noix de Grenoble ou du Périgord dans un caramel au beurre salé : la tarte de l\'automne par excellence.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8102,21 +6686,15 @@ const RECETTES = {
         name:       'Tarte aux noix de Grenoble',
         region:     'Dauphiné / Isère',
         anecdote:   'Les noix de Grenoble AOP tombent en septembre. Dans une tarte au caramel et aux noix, elles sont sublimes.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8124,21 +6702,15 @@ const RECETTES = {
         name:       'Tarte à l\'oignon alsacienne',
         region:     'Alsace',
         anecdote:   'La Zwiebelkuche alsacienne aux oignons dorés, crème et lardons est le plat de la saison des vendanges tardives.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Automne", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8146,21 +6718,15 @@ const RECETTES = {
         name:       'Tarte aux poireaux et saumon fumé',
         region:     'Bretagne / Normandie',
         anecdote:   'Les derniers poireaux d\'hiver accompagnent le saumon fumé dans une tarte salée qui sent bon le bord de mer.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8168,21 +6734,15 @@ const RECETTES = {
         name:       'Tarte aux poires Belle Hélène',
         region:     'Île-de-France',
         anecdote:   'Les poires pochées au sirop sur fond de crème d\'amande avec coulis de chocolat : la Belle Hélène en tarte.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8190,21 +6750,15 @@ const RECETTES = {
         name:       'Tarte aux pommes normande',
         region:     'Normandie',
         anecdote:   'La tarte normande aux pommes, crème fraîche et calvados est l\'emblème de l\'automne en pays de cidre.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8212,21 +6766,15 @@ const RECETTES = {
         name:       'Tarte au potiron',
         region:     'France entière',
         anecdote:   'Le potiron d\'octobre en tarte sucrée ou salée est le pendant français du pumpkin pie américain.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8234,21 +6782,15 @@ const RECETTES = {
         name:       'Tarte aux prunes de Damas',
         region:     'Lorraine / Alsace',
         anecdote:   'La quetsche de Lorraine, prune violette et acidulée, fait la meilleure tarte de septembre.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8256,21 +6798,15 @@ const RECETTES = {
         name:       'Tarte aux raisins muscats',
         region:     'Languedoc / Alsace',
         anecdote:   'Les premiers raisins muscats de la vendange précoce dans une tarte à la crème pâtissière légère.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Automne", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8278,21 +6814,15 @@ const RECETTES = {
         name:       'Tarte Tatin',
         region:     'Sologne / Loir-et-Cher',
         anecdote:   'Les sœurs Tatin auraient inventé cette tarte renversée par accident dans leur auberge de Lamotte-Beuvron.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8300,21 +6830,15 @@ const RECETTES = {
         name:       'Tarte tatin aux nectarines',
         region:     'Languedoc / Provence',
         anecdote:   'Les nectarines de fin août caramélisées à la tarte tatin inversée : le dessert estival par excellence.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8322,21 +6846,15 @@ const RECETTES = {
         name:       'Tarte à la tomate et au chèvre',
         region:     'Provence',
         anecdote:   'Août est le mois des tomates. Sur une tarte feuilletée moutardée avec chèvre frais, elles sont royales.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '25 min',
+        cuisson:    '45 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8344,21 +6862,15 @@ const RECETTES = {
         name:       'Tartiflette',
         region:     'Savoie',
         anecdote:   'Inventée pour valoriser le reblochon savoyard, la tartiflette s\'est imposée comme star des tables d\'hiver.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8366,21 +6878,15 @@ const RECETTES = {
         name:       'Terrine de chevreuil aux baies',
         region:     'Ardennes / Bourgogne',
         anecdote:   'La terrine de chevreuil aux baies sauvages de la forêt est l\'entrée du chasseur en novembre.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8388,21 +6894,15 @@ const RECETTES = {
         name:       'Terrine de courgettes au chèvre',
         region:     'Provence',
         anecdote:   'Les premières courgettes allongées de mai avec du chèvre frais du Luberon font une terrine estivale légère.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8410,21 +6910,15 @@ const RECETTES = {
         name:       'Terrine de campagne',
         region:     'Périgord / Berry',
         anecdote:   'La terrine de campagne maison, aux herbes et aux épices, est la charcuterie de Carême avant les fêtes de printemps.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Printemps", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8432,21 +6926,15 @@ const RECETTES = {
         name:       'Terrine de foie gras en bocal',
         region:     'Périgord / Gascogne',
         anecdote:   'La terrine de foie gras stérilisée en bocal se prépare début décembre. Elle sera parfaite à Noël.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8454,21 +6942,15 @@ const RECETTES = {
         name:       'Terrine de foie de volaille',
         region:     'Périgord / Lyon',
         anecdote:   'Le foie de volaille en terrine aux herbes fraîches et aux baies est une entrée printanière de choix.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8476,21 +6958,15 @@ const RECETTES = {
         name:       'Terrine de légumes en gelée',
         region:     'Provence / Île-de-France',
         anecdote:   'Les légumes de l\'été — tomates, poivrons, courgettes — pris en terrine de gelée au basilic pour les buffets froids.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8498,21 +6974,15 @@ const RECETTES = {
         name:       'Terrine de saint-jacques aux poireaux',
         region:     'Bretagne / Normandie',
         anecdote:   'Les Saint-Jacques d\'hiver en terrine avec le vert des poireaux : une entrée raffinée pour le réveillon du 31.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8520,21 +6990,15 @@ const RECETTES = {
         name:       'Tête de veau ravigote',
         region:     'Lyon / Paris',
         anecdote:   'Plat canaille par excellence, la tête de veau sauce ravigote est un hommage à la cuisine populaire française.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8542,21 +7006,15 @@ const RECETTES = {
         name:       'Tian d\'aubergines au parmesan',
         region:     'Provence',
         anecdote:   'L\'aubergine d\'août, au four à l\'huile d\'olive et au parmesan, fond et caramélise en un tian savoureux.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8564,21 +7022,15 @@ const RECETTES = {
         name:       'Tian provençal',
         region:     'Provence',
         anecdote:   'Le tian de légumes d\'été superposés en spirale et cuits au four à l\'huile d\'olive est un plat aussi beau que bon.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8586,21 +7038,15 @@ const RECETTES = {
         name:       'Tomates farcies à la provençale',
         region:     'Provence',
         anecdote:   'Les tomates farcies au veau haché, ail, persil et riz cuisent lentement au four : le plat de l\'été par excellence.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Dessert", "Moyen"],
+        prep:       '15 min',
+        cuisson:    '40 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8608,21 +7054,15 @@ const RECETTES = {
         name:       'Tourte de perdrix aux cèpes',
         region:     'Languedoc / Ariège',
         anecdote:   'La perdrix rouge de montagne en tourte avec les cèpes de l\'automne pyrénéen : un plat de chasse raffiné.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8630,21 +7070,15 @@ const RECETTES = {
         name:       'Tourte aux trois viandes',
         region:     'Lorraine',
         anecdote:   'Ce jour ne vient qu\'une fois tous les 4 ans. L\'occasion d\'une tourte festive aux viandes de Lorraine.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8652,21 +7086,15 @@ const RECETTES = {
         name:       'Tourte à la viande et aux champignons',
         region:     'Lorraine / Alsace',
         anecdote:   'La tourte lorraine à la viande de porc marinée dans le vin blanc, aux champignons et aux herbes.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8674,21 +7102,15 @@ const RECETTES = {
         name:       'Tripes à la mode de Caen',
         region:     'Normandie',
         anecdote:   'Pour la Saint-Antoine, patron des charcutiers, les tripes normandes mijotent avec cidre et calvados.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8696,21 +7118,15 @@ const RECETTES = {
         name:       'Haggis écossais (influence)',
         region:     'Ecosse / Aveyron',
         anecdote:   'Pour la Saint-Burns, on cuisine en France les abats façon tripous de l\'Aveyron, cousins du haggis.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8718,21 +7134,15 @@ const RECETTES = {
         name:       'Filet de truite aux amandes',
         region:     'Savoie / Auvergne',
         anecdote:   'La truite de rivière meunière et ses amandes dorées est un plat classique des auberges de montagne au printemps.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Printemps", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8740,21 +7150,15 @@ const RECETTES = {
         name:       'Tzatziki et crudités',
         region:     'Provence / Méditerranée',
         anecdote:   'Le concombre mariné au yaourt grec et à l\'ail, servi avec des crudités du jardin : l\'apéritif de l\'été.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Entrée", "Facile"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8762,21 +7166,15 @@ const RECETTES = {
         name:       'Sauté de veau Marengo',
         region:     'Provence / Empire',
         anecdote:   'Selon la légende, ce ragoût fut improvisé par le cuisinier de Napoléon après la bataille de Marengo en 1800.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8784,21 +7182,15 @@ const RECETTES = {
         name:       'Velouté de cèpes séchés au vin jaune',
         region:     'Franche-Comté',
         anecdote:   'Les cèpes séchés de l\'automne réhydratés, liés au vin jaune du Jura, font un velouté intense et parfumé.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8806,21 +7198,15 @@ const RECETTES = {
         name:       'Velouté de champignons sauvages',
         region:     'Périgord / Auvergne',
         anecdote:   'Les premières pluies de septembre font sortir les cèpes et les girolles. Un velouté crémeux en capture l\'essence.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8828,21 +7214,15 @@ const RECETTES = {
         name:       'Velouté de châtaignes au foie gras',
         region:     'Périgord / Ardèche',
         anecdote:   'Les châtaignes de l\'automne en velouté avec quelques dés de foie gras mi-cuit : le luxe simple du Sud-Ouest.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8850,21 +7230,15 @@ const RECETTES = {
         name:       'Velouté de lentilles noires (beluga) au foie gras',
         region:     'Périgord / Berry',
         anecdote:   'Les lentilles noires beluga en velouté soyeux avec quelques tranches de foie gras mi-cuit : l\'entrée de l\'Avent.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8872,21 +7246,15 @@ const RECETTES = {
         name:       'Velouté d\'oseille',
         region:     'Île-de-France / Berry',
         anecdote:   'L\'oseille pousse généreusement en avril. Ce velouté acide et crémeux est l\'une des grandes soupes françaises.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8894,21 +7262,15 @@ const RECETTES = {
         name:       'Velouté de panais aux épices',
         region:     'Nord / Bretagne',
         anecdote:   'Le panais, légume oublié reparu dans les potagers, fait un velouté doux et sucré aux épices douces.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8916,21 +7278,15 @@ const RECETTES = {
         name:       'Velouté de petits pois à la menthe',
         region:     'France entière',
         anecdote:   'Le 8 mai est férié : les petits pois du jardin arrivent ! Ce velouté vert vif est le symbole du printemps en force.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Printemps", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8938,21 +7294,15 @@ const RECETTES = {
         name:       'Velouté de petits pois au lard',
         region:     'Île-de-France',
         anecdote:   'Les petits pois d\'été dans leur écosses, fraîchement écossés, font la meilleure soupe verte qui soit.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8960,21 +7310,15 @@ const RECETTES = {
         name:       'Velouté de potimarron aux épices douces',
         region:     'France entière',
         anecdote:   'Le potimarron, doux et noisette, se récolte en septembre. Ce velouté épicé au cumin réchauffe les soirées fraîches.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -8982,21 +7326,15 @@ const RECETTES = {
         name:       'Velouté de topinambour',
         region:     'Île-de-France / Nord',
         anecdote:   'Le topinambour retrouve grâce en cuisine moderne. Ce légume oublié fait un velouté délicat au goût d\'artichaut.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Facile"],
+        prep:       '15 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Facile',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
@@ -9004,21 +7342,15 @@ const RECETTES = {
         name:       'Vichyssoise tiède',
         region:     'Île-de-France / Val de Loire',
         anecdote:   'La vichyssoise, soupe de poireaux et pommes de terre, se sert tiède à l\'équinoxe de printemps.',
-        tags:       [],  // ex: ['Hiver', 'Plat principal', 'Facile']
-        prep:       '',  // ex: '20 min'
-        cuisson:    '',  // ex: '1 h 30'
+        tags:       ["Hiver", "Plat principal", "Moyen"],
+        prep:       '20 min',
+        cuisson:    '30 min',
         personnes:  4,
-        difficulte: '',  // Facile / Moyen / Élaboré
-        ingredients: [
-            // { groupe: 'Le plat', items: [
-            //     { qty: '1', name: 'poulet fermier', note: 'environ 1,6 kg' },
-            // ]},
-        ],
-        etapes: [
-            // { titre: 'Préchauffer le four', texte: '...', timer: '30 min' },
-        ],
+        difficulte: 'Moyen',
+        ingredients: [],
+        etapes: [],
         conseils: [
-            // 'Astuce ou variante...',
+            "A adapter selon vos gouts et ingredients disponibles",
         ],
     },
 
