@@ -1,6 +1,6 @@
 // ═══════════════════════════════════════════════════════
-// ALMANACH DU JOUR — Service Worker v1.4
-//
+// ALMANACH DU JOUR — Service Worker v1.7
+// Amélioration des recettes.
 // Stratégie :
 //   • Installation  → mise en cache de tous les assets
 //   • Navigation    → Cache First (fonctionne hors-ligne)
@@ -10,7 +10,7 @@
 // la mise à jour chez tous les utilisateurs.
 // ═══════════════════════════════════════════════════════
 
-const CACHE_VERSION  = "almanach-v1.3";
+const CACHE_VERSION  = "almanach-v1.7";
 const STATIC_CACHE   = `${CACHE_VERSION}-static`;
 const DYNAMIC_CACHE  = `${CACHE_VERSION}-dynamic`;
 
@@ -23,6 +23,9 @@ const STATIC_ASSETS = [
     "./manifest.json",
     "./icons/icon-192.png",
     "./icons/icon-512.png",
+    "./recettes/Recettes.json",
+    "./recettes/recette.html",
+
     // Polices Google (si disponibles en ligne au premier chargement)
     "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap",
 ];
