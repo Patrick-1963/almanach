@@ -4600,6 +4600,15 @@ function getPlatDuJour(date) {
     return platsduJour[`${mm}-${dd}`] || null;
 }
 
+function getVinDuJour(date) {
+    if (typeof Vins === "undefined") return null;
+    const mm = String(date.getMonth() + 1).padStart(2, "0");
+    const dd = String(date.getDate()).padStart(2, "0");
+    const cle = `${mm}-${dd}`;
+    const entry = Object.entries(Vins).find(([, v]) => v.date === cle);
+    return entry ? { slug: entry[0], ...entry[1] } : null;
+}
+
 // Dictons simples (à compléter)
 
 const dictons = {
@@ -5695,22 +5704,114 @@ function renderPlatDuJour(date) {
     const el = document.getElementById("plat-du-jour-content");
     if (!el) return;
     const plat = getPlatDuJour(date);
+    const vin  = getVinDuJour(date);
 
-    if (!plat) {
+    if (!plat && !vin) {
         el.innerHTML = `<p style="text-align:center; color:var(--ink-muted); padding:1rem; font-style:italic;">Aucun plat enregistré pour ce jour.</p>`;
         return;
     }
 
-    el.innerHTML = `
+    let html = '';
+
+    // ── Plat du jour ──────────────────────────────────
+    if (plat) {
+        html += `
         <div class="ephem-item">
             <div class="ephem-year">🍽</div>
             <div class="ephem-text">
                 <span class="ephem-cat">${plat.name}</span>
                 <em>${plat.region}</em> — ${plat.anecdote}
-                <br><a href="${plat.recette}" class="plat-link">→ Voir la recette</a>
+                <br><div style="text-align: left;"><a href="${plat.recette}" class="plat-link">→ Voir la recette</a>
+                <a href="catalogue.html" class="plat-link" style="margin-left:1rem">→ Toutes les recettes</a></div>
             </div>
-        </div>
-    `;
+        </div>`;
+    }
+
+    // ── Vin du jour ───────────────────────────────────
+    if (vin) {
+        const corps  = vin.corps  ? ` · ${vin.corps}`  : '';
+        const prix   = vin.prix   ? ` · ${vin.prix}`   : '';
+        const service= vin.service? ` · ${vin.service}` : '';
+        html += `
+        <div class="ephem-item" style="margin-top:.5rem; padding-top:.75rem; border-top:1px solid var(--border, #2e3550)">
+            <div class="ephem-year">🍷</div>
+            <div class="ephem-text">
+                <span class="ephem-cat">${vin.name}</span>
+                <em>${vin.aoc || vin.region || ''}</em>${vin.cepage ? ' · ' + vin.cepage : ''}${corps}${prix}
+                ${vin.anecdote ? `<br><span style="opacity:.85">${vin.anecdote}</span>` : ''}
+                ${(vin.nez || vin.bouche) ? `<br><span style="opacity:.7;font-size:.85em">
+                    ${vin.nez   ? '👃 ' + vin.nez   + ' ' : ''}
+                    ${vin.bouche? '· ' + vin.bouche : ''}
+                    ${service}
+                </span>` : ''}
+                <br><div style="text-align:left"><a href="catalogue_vins.html" class="plat-link">→ Tous les vins</a></div>
+            </div>
+        </div>`;
+    }
+
+    // attempt to append full recipe content if data loaded
+    try {
+        if (!plat) throw new Error('no plat');
+        const url = new URL(plat.recette, window.location.href);
+        const slug = new URLSearchParams(url.search).get('plat');
+        const rec  = slug && window.RECETTES && RECETTES[slug];
+        if (rec) {
+            // ingredients
+            if (rec.ingredients && rec.ingredients.length) {
+                html += '<section class="ingredients-block"><h2 class="section-title"><span>🧄</span> Ingrédients</h2>';
+                rec.ingredients.forEach(g => {
+                    html += '<div class="ing-groupe">';
+                    if (g.groupe) html += `<h4>${g.groupe}</h4>`;
+                    html += '<ul class="ing-list">';
+                    g.items.forEach(it => {
+                        html += `
+                            <li>
+                                <span class="ing-bullet">—</span>
+                                <span class="ing-qty">${it.qty||''}</span>
+                                <span class="ing-name">${it.name}</span>
+                                <span class="ing-note">${it.note||''}</span>
+                            </li>`;
+                    });
+                    html += '</ul></div>';
+                });
+                html += '</section>';
+            }
+            // steps
+            if (rec.etapes && rec.etapes.length) {
+                html += '<section class="steps-block"><h2 class="section-title"><span>👨‍🍳</span> Préparation</h2>';
+                rec.etapes.forEach((e,i) => {
+                    html += `
+                        <div class="step">
+                            <div class="step-num">${i+1}</div>
+                            <div class="step-content">
+                                <h4>${e.titre}</h4>
+                                <p>${e.texte}</p>
+                                ${e.timer?`<span class="step-timer">⏱ ${e.timer}</span>`:''}
+                            </div>
+                        </div>`;
+                });
+                html += '</section>';
+            }
+            // conseils
+            if (rec.conseils && rec.conseils.length) {
+                const labels = ['💡 Le conseil de l\'almanach', '🔄 Variante', '📌 À savoir', '🍷 Accord'];
+                html += '<section id="r-conseils-block">';
+                rec.conseils.forEach((c,i) => {
+                    html += `
+                        <div class="conseil">
+                            <h4>${labels[i]||'💡 Conseil'}</h4>
+                            <p>${c}</p>
+                        </div>`;
+                });
+                html += '</section>';
+            }
+        }
+    } catch (err) {
+        // ignore if URL parsing fails
+        console.warn('renderPlatDuJour: unable to append recipe details', err);
+    }
+
+    el.innerHTML = html;
 }
 
 function renderNaissances(date) {

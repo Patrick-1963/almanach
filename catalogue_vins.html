@@ -1,0 +1,1120 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Almanach — Catalogue des Vins</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Catalogue des vins de l'Almanach du Jour — terroirs français, cépages, accords mets-vins, notes de dégustation.">
+
+<meta name="theme-color" content="#1a1f2e">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap" rel="stylesheet">
+
+<style>
+/* ════════════════════════════════════════════════════
+   VARIABLES — palette almanach + couleurs vins
+   ════════════════════════════════════════════════════ */
+:root {
+    --bg:           #1a1f2e;
+    --bg2:          #141824;
+    --bg3:          #0f1219;
+    --card:         #1e2438;
+    --card-hover:   #232a42;
+    --border:       #2e3550;
+    --border-dim:   #232840;
+    --gold:         #c8a96e;
+    --gold-dim:     #8c7448;
+    --gold-bg:      rgba(200,169,110,.07);
+    --text:         #d4ccbc;
+    --text-dim:     #7a7468;
+    --white:        #f0ece0;
+
+    /* Couleurs vins */
+    --rouge:        #a03848;
+    --rouge-light:  #c85868;
+    --rouge-bg:     rgba(160,56,72,.08);
+    --blanc:        #c8b46e;
+    --blanc-light:  #e0cc88;
+    --blanc-bg:     rgba(200,180,110,.08);
+    --rose:         #c87898;
+    --rose-light:   #e090b0;
+    --rose-bg:      rgba(200,120,152,.08);
+    --effervescent: #5a9878;
+    --efferv-light: #7ab898;
+    --efferv-bg:    rgba(90,152,120,.08);
+
+    /* Corps */
+    --corps-leger:  #5a90c4;
+    --corps-moyen:  #c8a96e;
+    --corps-ample:  #c87848;
+    --corps-corse:  #a03848;
+}
+
+/* ════════════════════════════════════════════════════
+   RESET & BASE
+   ════════════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+    background: var(--bg3);
+    color: var(--text);
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: 1rem;
+    line-height: 1.6;
+    min-height: 100vh;
+}
+
+/* ════════════════════════════════════════════════════
+   HEADER — identique à l'almanach
+   ════════════════════════════════════════════════════ */
+.site-header {
+    background: var(--bg2);
+    border-bottom: 1px solid var(--border);
+    text-align: center;
+    padding: 2rem 1rem 1.5rem;
+}
+.header-inner { display: flex; flex-direction: column; align-items: center; gap: .3rem; }
+.header-ornament { color: var(--gold-dim); font-size: .9rem; }
+.site-header h1 {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: clamp(1.6rem, 5vw, 2.6rem);
+    font-weight: 700;
+    letter-spacing: .06em;
+}
+.subtitle {
+    color: var(--text-dim);
+    font-size: .9rem;
+    letter-spacing: .15em;
+    font-style: italic;
+}
+.header-nav {
+    margin-top: .8rem;
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.header-nav a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: .82rem;
+    letter-spacing: .08em;
+    transition: color .2s;
+    padding: .2rem .5rem;
+    border-bottom: 1px solid transparent;
+}
+.header-nav a:hover { color: var(--gold); border-bottom-color: var(--gold-dim); }
+.header-nav a.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+/* ════════════════════════════════════════════════════
+   MAIN
+   ════════════════════════════════════════════════════ */
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 2rem 1rem 4rem;
+}
+
+/* ════════════════════════════════════════════════════
+   SECTION HEADER
+   ════════════════════════════════════════════════════ */
+.section-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: .8rem;
+    margin-bottom: 1.4rem;
+}
+.section-header .orn { color: var(--gold-dim); font-size: 1rem; }
+.section-header h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-weight: 400;
+    font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+    letter-spacing: .08em;
+}
+
+/* ════════════════════════════════════════════════════
+   STATS
+   ════════════════════════════════════════════════════ */
+.stats-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+.stat-chip {
+    background: var(--card);
+    border: 1px solid var(--border);
+    padding: .35rem .9rem;
+    font-size: .8rem;
+    color: var(--text-dim);
+    border-radius: 2px;
+    letter-spacing: .06em;
+}
+.stat-chip strong { color: var(--gold); }
+.stat-chip.rouge strong { color: var(--rouge-light); }
+.stat-chip.blanc strong { color: var(--blanc-light); }
+.stat-chip.rose  strong { color: var(--rose-light); }
+.stat-chip.efferv strong { color: var(--efferv-light); }
+
+/* ════════════════════════════════════════════════════
+   FILTRES
+   ════════════════════════════════════════════════════ */
+.filters-wrap {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1.2rem 1.4rem;
+    margin-bottom: 2rem;
+}
+.filters-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .8rem;
+    align-items: center;
+    margin-bottom: .8rem;
+}
+.filters-row:last-child { margin-bottom: 0; }
+
+.search-wrap { flex: 1 1 200px; position: relative; }
+.search-wrap input {
+    width: 100%;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--white);
+    font-family: 'Source Serif 4', serif;
+    font-size: .92rem;
+    padding: .5rem .9rem .5rem 2.2rem;
+    border-radius: 3px;
+    outline: none;
+    transition: border-color .2s;
+}
+.search-wrap input::placeholder { color: var(--text-dim); }
+.search-wrap input:focus { border-color: var(--gold-dim); }
+.search-icon {
+    position: absolute;
+    left: .7rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-dim);
+    pointer-events: none;
+}
+
+.filter-label {
+    font-size: .75rem;
+    color: var(--text-dim);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    margin-right: .2rem;
+}
+.filter-group { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; }
+
+.filter-btn {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    font-family: 'Source Serif 4', serif;
+    font-size: .8rem;
+    padding: .28rem .75rem;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all .18s;
+    white-space: nowrap;
+}
+.filter-btn:hover { border-color: var(--gold-dim); color: var(--gold); }
+
+/* Actifs par type */
+.filter-btn.active                { background: var(--gold-bg);    border-color: var(--gold);         color: var(--gold); }
+.filter-btn.c-rouge.active        { background: var(--rouge-bg);   border-color: var(--rouge-light);  color: var(--rouge-light); }
+.filter-btn.c-blanc.active        { background: var(--blanc-bg);   border-color: var(--blanc-light);  color: var(--blanc-light); }
+.filter-btn.c-rose.active         { background: var(--rose-bg);    border-color: var(--rose-light);   color: var(--rose-light); }
+.filter-btn.c-effervescent.active { background: var(--efferv-bg);  border-color: var(--efferv-light); color: var(--efferv-light); }
+
+.filters-meta {
+    font-size: .8rem;
+    color: var(--text-dim);
+    font-style: italic;
+    margin-top: .6rem;
+}
+.filters-meta strong { color: var(--gold); font-style: normal; }
+
+.btn-reset {
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    font-family: 'Source Serif 4', serif;
+    font-size: .78rem;
+    padding: .25rem .7rem;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: all .18s;
+}
+.btn-reset:hover { border-color: var(--gold-dim); color: var(--gold); }
+
+/* ════════════════════════════════════════════════════
+   GRILLE
+   ════════════════════════════════════════════════════ */
+#wine-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 1rem;
+}
+
+.wine-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1.1rem 1.2rem 1rem;
+    cursor: pointer;
+    transition: background .18s, border-color .22s, transform .15s;
+    display: flex;
+    flex-direction: column;
+    gap: .35rem;
+    position: relative;
+    overflow: hidden;
+}
+.wine-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    opacity: 0;
+    transition: opacity .2s;
+}
+.wine-card:hover { background: var(--card-hover); border-color: var(--gold-dim); transform: translateY(-1px); }
+.wine-card:hover::before { opacity: 1; }
+.wine-card.rouge::before  { background: var(--rouge-light); }
+.wine-card.blanc::before  { background: var(--blanc-light); }
+.wine-card.rose::before   { background: var(--rose-light); }
+.wine-card.effervescent::before { background: var(--efferv-light); }
+
+/* Bande couleur latérale */
+.wine-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 3px;
+    height: 100%;
+    opacity: .4;
+}
+.wine-card.rouge::after  { background: var(--rouge); }
+.wine-card.blanc::after  { background: var(--blanc); }
+.wine-card.rose::after   { background: var(--rose); }
+.wine-card.effervescent::after { background: var(--effervescent); }
+
+.card-top { display: flex; justify-content: space-between; align-items: flex-start; gap: .5rem; }
+.card-name {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.3;
+    flex: 1;
+}
+.card-color-dot {
+    width: 10px; height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    margin-top: .3rem;
+}
+.rouge  .card-color-dot { background: var(--rouge-light); box-shadow: 0 0 6px rgba(200,88,104,.4); }
+.blanc  .card-color-dot { background: var(--blanc-light); box-shadow: 0 0 6px rgba(224,204,136,.4); }
+.rose   .card-color-dot { background: var(--rose-light);  box-shadow: 0 0 6px rgba(224,144,176,.4); }
+.effervescent .card-color-dot { background: var(--efferv-light); box-shadow: 0 0 6px rgba(122,184,152,.4); }
+
+.card-aoc    { font-size: .78rem; color: var(--text-dim); font-style: italic; }
+.card-cepage { font-size: .8rem; color: var(--text); opacity: .75; }
+.card-anecdote {
+    font-size: .82rem;
+    color: var(--text);
+    opacity: .75;
+    line-height: 1.5;
+    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+.card-footer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .3rem;
+    margin-top: .2rem;
+    align-items: center;
+    justify-content: space-between;
+}
+.card-tags { display: flex; gap: .3rem; flex-wrap: wrap; }
+
+.tag {
+    font-size: .68rem;
+    padding: .15rem .5rem;
+    border-radius: 2px;
+    letter-spacing: .05em;
+    border: 1px solid;
+    white-space: nowrap;
+}
+.tag-region {
+    border-color: var(--gold-dim);
+    color: var(--gold-dim);
+    background: var(--gold-bg);
+}
+.tag-corps.Léger, .tag-corps.Légerà.moyen {
+    border-color: var(--corps-leger); color: var(--corps-leger); background: rgba(90,144,196,.06);
+}
+.tag-corps.Moyen, .tag-corps.Moyenà.ample {
+    border-color: var(--corps-moyen); color: var(--corps-moyen); background: rgba(200,169,110,.06);
+}
+.tag-corps.Ample, .tag-corps.Moyenà.corsé {
+    border-color: var(--corps-ample); color: var(--corps-ample); background: rgba(200,120,72,.06);
+}
+.tag-corps.Corsé, .tag-corps.Très.corsé {
+    border-color: var(--corps-corse); color: var(--corps-corse); background: rgba(160,56,72,.06);
+}
+
+.card-prix { font-size: .78rem; color: var(--text-dim); }
+
+/* Pas de résultats */
+.no-results {
+    grid-column: 1/-1;
+    text-align: center;
+    padding: 4rem 2rem;
+    color: var(--text-dim);
+    font-style: italic;
+}
+.no-results strong {
+    display: block;
+    font-family: 'Playfair Display', serif;
+    color: var(--gold-dim);
+    font-size: 1.2rem;
+    margin-bottom: .5rem;
+    font-style: normal;
+}
+
+/* ════════════════════════════════════════════════════
+   MODALE
+   ════════════════════════════════════════════════════ */
+.modal-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(10,12,20,.88);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 1rem;
+    overflow-y: auto;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .25s;
+}
+.modal-overlay.open { opacity: 1; pointer-events: all; }
+
+.modal {
+    background: var(--bg2);
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    width: 100%;
+    max-width: 740px;
+    margin: auto;
+    overflow: hidden;
+    transform: translateY(20px);
+    transition: transform .25s;
+    position: relative;
+}
+.modal-overlay.open .modal { transform: translateY(0); }
+
+/* Bande couleur top de modale */
+.modal-color-band {
+    height: 3px;
+    width: 100%;
+}
+.modal-color-band.rouge        { background: linear-gradient(90deg, var(--rouge), var(--rouge-light)); }
+.modal-color-band.blanc        { background: linear-gradient(90deg, var(--blanc), var(--blanc-light)); }
+.modal-color-band.rose         { background: linear-gradient(90deg, var(--rose), var(--rose-light)); }
+.modal-color-band.effervescent { background: linear-gradient(90deg, var(--effervescent), var(--efferv-light)); }
+
+.modal-header {
+    background: var(--bg3);
+    border-bottom: 1px solid var(--border);
+    padding: 1.3rem 1.6rem 1.1rem;
+    position: relative;
+}
+.modal-header h2 {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: clamp(1.2rem, 3vw, 1.7rem);
+    font-weight: 400;
+    line-height: 1.25;
+    padding-right: 2.5rem;
+}
+.modal-header .modal-aoc {
+    color: var(--text-dim);
+    font-style: italic;
+    font-size: .85rem;
+    margin-top: .2rem;
+}
+.modal-header .modal-cepage {
+    color: var(--text-dim);
+    font-size: .82rem;
+    margin-top: .1rem;
+    letter-spacing: .04em;
+}
+.modal-close {
+    position: absolute;
+    top: 1rem; right: 1rem;
+    background: none;
+    border: 1px solid var(--border);
+    color: var(--text-dim);
+    width: 2rem; height: 2rem;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex; align-items: center; justify-content: center;
+    border-radius: 2px;
+    transition: all .18s;
+}
+.modal-close:hover { border-color: var(--gold-dim); color: var(--gold); }
+
+/* Meta strip */
+.modal-meta-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .4rem;
+    padding: .8rem 1.4rem;
+    border-bottom: 1px solid var(--border-dim);
+    background: rgba(0,0,0,.15);
+}
+.meta-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: .05rem;
+    flex: 1 1 70px;
+    padding: .25rem .4rem;
+}
+.meta-item .m-label {
+    font-size: .65rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+}
+.meta-item .m-value {
+    font-family: 'Playfair Display', serif;
+    color: var(--white);
+    font-size: .88rem;
+    text-align: center;
+}
+
+/* Corps de modale */
+.modal-body {
+    padding: 1.4rem 1.6rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.3rem;
+}
+
+/* Anecdote domaine */
+.anecdote-block {
+    border-left: 2px solid var(--gold-dim);
+    padding-left: 1rem;
+    font-style: italic;
+    color: var(--text-dim);
+    font-size: .9rem;
+    line-height: 1.65;
+}
+.domaine-name {
+    font-style: normal;
+    font-family: 'Playfair Display', serif;
+    color: var(--gold-dim);
+    font-size: .85rem;
+    display: block;
+    margin-bottom: .3rem;
+}
+
+/* Bloc titre */
+.block-title {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: 1rem;
+    font-weight: 400;
+    letter-spacing: .06em;
+    margin-bottom: .7rem;
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+.block-title::after { content: ''; flex: 1; height: 1px; background: var(--border); }
+
+/* Dégustation */
+.degustation-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: .5rem 1.2rem;
+}
+@media (max-width: 520px) { .degustation-grid { grid-template-columns: 1fr; } }
+
+.deg-item {
+    padding: .5rem 0;
+    border-bottom: 1px solid rgba(46,53,80,.5);
+}
+.deg-item:last-child { border-bottom: none; }
+.deg-label {
+    font-size: .7rem;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: .15rem;
+}
+.deg-value {
+    font-size: .88rem;
+    color: var(--text);
+    line-height: 1.5;
+}
+
+/* Arômes */
+.aromes-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .35rem;
+    margin-top: .3rem;
+}
+.arome-tag {
+    background: rgba(200,169,110,.06);
+    border: 1px solid rgba(200,169,110,.2);
+    color: var(--text-dim);
+    font-size: .75rem;
+    padding: .15rem .5rem;
+    border-radius: 2px;
+    font-style: italic;
+}
+
+/* Infos pratiques */
+.infos-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: .5rem;
+}
+.info-cell {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: .55rem .8rem;
+    display: flex;
+    flex-direction: column;
+    gap: .1rem;
+}
+.info-cell .i-label {
+    font-size: .68rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+}
+.info-cell .i-value {
+    font-size: .88rem;
+    color: var(--white);
+    font-family: 'Playfair Display', serif;
+}
+
+/* Millésimes */
+.millesimes-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .35rem;
+}
+.millesime-tag {
+    background: rgba(74,144,196,.08);
+    border: 1px solid rgba(74,144,196,.25);
+    color: #7ab8d8;
+    font-size: .8rem;
+    padding: .2rem .6rem;
+    border-radius: 2px;
+    font-family: 'Playfair Display', serif;
+}
+
+/* Notes */
+.notes-block { display: flex; flex-wrap: wrap; gap: .6rem; }
+.note-item {
+    background: rgba(200,169,110,.05);
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    padding: .5rem .9rem;
+    flex: 1 1 180px;
+}
+.note-source {
+    font-size: .7rem;
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: .2rem;
+}
+.note-value {
+    font-family: 'Playfair Display', serif;
+    color: var(--gold);
+    font-size: .95rem;
+}
+
+/* Accords */
+.accords-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .35rem;
+}
+.accord-tag {
+    background: rgba(95,168,122,.06);
+    border: 1px solid rgba(95,168,122,.25);
+    color: #7abb90;
+    font-size: .8rem;
+    padding: .2rem .6rem;
+    border-radius: 2px;
+}
+
+/* Terroir */
+.terroir-block {
+    font-size: .87rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+    padding: .6rem .9rem;
+    background: var(--bg);
+    border: 1px solid var(--border-dim);
+    border-radius: 3px;
+    border-left: 2px solid var(--border);
+}
+
+/* ════════════════════════════════════════════════════
+   FOOTER
+   ════════════════════════════════════════════════════ */
+.site-footer {
+    background: var(--bg2);
+    border-top: 1px solid var(--border);
+    text-align: center;
+    padding: 2rem 1rem;
+    color: var(--text-dim);
+    font-size: .82rem;
+}
+.footer-inner { max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: .4rem; }
+.footer-divider { width: 40px; height: 1px; background: var(--border); margin: .5rem auto; }
+.footer-link { color: var(--gold-dim); text-decoration: none; letter-spacing: .05em; }
+.footer-link:hover { color: var(--gold); }
+
+/* ════════════════════════════════════════════════════
+   RESPONSIVE
+   ════════════════════════════════════════════════════ */
+@media (max-width: 600px) {
+    .modal { margin: 0; border-radius: 6px 6px 0 0; }
+    .modal-overlay { align-items: flex-end; padding: 0; }
+    .modal-body { padding: 1rem 1.1rem; }
+    .modal-header { padding: 1rem 1.2rem; }
+    .modal-meta-strip { padding: .6rem .9rem; }
+    #wine-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══ HEADER ═══ -->
+<header class="site-header">
+    <div class="header-inner">
+        <div class="header-ornament">✦</div>
+        <h1>Almanach du Jour</h1>
+        <p class="subtitle">Soleil · Lune · Éphémérides · Traditions</p>
+        <div class="header-ornament">✦</div>
+        <nav class="header-nav">
+            <a href="index.html">Almanach</a>
+            <a href="catalogue.html">Recettes</a>
+            <a href="catalogue_vins.html" class="active">Vins</a>
+        </nav>
+    </div>
+</header>
+
+<!-- ═══ MAIN ═══ -->
+<main>
+
+    <div class="section-header">
+        <span class="orn">◈</span>
+        <h2>Catalogue des Vins</h2>
+        <span class="orn">◈</span>
+    </div>
+
+    <!-- Stats -->
+    <div class="stats-strip">
+        <div class="stat-chip">Total : <strong id="stat-total">—</strong> vins</div>
+        <div class="stat-chip rouge">Rouges : <strong id="stat-rouge">—</strong></div>
+        <div class="stat-chip blanc">Blancs : <strong id="stat-blanc">—</strong></div>
+        <div class="stat-chip rose">Rosés : <strong id="stat-rose">—</strong></div>
+        <div class="stat-chip efferv">Effervescents : <strong id="stat-efferv">—</strong></div>
+    </div>
+
+    <!-- Filtres -->
+    <div class="filters-wrap">
+        <!-- Recherche -->
+        <div class="filters-row">
+            <div class="search-wrap">
+                <span class="search-icon">⌕</span>
+                <input type="search" id="search-input" placeholder="Nom, région, cépage, domaine…" autocomplete="off">
+            </div>
+            <button class="btn-reset" id="btn-reset">Réinitialiser</button>
+        </div>
+
+        <!-- Couleur -->
+        <div class="filters-row">
+            <span class="filter-label">Couleur</span>
+            <div class="filter-group">
+                <button class="filter-btn c-rouge"        data-filter="couleur" data-val="rouge">🔴 Rouge</button>
+                <button class="filter-btn c-blanc"        data-filter="couleur" data-val="blanc">🟡 Blanc</button>
+                <button class="filter-btn c-rose"         data-filter="couleur" data-val="rose">🌸 Rosé</button>
+                <button class="filter-btn c-effervescent" data-filter="couleur" data-val="effervescent">🟢 Effervescent</button>
+            </div>
+        </div>
+
+        <!-- Région -->
+        <div class="filters-row">
+            <span class="filter-label">Région</span>
+            <div class="filter-group" id="region-filters">
+                <!-- Rempli par JS selon les régions présentes -->
+            </div>
+        </div>
+
+        <!-- Corps -->
+        <div class="filters-row">
+            <span class="filter-label">Corps</span>
+            <div class="filter-group">
+                <button class="filter-btn" data-filter="corps" data-val="Léger">Léger</button>
+                <button class="filter-btn" data-filter="corps" data-val="Moyen">Moyen</button>
+                <button class="filter-btn" data-filter="corps" data-val="Ample">Ample</button>
+                <button class="filter-btn" data-filter="corps" data-val="Corsé">Corsé</button>
+            </div>
+        </div>
+
+        <div class="filters-meta">
+            Affichage : <strong id="count-display">—</strong> vin(s)
+        </div>
+    </div>
+
+    <!-- Grille -->
+    <div id="wine-grid"></div>
+
+</main>
+
+<!-- ═══ MODALE ═══ -->
+<div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+    <div class="modal" id="modal">
+        <div class="modal-color-band" id="modal-color-band"></div>
+        <div class="modal-header">
+            <h2 id="modal-title">—</h2>
+            <div class="modal-aoc"    id="modal-aoc">—</div>
+            <div class="modal-cepage" id="modal-cepage">—</div>
+            <button class="modal-close" id="modal-close" aria-label="Fermer">✕</button>
+        </div>
+        <div class="modal-meta-strip" id="modal-meta-strip"></div>
+        <div class="modal-body" id="modal-body"></div>
+    </div>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<footer class="site-footer">
+    <div class="footer-inner">
+        <p>📍 <strong>Almanach du Jour</strong> — Guer, Bretagne</p>
+        <div class="footer-divider"></div>
+        <a class="footer-link" href="https://patrick-1963.github.io/almanach/index.html" target="_blank" rel="noopener">
+            patrick-1963.github.io/almanach
+        </a>
+        <p>Vins du terroir · Appellations françaises · Accords mets-vins</p>
+    </div>
+</footer>
+
+<!-- Données -->
+<script src="vins/vins.js"></script>
+
+<script>
+// ─── DÉTECTION COULEUR ────────────────────────────────────────────────────
+function detectCouleur(vin) {
+    const robe = (vin.robe || '').toLowerCase();
+    if (/rosé|saumon|rose/.test(robe))                                          return 'rose';
+    if (/pétillant|bulle|mousse|effervescent|crémant|champagne/.test(robe))     return 'effervescent';
+    if (/blanc|doré|or |ambré|paille|jaune|golden/.test(robe))                  return 'blanc';
+    if (/rouge|rubis|grenat|pourpre|violet|noir/.test(robe))                    return 'rouge';
+    // Fallback sur le nom ou l'AOC
+    const txt = (vin.name + ' ' + (vin.aoc||'')).toLowerCase();
+    if (/champagne|crémant|pétillant|mousseux|cidre|cider/.test(txt))           return 'effervescent';
+    if (/rosé/.test(txt))                                                        return 'rose';
+    if (/blanc/.test(txt))                                                       return 'blanc';
+    return 'rouge';
+}
+
+// Corps normalisé pour filtre
+function normCorps(corps) {
+    if (!corps) return '';
+    const c = corps.toLowerCase();
+    if (c.includes('corsé'))  return 'Corsé';
+    if (c.includes('ample'))  return 'Ample';
+    if (c.includes('léger'))  return 'Léger';
+    if (c.includes('moyen'))  return 'Moyen';
+    return corps;
+}
+
+// ─── DONNÉES ─────────────────────────────────────────────────────────────
+const allWines = Object.entries(Vins).map(([slug, v]) => ({
+    slug,
+    ...v,
+    _couleur: detectCouleur(v),
+    _corps:   normCorps(v.corps),
+}));
+
+// ─── STATS ───────────────────────────────────────────────────────────────
+document.getElementById('stat-total').textContent  = allWines.length;
+document.getElementById('stat-rouge').textContent  = allWines.filter(v => v._couleur === 'rouge').length;
+document.getElementById('stat-blanc').textContent  = allWines.filter(v => v._couleur === 'blanc').length;
+document.getElementById('stat-rose').textContent   = allWines.filter(v => v._couleur === 'rose').length;
+document.getElementById('stat-efferv').textContent = allWines.filter(v => v._couleur === 'effervescent').length;
+
+// ─── RÉGIONS DISPONIBLES ─────────────────────────────────────────────────
+const regions = [...new Set(allWines.map(v => v.region).filter(Boolean))]
+    .sort((a,b) => a.localeCompare(b, 'fr'));
+
+const regionFilters = document.getElementById('region-filters');
+regions.forEach(r => {
+    const btn = document.createElement('button');
+    btn.className = 'filter-btn';
+    btn.dataset.filter = 'region';
+    btn.dataset.val = r;
+    btn.textContent = r;
+    regionFilters.appendChild(btn);
+});
+
+// ─── ÉTAT ────────────────────────────────────────────────────────────────
+const state = { search: '', couleur: null, region: null, corps: null };
+
+// ─── FILTRAGE ─────────────────────────────────────────────────────────────
+function filterWines() {
+    const q = state.search.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    return allWines.filter(v => {
+        if (q) {
+            const h = [v.name, v.region, v.aoc, v.cepage, v.domaine, v.anecdote]
+                .join(' ').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+            if (!h.includes(q)) return false;
+        }
+        if (state.couleur && v._couleur !== state.couleur) return false;
+        if (state.region  && v.region   !== state.region)  return false;
+        if (state.corps   && v._corps   !== state.corps)   return false;
+        return true;
+    });
+}
+
+// ─── RENDU GRILLE ─────────────────────────────────────────────────────────
+function renderGrid() {
+    const results = filterWines();
+    const grid = document.getElementById('wine-grid');
+    document.getElementById('count-display').textContent = results.length;
+
+    if (!results.length) {
+        grid.innerHTML = '<div class="no-results"><strong>Aucun vin trouvé</strong>Essayez d\'élargir vos filtres.</div>';
+        return;
+    }
+
+    grid.innerHTML = results.map(v => {
+        const corps = v._corps ? `<span class="tag tag-corps ${v._corps.replace(/\s/g,'.')}">${v._corps}</span>` : '';
+        const prix  = v.prix   ? `<span class="card-prix">${v.prix}</span>` : '';
+        return `
+        <article class="wine-card ${v._couleur}" data-slug="${v.slug}" tabindex="0" role="button" aria-label="Voir la fiche : ${v.name}">
+            <div class="card-top">
+                <div class="card-name">${v.name}</div>
+                <div class="card-color-dot"></div>
+            </div>
+            <div class="card-aoc">${v.aoc || v.region || ''}</div>
+            <div class="card-cepage">${v.cepage || ''}</div>
+            <div class="card-anecdote">${v.anecdote || ''}</div>
+            <div class="card-footer">
+                <div class="card-tags">
+                    ${v.region ? `<span class="tag tag-region">${v.region}</span>` : ''}
+                    ${corps}
+                </div>
+                ${prix}
+            </div>
+        </article>`;
+    }).join('');
+
+    grid.querySelectorAll('.wine-card').forEach(card => {
+        card.addEventListener('click', () => openModal(card.dataset.slug));
+        card.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') openModal(card.dataset.slug);
+        });
+    });
+}
+
+// ─── MODALE ───────────────────────────────────────────────────────────────
+function openModal(slug) {
+    const v = Vins[slug];
+    if (!v) return;
+
+    const couleur = detectCouleur(v);
+
+    // En-tête
+    document.getElementById('modal-title').textContent  = v.name;
+    document.getElementById('modal-aoc').textContent    = v.aoc || '';
+    document.getElementById('modal-cepage').textContent = v.cepage ? '🍇 ' + v.cepage : '';
+    document.getElementById('modal-color-band').className = 'modal-color-band ' + couleur;
+
+    // Meta strip
+    document.getElementById('modal-meta-strip').innerHTML = [
+        { label: 'Région',   value: v.region   || '—' },
+        { label: 'Corps',    value: v.corps     || '—' },
+        { label: 'Alcool',   value: v.alcool    || '—' },
+        { label: 'Garde',    value: v.garde     || '—' },
+        { label: 'Service',  value: v.service   || '—' },
+        { label: 'Prix',     value: v.prix      || '—' },
+    ].map(({ label, value }) => `
+        <div class="meta-item">
+            <span class="m-label">${label}</span>
+            <span class="m-value">${value}</span>
+        </div>`).join('');
+
+    // Corps de modale
+    let html = '';
+
+    // Domaine & anecdote
+    if (v.anecdote || v.domaine) {
+        html += `<div class="anecdote-block">`;
+        if (v.domaine) {
+            const proprio = v.proprietaire ? ` — ${v.proprietaire}` : '';
+            html += `<span class="domaine-name">🏰 ${v.domaine}${proprio}</span>`;
+        }
+        if (v.anecdote) html += v.anecdote;
+        html += `</div>`;
+    }
+
+    // Terroir
+    if (v.terroir) {
+        html += `<div>
+            <div class="block-title">Terroir</div>
+            <div class="terroir-block">🌍 ${v.terroir}</div>
+        </div>`;
+    }
+
+    // Dégustation
+    const degItems = [
+        { label: 'Robe',      value: v.robe },
+        { label: 'Nez',       value: v.nez },
+        { label: 'Bouche',    value: v.bouche },
+        { label: 'Longueur',  value: v.longueur },
+        { label: 'Corps',     value: v.corps },
+        { label: 'Acidité',   value: v.acidite },
+        ...(v.tanins ? [{ label: 'Tanins', value: v.tanins }] : []),
+    ].filter(d => d.value);
+
+    if (degItems.length) {
+        html += `<div>
+            <div class="block-title">Notes de dégustation</div>
+            <div class="degustation-grid">
+                ${degItems.map(d => `
+                <div class="deg-item">
+                    <div class="deg-label">${d.label}</div>
+                    <div class="deg-value">${d.value}</div>
+                </div>`).join('')}
+            </div>`;
+
+        if (v.aromes) {
+            const aromes = v.aromes.split(',').map(a => a.trim()).filter(Boolean);
+            html += `<div class="aromes-list">${aromes.map(a => `<span class="arome-tag">${a}</span>`).join('')}</div>`;
+        }
+        html += `</div>`;
+    }
+
+    // Infos pratiques
+    html += `<div>
+        <div class="block-title">Infos pratiques</div>
+        <div class="infos-grid">`;
+    if (v.service)  html += `<div class="info-cell"><span class="i-label">Service</span><span class="i-value">${v.service}</span></div>`;
+    if (v.garde)    html += `<div class="info-cell"><span class="i-label">Garde</span><span class="i-value">${v.garde}</span></div>`;
+    if (v.alcool)   html += `<div class="info-cell"><span class="i-label">Alcool</span><span class="i-value">${v.alcool}</span></div>`;
+    if (v.prix)     html += `<div class="info-cell"><span class="i-label">Prix indicatif</span><span class="i-value">${v.prix}</span></div>`;
+    html += `</div>`;
+
+    if (v.millesimes && v.millesimes.length) {
+        html += `<div class="millesimes-list" style="margin-top:.6rem">
+            <span style="font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--text-dim);margin-right:.4rem;">Millésimes :</span>
+            ${v.millesimes.map(m => `<span class="millesime-tag">${m}</span>`).join('')}
+        </div>`;
+    }
+    html += `</div>`;
+
+    // Notes critiques
+    if (v.note_parker || v.note_hachette) {
+        html += `<div>
+            <div class="block-title">Distinctions</div>
+            <div class="notes-block">
+                ${v.note_parker   ? `<div class="note-item"><div class="note-source">Robert Parker</div><div class="note-value">${v.note_parker}</div></div>` : ''}
+                ${v.note_hachette ? `<div class="note-item"><div class="note-source">Guide Hachette</div><div class="note-value">${v.note_hachette}</div></div>` : ''}
+            </div>
+        </div>`;
+    }
+
+    // Accords mets-vins
+    if (v.accords && v.accords.length) {
+        html += `<div>
+            <div class="block-title">Accords mets-vins</div>
+            <div class="accords-list">
+                ${v.accords.map(a => `<span class="accord-tag">🍽 ${a.replace(/-/g,' ')}</span>`).join('')}
+            </div>
+        </div>`;
+    }
+
+    document.getElementById('modal-body').innerHTML = html;
+
+    // Ouverture
+    const overlay = document.getElementById('modal-overlay');
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    setTimeout(() => document.getElementById('modal-close').focus(), 50);
+}
+
+function closeModal() {
+    document.getElementById('modal-overlay').classList.remove('open');
+    document.body.style.overflow = '';
+}
+
+document.getElementById('modal-close').addEventListener('click', closeModal);
+document.getElementById('modal-overlay').addEventListener('click', e => {
+    if (e.target === e.currentTarget) closeModal();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+// ─── FILTRES ──────────────────────────────────────────────────────────────
+document.addEventListener('click', e => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    const { filter, val } = btn.dataset;
+    if (state[filter] === val) {
+        state[filter] = null;
+        btn.classList.remove('active');
+    } else {
+        document.querySelectorAll(`[data-filter="${filter}"]`).forEach(b => b.classList.remove('active'));
+        state[filter] = val;
+        btn.classList.add('active');
+    }
+    renderGrid();
+});
+
+document.getElementById('search-input').addEventListener('input', e => {
+    state.search = e.target.value.trim();
+    renderGrid();
+});
+
+document.getElementById('btn-reset').addEventListener('click', () => {
+    state.search = ''; state.couleur = null; state.region = null; state.corps = null;
+    document.getElementById('search-input').value = '';
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    renderGrid();
+});
+
+// ─── INIT ─────────────────────────────────────────────────────────────────
+renderGrid();
+</script>
+</body>
+</html>

@@ -1,6 +1,7 @@
 // ═══════════════════════════════════════════════════════
 // ALMANACH DU JOUR — Service Worker v1.7
-// Amélioration des recettes.
+// 25/02/2026 V1.6 Amélioration des recettes.
+// 01/03/2026 v1.7 Ajout dune partie Vins (catalogue_vins.html + vins.js). 01/03/2026
 // Stratégie :
 //   • Installation  → mise en cache de tous les assets
 //   • Navigation    → Cache First (fonctionne hors-ligne)
@@ -20,11 +21,14 @@ const STATIC_ASSETS = [
     "./index.html",
     "./almanach.js",
     "./style.css",
+    "./catalogue.html",
+    "./catalogue_vins.html",
     "./manifest.json",
     "./icons/icon-192.png",
     "./icons/icon-512.png",
     "./recettes/Recettes.json",
     "./recettes/recette.html",
+    "./vins/vin.js",
 
     // Polices Google (si disponibles en ligne au premier chargement)
     "https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,300;0,8..60,400;1,8..60,300&display=swap",

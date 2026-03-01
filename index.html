@@ -62,18 +62,15 @@
     </header>
 
     <main>
-
-
-        <!-- PLAT DU JOUR -->
+        <!-- TABLE DU JOUR : Plat & Vin -->
         <section id="plat-du-jour-section">
             <div class="section-header">
                 <span class="orn">◈</span>
-                <h2>Plat du jour</h2>
+                <h2>Table du jour</h2>
                 <span class="orn">◈</span>
             </div>
             <div id="plat-du-jour-content" class="ephemerides-list"></div>
         </section>
-
         <!-- BLOC DU JOUR -->
         <section id="today-block">
             <div class="today-date-wrap">
@@ -154,7 +151,8 @@
         </section>
 
         <!-- PARTAGE DU JOUR -->
-        <section id="share-block">
+         <br>
+        <section id="ephemerides-block">
             <div class="share-inner">
                 <div class="share-preview-wrap">
                     <canvas id="share-canvas" width="1200" height="630"
@@ -172,33 +170,11 @@
             </div>
         </section>
 
-        <!-- MARÉES — LIEN SHOM OFFICIEL -->
-        <section id="marees-section">
-            <div class="section-header">
-                <span class="orn">◈</span>
-                <h2>Marées — Bretagne</h2>
-                <span class="orn">◈</span>
-            </div>
-            <div class="shom-block">
-                <p class="shom-intro">
-                    Les horaires et coefficients de marée sont fournis par le
-                    <strong>SHOM</strong> — Service Hydrographique et Océanographique de la Marine,
-                    référence officielle française.
-                </p>
-                <a class="shom-link"
-                   href="https://maree.shom.fr"
-                   target="_blank" rel="noopener">
-                    ⚓ Consulter les marées sur maree.shom.fr
-                </a>
-                <p class="shom-note">
-                    Prédictions officielles exactes · Tous les ports bretons · Gratuit
-                </p>
-            </div>
-        </section>
 
         
         <!-- NAISSANCES CÉLÈBRES -->
-        <section id="naissances-section">
+         <br>
+        <section id="ephemerides-block">
             <div class="section-header">
                 <span class="orn">◈</span>
                 <h2>Nés un jour comme aujourd'hui</h2>
@@ -206,10 +182,11 @@
             </div>
             <div id="naissances-list" class="ephemerides-list"></div>
         </section>
-
+    
 
         <!-- NÉCROLOGIE -->
-        <section id="necrologie-section">
+         <br>
+        <section id="ephemerides-block">
             <div class="section-header">
                 <span class="orn">◈</span>
                 <h2>Disparus un jour comme aujourd'hui</h2>
@@ -217,8 +194,9 @@
             </div>
             <div id="necrologie-list" class="ephemerides-list"></div>
         </section>
-
+    
         <!-- ÉPHÉMÉRIDES -->
+         <br>
         <section id="ephemerides-block">
             <div class="section-header">
                 <span class="orn">◈</span>
@@ -227,7 +205,7 @@
             </div>
             <div id="ephemerides-list" class="ephemerides-list"></div>
         </section>
-
+    </br>
         <!-- CALENDRIER -->
         <section id="calendar-section">
             <div class="section-header">
@@ -265,7 +243,7 @@
                 patrick-1963.github.io/almanach
             </a>
             <p class="footer-description">
-                Soleil, Lune, Marées bretonnes, Éphémérides historiques,
+                Soleil, Lune, Éphémérides historiques,
                 Calendrier jardinier biodynamique et Dictons du terroir —
                 tous les calculs sont effectués localement, sans connexion requise.
                 Installable sur mobile comme application.
@@ -288,6 +266,7 @@
     </div>
 
     <script src="recettes/Recettes.js"></script>
+    <script src="vins/vins.js"></script>
     <script src="almanach.js"></script>
     <script src="pwa.js"></script>
 </body>
