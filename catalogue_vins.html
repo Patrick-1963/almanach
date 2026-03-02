@@ -407,7 +407,7 @@ main {
     backdrop-filter: blur(4px);
     z-index: 1000;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     padding: 1rem;
     overflow-y: auto;
@@ -424,12 +424,21 @@ main {
     width: 100%;
     max-width: 740px;
     margin: auto;
+    /* Conteneur flex : header fixe + body scrollable */
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
     transform: translateY(20px);
     transition: transform .25s;
     position: relative;
 }
 .modal-overlay.open .modal { transform: translateY(0); }
+
+/* Header et meta-strip restent visibles */
+.modal-color-band { flex-shrink: 0; }
+.modal-header     { flex-shrink: 0; }
+.modal-meta-strip { flex-shrink: 0; }
 
 /* Bande couleur top de modale */
 .modal-color-band {
@@ -518,6 +527,9 @@ main {
     display: flex;
     flex-direction: column;
     gap: 1.3rem;
+    flex: 1 1 auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
 }
 
 /* Anecdote domaine */
@@ -707,11 +719,16 @@ main {
    RESPONSIVE
    ════════════════════════════════════════════════════ */
 @media (max-width: 600px) {
-    .modal { margin: 0; border-radius: 6px 6px 0 0; }
     .modal-overlay { align-items: flex-end; padding: 0; }
-    .modal-body { padding: 1rem 1.1rem; }
-    .modal-header { padding: 1rem 1.2rem; }
+    .modal {
+        margin: 0;
+        border-radius: 12px 12px 0 0;
+        max-height: 92vh;
+        width: 100%;
+    }
+    .modal-header     { padding: 1rem 1.2rem; }
     .modal-meta-strip { padding: .6rem .9rem; }
+    .modal-body       { padding: 1rem 1.1rem; }
     #wine-grid { grid-template-columns: 1fr; }
 }
 </style>

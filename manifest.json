@@ -2,6 +2,7 @@
     "name": "Almanach du Jour",
     "short_name": "Almanach",
     "description": "Soleil, Lune, Marées bretonnes, Éphémérides et traditions — calculs locaux, sans API.",
+    "author": "Patrick Leguet",
     "start_url": "./index.html",
     "display": "standalone",
     "orientation": "portrait-primary",

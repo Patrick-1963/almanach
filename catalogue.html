@@ -390,7 +390,7 @@ main {
     backdrop-filter: blur(4px);
     z-index: 1000;
     display: flex;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     padding: 1rem;
     overflow-y: auto;
@@ -409,12 +409,25 @@ main {
     width: 100%;
     max-width: 720px;
     margin: auto;
+    /* Conteneur flex : header fixe + body scrollable */
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
     overflow: hidden;
     transform: translateY(20px);
     transition: transform .25s;
     position: relative;
 }
 .modal-overlay.open .modal { transform: translateY(0); }
+
+/* Header et meta-strip restent visibles, body défile */
+.modal-header     { flex-shrink: 0; }
+.modal-meta-strip { flex-shrink: 0; }
+.modal-body {
+    flex: 1 1 auto;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
 
 .modal-header {
     background: var(--bg3);
@@ -617,13 +630,18 @@ main {
    RESPONSIVE
    ════════════════════════════════════════════════════ */
 @media (max-width: 600px) {
-    .modal { margin: 0; border-radius: 6px 6px 0 0; }
     .modal-overlay { align-items: flex-end; padding: 0; }
-    .modal-body { padding: 1rem 1.1rem; }
-    .modal-header { padding: 1.1rem 1.2rem; }
+    .modal {
+        margin: 0;
+        border-radius: 12px 12px 0 0;
+        max-height: 92vh;
+        width: 100%;
+    }
+    .modal-header     { padding: 1.1rem 1.2rem; }
     .modal-meta-strip { padding: .6rem 1rem; }
-    .meta-item { flex: 1 1 60px; }
-    #recipe-grid { grid-template-columns: 1fr; }
+    .modal-body       { padding: 1rem 1.1rem; }
+    .meta-item        { flex: 1 1 60px; }
+    #recipe-grid      { grid-template-columns: 1fr; }
 }
 </style>
 </head>
@@ -639,7 +657,6 @@ main {
         <nav class="header-nav">
             <a href="index.html">Almanach</a>
             <a href="catalogue.html" class="active">Recettes</a>
-             <a href="catalogue_vins.html" >Vins</a>
         </nav>
     </div>
 </header>

@@ -1,5 +1,11 @@
 // ═══════════════════════════════════════════════════════
-// ALMANACH DU JOUR — PWA Manager v1.8
+// ALMANACH DU JOUR — PWA Manager v2.2
+// 25/02/2026 V1.6 Amélioration des recettes.
+// 01/03/2026 v1.7 Ajout dune partie Vins (catalogue_vins.html + vins.js). 01/03/2026
+// 02/03/2026 v1.9 Correction d'un bug d'affichage des recettes sur smartphone.
+// 02/03/2026 v2.0 Correction d'un bug d'affichage des fiches vins sur smartphone.
+// 02/03/2026 v2.1 Correction d'un bug d'affichage des fiches vins sur smartphone.
+// 02/03/2026 v2.2 affiche splash screen personnalisé au lancement depuis l'icône (iOS 15+ et Android 12+).
 // ═══════════════════════════════════════════════════════
 
 (function () {
